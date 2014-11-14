@@ -6,7 +6,7 @@
 public OnCommandProcess(playerid, cmdtext[], status, response)
 {
 	new
-		cmd[32],	// parancs 
+		cmd[32],	// parancs
 		pms[128],	// paraméterek
 		string[256]
 	;
