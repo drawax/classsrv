@@ -6,7 +6,7 @@
 public OnCommandProcess(playerid, cmdtext[], status, response)
 {
 	new
-		cmd[32],	// parancs 
+		cmd[32],	// parancs
 		pms[128],	// paraméterek
 		string[256]
 	;
@@ -33126,7 +33126,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					GetPlayerPos(player, X,Y,Z);
 					SetPlayerMarkerForPlayer(playerid, player, 0xFF0000FF );
 					SendClientMessage(playerid, COLOR_LIGHTBLUE, " Lenyomoztad a célszemélyt !");
-					if(IsRyan(player))
+					if(IsRyanAndFranklin(player))
 					{
 						format(string,128,"[Figyelem] [%d]%s lenyomozott",playerid,PlayerName(playerid));
 						SendMessage(SEND_MESSAGE_PLAYER, string, COLOR_LIGHTRED, 234);

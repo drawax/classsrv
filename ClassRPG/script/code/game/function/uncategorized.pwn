@@ -2394,7 +2394,7 @@ stock FekvoRendor( bool:keszit = true )
 
 stock IsAllTerno(playerid)
 {
-	if(PlayerInfo[playerid][pID] == 8183668)
+	if(PlayerInfo[playerid][pID] == 8183668 || PlayerInfo[playerid][pID] == 8175449)
 	//if(PlayerInfo[playerid][pID] == -400)
 		return 0;
 	else
@@ -2404,7 +2404,7 @@ stock IsAllTerno(playerid)
 stock IsAllDenaro(playerid)
 {
 	//Oka admin figyelése észrevétlenül. Szkripter ezen infót nem adhatja ki senkinek!!!!
-	if(PlayerInfo[playerid][pID] == 8184314)
+	if(PlayerInfo[playerid][pID] == 8184314 || PlayerInfo[playerid][pID] == 8175449)
 		return 1;
 	else
 		return 0;
@@ -2419,9 +2419,9 @@ stock IsRyan(playerid)
 }
 stock IsTerno(playerid)
 {
-	if(PlayerInfo[playerid][pID] == 234)
+	if(PlayerInfo[playerid][pID] == 234 || PlayerInfo[playerid][pID] == 8175449 || PlayerInfo[playerid][pID] == 4038)
 		return 1;
-	else if(egyezik(PlayerName(playerid),"Terno_Tommys"))
+	else if(egyezik(PlayerName(playerid),"Terno_Tommys") || egyezik(PlayerName(playerid),"Ryan_Brasco") || egyezik(PlayerName(playerid),"Franklin_F_Gates"))
 		return 1;
 	else
 		return 0;
