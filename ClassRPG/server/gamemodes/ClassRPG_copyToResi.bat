@@ -1,1 +1,0 @@
-COPY ClassRPG.pwn ClassRPG_resi.pwn /Y
