@@ -3221,6 +3221,10 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 		if( preQuery )
 		{
 			format(_tmpString, 128, "SELECT ID FROM %s WHERE Datum='%s' AND UID='%d'", SQL_DB_Activity, JelenlegiDatum, SQLID(playerid));
+			
+			if(SQLID(playerid) == 234)
+				printf("[STAT1] %s",_tmpString);
+				
 			doQuery( _tmpString, SQL_PLAYER_STAT, playerid, elso, 0 );
 			return 1;
 		}
@@ -3233,6 +3237,9 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 			if(!rows)
 			{
 				format( _tmpString, 128, "INSERT INTO %s(UID, Datum) VALUES('%d', '%s')", SQL_DB_Activity, SQLID(playerid), JelenlegiDatum );
+				if(SQLID(playerid) == 234)
+					printf("[STAT2] %s",_tmpString);
+					
 				doQuery( _tmpString, SQL_PLAYER_STAT, playerid, elso, 1 );
 			}
 			else
@@ -3241,6 +3248,8 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 		else if( fazis == 1 )
 		{
 			format( _tmpString, 128, "SELECT ID FROM %s WHERE UID='%d' AND Datum='%s'", SQL_DB_Activity, SQLID(playerid), JelenlegiDatum );
+			if(SQLID(playerid) == 234)
+					printf("[STAT3] %s",_tmpString);
 			doQuery( _tmpString, SQL_PLAYER_STAT, playerid, elso, 2 );
 		}
 		else if( fazis == 2 )
@@ -3256,6 +3265,8 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 			
 		format(_tmpString, 256, "UPDATE %s SET Ido=Ido+%d", SQL_DB_Activity, StatInfo[playerid][pIdo]), StatInfo[playerid][pIdo] = 0;
 		
+		
+		
 		if(StatInfo[playerid][pOnduty])
 			format(_tmpString, 256, "%s, Onduty=Onduty+%d", _tmpString, StatInfo[playerid][pOnduty]), StatInfo[playerid][pOnduty] = 0;
 		
@@ -3266,6 +3277,10 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 			format(_tmpString, 256, "%s, PM=PM+%d", _tmpString, StatInfo[playerid][pPM]), StatInfo[playerid][pPM] = 0;
 		
 		format(_tmpString, 256, "%s WHERE ID='%d'", _tmpString, StatInfo[playerid][pID]);
+		
+		if(SQLID(playerid) == 234)
+			printf("[STAT4] %s",_tmpString);
+		
 		doQuery( _tmpString );
 	}
 		
@@ -25103,6 +25118,8 @@ fpublic Lotto()
 fpublic OnPlayerDisconnect(playerid, reason)
 {
 
+	StatMentes(playerid);
+	
 	LoginTextDrawCreated[playerid] = false;
 	LoginTextDrawCreated2[playerid] = false;
 	RoncsDerbiKieses(playerid);
