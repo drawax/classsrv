@@ -4549,7 +4549,7 @@ CMD:p2nzsz1ll3t4(playerid, params[])
 		if(GetVehicleModel(kocsi) != 428) return Msg(playerid, "Ez nem pénzszállító!");
 		if(IsMunkaKocsi(kocsi) != MUNKA_PENZ) return Msg(playerid, "Ez nem munka kocsi!");
 		
-		if((PenzszallitoPenz[kocsi] +  SzallitPenz[playerid]) <= MAXTASKAPENZ*10)
+		if((PenzszallitoPenz[kocsi] +  SzallitPenz[playerid]) <= (MAXTASKAPENZ*10)*3)
 		{
 			PenzszallitoPenz[kocsi] += SzallitPenz[playerid];
 			SzallitPenz[playerid] = NINCS;
@@ -4622,7 +4622,7 @@ CMD:p2nzsz1ll3t4(playerid, params[])
 		RemovePlayerAttachedObject(playerid, ATTACH_SLOT_ZSAK_PAJZS_BILINCS);
 		SendFormatMessage(playerid, COLOR_YELLOW, "Feltöltötted az ATM-et 1 kazettával. Ne feledd 1 kazetta %s Ft-ott tartalmaz és csak üreset cserélhetsz.",FormatInt(MAXTASKAPENZ));
 		SendFormatMessage(playerid, COLOR_YELLOW, "ATM infó: %s Ft tartalom. Maximum %s Ft",FormatInt(ATM[atmid][aPenz]),FormatInt(MAXATMPENZ));
-		PlayerInfo[playerid][pPayCheck] +=10000;
+		PlayerInfo[playerid][pPayCheck] +=5000;
 	}
 	return 1;
 }
