@@ -17011,12 +17011,13 @@ stock BizPenz(biz, penz, playerid = NINCS)
 		
 	if(biz == BIZ_247)
 	{
-		new adomany, bizbe;
-		adomany = floatround(float(penz)*0.2);
+		new adomany, adomany2, bizbe;
+		adomany2 = floatround(float(penz)*0.5);
+		adomany = floatround(float(penz)*0.15);
 		bizbe = penz;
-		bizbe -=adomany;
-		BizzInfo[BIZ_247][bAdomany] +=adomany;
-		FrakcioSzef(FRAKCIO_TAXI,adomany, 11);
+		bizbe -=adomany2;
+		BizzInfo[BIZ_247][bAdomany] +=adomany2;
+		FrakcioSzef(FRAKCIO_TAXI,adomany2, 11);
 		
 		
 		
@@ -17032,7 +17033,7 @@ stock BizPenz(biz, penz, playerid = NINCS)
 		new log[256];
 		
 
-		format(log,sizeof(log),"[%d. frakció(%s) - ADOMÁNY]TT bolt adomány %s Ft",FRAKCIO_TAXI,Szervezetneve[FRAKCIO_TAXI - 1][2],FormatInt(adomany));
+		format(log,sizeof(log),"[%d. frakció(%s) - ADOMÁNY]TT bolt adomány %s Ft",FRAKCIO_TAXI,Szervezetneve[FRAKCIO_TAXI - 1][2],FormatInt(adomany2));
 		Log("Szef",log);
 		
 		format(log,sizeof(log),"[%d. frakció(%s) - ADOMÁNY]TT bolt adomány %s Ft",FRAKCIO_RIPORTER,Szervezetneve[FRAKCIO_RIPORTER - 1][2],FormatInt(adomany));
@@ -25145,6 +25146,7 @@ fpublic Lotto()
 fpublic OnPlayerDisconnect(playerid, reason)
 {
 
+	StatMentes(playerid);
 	LoginTextDrawCreated[playerid] = false;
 	LoginTextDrawCreated2[playerid] = false;
 	RoncsDerbiKieses(playerid);
@@ -25308,10 +25310,10 @@ fpublic OnPlayerDisconnect(playerid, reason)
 	if(PlayerInfo[playerid][pPbiskey] > NINCS)
 	{
 		new biz=PlayerInfo[playerid][pPbiskey];
-		if(Admin(playerid,1337) && PlayerInfo[playerid][pHetiAktivitas] < 14)
+		if((Admin(playerid,1337) || BizzInfo[biz][bTulaj] == 234) && PlayerInfo[playerid][pHetiAktivitas] < 50)
 		{
-			BizzInfo[biz][bHeti1]=14;
-			BizzInfo[biz][bHavi1]=PlayerInfo[playerid][pHaviAktivitas];
+			BizzInfo[biz][bHeti1]=50;
+			BizzInfo[biz][bHavi1]=50;
 			BizzInfo[biz][bIdo1]=UnixTime;
 		}
 		else
@@ -33129,7 +33131,7 @@ fpublic OtherTimer()
 				OnePlayAnim(i, "GANGS", "shake_cara", 4.0, 0, 0, 0, 0, 0);
 				OnePlayAnim(BankSFNPC, "GANGS", "shake_cara", 4.0, 0, 0, 0, 0, 0);
 				SetPlayerAttachedObject(i, ATTACH_SLOT_ZSAK_PAJZS_BILINCS, 1210, 5, 0.2949, 0.1309, 0.0409, 139.2000, -70.6999, 157.9999, 0.9739, 1.0000, 1.0000, 0, 0);
-				SzallitPenz[i]=MAXTASKAPENZ;
+				SzallitPenz[i]=MAXTASKAPENZ*5;
 			}
 			if(PenzSzallitimer[i] == 5)
 			{
