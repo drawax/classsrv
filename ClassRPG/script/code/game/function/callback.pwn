@@ -565,7 +565,7 @@ public OnGameModeInit()
 		if(x == 0) strmid(ReportChannel[x][rTitle], "Adminsegédek", 0, 12, 40);
 		else if(x == 1) strmid(ReportChannel[x][rTitle], "Adminok", 0, 7, 40);
 		else if(x == 2) strmid(ReportChannel[x][rTitle], "Fõadminok", 0, 9, 40);
-		else if(x == 3) strmid(ReportChannel[x][rTitle], "Tulajdonos/ IG Scripterek", 0, 24, 40);
+		else if(x == 3) strmid(ReportChannel[x][rTitle], "Tulajdonos", 0, 12, 40);
 		else if(x == 4) strmid(ReportChannel[x][rTitle], "Scripterek", 0, 12, 40);
 		else
 		{

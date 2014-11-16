@@ -658,7 +658,7 @@ stock Torlesek() { //orem
 	RemoveBuildingForPlayer(playerid, 729, -68.9688, -292.3281, 4.5859, 0.25);
 	RemoveBuildingForPlayer(playerid, 729, -58.5313, -279.3672, 4.5859, 0.25);
 	
-	//Városháza park törlések - Pedro - 2013.07.16		
+	/*//Városháza park törlések - Pedro - 2013.07.16		
 	RemoveBuildingForPlayer(playerid, 4057, 1479.5547, -1693.1406, 19.5781, 0.25);
 	RemoveBuildingForPlayer(playerid, 4210, 1479.5625, -1631.4531, 12.0781, 0.25);
 	RemoveBuildingForPlayer(playerid, 713, 1457.9375, -1620.6953, 13.4531, 0.25);
@@ -735,7 +735,7 @@ stock Torlesek() { //orem
 	RemoveBuildingForPlayer(playerid, 625, 1505.6953, -1654.8359, 13.6953, 0.25);
 	RemoveBuildingForPlayer(playerid, 625, 1508.5156, -1647.8594, 13.6953, 0.25);
 	RemoveBuildingForPlayer(playerid, 625, 1513.2734, -1642.4922, 13.6953, 0.25);
-	RemoveBuildingForPlayer(playerid, 1258, 1510.8906, -1607.3125, 13.6953, 0.25);
+	RemoveBuildingForPlayer(playerid, 1258, 1510.8906, -1607.3125, 13.6953, 0.25);*/
 	
 	//repülõ fa - Terno - 2013-05-24
 	RemoveBuildingForPlayer(playerid, 672, -149.3359, -160.5078, 3.4688, 0.25);

@@ -831,3 +831,4 @@ new HalloWeenPumpkinTimer;
 new TimeToOpenPumpkin = 5;*/
 new Felhatalmazas[MAX_PLAYERS][256];
 new Felhatalmazva[MAX_PLAYERS];
+//new VehicleInterior[MAX_VEHICLES];

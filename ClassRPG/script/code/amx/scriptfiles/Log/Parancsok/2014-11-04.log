@@ -1,0 +1,633 @@
+[00:22:46] [16] Ryan_Brasco - /login
+[00:22:53] [16] Ryan_Brasco - /gps be
+[00:22:56] [17] Amos_Toretto - /login
+[00:23:03] [17] Amos_Toretto - /gps be
+[00:23:16] [17] Amos_Toretto - /poz
+[00:23:16] [16] Ryan_Brasco - /a na akkor most 20perc várakozás jön
+[00:23:20] [18] Krisztofer_Vincenzo - /login
+[00:23:22] [19] Bart_S_Tomasso - /login
+[00:23:24] [18] Krisztofer_Vincenzo - /gps be
+[00:23:25] [18] Krisztofer_Vincenzo - /gps lsvaroshaza
+[00:23:25] [18] Krisztofer_Vincenzo - /sss duty
+[00:23:25] [18] Krisztofer_Vincenzo - /togszidas
+[00:23:25] [18] Krisztofer_Vincenzo - /szájkendõ
+[00:23:25] [18] Krisztofer_Vincenzo - /hack bankszámla 12
+[00:23:27] [19] Bart_S_Tomasso - /gps be
+[00:23:34] [18] Krisztofer_Vincenzo - /admins
+[00:23:41] [19] Bart_S_Tomasso - /exit
+[00:23:41] [18] Krisztofer_Vincenzo - /a egyenlõre jónak tûnik, most várunk
+[00:23:50] [18] Krisztofer_Vincenzo - /poz
+[00:23:52] [18] Krisztofer_Vincenzo - /nyit
+[00:23:58] [17] Amos_Toretto - /fa asd, oké
+[00:24:02] [18] Krisztofer_Vincenzo - /zar
+[00:24:11] [16] Ryan_Brasco - /sc a
+[00:24:17] [16] Ryan_Brasco - /sc ennek mi értelme?xd
+[00:24:21] [18] Krisztofer_Vincenzo - /a éredekes...
+[00:24:25] [18] Krisztofer_Vincenzo - /a érdekes*
+[00:24:29] [16] Ryan_Brasco - /ami érdekes?
+[00:24:30] [18] Krisztofer_Vincenzo - /a az utolsó cuccokat elmentette
+[00:24:37] [18] Krisztofer_Vincenzo - /a csak a köztes állapotot nem
+[00:24:40] [17] Amos_Toretto - /sa xD ezt csak 3-man látjuk :D
+[00:24:54] [18] Krisztofer_Vincenzo - /sc Ezt csak mi hárman látjuk
+[00:24:54] [16] Ryan_Brasco - /a a betöltéssel volt a baj nem a mentéssel szerintem
+[00:25:09] [17] Amos_Toretto - /sc asd xD
+[00:26:02] [17] Amos_Toretto - /stats
+[00:26:44] [18] Krisztofer_Vincenzo - /adat 18
+[00:26:48] [17] Amos_Toretto - /getveh
+[00:26:49] [18] Krisztofer_Vincenzo - /eladókocsik
+[00:26:51] [17] Amos_Toretto - /getcar
+[00:26:56] [17] Amos_Toretto - /getcar 737
+[00:27:13] [17] Amos_Toretto - /aprak
+[00:27:19] [18] Krisztofer_Vincenzo - /ujmodel
+[00:27:21] [18] Krisztofer_Vincenzo - /ujmodel Infernus
+[00:27:29] [17] Amos_Toretto - /aprak
+[00:27:35] [17] Amos_Toretto - /apark
+[00:28:01] [17] Amos_Toretto - /getcar 910
+[00:28:07] [18] Krisztofer_Vincenzo - /alock
+[00:28:13] [18] Krisztofer_Vincenzo - /forgalmi 18
+[00:28:17] [18] Krisztofer_Vincenzo - /adat 17
+[00:28:30] [18] Krisztofer_Vincenzo - /leaderek
+[00:28:50] [17] Amos_Toretto - /motor
+[00:28:54] [17] Amos_Toretto - /apark
+[00:29:21] [18] Krisztofer_Vincenzo - /object
+[00:29:22] [18] Krisztofer_Vincenzo - /object uj
+[00:29:25] [17] Amos_Toretto - /object
+[00:29:32] [17] Amos_Toretto - /object
+[00:29:34] [18] Krisztofer_Vincenzo - /hotdogstand
+[00:29:36] [18] Krisztofer_Vincenzo - /hotdog
+[00:29:43] [16] Ryan_Brasco - /makeadmin 16 5555
+[00:29:44] [17] Amos_Toretto - /object uj
+[00:30:52] [16] Ryan_Brasco - /admins
+[00:30:54] [19] Albert_Kesselring - /login
+[00:31:03] [17] Amos_Toretto - /kapu
+[00:31:14] [19] Albert_Kesselring - /gps be
+[00:31:24] [17] Amos_Toretto - /kapu
+[00:31:26] [19] Albert_Kesselring - /lõtér m4 5
+[00:31:29] [19] Albert_Kesselring - /lõtér m4 5
+[00:31:33] [19] Albert_Kesselring - /report join 2
+[00:31:35] [19] Albert_Kesselring - /report join 3
+[00:31:36] [19] Albert_Kesselring - /report join 4
+[00:31:37] [17] Amos_Toretto - /kapu
+[00:31:44] [19] Albert_Kesselring - /ü Szervusztok. A lõtér mikor nyit?
+[00:31:58] [17] Amos_Toretto - /b 19377
+[00:32:04] [18] Krisztofer_Vincenzo - /abiz
+[00:32:10] [18] Krisztofer_Vincenzo - /abiz lista
+[00:32:21] [17] Amos_Toretto - /object uj
+[00:32:32] [16] Ryan_Brasco - /abiz open
+[00:32:33] [18] Krisztofer_Vincenzo - /abiz open 30
+[00:32:38] [17] Amos_Toretto - /object uj 1340
+[00:32:42] [18] Krisztofer_Vincenzo - /vá 19 éppen most
+[00:32:48] [18] Krisztofer_Vincenzo - /menu
+[00:32:56] [18] Krisztofer_Vincenzo - /atm
+[00:32:57] [19] Albert_Kesselring - /report join 4
+[00:33:04] [18] Krisztofer_Vincenzo - /atm pos
+[00:33:05] [19] Albert_Kesselring - /ü Esetleg mikor lesz javítva a HP bug? :D
+[00:33:17] [19] Albert_Kesselring - /lõtér m4 5
+[00:33:20] [19] Albert_Kesselring - /f e m4
+[00:33:25] [18] Krisztofer_Vincenzo - /vá 19 elvileg már javítva van, tesztelésre vár
+[00:33:44] [18] Krisztofer_Vincenzo - /crs
+[00:33:46] [18] Krisztofer_Vincenzo - /crs
+[00:33:58] [20] Marcell_O_Neill - /login
+[00:34:05] [20] Marcell_O_Neill - /a haooohaho
+[00:34:09] [20] Marcell_O_Neill - /fél.y
+[00:34:10] [18] Krisztofer_Vincenzo - /a csá
+[00:34:14] [20] Marcell_O_Neill - /jail kórház 
+[00:34:16] [20] Marcell_O_Neill - /jail kórház 
+[00:34:20] [16] Ryan_Brasco - /a játszott óra 19 de lvl 32 gg wp
+[00:34:25] [21] Phil_Stinson - /login
+[00:34:27] [20] Marcell_O_Neill - /jail 20 kórház 0 0
+[00:34:28] [18] Krisztofer_Vincenzo - /adat 19
+[00:34:30] [21] Phil_Stinson - /gps be
+[00:34:30] [20] Marcell_O_Neill - /a skacok :D
+[00:34:31] [17] Amos_Toretto - /a hali
+[00:34:35] [18] Krisztofer_Vincenzo - /a az szép
+[00:34:37] [20] Marcell_O_Neill - /a javaslatom lennew
+[00:34:45] [21] Phil_Stinson - /car munka 1
+[00:34:48] [20] Marcell_O_Neill - /a ha admin duty-ban van valaki
+[00:34:50] [20] Marcell_O_Neill - /a és meghal
+[00:34:54] [21] Phil_Stinson - /car munka 1
+[00:34:58] [20] Marcell_O_Neill - /a akkor automatikusan kiszedje a kórházból 
+[00:35:04] [21] Phil_Stinson - /car munka 1
+[00:35:06] [16] Ryan_Brasco - /a be se rakja elvileg
+[00:35:06] [18] Krisztofer_Vincenzo - /a jelenleg is úgy van xDDD
+[00:35:07] [20] Marcell_O_Neill - /a persze ha nem akkor nem
+[00:35:08] [16] Ryan_Brasco - /a xd
+[00:35:13] [20] Marcell_O_Neill - /a ja oks xD
+[00:35:17] [20] Marcell_O_Neill - /a most jöttem rá hogy nem voltam abba
+[00:35:25] [20] Marcell_O_Neill - /onduty 1
+[00:35:29] [20] Marcell_O_Neill - /goto Amos_Toretto
+[00:35:33] [18] Krisztofer_Vincenzo - /onduty
+[00:35:36] [16] Ryan_Brasco - /gun 16 m4
+[00:35:39] [20] Marcell_O_Neill - /b pill
+[00:35:41] [16] Ryan_Brasco - /ammo 16 m4 500
+[00:35:43] [16] Ryan_Brasco - /f e m4
+[00:35:46] [18] Krisztofer_Vincenzo - /set
+[00:35:47] [16] Ryan_Brasco - /goto mar
+[00:35:48] [18] Krisztofer_Vincenzo - /setvw
+[00:35:50] [21] Phil_Stinson - /b .
+[00:35:58] [18] Krisztofer_Vincenzo - /vw 20 0
+[00:36:06] [21] Phil_Stinson - /car munka 1
+[00:36:13] [17] Amos_Toretto - /onduty
+[00:36:22] [21] Phil_Stinson - /bicikli elõvesz
+[00:36:22] [18] Krisztofer_Vincenzo - /kaja
+[00:36:24] [16] Ryan_Brasco - /a na kb még bõ 5 perc
+[00:36:32] [21] Phil_Stinson - /number albert
+[00:36:39] [17] Amos_Toretto - /kiss
+[00:36:39] [21] Phil_Stinson - /sms 7173816 ((sok sikert a navban ! ))
+[00:36:41] [17] Amos_Toretto - /kiss
+[00:36:43] [18] Krisztofer_Vincenzo - /togb
+[00:36:51] [17] Amos_Toretto - /kiss
+[00:36:56] [18] Krisztofer_Vincenzo - /togb
+[00:36:56] [17] Amos_Toretto - /kiss
+[00:37:31] [19] Albert_Kesselring - /skill 12
+[00:37:47] [19] Albert_Kesselring - /number 1542855
+[00:37:50] [18] Krisztofer_Vincenzo - /a na most
+[00:37:51] [16] Ryan_Brasco - /a na most ugrik a majom a vízbe
+[00:37:52] [18] Krisztofer_Vincenzo - /poz
+[00:38:22] [18] Krisztofer_Vincenzo - /vw Ryan_B 0
+[00:38:28] [19] Albert_Kesselring - /pm 18 Marcell hova lett?
+[00:38:30] [16] Ryan_Brasco - /a azta de titkos ott egy rés
+[00:38:34] [18] Krisztofer_Vincenzo - /a xD
+[00:38:38] [16] Ryan_Brasco - /goto kr
+[00:38:41] [17] Amos_Toretto - /super
+[00:38:43] [16] Ryan_Brasco - /poz
+[00:38:48] [17] Amos_Toretto - /a asd
+[00:38:52] [18] Krisztofer_Vincenzo - /a müködik
+[00:38:52] [19] Albert_Kesselring - /pm 18 Egyébként, valaki el tudná bírálni a TS UB kérelmem? Mivel 4 napig vagyok még bannolva
+[00:38:55] [18] Krisztofer_Vincenzo - /a hát beszaork
+[00:38:57] [16] Ryan_Brasco - /a még nem
+[00:38:58] [19] Albert_Kesselring - /pm 18 De nem ír hozzá senki.
+[00:39:05] [20] Marcell_O_Neill - /login
+[00:39:10] [16] Ryan_Brasco - /a a 2. hirdetés szokott szarlenni
+[00:39:11] [20] Marcell_O_Neill - /a mégegyszer
+[00:39:14] [19] Albert_Kesselring - /pm 18 Akit meg szidtam, elnézést kértem tõle a szerveren, és õ mondta, hogy írjam meg :/
+[00:39:16] [20] Marcell_O_Neill - /a meglõsz megöllek
+[00:39:24] [19] Albert_Kesselring - /tagok
+[00:39:24] [20] Marcell_O_Neill - /sethp
+[00:39:26] [18] Krisztofer_Vincenzo - /hulla motoz
+[00:39:27] [20] Marcell_O_Neill - /sethp Ryan 0
+[00:39:29] [18] Krisztofer_Vincenzo - /hulla töröl
+[00:39:32] [20] Marcell_O_Neill - /jail 20 kórház 0 0
+[00:39:33] [16] Ryan_Brasco - /a xdxdxdxdx
+[00:39:34] [20] Marcell_O_Neill - /b rohadék
+[00:39:39] [20] Marcell_O_Neill - /goto Amos_Toretto
+[00:39:39] [21] Phil_Stinson - /car
+[00:39:41] [20] Marcell_O_Neill - /onduty
+[00:39:42] [17] Amos_Toretto - /a xD
+[00:39:42] [16] Ryan_Brasco - /jail 16 kórház bug volt
+[00:39:43] [18] Krisztofer_Vincenzo - /vá 19 Az majd biztosan hozzáír aki bannolt
+[00:39:47] [21] Phil_Stinson - /bicikli elrak
+[00:39:50] [16] Ryan_Brasco - /jail 16 kórház 0 bug volt
+[00:39:54] [16] Ryan_Brasco - /goto kr
+[00:39:56] [20] Marcell_O_Neill - /veh
+[00:39:58] [21] Phil_Stinson - /átnéz jármû
+[02:39:45] [16] Thomas_Berzerk - /login
+[02:39:58] [17] Amos_Toretto - /login
+[02:40:02] [16] Thomas_Berzerk - /széf megnéz
+[02:40:14] [17] Amos_Toretto - /ah
+[02:40:20] [17] Amos_Toretto - /gps be
+[02:40:23] [17] Amos_Toretto - /mentés
+[02:40:32] [17] Amos_Toretto - /mentés frakcio
+[02:40:41] [17] Amos_Toretto - /mentés frakcio bandaszéf
+[02:40:46] [16] Thomas_Berzerk - /report channelstatus 4
+[02:40:51] [16] Thomas_Berzerk - /report join 4
+[02:41:08] [16] Thomas_Berzerk - /ü szép estét, zavarhatok? :)
+[02:41:08] [17] Amos_Toretto - /makeadmin 17 1
+[02:41:32] [16] Thomas_Berzerk - /ü 
+[02:41:43] [16] Thomas_Berzerk - /ü lesznek még resik? :)
+[02:41:46] [16] Thomas_Berzerk - /report join 4
+[02:41:48] [16] Thomas_Berzerk - /ü lesznek még resik? :)
+[02:41:58] [16] Thomas_Berzerk - /gps be
+[02:42:01] [16] Thomas_Berzerk - /kaja
+[02:42:02] [16] Thomas_Berzerk - /kaja
+[02:42:04] [16] Thomas_Berzerk - /prr
+[02:42:06] [16] Thomas_Berzerk - /pee
+[02:42:37] [17] Amos_Toretto - /válaszok
+[02:42:41] [17] Amos_Toretto - /válaszok mindig
+[02:42:52] [17] Amos_Toretto - /válaszok 18
+[02:42:52] [16] Thomas_Berzerk - /report join 4
+[02:42:56] [16] Thomas_Berzerk - /ü lesznek még resik? :)
+[02:42:59] [17] Amos_Toretto - /válaszok 16
+[02:43:09] [17] Amos_Toretto - /ahegy
+[02:43:16] [17] Amos_Toretto - /adminafk
+[02:43:20] [16] Thomas_Berzerk - /ü úgy értem, most este hamarosan
+[02:43:33] [17] Amos_Toretto - /válaszok játékos
+[02:43:37] [16] Thomas_Berzerk - /f e mp5
+[02:43:38] [17] Amos_Toretto - /válaszok játékos 18
+[02:43:42] [17] Amos_Toretto - /válaszok játékos 16
+[02:44:50] [17] Amos_Toretto - /togphone
+[02:45:13] [17] Amos_Toretto - /cheathp
+[02:45:22] [17] Amos_Toretto - /cheathp 17 +
+[02:45:29] [17] Amos_Toretto - /cheathp 17 -
+[02:45:39] [17] Amos_Toretto - /cheathp 17 -
+[02:45:42] [17] Amos_Toretto - /cheathp 17 +
+[02:45:45] [17] Amos_Toretto - /cheathp 17 +
+[02:46:22] [17] Amos_Toretto - /pee
+[02:47:14] [17] Amos_Toretto - /tv 16
+[02:48:29] [17] Amos_Toretto - /tv
+[02:48:35] [17] Amos_Toretto - /tv vissza
+[02:49:15] [16] Thomas_Berzerk - /report join 4
+[02:49:19] [17] Amos_Toretto - /parancsbetöltés
+[02:49:26] [16] Thomas_Berzerk - /ü lesznek még resik? úgy értem hamarosan.. :)
+[02:49:26] [17] Amos_Toretto - /gps be
+[02:49:58] [16] Thomas_Berzerk - /laptopom find
+[02:50:07] [16] Thomas_Berzerk - /nyit
+[02:50:09] [16] Thomas_Berzerk - /zár
+[02:50:42] [17] Amos_Toretto - /tv 16
+[02:51:09] [17] Amos_Toretto - /tv
+[02:51:14] [17] Amos_Toretto - /tv vissza
+[02:51:16] [16] Thomas_Berzerk - /nyit
+[02:51:20] [16] Thomas_Berzerk - /zár
+[02:51:32] [17] Amos_Toretto - /adminafk
+[02:52:08] [16] Thomas_Berzerk - /do megüti magát
+[02:52:37] [16] Thomas_Berzerk - /do koccan
+[02:54:10] [16] Thomas_Berzerk - /do megüti magát
+[02:54:51] [16] Thomas_Berzerk - /do megüti magát
+[02:55:02] [16] Thomas_Berzerk - /motr
+[02:55:04] [16] Thomas_Berzerk - /motor
+[02:55:10] [16] Thomas_Berzerk - /avesz
+[02:55:15] [16] Thomas_Berzerk - /avesz
+[02:55:19] [16] Thomas_Berzerk - /avesz
+[02:55:22] [16] Thomas_Berzerk - /avesz
+[02:56:20] [17] Amos_Toretto - /login
+[02:56:33] [17] Amos_Toretto - /gps be
+[03:40:51] [16] Joe_O_Neill - /login
+[03:55:08] [16] Thomas_Berzerk - /login
+[07:18:57] [16] Ryan_Brasco - /login
+[07:19:07] [16] Ryan_Brasco - /gps be
+[07:19:17] [16] Ryan_Brasco - /ahegy
+[07:19:25] [16] Ryan_Brasco - /kaja
+[07:23:57] [18] Marcell_O_Neill - /login
+[07:23:57] [17] Paul_D_Cortez - /login
+[07:24:03] [17] Paul_D_Cortez - /Gps be
+[07:24:03] [18] Marcell_O_Neill - /goto Ryan_Brasco
+[07:24:14] [18] Marcell_O_Neill - /goto Paul_D_Cortez
+[07:24:16] [17] Paul_D_Cortez - /hack
+[07:24:22] [17] Paul_D_Cortez - /wave
+[07:24:29] [18] Marcell_O_Neill - /alefoglal
+[07:24:48] [17] Paul_D_Cortez - /Hack
+[07:25:01] [17] Paul_D_Cortez - /mp4 lista
+[07:25:06] [17] Paul_D_Cortez - /mp4 lista
+[07:25:40] [16] Ryan_Brasco - /goto mar
+[07:25:43] [16] Ryan_Brasco - /a more
+[07:25:47] [16] Ryan_Brasco - /a aludjá
+[07:25:48] [18] Marcell_O_Neill - /motor
+[07:25:50] [16] Ryan_Brasco - /goto mar
+[07:25:51] [18] Marcell_O_Neill - /goto
+[07:25:56] [17] Paul_D_Cortez - /login
+[07:26:01] [17] Paul_D_Cortez - /Gps be
+[07:26:06] [18] Marcell_O_Neill - /b am
+[07:26:09] [16] Ryan_Brasco - /a befagyasztottad a szerót elõbb
+[07:26:10] [17] Paul_D_Cortez - /adat 16
+[07:26:11] [18] Marcell_O_Neill - /b jó e má
+[07:26:14] [17] Paul_D_Cortez - /adat 18
+[07:26:14] [16] Ryan_Brasco - /anem volt jó a mysql
+[07:26:18] [16] Ryan_Brasco - /a nem volt jó a mysql
+[07:26:19] [17] Paul_D_Cortez - /bicikli elõvesz
+[07:26:24] [18] Marcell_O_Neill - /a frissítettem :$
+[07:26:24] [16] Ryan_Brasco - /a azt mondtad csináltál vele vmit
+[07:26:27] [18] Marcell_O_Neill - /a a szerót
+[07:26:28] [17] Paul_D_Cortez - /gps kocsim
+[07:26:36] [18] Marcell_O_Neill - /a nem tudtam hogy elbassza. xd
+[07:26:37] [17] Paul_D_Cortez - /ad
+[07:26:39] [17] Paul_D_Cortez - /ad legális
+[07:26:42] [18] Marcell_O_Neill - /a legközelebb vigyázok
+[07:26:47] [17] Paul_D_Cortez - /ad legális Értékpapirt veszek 17millioba!
+[07:27:08] [17] Paul_D_Cortez - /bicikli elrak
+[07:27:11] [16] Ryan_Brasco - /a az ment vagy 100al biciklivel
+[07:27:16] [17] Paul_D_Cortez - /Gps töröl
+[07:27:26] [16] Ryan_Brasco - /a dik kiez
+[07:27:29] [16] Ryan_Brasco - /admins
+[07:27:30] [17] Paul_D_Cortez - /B :(
+[07:27:42] [16] Ryan_Brasco - /a vmi spanod?
+[07:27:45] [18] Marcell_O_Neill - /poke Ryan szaros
+[07:27:48] [18] Marcell_O_Neill - /a nem
+[07:27:51] [16] Ryan_Brasco - /poke marcell kivégezlek
+[07:27:52] [18] Marcell_O_Neill - /a nemtudom ki ez xd
+[07:27:54] [17] Paul_D_Cortez - /szájkendõ
+[07:27:56] [17] Paul_D_Cortez - /Hack utalás
+[07:28:00] [17] Paul_D_Cortez - /B faxa
+[07:28:03] [16] Ryan_Brasco - /A XDDDDDDD
+[07:28:03] [17] Paul_D_Cortez - /szájkendõ
+[07:28:07] [17] Paul_D_Cortez - /eldob telefon
+[07:28:11] [17] Paul_D_Cortez - /laptopom power
+[07:28:11] [16] Ryan_Brasco - /goto marce
+[07:28:13] [18] Marcell_O_Neill - /onduty
+[07:28:16] [18] Marcell_O_Neill - /goto Paul
+[07:28:25] [18] Marcell_O_Neill - /öv
+[07:28:27] [18] Marcell_O_Neill - /tie
+[07:28:29] [18] Marcell_O_Neill - /tie 17
+[07:28:32] [16] Ryan_Brasco - /a mindjárt szétbaszódik megint
+[07:28:37] [16] Ryan_Brasco - /a és jön a hp bug
+[07:28:39] [17] Paul_D_Cortez - /B ninsc eladó pp-d?
+[07:28:41] [18] Marcell_O_Neill - /b a-a
+[07:28:44] [18] Marcell_O_Neill - /stats
+[07:28:53] [16] Ryan_Brasco - /a és kb 20 órát basztam el a semmire mert nem jöttem rá mi a baja
+[07:29:08] [18] Marcell_O_Neill - /ÖV
+[07:29:10] [16] Ryan_Brasco - /onduty
+[07:29:14] [18] Marcell_O_Neill - /goto Ryan_Brasco
+[07:29:14] [16] Ryan_Brasco - /goto mar
+[07:29:15] [17] Paul_D_Cortez - /B öv..
+[07:29:19] [16] Ryan_Brasco - /goto mar
+[07:29:54] [16] Ryan_Brasco - /a legvégsõ esetben lehet újra kéne húzni az egész vpst xd
+[07:30:16] [17] Paul_D_Cortez - /nyit
+[07:30:18] [17] Paul_D_Cortez - /Zar
+[07:30:24] [17] Paul_D_Cortez - /motor
+[07:30:46] [17] Paul_D_Cortez - /nyit
+[07:30:48] [17] Paul_D_Cortez - /Zar
+[07:30:52] [17] Paul_D_Cortez - /Széf megnéz
+[07:30:55] [16] Ryan_Brasco - /ahegy
+[07:32:28] [16] Ryan_Brasco - /login
+[07:32:49] [16] Ryan_Brasco - /gps be
+[07:55:36] [16] Ryan_Brasco - /login
+[07:55:44] [16] Ryan_Brasco - /gps be
+[08:12:49] [16] Ryan_Brasco - /login
+[08:12:56] [16] Ryan_Brasco - /gps be
+[08:13:02] [16] Ryan_Brasco - /buzi
+[08:13:04] [16] Ryan_Brasco - /alma
+[08:13:06] [16] Ryan_Brasco - /kiszed
+[08:13:08] [16] Ryan_Brasco - /visz
+[08:13:11] [16] Ryan_Brasco - /visz
+[08:13:21] [17] Damien_Creed - /login
+[08:13:34] [17] Damien_Creed - /gps be
+[08:13:37] [17] Damien_Creed - /as Csáó
+[08:13:57] [17] Damien_Creed - /as Ryan, egy intit csere mennyibe kerül.?
+[08:14:11] [17] Damien_Creed - /hack bankszámla 1
+[08:14:12] [17] Damien_Creed - /hack bankszámla 1
+[08:14:15] [16] Ryan_Brasco - /as szeva hát most fogalmam sincs.. õszintén nem aludtam kb 25 órája
+[08:14:27] [17] Damien_Creed - /as Fasza :S
+[08:14:30] [16] Ryan_Brasco - /as próbálom megcsinálni a PLAYEREKNEK a hp bugot mert valami adatbázis hiba okozza
+[08:14:42] [16] Ryan_Brasco - /as de hát úgyis tudom hogy hálátlanok lesznek szóval igazából értelmetlen
+[08:14:46] [16] Ryan_Brasco - /as szenvednem vele:D
+[08:14:48] [17] Damien_Creed - /as Igen, meg ugye a bankkártya/laptop
+[08:14:52] [16] Ryan_Brasco - /visz
+[08:14:55] [16] Ryan_Brasco - /bankkártya
+[08:14:57] [16] Ryan_Brasco - /bankkártya
+[08:15:04] [16] Ryan_Brasco - /laptop
+[08:15:06] [16] Ryan_Brasco - /laptop
+[08:15:08] [16] Ryan_Brasco - /laptopo
+[08:15:10] [16] Ryan_Brasco - /laptopom
+[08:15:12] [17] Damien_Creed - /as Én tökéletesen megvagyok elégedve a munkátokkal
+[08:15:25] [17] Damien_Creed - /as Legalább most vannak Scripterek akik foglalkozank a szerverrel
+[08:15:30] [17] Damien_Creed - /as Nem úgy mint régen
+[08:15:52] [17] Damien_Creed - /as És gondolom Scripterkedni nem olyan egyszerû
+[08:16:10] [16] Ryan_Brasco - /as hát elég idõigényes
+[08:16:16] [17] Damien_Creed - /as Én is próbáltam régen a PAWNO nyelvet tanulmányozni
+[08:16:23] [16] Ryan_Brasco - /as + amíg néha rájövök hogy mi okoz egy hibát.. felér egy nyomozással:D
+[08:16:23] [17] Damien_Creed - /as Össze hoztam egy szevert
+[08:16:39] [17] Damien_Creed - /as Sikerült beleírnom az üdvözlõ üzit meg az alap dolgokat :D
+[08:16:53] [16] Ryan_Brasco - /as hát ez egy kicsit több mindenbõl áll:D
+[08:16:58] [17] Damien_Creed - /as Aztán tiszta ideg lettem és kitöröltem xD
+[08:17:20] [17] Damien_Creed - /as Brasconak meg találtam egy helyet :)
+[08:17:22] [16] Ryan_Brasco - /as engem is felbasz rengetegszer:D
+[08:17:25] [17] Damien_Creed - /as Nagyon faintos
+[08:17:43] [17] Damien_Creed - /as Szerintem simán nagyobb mint volt
+[08:17:44] [17] Damien_Creed - /hack bankszámla 1
+[08:18:30] [16] Ryan_Brasco - /as megnézem majd csak egyelõre minden idõm elveszi ez a bug
+[08:18:39] [17] Damien_Creed - /as Oksa
+[08:18:59] [17] Damien_Creed - /as Am Zecchin birtokon vagy egy bug, remélem enyémbe nem rakott a mapp editor :S
+[08:21:15] [17] Damien_Creed - /hack bankszámla 1
+[08:22:57] [17] Damien_Creed - /as ÁÁÁÁÁá nem jó a Brasconak, nagyon sok a fa :(
+[08:23:48] [17] Damien_Creed - /as Te figyu, amit mappoltam F Gates szigetet azt láttad már.?
+[08:24:17] [17] Damien_Creed - /kcs rt megnéz
+[08:24:19] [17] Damien_Creed - /kcs rt megnéz
+[08:24:45] [17] Damien_Creed - /hack bankszámla 1
+[08:24:55] [16] Ryan_Brasco - /as õõ asszem láttam
+[08:25:12] [16] Ryan_Brasco - /kaja
+[08:25:25] [17] Damien_Creed - /as Mi lenne ha a Brasconak is csinálnék egy szép szigetet, mert nem sok hely van már ami egyenes és nem buggos :SD
+[08:42:10] [16] Richard_N_Ortega - /login
+[08:42:38] [17] Natalia_Inferno - /login
+[08:42:55] [18] Ryan_Brasco - /login
+[08:43:04] [18] Ryan_Brasco - /anev Kovacs_Adam
+[08:43:08] [18] Ryan_Brasco - /aszint 5
+[08:43:11] [18] Ryan_Brasco - /gps be
+[08:43:11] [17] Natalia_Inferno - /nyit
+[08:43:16] [17] Natalia_Inferno - /zár
+[08:43:28] [18] Ryan_Brasco - /report channelstatus 3
+[08:43:30] [18] Ryan_Brasco - /report channelstatus 4
+[08:43:36] [18] Ryan_Brasco - /report view
+[08:43:39] [18] Ryan_Brasco - /report view off
+[08:43:44] [18] Ryan_Brasco - /report channelstatus 4
+[08:43:52] [16] Mikhail_Bratislav - /login
+[08:44:05] [17] Natalia_Inferno - /gps be
+[08:44:39] [18] Ryan_Brasco - /visz
+[08:44:41] [18] Ryan_Brasco - /as
+[08:44:44] [18] Ryan_Brasco - /asd
+[08:44:47] [18] Ryan_Brasco - /kaja
+[08:44:52] [18] Ryan_Brasco - /pee
+[08:45:14] [17] Natalia_Inferno - /motor
+[08:45:58] [17] Natalia_Inferno - /utasszállítás kezdés
+[08:48:51] [17] Natalia_Inferno - /utasszállítás befejezés
+[08:49:28] [17] Natalia_Inferno - /utasszállítás kezdés
+[08:49:43] [19] Joke_Diesel - /login
+[08:50:05] [19] Joke_Diesel - /tagok
+[08:51:22] [19] Joke_Diesel - /help munka
+[08:51:35] [17] Natalia_Inferno - /utasszállítás befejezés
+[08:51:35] [19] Joke_Diesel - /szerelés
+[08:51:40] [19] Joke_Diesel - /szerelés
+[08:51:42] [19] Joke_Diesel - /szerelés
+[08:53:09] [16] Mikhail_Bratislav - /gps be
+[08:53:19] [16] Mikhail_Bratislav - /ad legális Gazdagnegyedi házam eladó.
+[08:53:40] [18] Ryan_Brasco - /adat 18
+[08:53:41] [16] Mikhail_Bratislav - /bicikli elõvesz
+[08:53:43] [17] Natalia_Inferno - /sms 1019837 Cseréli Bullet?
+[08:53:54] [17] Natalia_Inferno - /sms 1019839 Cseréli Bullet?
+[08:54:04] [16] Mikhail_Bratislav - /number 2803880
+[08:54:21] [16] Mikhail_Bratislav - /sms 2803880 Maximum egy másik házra ráfizetéssel :)
+[08:54:29] [19] Joke_Diesel - /motor
+[08:54:33] [17] Natalia_Inferno - /sms 1019839 Hanyas számú ház?
+[08:54:44] [16] Mikhail_Bratislav - /sms 2803880 136 Megnézi?
+[08:54:46] [19] Joke_Diesel - /szerelés
+[08:54:48] [17] Natalia_Inferno - /gps ház 136
+[08:54:53] [17] Natalia_Inferno - /sms 1019839 Meg
+[08:55:03] [19] Joke_Diesel - /szduty
+[08:55:06] [19] Joke_Diesel - /szduty
+[08:55:17] [19] Joke_Diesel - /szereloduty
+[08:55:19] [19] Joke_Diesel - /szereloduty
+[08:55:26] [19] Joke_Diesel - /szerelõduty
+[08:55:41] [19] Joke_Diesel - /szerelõduty
+[08:55:43] [16] Mikhail_Bratislav - /bicikli elrak
+[08:55:45] [19] Joke_Diesel - /szerelõduty
+[08:55:47] [19] Joke_Diesel - /szerelõduty
+[08:55:48] [16] Mikhail_Bratislav - /walk 3
+[08:55:51] [19] Joke_Diesel - /szereloduty
+[08:55:57] [19] Joke_Diesel - /szduty
+[08:56:18] [17] Natalia_Inferno - /kaja
+[08:56:57] [17] Natalia_Inferno - /nyit
+[08:56:59] [19] Joke_Diesel - /szduty
+[08:57:00] [20] Denny_Toretto - /login
+[08:57:01] [17] Natalia_Inferno - /zéár
+[08:57:02] [17] Natalia_Inferno - /zár
+[08:57:15] [20] Denny_Toretto - /r Üdv
+[08:57:15] [20] Denny_Toretto - /rb Csõ
+[08:57:15] [20] Denny_Toretto - /szr Üdv
+[08:57:15] [20] Denny_Toretto - /szrb Hello
+[08:57:15] [20] Denny_Toretto - /sr Üdv
+[08:57:15] [20] Denny_Toretto - /srb Hello
+[08:57:15] [20] Denny_Toretto - /sss duty
+[08:57:15] [20] Denny_Toretto - /gps be
+[08:57:15] [20] Denny_Toretto - /nevek
+[08:57:15] [20] Denny_Toretto - /snevek
+[08:57:15] [20] Denny_Toretto - /bankkártya
+[08:57:15] [20] Denny_Toretto - /harcstílus kneehead
+[08:57:18] [17] Natalia_Inferno - /motor
+[08:57:21] [19] Joke_Diesel - /r Üdv
+[08:57:28] [19] Joke_Diesel - /szr Üdv
+[08:57:36] [19] Joke_Diesel - /szrb szia
+[08:57:36] [17] Natalia_Inferno - /nyit
+[08:57:38] [20] Denny_Toretto - /stats
+[08:57:39] [17] Natalia_Inferno - /zár
+[08:57:51] [19] Joke_Diesel - /szrb Nekem nem megy a /szduty
+[08:57:58] [19] Joke_Diesel - /szduty
+[08:57:58] [20] Denny_Toretto - /szrb /szerelõ duty
+[08:58:02] [21] Mester_Csaba - /login
+[08:58:05] [16] Mikhail_Bratislav - /gps ház 136
+[08:58:05] [19] Joke_Diesel - /szerelo duty
+[08:58:07] [16] Mikhail_Bratislav - /gps töröl
+[08:58:09] [21] Mester_Csaba - /gps be
+[08:58:09] [21] Mester_Csaba - /harcstílus elbow
+[08:58:09] [21] Mester_Csaba - /nevek
+[08:58:09] [21] Mester_Csaba - /r Konnichiwa
+[08:58:09] [21] Mester_Csaba - /rb hali
+[08:58:11] [21] Mester_Csaba - /kendõ
+[08:58:12] [21] Mester_Csaba - /tagok
+[08:58:17] [16] Mikhail_Bratislav - /bicikli elõvesz
+[08:58:18] [16] Mikhail_Bratislav - /zsebem
+[08:58:20] [18] Ryan_Brasco - /visz
+[08:58:21] [17] Natalia_Inferno - /r Üdv, sziasztok!
+[08:58:21] [17] Natalia_Inferno - /rb Hali!
+[08:58:21] [17] Natalia_Inferno - /ar Szép napot!
+[08:58:21] [17] Natalia_Inferno - /arb Csácsá
+[08:58:23] [18] Ryan_Brasco - /as
+[08:58:25] [21] Mester_Csaba - /adat 20
+[08:58:26] [19] Joke_Diesel - /szrb Egybe irtam az elõb,köszi
+[08:58:28] [21] Mester_Csaba - /oktatók
+[08:58:39] [21] Mester_Csaba - /garazs zar
+[08:58:42] [21] Mester_Csaba - /enter
+[08:58:43] [20] Denny_Toretto - /kaja
+[08:58:46] [19] Joke_Diesel - /fizetesek
+[08:58:46] [20] Denny_Toretto - /alma evés
+[08:58:49] [20] Denny_Toretto - /alma evés
+[08:58:49] [17] Natalia_Inferno - /motor
+[08:58:51] [20] Denny_Toretto - /alma evés
+[08:58:52] [16] Mikhail_Bratislav - /bicikli elrak
+[08:58:59] [21] Mester_Csaba - /exit
+[08:59:02] [21] Mester_Csaba - /enter
+[08:59:12] [21] Mester_Csaba - /v park
+[08:59:14] [17] Natalia_Inferno - /enter
+[08:59:16] [16] Mikhail_Bratislav - /open
+[08:59:17] [17] Natalia_Inferno - /enter
+[08:59:17] [16] Mikhail_Bratislav - /enter
+[08:59:20] [21] Mester_Csaba - /exit
+[08:59:22] [21] Mester_Csaba - /garazs zar
+[08:59:28] [19] Joke_Diesel - /gps be
+[10:09:54] [16] Szabina_S_White - /login
+[10:10:02] [16] Szabina_S_White - /adat 17
+[10:10:04] [16] Szabina_S_White - /gps be
+[10:10:07] [16] Szabina_S_White - /open
+[10:10:09] [16] Szabina_S_White - /exit
+[10:10:11] [16] Szabina_S_White - /open
+[10:10:13] [16] Szabina_S_White - /open
+[10:10:17] [16] Szabina_S_White - /adat 17
+[10:10:24] [16] Szabina_S_White - /garazs zar
+[10:10:27] [16] Szabina_S_White - /togphone
+[10:10:29] [16] Szabina_S_White - /enter
+[10:10:38] [16] Szabina_S_White - /hack riaszto 1 1
+[10:11:02] [16] Szabina_S_White - /hack riaszto 1 0
+[10:11:23] [16] Szabina_S_White - /hack riaszto 0 0
+[10:11:26] [16] Szabina_S_White - /ellop
+[10:11:35] [16] Szabina_S_White - /exit
+[10:12:29] [17] Natalia_Inferno - /login
+[10:12:46] [17] Natalia_Inferno - /number 16
+[10:12:55] [17] Natalia_Inferno - /sms 2845586 Szabinaa:D hát temég ittv?
+[10:13:06] [17] Natalia_Inferno - /bicikli elovesz
+[10:14:37] [16] Damien_Creed - /login
+[10:14:54] [16] Damien_Creed - /készít mati 20
+[10:14:58] [17] Natalia_Inferno - /gps be
+[10:15:03] [16] Damien_Creed - /laptopom power
+[10:15:04] [17] Natalia_Inferno - /nyit
+[10:15:07] [17] Natalia_Inferno - /zár
+[10:15:17] [16] Damien_Creed - /gps be
+[10:15:21] [17] Natalia_Inferno - /bicikli elrak
+[10:16:14] [16] Damien_Creed - /hack bankszámla 1
+[10:16:21] [16] Damien_Creed - /hack bankszámla 1
+[10:16:21] [17] Natalia_Inferno - /motor
+[10:16:24] [16] Damien_Creed - /laptopom power
+[10:16:28] [17] Natalia_Inferno - /ellop lista 1
+[10:16:36] [16] Damien_Creed - /hack bankszámla 1
+[10:16:40] [16] Damien_Creed - /kcs rt megnéz
+[10:17:00] [17] Natalia_Inferno - /nyit
+[10:17:00] [17] Natalia_Inferno - /h
+[10:17:03] [17] Natalia_Inferno - /zár
+[10:17:07] [16] Damien_Creed - /asay Ahogy látom a hp bug javítva
+[10:17:21] [16] Damien_Creed - /vá
+[10:17:28] [16] Damien_Creed - /report channelstatus 0
+[10:17:36] [16] Damien_Creed - /kcs rt megnéz
+[10:17:39] [16] Damien_Creed - /kcs rt megnéz
+[10:17:41] [17] Natalia_Inferno - /arb jelentésnek 3 rangon még jó lehet a karbantartás?
+[10:17:46] [16] Damien_Creed - /bicikli elõvesz
+[10:17:52] [16] Damien_Creed - /zsebem
+[10:18:00] [16] Damien_Creed - /arb Nem
+[10:18:07] [16] Damien_Creed - /arb csak 0 és 1
+[10:18:14] [17] Natalia_Inferno - /arb okké
+[10:18:19] [17] Natalia_Inferno - /ar Valakit érdekel Bullet?
+[10:18:22] [16] Damien_Creed - /arb De fórumon kint van 
+[10:18:38] [17] Natalia_Inferno - /motor
+[10:18:41] [16] Damien_Creed - /arb Lejárt az AS-em :S
+[10:19:10] [17] Natalia_Inferno - /arb majd kineveznek újra:D
+[10:19:19] [17] Natalia_Inferno - /arb én sose voltam még as xd
+[10:19:22] [16] Damien_Creed - /arb Nem biztos :S
+[10:19:44] [16] Damien_Creed - /arb Én is most voltam elõször
+[10:19:55] [16] Damien_Creed - /arb de tegnap 76-ot válaszoltam :D
+[10:19:59] [17] Natalia_Inferno - /arb lol
+[10:20:08] [16] Damien_Creed - /hack bankszámla 1
+[10:20:37] [17] Natalia_Inferno - /arb .
+[10:20:49] [16] Damien_Creed - /arb Én azt várom hogy a birtokomat berakják :D
+[10:20:55] [17] Natalia_Inferno - /arb birtok?:O
+[10:21:04] [16] Damien_Creed - /arb Creed birtok
+[10:21:13] [17] Natalia_Inferno - /arb hol lesz?
+[10:21:17] [17] Natalia_Inferno - /motor
+[10:21:30] [17] Natalia_Inferno - /öv
+[10:21:30] [16] Damien_Creed - /arb Régi LCN HQ, egy kis raktárnál
+[10:21:58] [17] Natalia_Inferno - /arb ott a farmnál?
+[10:22:03] [16] Damien_Creed - /arb a-a
+[10:22:06] [17] Natalia_Inferno - /utasszállítás
+[10:22:08] [17] Natalia_Inferno - /utasszállítás kezdés
+[10:22:10] [17] Natalia_Inferno - /utasszállítás kezdés
+[10:22:14] [17] Natalia_Inferno - /utasszállítás kezdés
+[10:22:20] [16] Damien_Creed - /arb ls sf alagút felé ahogy mész, van egy kis út lefelé és ott
+[10:22:27] [16] Damien_Creed - /arv Majdnem sf reptér mellett
+[10:22:31] [17] Natalia_Inferno - /arb igen
+[10:22:38] [17] Natalia_Inferno - /utasszállítás kezdés
+[10:22:42] [16] Damien_Creed - /arb Majdnem sf reptér mellett
+[10:22:56] [17] Natalia_Inferno - /arb jaaaa
+[10:22:58] [16] Damien_Creed - /adat 17
+[10:23:02] [17] Natalia_Inferno - /arb már tudom
+[10:23:13] [17] Natalia_Inferno - /arb mennyi lesz?
+[10:23:19] [16] Damien_Creed - /arb 63 misi volt
+[10:23:29] [16] Damien_Creed - /arb 2 hónappal ezelõtt kifizettem már
+[10:23:33] [17] Natalia_Inferno - /arb jaa vágom
+[10:23:45] [17] Natalia_Inferno - /arb hallottad hogy jártam?xd
+[10:23:47] [18] Mikhail_Bratislav - /login
+[10:23:47] [16] Damien_Creed - /arb Csak amikor bekerólt volna Pedróék kiírták hogy vége a Class-nak
+[10:23:52] [16] Damien_Creed - /hack bankszámla 1
+[10:23:54] [18] Mikhail_Bratislav - /gps be
+[10:23:56] [16] Damien_Creed - /atb a-a
+[10:24:00] [16] Damien_Creed - /arb a-a
+[10:24:19] [18] Mikhail_Bratislav - /rentcar 1
+[10:24:21] [17] Natalia_Inferno - /rb volt 1 házam amiben nem tudtam h van gyémánt
+[10:24:24] [17] Natalia_Inferno - /arb volt 1 házam amiben nem tudtam h van gyémánt
+[10:24:28] [17] Natalia_Inferno - /arb és eladtam:(
+[10:24:32] [17] Natalia_Inferno - /arb a házat
+[10:24:33] [16] Damien_Creed - /arb Jah, azt hallottam :D
+[10:24:42] [17] Natalia_Inferno - /arb xddd bánom még mindi
+[10:24:53] [16] Damien_Creed - /arb Már nincs meg
+[10:24:57] [17] Natalia_Inferno - /arb ??
+[10:24:59] [16] Damien_Creed - /arb 300misiéret adták el
+[10:25:19] [17] Natalia_Inferno - /rb kinek?
+[10:25:23] [17] Natalia_Inferno - /arb kinek?
+[10:25:30] [16] Damien_Creed - /arb Azt nem tudom
+[10:25:42] [16] Damien_Creed - /arb De abból a pénzbõl került be a Zecchin birtok
+[10:25:45] [17] Natalia_Inferno - /utasszállítás
+[10:25:48] [17] Natalia_Inferno - /utasszállítás befejezés
+[10:25:56] [17] Natalia_Inferno - /arb úristen én el nem adtam vna

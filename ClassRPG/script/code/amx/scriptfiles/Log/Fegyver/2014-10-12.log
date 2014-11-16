@@ -1,0 +1,1112 @@
+[00:07:27] [Weapon-Berak][Civil]Krisztofer_Vincenzo berakott egy fegyvert a 343 rendszámú jármû 0 slotjába: M4-t
+[00:07:32] [Weapon-Berak][Civil]Krisztofer_Vincenzo berakott egy fegyvert a 343 rendszámú jármû 1 slotjába: Sniper-t
+[00:08:10] [Weapon-Kivesz][Civil]Krisztofer_Vincenzo kivett egy fegyvert a 343. rendszámú jármû 0. slotjából: M4-t
+[00:08:14] [Weapon-Kivesz][Civil]Krisztofer_Vincenzo kivett egy fegyvert a 343. rendszámú jármû 1. slotjából: Sniper-t
+[00:08:32] [/fegyverraktár kivesz lõszer 8] Tom_Zecchin kivett 1000db Sniper lõszert a raktárból
+[00:08:46] [/fegyverraktár berak fegyver 8] Tom_Zecchin kivett egy Sniper fegyvert a raktárból
+[00:11:32] [/fegyverraktár berak fegyver 8] Tom_Zecchin berakott egy AK47 fegyvert a raktárba
+[00:11:37] [/fegyverraktár berak lõszer 8] Tom_Zecchin berakott 241db AK47 lõszert a raktárba
+[00:11:45] [/fegyverraktár berak fegyver 8] Tom_Zecchin kivett egy M4 fegyvert a raktárból
+[00:34:29] [Átad][LCN]Edie_Morra átadott neki: [LCN]Matt_Creed, egy Deagle-t
+[00:34:38] [Átad][LCN]Edie_Morra átadott 10db Deagle lõszert neki: [LCN]Matt_Creed
+[00:37:41] [Weapon-Berak][Civil]Damien_Creed berakott egy fegyvert a 323 rendszámú jármû 0 slotjába: M4-t
+[00:37:59] [Weapon-Berak][Civil]Dominic_Vincenzo berakott egy fegyvert a 343 rendszámú jármû 0 slotjába: AK47-t
+[00:38:03] [Weapon-Berak][Civil]Krisztofer_Vincenzo berakott egy fegyvert a 343 rendszámú jármû 1 slotjába: M4-t
+[00:38:04] [Weapon-Berak][Civil]Dominic_Vincenzo berakott egy fegyvert a 343 rendszámú jármû 2 slotjába: Shotgun-t
+[00:38:07] [Weapon-Berak][Civil]Krisztofer_Vincenzo berakott egy fegyvert a 343 rendszámú jármû 3 slotjába: Sniper-t
+[00:38:13] [Weapon-Berak][Civil]Krisztofer_Vincenzo berakott egy fegyvert a 343 rendszámú jármû 4 slotjába: MP5-t
+[00:38:24] [Átad][Civil]Michael_T_Morales átadott neki: [FBI]Ralf_S_Tomasso, egy Rifle-t
+[00:38:41] [Átad][FBI]Ralf_S_Tomasso átadott neki: [Civil]Michael_T_Morales, egy Rifle-t
+[00:38:47] [/fegyverraktár berak fegyver 8] Tom_Zecchin berakott egy M4 fegyvert a raktárba
+[00:38:50] [/fegyverraktár berak fegyver 8] Tom_Zecchin berakott egy Sniper fegyvert a raktárba
+[00:39:02] [Átad][Civil]Michael_T_Morales átadott neki: [FBI]Ralf_S_Tomasso, egy Rifle-t
+[00:39:09] [Átad][Civil]Michael_T_Morales átadott 49db Rifle lõszert neki: [FBI]Ralf_S_Tomasso
+[00:39:37] [Átad][VLA]Hugo_Sanchez átadott neki: [VLA]Milinte_Brasco, egy M4-t
+[00:39:41] [Átad][VLA]Hugo_Sanchez átadott neki: [VLA]Milinte_Brasco, egy Sniper-t
+[00:52:28] [/eldob fegyver] Ralf_S_Tomasso eldobta ezt: Rifle
+[00:52:33] [/eldob lõszer] Ralf_S_Tomasso eldobott 49db Rifle lõszert
+[00:54:01] [/felvesz fegyver] Michael_T_Morales felvette ezt: Rifle
+[00:54:07] [/felvesz lõszer] Michael_T_Morales felvette ezt: 49db Rifle lõszer
+[01:26:43] [Átad][Civil]Diego_Aciano átadott neki: [Civil]Dom_Aciano, egy MP5-t
+[01:26:55] [Átad][Civil]Diego_Aciano átadott 120db MP5 lõszert neki: [Civil]Dom_Aciano
+[01:30:16] [Weapon-Kivesz][VLA]Damien_Creed kivett egy fegyvert a 323. rendszámú jármû 0. slotjából: M4-t
+[01:31:56] [Weapon-Kivesz][VLA]Dominic_Vincenzo kivett egy fegyvert a 343. rendszámú jármû 2. slotjából: Shotgun-t
+[01:32:01] [Weapon-Kivesz][VLA]Dominic_Vincenzo kivett egy fegyvert a 343. rendszámú jármû 0. slotjából: AK47-t
+[01:32:06] [Weapon-Kivesz][VLA]Krisztofer_Vincenzo kivett egy fegyvert a 343. rendszámú jármû 1. slotjából: M4-t
+[01:32:10] [Weapon-Kivesz][VLA]Krisztofer_Vincenzo kivett egy fegyvert a 343. rendszámú jármû 3. slotjából: Sniper-t
+[01:32:13] [Weapon-Kivesz][VLA]Krisztofer_Vincenzo kivett egy fegyvert a 343. rendszámú jármû 4. slotjából: MP5-t
+[01:33:03] [Átad][VLA]Milinte_Brasco átadott neki: [VLA]Hugo_Sanchez, egy M4-t
+[01:33:08] [Átad][VLA]Milinte_Brasco átadott neki: [VLA]Hugo_Sanchez, egy Sniper-t
+[09:27:52] [Átad][Civil]Peter_D_Wayne átadott neki: [Civil]Rock_P_Dimitriev, egy MP5-t
+[09:28:04] [Átad][Civil]Peter_D_Wayne átadott 150db MP5 lõszert neki: [Civil]Rock_P_Dimitriev
+[09:36:50] [Weapon-Berak][LCN]Elwood_JR_Sorrentino berakott egy fegyvert a 30 rendszámú jármû 0 slotjába: M4-t
+[09:36:54] [Weapon-Berak][LCN]Elwood_JR_Sorrentino berakott egy fegyvert a 30 rendszámú jármû 1 slotjába: Sniper-t
+[09:37:03] [Weapon-Berak][LCN]Elwood_JR_Sorrentino berakott 176db M4 lõszert a 30. rendszámú jármûbe
+[09:37:09] [Weapon-Berak][LCN]Elwood_JR_Sorrentino berakott 29db Sniper lõszert a 30. rendszámú jármûbe
+[10:09:44] [Weapon-Kivesz][LCN]Elwood_JR_Sorrentino kivett egy fegyvert a 30. rendszámú jármû 0. slotjából: M4-t
+[10:09:48] [Weapon-Kivesz][LCN]Elwood_JR_Sorrentino kivett egy fegyvert a 30. rendszámú jármû 1. slotjából: Sniper-t
+[10:09:54] [Weapon-Kivesz][LCN]Elwood_JR_Sorrentino kivett 29db Sniper lõszert a 30. rendszámú jármûbõl
+[10:09:59] [Weapon-Kivesz][LCN]Elwood_JR_Sorrentino kivett 176db M4 lõszert a 30. rendszámú jármûbõl
+[10:10:04] [Weapon-Berak][Yakuza]Jennyfer_Kowalaski berakott egy fegyvert a 344 rendszámú jármû 0 slotjába: MP5-t
+[10:10:09] [Weapon-Berak][Yakuza]Jennyfer_Kowalaski berakott 233db MP5 lõszert a 344. rendszámú jármûbe
+[10:21:03] [Weapon-Kivesz][Yakuza]Jennyfer_Kowalaski kivett egy fegyvert a 344. rendszámú jármû 0. slotjából: MP5-t
+[10:21:13] [Weapon-Kivesz][Yakuza]Jennyfer_Kowalaski kivett 233db MP5 lõszert a 344. rendszámú jármûbõl
+[10:22:21] [Átad][Civil]Victor_Jr_Zecchin átadott neki: [Yakuza]Jennyfer_Kowalaski, egy Sniper-t
+[10:22:28] [Átad][Civil]Victor_Jr_Zecchin átadott 30db Sniper lõszert neki: [Yakuza]Jennyfer_Kowalaski
+[10:22:37] [Weapon-Berak][Civil]Victor_Jr_Zecchin berakott egy fegyvert a 337 rendszámú jármû 0 slotjába: MP5-t
+[10:22:47] [Weapon-Berak][Civil]Victor_Jr_Zecchin berakott 781db MP5 lõszert a 337. rendszámú jármûbe
+[10:23:55] [Weapon-Kivesz][Civil]Victor_Jr_Zecchin kivett egy fegyvert a 337. rendszámú jármû 0. slotjából: MP5-t
+[10:24:01] [Weapon-Kivesz][Civil]Victor_Jr_Zecchin kivett 781db MP5 lõszert a 337. rendszámú jármûbõl
+[10:42:34] [/fegyverraktár berak lõszer 5] Krist_Roscoe berakott 275db M4 lõszert a raktárba
+[10:51:53] [Weapon-Berak][Yakuza]Jennyfer_Kowalaski berakott egy fegyvert a 463 rendszámú jármû 0 slotjába: Sniper-t
+[10:51:58] [Weapon-Berak][Yakuza]Jennyfer_Kowalaski berakott 30db Sniper lõszert a 463. rendszámú jármûbe
+[10:58:43] [/eldob fegyver] Hugo_Sanchez eldobta ezt: M4
+[10:59:02] [/eldob fegyver] Hugo_Sanchez eldobta ezt: Sniper
+[10:59:39] [/felvesz fegyver] Milinte_Brasco felvette ezt: M4
+[10:59:42] [Weapon-Berak][Yakuza]Bence_S_Kennedy berakott egy fegyvert a 468 rendszámú jármû 0 slotjába: MP5-t
+[10:59:43] [/felvesz fegyver] Milinte_Brasco felvette ezt: Sniper
+[10:59:46] [Weapon-Berak][Yakuza]Bence_S_Kennedy berakott 100db MP5 lõszert a 468. rendszámú jármûbe
+[11:00:35] [Berak][VLA]Milinte_Brasco berakott egy fegyvert a 528. házba: M4-t
+[11:00:39] [Berak][VLA]Milinte_Brasco berakott egy fegyvert a 528. házba: Sniper-t
+[11:03:26] [Átad][VLA]Hugo_Sanchez átadott 307db M4 lõszert neki: [VLA]Milinte_Brasco
+[11:03:32] [Átad][VLA]Hugo_Sanchez átadott 44db Sniper lõszert neki: [VLA]Milinte_Brasco
+[11:03:40] [Berak][VLA]Milinte_Brasco berakott 307db M4 lõszert 528. ház széfjébe
+[11:03:44] [Berak][VLA]Milinte_Brasco berakott 44db Sniper lõszert 528. ház széfjébe
+[11:33:17] [duty felvesz fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 74 Lett: 73
+[11:33:26] [duty felvesz fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db Shotgun-t | Raktár: Volt: 537 Lett: 536
+[11:33:36] [duty felvesz lõszer]Jin_Sorrentino Frakcio: 1 | 50 Db Shotgun-t | Raktár: Volt: 10236 Lett: 10186
+[11:33:59] [duty felvesz lõszer]Jin_Sorrentino Frakcio: 1 | 200 Db MP5-t | Raktár: Volt: 900 Lett: 700
+[11:33:59] [Weapon-Kivesz][Yakuza]Bence_S_Kennedy kivett egy fegyvert a 468. rendszámú jármû 0. slotjából: MP5-t
+[11:34:03] [Weapon-Kivesz][Yakuza]Bence_S_Kennedy kivett 100db MP5 lõszert a 468. rendszámú jármûbõl
+[11:41:12] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 250 Db MP5-t | Raktár: Volt: 6097 Lett: 5847
+[11:41:19] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 149 Lett: 148
+[11:41:25] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 300 Db M4-t | Raktár: Volt: 11129 Lett: 10829
+[11:41:56] [duty lead fegyver]Stefan_D_Zecchin Frakcio: 1 | 1 Db Rifle-t | Raktár Volt: 310 Lett: 311
+[11:41:56] [duty lead fegyver]Stefan_D_Zecchin Frakcio: 1 | 1 Db Rifle-t | Raktár Volt: 310 Lett: 311
+[11:42:03] [duty lead lõszer]Stefan_D_Zecchin Frakcio: 1 | 17 Db Rifle-t | Raktár Volt: 1208 Lett: 1225
+[11:42:03] [duty lead lõszer]Stefan_D_Zecchin Frakcio: 1 | 17 Db Rifle-t | Raktár Volt: 1208 Lett: 1225
+[11:42:33] [Átad][LSPD]Henrik_T_Scaletta átadott neki: [LSPD]Stefan_D_Zecchin, egy Sniper-t
+[11:42:37] [Átad][LSPD]Henrik_T_Scaletta átadott 35db Sniper lõszert neki: [LSPD]Stefan_D_Zecchin
+[11:42:47] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Sniper-t | Raktár: Volt: 10 Lett: 9
+[11:43:21] [Átad][LSPD]Stefan_D_Zecchin átadott 20db Sniper lõszert neki: [LSPD]Henrik_T_Scaletta
+[11:50:08] [Átad][VLA]Krisztofer_Vincenzo átadott neki: [VLA]Milinte_Brasco, egy MP5-t
+[11:50:13] [Átad][VLA]Krisztofer_Vincenzo átadott 150db MP5 lõszert neki: [VLA]Milinte_Brasco
+[11:51:18] [Weapon-Berak][LCN]Dom_Aciano berakott egy fegyvert a 30 rendszámú jármû 0 slotjába: MP5-t
+[11:54:04] [Weapon-Berak][VLA]Milinte_Brasco berakott egy fegyvert a 516 rendszámú jármû 0 slotjába: MP5-t
+[11:54:08] [Weapon-Berak][VLA]Milinte_Brasco berakott 150db MP5 lõszert a 516. rendszámú jármûbe
+[11:57:18] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[11:57:18] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[11:57:18] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[11:57:22] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 148 Lett: 147
+[11:57:25] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db M4-t | Raktár: Volt: 10829 Lett: 10629
+[11:57:32] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár: Volt: 208 Lett: 207
+[11:57:36] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db MP5-t | Raktár: Volt: 5847 Lett: 5647
+[12:01:45] [Weapon-Kivesz][VLA]Krisztofer_Vincenzo kivett 150db MP5 lõszert a 516. rendszámú jármûbõl
+[12:01:49] [Weapon-Berak][VLA]Krisztofer_Vincenzo berakott egy fegyvert a 516 rendszámú jármû 1 slotjába: M4-t
+[12:01:50] [Weapon-Berak][VLA]Michael_T_Morales berakott egy fegyvert a 516 rendszámú jármû 2 slotjába: Rifle-t
+[12:01:52] [Weapon-Berak][VLA]Krisztofer_Vincenzo berakott egy fegyvert a 516 rendszámú jármû 3 slotjába: Sniper-t
+[12:02:10] [Weapon-Berak][VLA]Damien_Creed berakott egy fegyvert a 525 rendszámú jármû 0 slotjába: M4-t
+[12:03:20] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott egy fegyvert a 516 rendszámú jármû 4 slotjába: MP5-t
+[12:08:59] [Átad][VLA]Michael_T_Morales átadott neki: [VLA]Victor_Jr_Zecchin, egy Deagle-t
+[12:09:07] [Átad][VLA]Michael_T_Morales átadott 49db Deagle lõszert neki: [VLA]Victor_Jr_Zecchin
+[12:09:27] [Weapon-Kivesz][VLA]Damien_Creed kivett egy fegyvert a 525. rendszámú jármû 0. slotjából: M4-t
+[12:11:02] [/felvesz fegyver] Damien_Creed felvette ezt: M4
+[12:11:09] [/felvesz lõszer] Damien_Creed felvette ezt: 200db M4 lõszer
+[12:11:16] [Weapon-Berak][VLA]Damien_Creed berakott egy fegyvert a 525 rendszámú jármû 0 slotjába: M4-t
+[12:11:32] [Weapon-Berak][VLA]Damien_Creed berakott 200db M4 lõszert a 525. rendszámú jármûbe
+[12:12:44] [/felvesz fegyver] Michael_T_Morales felvette ezt: Deagle
+[12:12:51] [/felvesz lõszer] Michael_T_Morales felvette ezt: 49db Deagle lõszer
+[12:14:03] [Átad][VLA]Michael_T_Morales átadott neki: [VLA]Victor_Jr_Zecchin, egy Deagle-t
+[12:14:11] [Átad][VLA]Michael_T_Morales átadott 49db Deagle lõszert neki: [VLA]Victor_Jr_Zecchin
+[12:15:42] [duty felvesz fegyver]Oberth_Andras Frakcio: 1 | 1 Db SilencedColt45-t | Raktár: Volt: 661 Lett: 660
+[12:15:56] [duty felvesz lõszer]Oberth_Andras Frakcio: 1 | 30 Db SilencedColt45-t | Raktár: Volt: 16413 Lett: 16383
+[12:18:02] [duty felvesz fegyver]Kazuyoshi_Akira Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 83 Lett: 82
+[12:18:11] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett egy fegyvert a 516. rendszámú jármû 0. slotjából: MP5-t
+[12:18:15] [Weapon-Kivesz][VLA]Michael_T_Morales kivett egy fegyvert a 516. rendszámú jármû 2. slotjából: Rifle-t
+[12:18:34] [Weapon-Kivesz][VLA]Damien_Creed kivett egy fegyvert a 525. rendszámú jármû 0. slotjából: M4-t
+[12:18:40] [Weapon-Kivesz][VLA]Damien_Creed kivett 200db M4 lõszert a 525. rendszámú jármûbõl
+[12:18:42] [Weapon-Kivesz][VLA]Krisztofer_Vincenzo kivett egy fegyvert a 516. rendszámú jármû 1. slotjából: M4-t
+[12:18:44] [Weapon-Kivesz][VLA]Krisztofer_Vincenzo kivett egy fegyvert a 516. rendszámú jármû 4. slotjából: MP5-t
+[12:18:48] [Weapon-Kivesz][VLA]Krisztofer_Vincenzo kivett egy fegyvert a 516. rendszámú jármû 3. slotjából: Sniper-t
+[12:19:55] [Weapon-Kivesz][LCN]Diego_Aciano kivett egy fegyvert a 30. rendszámú jármû 0. slotjából: MP5-t
+[12:20:29] [duty felvesz lõszer]Kazuyoshi_Akira Frakcio: 1 | 40 Db Deagle-t | Raktár: Volt: 908 Lett: 868
+[12:20:56] [duty felvesz fegyver]Tyson_M_Harris Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 82 Lett: 81
+[12:21:44] [duty felvesz lõszer]Tyson_M_Harris Frakcio: 1 | 10 Db Deagle-t | Raktár: Volt: 868 Lett: 858
+[12:21:48] [duty felvesz lõszer]Tyson_M_Harris Frakcio: 1 | 20 Db Deagle-t | Raktár: Volt: 858 Lett: 838
+[12:33:08] [/fegyverraktár berak fegyver 6] Tyler_Wish kivett egy MP5 fegyvert a raktárból
+[12:33:14] [/fegyverraktár kivesz lõszer 6] Tyler_Wish kivett 300db MP5 lõszert a raktárból
+[12:34:47] [Weapon-Berak][Civil]James_Creed berakott egy fegyvert a 337 rendszámú jármû 0 slotjába: M4-t
+[12:34:51] [Weapon-Berak][Civil]James_Creed berakott egy fegyvert a 337 rendszámú jármû 1 slotjába: Sniper-t
+[12:34:54] [Weapon-Berak][Civil]James_Creed berakott egy fegyvert a 337 rendszámú jármû 2 slotjába: Combat-t
+[12:35:07] [Weapon-Berak][Civil]James_Creed berakott 299db M4 lõszert a 337. rendszámú jármûbe
+[12:35:12] [Weapon-Berak][Civil]James_Creed berakott 200db Combat lõszert a 337. rendszámú jármûbe
+[12:35:17] [Weapon-Berak][Civil]James_Creed berakott 60db Sniper lõszert a 337. rendszámú jármûbe
+[12:38:15] [Weapon-Berak][LCN]Diego_Aciano berakott egy fegyvert a 30 rendszámú jármû 0 slotjába: MP5-t
+[12:41:04] [Berak][VLA]Krisztofer_Vincenzo berakott egy fegyvert a 55. házba: M4-t
+[12:41:11] [duty lead fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db Shotgun-t | Raktár Volt: 536 Lett: 537
+[12:41:11] [duty lead fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db Shotgun-t | Raktár Volt: 536 Lett: 537
+[12:41:17] [duty lead lõszer]Jin_Sorrentino Frakcio: 1 | 50 Db Shotgun-t | Raktár Volt: 10186 Lett: 10236
+[12:41:17] [duty lead lõszer]Jin_Sorrentino Frakcio: 1 | 50 Db Shotgun-t | Raktár Volt: 10186 Lett: 10236
+[12:41:25] [Berak][VLA]Krisztofer_Vincenzo berakott egy fegyvert a 55. házba: Sniper-t
+[12:41:38] [Berak][VLA]Krisztofer_Vincenzo berakott 250db M4 lõszert 55. ház széfjébe
+[12:41:42] [Berak][VLA]Krisztofer_Vincenzo berakott 42db Sniper lõszert 55. ház széfjébe
+[12:42:42] [Átad][VLA]Dominic_Vincenzo átadott neki: [VLA]Krisztofer_Vincenzo, egy AK47-t
+[12:42:49] [Átad][VLA]Dominic_Vincenzo átadott 200db AK47 lõszert neki: [VLA]Krisztofer_Vincenzo
+[12:42:52] [Berak][VLA]Krisztofer_Vincenzo berakott egy fegyvert a 55. házba: AK47-t
+[12:42:57] [Berak][VLA]Krisztofer_Vincenzo berakott 200db AK47 lõszert 55. ház széfjébe
+[12:48:13] [duty felvesz fegyver]Steve_Aoki Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 81 Lett: 80
+[12:48:14] [Weapon-Kivesz][Civil]James_Creed kivett egy fegyvert a 337. rendszámú jármû 0. slotjából: M4-t
+[12:48:18] [Weapon-Kivesz][Civil]James_Creed kivett egy fegyvert a 337. rendszámú jármû 1. slotjából: Sniper-t
+[12:48:22] [Weapon-Kivesz][Civil]James_Creed kivett egy fegyvert a 337. rendszámú jármû 2. slotjából: Combat-t
+[12:48:30] [Weapon-Kivesz][Civil]James_Creed kivett 299db M4 lõszert a 337. rendszámú jármûbõl
+[12:48:33] [duty felvesz lõszer]Steve_Aoki Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 838 Lett: 788
+[12:48:34] [Weapon-Kivesz][Civil]James_Creed kivett 200db Combat lõszert a 337. rendszámú jármûbõl
+[12:48:36] [duty felvesz lõszer]Steve_Aoki Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 788 Lett: 738
+[12:48:38] [Weapon-Kivesz][Civil]James_Creed kivett 60db Sniper lõszert a 337. rendszámú jármûbõl
+[12:50:28] [/fegyverraktár berak fegyver 6] Tyler_Wish berakott egy MP5 fegyvert a raktárba
+[12:50:34] [/fegyverraktár berak lõszer 6] Tyler_Wish berakott 300db MP5 lõszert a raktárba
+[12:59:23] [Átad][LCN]Elwood_JR_Sorrentino átadott neki: [VLA]Krisztofer_Vincenzo, egy Sniper-t
+[12:59:31] [Átad][LCN]Elwood_JR_Sorrentino átadott 29db Sniper lõszert neki: [VLA]Krisztofer_Vincenzo
+[13:01:19] [duty felvesz fegyver]Oliver_Aciano Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 80 Lett: 79
+[13:01:24] [duty felvesz fegyver]Oliver_Aciano Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 79 Lett: 78
+[13:02:23] [/felvesz fegyver] Michael_T_Morales felvette ezt: Rifle
+[13:02:24] [duty felvesz lõszer]Oliver_Aciano Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 738 Lett: 688
+[13:02:29] [/felvesz lõszer] Michael_T_Morales felvette ezt: 49db Rifle lõszer
+[13:05:45] [/eldob fegyver] Tom_Zecchin eldobta ezt: MP5
+[13:05:58] [/eldob lõszer] Tom_Zecchin eldobott 161db MP5 lõszert
+[13:06:14] [/fegyverraktár berak lõszer 8] Tom_Zecchin berakott 1000db Sniper lõszert a raktárba
+[13:08:36] [Weapon-Berak][Civil]Dave_S_Tomasso berakott egy fegyvert a 474 rendszámú jármû 0 slotjába: MP5-t
+[13:08:43] [Weapon-Berak][Civil]Dave_S_Tomasso berakott 146db MP5 lõszert a 474. rendszámú jármûbe
+[13:08:49] [duty lead fegyver]Kazuyoshi_Akira Frakcio: 1 | 1 Db Láncfûrész-t | Raktár Volt: -1 Lett: 0
+[13:08:49] [duty lead fegyver]Kazuyoshi_Akira Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[13:08:49] [duty lead fegyver]Kazuyoshi_Akira Frakcio: 1 | 1 Db Deagle-t | Raktár Volt: 78 Lett: 79
+[13:08:49] [duty lead lõszer]Kazuyoshi_Akira Frakcio: 1 | 40 Db Deagle-t | Raktár Volt: 688 Lett: 728
+[13:08:49] [duty lead lõszer]Kazuyoshi_Akira Frakcio: 1 | 800 Db Spray-t | Raktár Volt: -72 Lett: 728
+[13:09:06] [duty felvesz fegyver]Kazuyoshi_Akira Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 79 Lett: 78
+[13:09:21] [Átad][LSPD]Henrik_T_Scaletta átadott neki: [LSPD]Jin_Sorrentino, egy Sniper-t
+[13:09:25] [Átad][LSPD]Henrik_T_Scaletta átadott 20db Sniper lõszert neki: [LSPD]Jin_Sorrentino
+[13:09:38] [duty felvesz lõszer]Kazuyoshi_Akira Frakcio: 1 | 40 Db Deagle-t | Raktár: Volt: 728 Lett: 688
+[13:09:45] [Átad][VLA]Krisztofer_Vincenzo átadott neki: [LCN]Elwood_JR_Sorrentino, egy Sniper-t
+[13:09:52] [Weapon-Kivesz][Civil]Dave_S_Tomasso kivett egy fegyvert a 474. rendszámú jármû 0. slotjából: MP5-t
+[13:09:52] [Átad][VLA]Krisztofer_Vincenzo átadott 18db Sniper lõszert neki: [LCN]Elwood_JR_Sorrentino
+[13:09:59] [Weapon-Kivesz][Civil]Dave_S_Tomasso kivett 146db MP5 lõszert a 474. rendszámú jármûbõl
+[13:16:28] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 146 Lett: 145
+[13:16:29] [duty felvesz fegyver]Patrick_Zecchin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 78 Lett: 77
+[13:16:30] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár: Volt: 206 Lett: 205
+[13:16:34] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db Deagle-t | Raktár: Volt: 158 Lett: 157
+[13:16:39] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 300 Db M4-t | Raktár: Volt: 10287 Lett: 9987
+[13:16:40] [duty felvesz lõszer]Patrick_Zecchin Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 688 Lett: 638
+[13:16:43] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 50 Db Deagle-t | Raktár: Volt: 196 Lett: 146
+[13:16:47] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 200 Db MP5-t | Raktár: Volt: 5347 Lett: 5147
+[13:17:18] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 205 Lett: 206
+[13:17:18] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 145 Lett: 146
+[13:17:18] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: 145 Lett: 146
+[13:17:18] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Parachute-t | Raktár Volt: 1081 Lett: 1082
+[13:17:18] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 300 Db MP5-t | Raktár Volt: 5147 Lett: 5447
+[13:17:18] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 248 Db M4-t | Raktár Volt: 9987 Lett: 10235
+[13:17:18] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: 9835 Lett: 10235
+[13:17:22] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 146 Lett: 145
+[13:17:26] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db M4-t | Raktár: Volt: 10235 Lett: 10035
+[13:22:51] [Weapon-Berak][LCN]Diego_Aciano berakott egy fegyvert a 28 rendszámú jármû 0 slotjába: Shotgun-t
+[13:23:09] [Weapon-Berak][LCN]Diego_Aciano berakott egy fegyvert a 28 rendszámú jármû 1 slotjába: MP5-t
+[13:23:37] [Weapon-Berak][LCN]Diego_Aciano berakott 36db Shotgun lõszert a 28. rendszámú jármûbe
+[13:23:49] [Weapon-Berak][LCN]Diego_Aciano berakott 300db MP5 lõszert a 28. rendszámú jármûbe
+[13:24:06] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott egy fegyvert a 333 rendszámú jármû 0 slotjába: MP5-t
+[13:24:14] [Weapon-Kivesz][LCN]Diego_Aciano kivett egy fegyvert a 30. rendszámú jármû 0. slotjából: MP5-t
+[13:24:42] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett egy fegyvert a 333. rendszámú jármû 0. slotjából: MP5-t
+[13:24:51] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott egy fegyvert a 333 rendszámú jármû 0 slotjába: MP5-t
+[13:25:00] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott 2500db MP5 lõszert a 333. rendszámú jármûbe
+[13:25:37] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[13:25:37] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[13:25:37] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 145 Lett: 146
+[13:25:37] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db M4-t | Raktár Volt: 10035 Lett: 10235
+[13:25:37] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: 9835 Lett: 10235
+[13:27:33] [Berak][Yakuza]Jennyfer_Kowalaski berakott egy fegyvert a 60. házba: MP5-t
+[13:27:41] [Berak][Yakuza]Jennyfer_Kowalaski berakott 233db MP5 lõszert 60. ház széfjébe
+[13:28:39] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett egy fegyvert a 333. rendszámú jármû 0. slotjából: MP5-t
+[13:28:44] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett 2500db MP5 lõszert a 333. rendszámú jármûbõl
+[13:30:12] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott egy fegyvert a 333 rendszámú jármû 0 slotjába: MP5-t
+[13:30:18] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott 2500db MP5 lõszert a 333. rendszámú jármûbe
+[13:31:56] [Átad][FBI]Kevin_S_Tomasso átadott neki: [LSPD]Patrick_Zecchin, egy MP5-t
+[13:32:03] [Átad][FBI]Kevin_S_Tomasso átadott 200db MP5 lõszert neki: [LSPD]Patrick_Zecchin
+[13:35:01] [/felvesz fegyver] Denny_Toretto felvette ezt: MP5
+[13:35:04] [/felvesz lõszer] Denny_Toretto felvette ezt: 130db MP5 lõszer
+[13:35:44] [Weapon-Kivesz][Yakuza]Jennyfer_Kowalaski kivett egy fegyvert a 463. rendszámú jármû 0. slotjából: Sniper-t
+[13:35:51] [Weapon-Kivesz][Yakuza]Jennyfer_Kowalaski kivett 30db Sniper lõszert a 463. rendszámú jármûbõl
+[13:36:22] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett egy fegyvert a 333. rendszámú jármû 0. slotjából: MP5-t
+[13:36:27] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett 2500db MP5 lõszert a 333. rendszámú jármûbõl
+[13:36:33] [Berak][Yakuza]Jennyfer_Kowalaski berakott egy fegyvert a 60. házba: Sniper-t
+[13:36:42] [Berak][Yakuza]Jennyfer_Kowalaski berakott 30db Sniper lõszert 60. ház széfjébe
+[13:38:01] [Berak][Civil]Vlad_D_Dueno berakott egy fegyvert a 243. házba: MP5-t
+[13:38:17] [Berak][Civil]Vlad_D_Dueno berakott 200db MP5 lõszert 243. ház széfjébe
+[13:38:34] [/felvesz fegyver] Lorand_B_Hollywood felvette ezt: M4
+[13:41:09] [duty lead fegyver]Michael_Faraday Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[13:41:09] [duty lead fegyver]Michael_Faraday Frakcio: 1 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[13:41:09] [duty lead lõszer]Michael_Faraday Frakcio: 1 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[13:42:25] [duty felvesz fegyver]Michael_Faraday Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 77 Lett: 76
+[13:42:36] [duty felvesz lõszer]Michael_Faraday Frakcio: 1 | 400 Db Deagle-t | Raktár: Volt: 638 Lett: 238
+[13:43:03] [duty lead fegyver]Travis_Dominguez Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[13:43:03] [duty lead fegyver]Travis_Dominguez Frakcio: 1 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[13:43:03] [duty lead lõszer]Travis_Dominguez Frakcio: 1 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[13:43:18] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott egy fegyvert a 526 rendszámú jármû 0 slotjába: MP5-t
+[13:43:19] [Weapon-Berak][Civil]Lorand_B_Hollywood berakott egy fegyvert a 482 rendszámú jármû 0 slotjába: M4-t
+[13:43:25] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott 2500db MP5 lõszert a 526. rendszámú jármûbe
+[13:43:25] [duty felvesz fegyver]Travis_Dominguez Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 76 Lett: 75
+[13:43:48] [duty felvesz lõszer]Travis_Dominguez Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 238 Lett: 188
+[13:43:50] [/felvesz fegyver] Victor_Jr_Zecchin felvette ezt: MP5
+[13:44:25] [/eldob fegyver] Victor_Jr_Zecchin eldobta ezt: MP5
+[13:44:31] [duty lead fegyver]Michael_Faraday Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[13:44:31] [duty lead fegyver]Michael_Faraday Frakcio: 1 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[13:44:31] [duty lead fegyver]Michael_Faraday Frakcio: 1 | 1 Db Deagle-t | Raktár Volt: 75 Lett: 76
+[13:44:31] [duty lead lõszer]Michael_Faraday Frakcio: 1 | 400 Db Deagle-t | Raktár Volt: 188 Lett: 588
+[13:44:31] [duty lead lõszer]Michael_Faraday Frakcio: 1 | 400 Db Spray-t | Raktár Volt: 188 Lett: 588
+[13:45:02] [/felvesz lõszer] Victor_Jr_Zecchin felvette ezt: 161db MP5 lõszer
+[13:45:13] [/felvesz fegyver] Victor_Jr_Zecchin felvette ezt: MP5
+[13:45:29] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett egy fegyvert a 526. rendszámú jármû 0. slotjából: MP5-t
+[13:45:34] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett 2500db MP5 lõszert a 526. rendszámú jármûbõl
+[13:54:27] [Weapon-Kivesz][Civil]Lorand_B_Hollywood kivett egy fegyvert a 482. rendszámú jármû 0. slotjából: M4-t
+[13:57:00] [/eldob fegyver] Lorand_B_Hollywood eldobta ezt: M4
+[13:57:07] [/felvesz fegyver] Atsuya_D_Freeman felvette ezt: M4
+[13:57:31] [/fegyverraktár berak fegyver 6] Atsuya_D_Freeman berakott egy M4 fegyvert a raktárba
+[14:01:03] [duty felvesz fegyver]Toth_Martin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 76 Lett: 75
+[14:01:43] [duty felvesz fegyver]Toth_Martin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 75 Lett: 74
+[14:03:54] [duty felvesz fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 73 Lett: 72
+[14:04:02] [duty felvesz lõszer]Jin_Sorrentino Frakcio: 1 | 200 Db MP5-t | Raktár: Volt: 700 Lett: 500
+[14:04:10] [duty felvesz fegyver]Travis_Dominguez Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 74 Lett: 73
+[14:04:20] [duty felvesz lõszer]Travis_Dominguez Frakcio: 1 | 60 Db Deagle-t | Raktár: Volt: 588 Lett: 528
+[14:04:26] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 205 Lett: 206
+[14:04:26] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 145 Lett: 146
+[14:04:26] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: 145 Lett: 146
+[14:04:26] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Parachute-t | Raktár Volt: 1082 Lett: 1083
+[14:04:26] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: 1082 Lett: 1083
+[14:04:26] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 300 Db MP5-t | Raktár Volt: 5147 Lett: 5447
+[14:04:26] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 300 Db M4-t | Raktár Volt: 9935 Lett: 10235
+[14:04:26] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 800 Db Spray-t | Raktár Volt: 9435 Lett: 10235
+[14:04:34] [duty felvesz lõszer]Toth_Martin Frakcio: 1 | 30 Db Deagle-t | Raktár: Volt: 528 Lett: 498
+[14:04:37] [duty felvesz fegyver]Sifu_D_Sorrentino Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 73 Lett: 72
+[14:04:50] [duty felvesz lõszer]Sifu_D_Sorrentino Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 498 Lett: 448
+[14:05:17] [Átad][LSPD]Jin_Sorrentino átadott 10db Sniper lõszert neki: [LSPD]Henrik_T_Scaletta
+[14:05:39] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Sniper-t | Raktár: Volt: 9 Lett: 8
+[14:07:45] [duty felvesz fegyver]Steve_Aoki Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 72 Lett: 71
+[14:07:54] [duty felvesz lõszer]Steve_Aoki Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 448 Lett: 398
+[14:10:19] [duty felvesz fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 72 Lett: 71
+[14:10:24] [duty felvesz lõszer]Lorand_B_Hollywood Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 500 Lett: 350
+[14:10:35] [duty felvesz fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db Rifle-t | Raktár: Volt: 311 Lett: 310
+[14:10:49] [duty felvesz lõszer]Lorand_B_Hollywood Frakcio: 1 | 50 Db Rifle-t | Raktár: Volt: 1225 Lett: 1175
+[14:11:47] [Átad][LSPD]Travis_Dominguez átadott neki: [LSPD]Steve_Aoki, egy MP5-t
+[14:11:54] [Átad][LSPD]Travis_Dominguez átadott 300db MP5 lõszert neki: [LSPD]Steve_Aoki
+[14:12:46] [duty lead fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[14:12:46] [duty lead fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[14:12:46] [duty lead fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 146 Lett: 147
+[14:12:46] [duty lead fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db Deagle-t | Raktár Volt: 157 Lett: 158
+[14:12:46] [duty lead lõszer]Kevin_S_Tomasso Frakcio: 2 | 50 Db Deagle-t | Raktár Volt: 146 Lett: 196
+[14:12:46] [duty lead lõszer]Kevin_S_Tomasso Frakcio: 2 | 235 Db M4-t | Raktár Volt: 10235 Lett: 10470
+[14:12:46] [duty lead lõszer]Kevin_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: 10070 Lett: 10470
+[14:15:24] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Sniper-t | Raktár: Volt: 67 Lett: 66
+[14:15:29] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 50 Db Sniper-t | Raktár: Volt: 313 Lett: 263
+[14:17:26] [duty felvesz fegyver]Patrick_Zecchin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 71 Lett: 70
+[14:17:38] [duty felvesz lõszer]Patrick_Zecchin Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 398 Lett: 348
+[14:18:51] [Átad][VLA]Victor_Jr_Zecchin átadott neki: [VLA]Krisztofer_Vincenzo, egy MP5-t
+[14:18:57] [Átad][VLA]Victor_Jr_Zecchin átadott 1000db MP5 lõszert neki: [VLA]Krisztofer_Vincenzo
+[14:27:17] [Átad][LSPD]Jin_Sorrentino átadott neki: [LSPD]Sifu_D_Sorrentino, egy MP5-t
+[14:27:22] [Átad][LSPD]Jin_Sorrentino átadott 200db MP5 lõszert neki: [LSPD]Sifu_D_Sorrentino
+[14:27:37] [duty felvesz fegyver]Jizzy_Mc_Deguchi Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 70 Lett: 69
+[14:28:07] [duty felvesz lõszer]Jizzy_Mc_Deguchi Frakcio: 1 | 100 Db Deagle-t | Raktár: Volt: 348 Lett: 248
+[14:28:13] [duty felvesz lõszer]Jizzy_Mc_Deguchi Frakcio: 1 | 200 Db Deagle-t | Raktár: Volt: 248 Lett: 48
+[14:33:00] [/eldob fegyver] Hegyes_Marton eldobta ezt: Sniper
+[14:35:09] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 204 Lett: 205
+[14:35:09] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 145 Lett: 146
+[14:35:09] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: 145 Lett: 146
+[14:35:09] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Parachute-t | Raktár Volt: 1083 Lett: 1084
+[14:35:09] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Sniper-t | Raktár Volt: 66 Lett: 67
+[14:35:09] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 300 Db MP5-t | Raktár Volt: 4847 Lett: 5147
+[14:35:09] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 300 Db M4-t | Raktár Volt: 9870 Lett: 10170
+[14:35:09] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 50 Db Sniper-t | Raktár Volt: 263 Lett: 313
+[14:35:09] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: -87 Lett: 313
+[14:35:16] [Weapon-Berak][Yakuza]Bence_S_Kennedy berakott egy fegyvert a 468 rendszámú jármû 0 slotjába: MP5-t
+[14:35:24] [Weapon-Berak][Yakuza]Bence_S_Kennedy berakott 100db MP5 lõszert a 468. rendszámú jármûbe
+[14:35:25] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 146 Lett: 145
+[14:35:29] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db M4-t | Raktár: Volt: 10170 Lett: 9970
+[14:35:32] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Sniper-t | Raktár: Volt: 67 Lett: 66
+[14:36:47] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár: Volt: 206 Lett: 205
+[14:36:52] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 146 Lett: 145
+[14:36:58] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db Deagle-t | Raktár: Volt: 158 Lett: 157
+[14:37:04] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 300 Db M4-t | Raktár: Volt: 10270 Lett: 9970
+[14:37:09] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 50 Db Deagle-t | Raktár: Volt: 196 Lett: 146
+[14:37:15] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 200 Db MP5-t | Raktár: Volt: 5447 Lett: 5247
+[14:38:43] [Átad][LSPD]Henrik_T_Scaletta átadott 1db Sniper lõszert neki: [LSPD]Sifu_D_Sorrentino
+[14:38:49] [Átad][LSPD]Henrik_T_Scaletta átadott neki: [LSPD]Sifu_D_Sorrentino, egy Sniper-t
+[14:39:00] [Átad][LSPD]Sifu_D_Sorrentino átadott neki: [LSPD]Henrik_T_Scaletta, egy Sniper-t
+[14:39:07] [Átad][LSPD]Sifu_D_Sorrentino átadott 1db Sniper lõszert neki: [LSPD]Henrik_T_Scaletta
+[14:42:04] [/felvesz fegyver] Danno_Derossi felvette ezt: MP5
+[14:42:38] [duty felvesz fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db SilencedColt45-t | Raktár: Volt: 660 Lett: 659
+[14:42:39] [Weapon-Berak][Civil]Danno_Derossi berakott egy fegyvert a 473 rendszámú jármû 0 slotjába: MP5-t
+[14:42:52] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 100 Db SilencedColt45-t | Raktár: Volt: 16383 Lett: 16283
+[14:43:40] [Átad][LSPD]Henrik_T_Scaletta átadott neki: [LSPD]Freddie_B_Scaletta, egy MP5-t
+[14:43:47] [Átad][LSPD]Henrik_T_Scaletta átadott 150db MP5 lõszert neki: [LSPD]Freddie_B_Scaletta
+[14:44:13] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 71 Lett: 70
+[14:44:30] [Átad][VLA]Krisztofer_Vincenzo átadott 500db MP5 lõszert neki: [VLA]Dominic_Vincenzo
+[14:44:43] [/felvesz lõszer] Gunnar_Jensen felvette ezt: 500db MP5 lõszer
+[14:45:11] [duty felvesz fegyver]Patrick_Zecchin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 69 Lett: 68
+[14:45:20] [duty felvesz lõszer]Patrick_Zecchin Frakcio: 1 | 10 Db Deagle-t | Raktár: Volt: 48 Lett: 38
+[14:45:23] [duty felvesz lõszer]Patrick_Zecchin Frakcio: 1 | 10 Db Deagle-t | Raktár: Volt: 38 Lett: 28
+[14:45:27] [duty felvesz lõszer]Patrick_Zecchin Frakcio: 1 | 10 Db Deagle-t | Raktár: Volt: 28 Lett: 18
+[14:46:16] [duty felvesz fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 70 Lett: 69
+[14:46:21] [duty felvesz lõszer]Jin_Sorrentino Frakcio: 1 | 200 Db MP5-t | Raktár: Volt: 350 Lett: 150
+[14:46:45] [/eldob fegyver] Jin_Sorrentino eldobta ezt: MP5
+[14:46:50] [/eldob lõszer] Jin_Sorrentino eldobott 200db MP5 lõszert
+[14:46:54] [duty felvesz fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 69 Lett: 68
+[14:46:55] [Weapon-Kivesz][Civil]Danno_Derossi kivett egy fegyvert a 473. rendszámú jármû 0. slotjából: MP5-t
+[14:46:59] [/felvesz fegyver] Steve_Aoki felvette ezt: MP5
+[14:47:06] [/felvesz lõszer] Steve_Aoki felvette ezt: 200db MP5 lõszer
+[14:52:45] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[14:52:45] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[14:52:45] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 145 Lett: 146
+[14:52:45] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Sniper-t | Raktár Volt: 66 Lett: 67
+[14:52:45] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 165 Db M4-t | Raktár Volt: 9970 Lett: 10135
+[14:52:45] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: 9735 Lett: 10135
+[14:52:47] [Átad][LSPD]Sifu_D_Sorrentino átadott 100db MP5 lõszert neki: [LSPD]Jin_Sorrentino
+[14:53:04] [Átad][LSPD]Sifu_D_Sorrentino átadott 100db MP5 lõszert neki: [LSPD]Jin_Sorrentino
+[14:53:41] [Átad][LSPD]Jin_Sorrentino átadott 100db MP5 lõszert neki: [LSPD]Sifu_D_Sorrentino
+[14:53:53] [Weapon-Kivesz][Yakuza]Bence_S_Kennedy kivett egy fegyvert a 468. rendszámú jármû 0. slotjából: MP5-t
+[14:53:57] [Weapon-Kivesz][Yakuza]Bence_S_Kennedy kivett 100db MP5 lõszert a 468. rendszámú jármûbõl
+[14:58:14] [/felvesz lõszer] Henrik_T_Scaletta felvette ezt: 471db MP5 lõszer
+[14:58:28] [/felvesz fegyver] Lorand_B_Hollywood felvette ezt: MP5
+[15:00:33] [Weapon-Berak][Yakuza]Bence_S_Kennedy berakott egy fegyvert a 468 rendszámú jármû 0 slotjába: MP5-t
+[15:00:38] [Weapon-Berak][Yakuza]Bence_S_Kennedy berakott 100db MP5 lõszert a 468. rendszámú jármûbe
+[15:01:38] [Weapon-Berak][Civil]Jose_Washington berakott egy fegyvert a 345 rendszámú jármû 0 slotjába: MP5-t
+[15:01:41] [Weapon-Berak][Civil]Jose_Washington berakott egy fegyvert a 345 rendszámú jármû 1 slotjába: Rifle-t
+[15:01:45] [Weapon-Berak][Civil]Jose_Washington berakott 138db MP5 lõszert a 345. rendszámú jármûbe
+[15:01:48] [Weapon-Berak][Civil]Jose_Washington berakott 30db Rifle lõszert a 345. rendszámú jármûbe
+[15:07:29] [Weapon-Berak][LSPD]Jin_Sorrentino berakott egy fegyvert a 534 rendszámú jármû 0 slotjába: MP5-t
+[15:07:31] [Weapon-Berak][LSPD]Jin_Sorrentino berakott egy fegyvert a 534 rendszámú jármû 1 slotjába: Sniper-t
+[15:07:43] [Weapon-Berak][LSPD]Jin_Sorrentino berakott 78db MP5 lõszert a 534. rendszámú jármûbe
+[15:09:07] [Átad][VLA]Damien_Creed átadott neki: [VLA]Krisztofer_Vincenzo, egy MP5-t
+[15:09:12] [Átad][VLA]Damien_Creed átadott 200db MP5 lõszert neki: [VLA]Krisztofer_Vincenzo
+[15:09:45] [Weapon-Berak][LSPD]Sifu_D_Sorrentino berakott egy fegyvert a 534 rendszámú jármû 2 slotjába: MP5-t
+[15:09:48] [Weapon-Berak][LSPD]Sifu_D_Sorrentino berakott egy fegyvert a 534 rendszámú jármû 3 slotjába: Deagle-t
+[15:09:54] [Weapon-Berak][LSPD]Sifu_D_Sorrentino berakott 97db MP5 lõszert a 534. rendszámú jármûbe
+[15:09:59] [Weapon-Berak][LSPD]Sifu_D_Sorrentino berakott 50db Deagle lõszert a 534. rendszámú jármûbe
+[15:10:05] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott egy fegyvert a 534 rendszámú jármû 4 slotjába: MP5-t
+[15:10:16] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott 120db MP5 lõszert a 534. rendszámú jármûbe
+[15:17:34] [Weapon-Kivesz][LSPD]Sifu_D_Sorrentino kivett egy fegyvert a 534. rendszámú jármû 0. slotjából: MP5-t
+[15:17:38] [Weapon-Kivesz][LSPD]Sifu_D_Sorrentino kivett egy fegyvert a 534. rendszámú jármû 3. slotjából: Deagle-t
+[15:17:43] [Weapon-Kivesz][LSPD]Sifu_D_Sorrentino kivett 100db MP5 lõszert a 534. rendszámú jármûbõl
+[15:17:47] [Weapon-Kivesz][LSPD]Sifu_D_Sorrentino kivett 50db Deagle lõszert a 534. rendszámú jármûbõl
+[15:28:49] [Weapon-Kivesz][LSPD]Sifu_D_Sorrentino kivett egy fegyvert a 534. rendszámú jármû 1. slotjából: Sniper-t
+[15:29:03] [Weapon-Kivesz][LSPD]Freddie_B_Scaletta kivett egy fegyvert a 534. rendszámú jármû 2. slotjából: MP5-t
+[15:29:04] [duty felvesz fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 68 Lett: 67
+[15:29:08] [duty felvesz fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db Rifle-t | Raktár: Volt: 310 Lett: 309
+[15:29:08] [Weapon-Kivesz][LSPD]Freddie_B_Scaletta kivett 195db MP5 lõszert a 534. rendszámú jármûbõl
+[15:29:12] [duty felvesz lõszer]Lorand_B_Hollywood Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 150 Lett: 0
+[15:29:16] [duty felvesz lõszer]Lorand_B_Hollywood Frakcio: 1 | 50 Db Rifle-t | Raktár: Volt: 1175 Lett: 1125
+[15:29:23] [duty lead fegyver]Sifu_D_Sorrentino Frakcio: 1 | 1 Db Sniper-t | Raktár Volt: 8 Lett: 9
+[15:29:23] [duty lead fegyver]Sifu_D_Sorrentino Frakcio: 1 | 1 Db Sniper-t | Raktár Volt: 8 Lett: 9
+[15:52:18] [Berak][Civil]Nelson_Washington berakott egy fegyvert a 219. házba: M4-t
+[15:52:31] [/eldob fegyver] Nelson_Washington eldobta ezt: MP5
+[15:52:35] [Kivesz][Civil]Nelson_Washington kivett egy fegyvert a 219. házból: MP5-t
+[15:52:38] [Berak][Civil]Nelson_Washington berakott egy fegyvert a 219. házba: Sniper-t
+[15:52:42] [Berak][Civil]Nelson_Washington berakott 25db Sniper lõszert 219. ház széfjébe
+[15:52:45] [Berak][Civil]Nelson_Washington berakott 358db M4 lõszert 219. ház széfjébe
+[15:53:14] [Kivesz][Civil]Vlad_D_Dueno kivett egy fegyvert a 243. házból: MP5-t
+[15:53:20] [Kivesz][Civil]Vlad_D_Dueno kivett 150db MP5 lõszert 243. ház széfjébõl
+[15:53:34] [Berak][VLA]James_Creed berakott egy fegyvert a 149. házba: M4-t
+[15:53:37] [Berak][VLA]James_Creed berakott egy fegyvert a 149. házba: Sniper-t
+[15:53:41] [Berak][VLA]James_Creed berakott egy fegyvert a 149. házba: Combat-t
+[15:53:50] [Berak][VLA]James_Creed berakott 299db M4 lõszert 149. ház széfjébe
+[15:53:53] [Berak][VLA]James_Creed berakott 60db Sniper lõszert 149. ház széfjébe
+[15:53:59] [Berak][VLA]James_Creed berakott 200db Combat lõszert 149. ház széfjébe
+[16:01:38] [Weapon-Kivesz][LCN]Diego_Aciano kivett egy fegyvert a 28. rendszámú jármû 1. slotjából: MP5-t
+[16:01:44] [Weapon-Kivesz][LCN]Diego_Aciano kivett 300db MP5 lõszert a 28. rendszámú jármûbõl
+[16:10:57] [duty lead fegyver]Joe_Gates Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[16:10:57] [duty lead fegyver]Joe_Gates Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[16:10:57] [duty lead lõszer]Joe_Gates Frakcio: 2 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[16:11:06] [duty felvesz fegyver]Joe_Gates Frakcio: 2 | 1 Db AK47-t | Raktár: Volt: 1 Lett: 0
+[16:11:13] [duty felvesz lõszer]Joe_Gates Frakcio: 2 | 150 Db AK47-t | Raktár: Volt: 150 Lett: 0
+[16:15:20] [duty felvesz fegyver]Michael_Faraday Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 68 Lett: 67
+[16:15:41] [duty felvesz lõszer]Michael_Faraday Frakcio: 1 | 10 Db Deagle-t | Raktár: Volt: 18 Lett: 8
+[16:27:10] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott egy fegyvert a 538 rendszámú jármû 0 slotjába: M4-t
+[16:27:14] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott egy fegyvert a 538 rendszámú jármû 1 slotjába: Sniper-t
+[16:27:18] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott 230db M4 lõszert a 538. rendszámú jármûbe
+[16:27:21] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott 10db Sniper lõszert a 538. rendszámú jármûbe
+[16:28:37] [Weapon-Kivesz][LSPD]Henrik_T_Scaletta kivett egy fegyvert a 538. rendszámú jármû 0. slotjából: M4-t
+[16:28:41] [Weapon-Kivesz][LSPD]Henrik_T_Scaletta kivett 230db M4 lõszert a 538. rendszámú jármûbõl
+[16:28:44] [Weapon-Kivesz][LSPD]Henrik_T_Scaletta kivett egy fegyvert a 538. rendszámú jármû 1. slotjából: Sniper-t
+[16:28:47] [Weapon-Kivesz][LSPD]Henrik_T_Scaletta kivett 10db Sniper lõszert a 538. rendszámú jármûbõl
+[16:30:19] [duty felvesz fegyver]Perez_Esteban Frakcio: 13 | 1 Db MP5-t | Raktár: Volt: 71 Lett: 70
+[16:30:58] [/felvesz lõszer] Tom_Torres felvette ezt: 250db MP5 lõszer
+[16:31:17] [Átad][VLA]Dominic_Vincenzo átadott neki: [VLA]James_Creed, egy MP5-t
+[16:31:24] [Átad][VLA]Dominic_Vincenzo átadott 150db MP5 lõszert neki: [VLA]James_Creed
+[16:32:20] [duty felvesz fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 67 Lett: 66
+[16:32:35] [/felvesz lõszer] Damien_Creed felvette ezt: 44db MP5 lõszer
+[16:32:36] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 8 Lett: 7
+[16:32:40] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 7 Lett: 6
+[16:32:42] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 5 Db Deagle-t | Raktár: Volt: 6 Lett: 1
+[16:32:46] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 1 Lett: 0
+[16:33:38] [duty felvesz fegyver]Toth_Martin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 66 Lett: 65
+[16:34:06] [duty felvesz fegyver]Patrick_Zecchin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 65 Lett: 64
+[16:36:25] [duty lead fegyver]Toth_Martin Frakcio: 1 | 1 Db Deagle-t | Raktár Volt: 64 Lett: 65
+[16:36:25] [duty lead fegyver]Toth_Martin Frakcio: 1 | 1 Db Deagle-t | Raktár Volt: 64 Lett: 65
+[16:37:02] [duty felvesz fegyver]Toth_Martin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 65 Lett: 64
+[16:39:33] [duty lead fegyver]Nagato_Brasco Frakcio: 13 | 1 Db Láncfûrész-t | Raktár Volt: -1 Lett: 0
+[16:39:33] [duty lead fegyver]Nagato_Brasco Frakcio: 13 | 1 Db Fire-t | Raktár Volt: -1 Lett: 0
+[16:39:33] [duty lead lõszer]Nagato_Brasco Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[16:39:33] [duty lead lõszer]Nagato_Brasco Frakcio: 13 | 6112 Db Fire-t | Raktár Volt: -6112 Lett: 0
+[16:40:31] [/felvesz fegyver] Diego_Aciano felvette ezt: MP5
+[16:42:32] [Kivesz][LCN]Diego_Aciano kivett 150db MP5 lõszert 115. ház széfjébõl
+[16:43:08] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 204 Lett: 205
+[16:43:08] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 145 Lett: 146
+[16:43:08] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: 145 Lett: 146
+[16:43:08] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Parachute-t | Raktár Volt: 1084 Lett: 1085
+[16:43:08] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: 1084 Lett: 1085
+[16:43:08] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 300 Db MP5-t | Raktár Volt: 4947 Lett: 5247
+[16:43:08] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 283 Db M4-t | Raktár Volt: 9835 Lett: 10118
+[16:43:08] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 800 Db Spray-t | Raktár Volt: 9318 Lett: 10118
+[16:43:10] [duty lead fegyver]Patrick_Zecchin Frakcio: 1 | 1 Db Deagle-t | Raktár Volt: 64 Lett: 65
+[16:43:46] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Sniper-t | Raktár Volt: 9 Lett: 10
+[16:43:46] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Sniper-t | Raktár Volt: 9 Lett: 10
+[16:44:49] [duty lead fegyver]Nelson_Washington Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[16:44:49] [duty lead fegyver]Nelson_Washington Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[16:44:49] [duty lead fegyver]Nelson_Washington Frakcio: 13 | 1 Db MP5-t | Raktár Volt: 70 Lett: 71
+[16:44:49] [duty lead fegyver]Nelson_Washington Frakcio: 13 | 1 Db MP5-t | Raktár Volt: 71 Lett: 72
+[16:44:49] [duty lead fegyver]Nelson_Washington Frakcio: 13 | 1 Db MP5-t | Raktár Volt: 72 Lett: 73
+[16:44:49] [duty lead lõszer]Nelson_Washington Frakcio: 13 | 247 Db MP5-t | Raktár Volt: 5392 Lett: 5639
+[16:44:49] [duty lead lõszer]Nelson_Washington Frakcio: 13 | 2000 Db Spray-t | Raktár Volt: 3639 Lett: 5639
+[16:44:54] [duty felvesz fegyver]Nelson_Washington Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 45 Lett: 44
+[16:45:09] [duty felvesz lõszer]Nelson_Washington Frakcio: 13 | 250 Db M4-t | Raktár: Volt: 9747 Lett: 9497
+[16:45:17] [duty felvesz fegyver]Nelson_Washington Frakcio: 13 | 1 Db MP5-t | Raktár: Volt: 73 Lett: 72
+[16:45:28] [duty felvesz lõszer]Nelson_Washington Frakcio: 13 | 250 Db MP5-t | Raktár: Volt: 5639 Lett: 5389
+[16:46:12] [duty felvesz fegyver]Nagato_Brasco Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 44 Lett: 43
+[16:46:16] [duty felvesz lõszer]Nagato_Brasco Frakcio: 13 | 250 Db M4-t | Raktár: Volt: 9497 Lett: 9247
+[16:46:26] [duty felvesz fegyver]Nagato_Brasco Frakcio: 13 | 1 Db Deagle-t | Raktár: Volt: 69 Lett: 68
+[16:46:56] [/felvesz lõszer] Lorand_B_Hollywood felvette ezt: 1577db MP5 lõszer
+[16:47:04] [/felvesz fegyver] Lorand_B_Hollywood felvette ezt: MP5
+[16:47:12] [Átad][LSPD]Lorand_B_Hollywood átadott 150db MP5 lõszert neki: [LSPD]Sifu_D_Sorrentino
+[16:49:03] [Átad][LSPD]Sifu_D_Sorrentino átadott neki: [LSPD]Lorand_B_Hollywood, egy MP5-t
+[16:49:10] [Átad][LSPD]Sifu_D_Sorrentino átadott 239db MP5 lõszert neki: [LSPD]Lorand_B_Hollywood
+[16:49:29] [duty lead fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[16:49:29] [duty lead fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[16:49:29] [duty lead fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db MP5-t | Raktár Volt: 67 Lett: 68
+[16:49:29] [duty lead fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db Rifle-t | Raktár Volt: 309 Lett: 310
+[16:49:29] [duty lead fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db MP5-t | Raktár Volt: 68 Lett: 69
+[16:49:29] [duty lead fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db MP5-t | Raktár Volt: 69 Lett: 70
+[16:49:29] [duty lead lõszer]Lorand_B_Hollywood Frakcio: 1 | 1816 Db MP5-t | Raktár Volt: 0 Lett: 1816
+[16:49:29] [duty lead lõszer]Lorand_B_Hollywood Frakcio: 1 | 50 Db Rifle-t | Raktár Volt: 1125 Lett: 1175
+[16:49:29] [duty lead lõszer]Lorand_B_Hollywood Frakcio: 1 | 800 Db Spray-t | Raktár Volt: 375 Lett: 1175
+[16:49:32] [duty lead fegyver]Sifu_D_Sorrentino Frakcio: 1 | 1 Db Deagle-t | Raktár Volt: 65 Lett: 66
+[16:49:32] [duty lead fegyver]Sifu_D_Sorrentino Frakcio: 1 | 1 Db Spray-t | Raktár Volt: 65 Lett: 66
+[16:49:32] [duty lead fegyver]Sifu_D_Sorrentino Frakcio: 1 | 1 Db Stick-t | Raktár Volt: 65 Lett: 66
+[16:49:32] [duty lead lõszer]Sifu_D_Sorrentino Frakcio: 1 | 50 Db Deagle-t | Raktár Volt: 0 Lett: 50
+[16:49:32] [duty lead lõszer]Sifu_D_Sorrentino Frakcio: 1 | 400 Db Spray-t | Raktár Volt: -350 Lett: 50
+[16:49:34] [duty felvesz fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 70 Lett: 69
+[16:49:37] [duty felvesz fegyver]Lorand_B_Hollywood Frakcio: 1 | 1 Db Rifle-t | Raktár: Volt: 310 Lett: 309
+[16:49:43] [duty felvesz lõszer]Lorand_B_Hollywood Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 1816 Lett: 1666
+[16:49:46] [duty felvesz lõszer]Lorand_B_Hollywood Frakcio: 1 | 50 Db Rifle-t | Raktár: Volt: 1175 Lett: 1125
+[16:52:59] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[16:52:59] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[16:52:59] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[16:56:38] [duty lead fegyver]Patrick_Zecchin Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[16:56:38] [duty lead fegyver]Patrick_Zecchin Frakcio: 1 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[16:56:38] [duty lead lõszer]Patrick_Zecchin Frakcio: 1 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[16:56:45] [Weapon-Berak][USA]Nagato_Brasco berakott egy fegyvert a 593 rendszámú jármû 0 slotjába: M4-t
+[16:56:57] [Weapon-Berak][USA]Nagato_Brasco berakott 250db M4 lõszert a 593. rendszámú jármûbe
+[16:57:04] [duty lead fegyver]Nagato_Brasco Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[16:57:04] [duty lead fegyver]Nagato_Brasco Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[16:57:04] [duty lead fegyver]Nagato_Brasco Frakcio: 13 | 1 Db Deagle-t | Raktár Volt: 68 Lett: 69
+[16:57:04] [duty lead lõszer]Nagato_Brasco Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -331 Lett: 69
+[16:57:17] [duty felvesz fegyver]Nagato_Brasco Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 43 Lett: 42
+[16:57:20] [duty felvesz fegyver]Nagato_Brasco Frakcio: 13 | 1 Db Deagle-t | Raktár: Volt: 69 Lett: 68
+[16:57:22] [duty felvesz fegyver]Sifu_D_Sorrentino Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 66 Lett: 65
+[16:57:26] [duty felvesz lõszer]Nagato_Brasco Frakcio: 13 | 250 Db M4-t | Raktár: Volt: 9247 Lett: 8997
+[16:57:40] [duty felvesz lõszer]Sifu_D_Sorrentino Frakcio: 1 | 40 Db Deagle-t | Raktár: Volt: 50 Lett: 10
+[16:57:42] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 146 Lett: 145
+[16:57:47] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db M4-t | Raktár: Volt: 10118 Lett: 9918
+[16:57:58] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Deagle-t | Raktár: Volt: 157 Lett: 156
+[16:58:01] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 50 Db Deagle-t | Raktár: Volt: 146 Lett: 96
+[16:58:02] [Átad][USA]Nagato_Brasco átadott neki: [USA]Perez_Esteban, egy M4-t
+[16:58:11] [Átad][USA]Nagato_Brasco átadott 250db M4 lõszert neki: [USA]Perez_Esteban
+[16:58:13] [Átad][VLA]Dominic_Vincenzo átadott neki: [VLA]James_Creed, egy MP5-t
+[16:58:18] [Átad][VLA]Dominic_Vincenzo átadott 150db MP5 lõszert neki: [VLA]James_Creed
+[16:58:22] [Weapon-Kivesz][USA]Nagato_Brasco kivett egy fegyvert a 593. rendszámú jármû 0. slotjából: M4-t
+[16:58:28] [Weapon-Kivesz][USA]Nagato_Brasco kivett 250db M4 lõszert a 593. rendszámú jármûbõl
+[16:58:32] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 771 Db MP5-t | Raktár Volt: 1666 Lett: 2437
+[16:58:32] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 771 Db MP5-t | Raktár Volt: 1666 Lett: 2437
+[16:58:37] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[16:58:37] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[16:58:37] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 145 Lett: 146
+[16:58:37] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Deagle-t | Raktár Volt: 156 Lett: 157
+[16:58:37] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 50 Db Deagle-t | Raktár Volt: 96 Lett: 146
+[16:58:37] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db M4-t | Raktár Volt: 9918 Lett: 10118
+[16:58:37] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: 9718 Lett: 10118
+[16:58:39] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 2437 Lett: 2287
+[16:58:52] [duty felvesz fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db SilencedColt45-t | Raktár: Volt: 659 Lett: 658
+[16:58:53] [Átad][LSPD]Henrik_T_Scaletta átadott 150db MP5 lõszert neki: [LSPD]Freddie_B_Scaletta
+[16:58:58] [Átad][LSPD]Henrik_T_Scaletta átadott neki: [LSPD]Freddie_B_Scaletta, egy MP5-t
+[16:59:00] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 100 Db SilencedColt45-t | Raktár: Volt: 16283 Lett: 16183
+[16:59:16] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 2287 Lett: 2137
+[16:59:24] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 69 Lett: 68
+[17:08:03] [/eldob fegyver] Steve_Aoki eldobta ezt: MP5
+[17:08:09] [/eldob lõszer] Steve_Aoki eldobott 190db MP5 lõszert
+[17:08:23] [/felvesz fegyver] Steve_Aoki felvette ezt: MP5
+[17:08:29] [/felvesz lõszer] Steve_Aoki felvette ezt: 190db MP5 lõszer
+[17:12:04] [duty lead lõszer]Sifu_D_Sorrentino Frakcio: 1 | 1040 Db Deagle-t | Raktár Volt: 10 Lett: 1050
+[17:12:04] [duty lead lõszer]Sifu_D_Sorrentino Frakcio: 1 | 1040 Db Deagle-t | Raktár Volt: 10 Lett: 1050
+[17:13:56] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Sniper-t | Raktár: Volt: 67 Lett: 66
+[17:14:04] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 50 Db Sniper-t | Raktár: Volt: 313 Lett: 263
+[17:14:38] [duty lead fegyver]Joe_Gates Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[17:14:38] [duty lead fegyver]Joe_Gates Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[17:14:38] [duty lead fegyver]Joe_Gates Frakcio: 2 | 1 Db AK47-t | Raktár Volt: -1 Lett: 0
+[17:14:38] [duty lead lõszer]Joe_Gates Frakcio: 2 | 131 Db AK47-t | Raktár Volt: -131 Lett: 0
+[17:14:38] [duty lead lõszer]Joe_Gates Frakcio: 2 | 800 Db Spray-t | Raktár Volt: -800 Lett: 0
+[17:16:15] [duty felvesz lõszer]Sifu_D_Sorrentino Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 1050 Lett: 1000
+[17:20:54] [/eldob fegyver] Nagato_Brasco eldobta ezt: M4
+[17:20:58] [duty felvesz fegyver]Nagato_Brasco Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 42 Lett: 41
+[17:21:03] [/eldob fegyver] Nagato_Brasco eldobta ezt: M4
+[17:21:06] [duty felvesz fegyver]Nagato_Brasco Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 41 Lett: 40
+[17:21:10] [/eldob fegyver] Nagato_Brasco eldobta ezt: M4
+[17:21:15] [duty felvesz fegyver]Randy_Marsh Frakcio: 13 | 1 Db MP5-t | Raktár: Volt: 72 Lett: 71
+[17:21:26] [duty felvesz lõszer]Randy_Marsh Frakcio: 13 | 100 Db MP5-t | Raktár: Volt: 5389 Lett: 5289
+[17:21:26] [/felvesz fegyver] Patrick_Zecchin felvette ezt: M4
+[17:21:33] [/felvesz fegyver] Randy_Marsh felvette ezt: M4
+[17:21:37] [Átad][USA]Nagato_Brasco átadott 100db M4 lõszert neki: [USA]Randy_Marsh
+[17:21:39] [duty felvesz lõszer]Perez_Esteban Frakcio: 13 | 200 Db MP5-t | Raktár: Volt: 5289 Lett: 5089
+[17:21:43] [Átad][USA]Nagato_Brasco átadott 100db M4 lõszert neki: [USA]Patrick_Zecchin
+[17:21:49] [duty felvesz lõszer]Nagato_Brasco Frakcio: 13 | 150 Db M4-t | Raktár: Volt: 8997 Lett: 8847
+[17:21:59] [/felvesz fegyver] Nagato_Brasco felvette ezt: M4
+[17:28:14] [duty lead fegyver]Steve_J_Sorrentino Frakcio: 1 | 1 Db Virág-t | Raktár Volt: -1 Lett: 0
+[17:28:14] [duty lead fegyver]Steve_J_Sorrentino Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[17:28:14] [duty lead lõszer]Steve_J_Sorrentino Frakcio: 1 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[17:28:23] [duty felvesz fegyver]Steve_J_Sorrentino Frakcio: 1 | 1 Db M4-t | Raktár: Volt: 42 Lett: 41
+[17:28:27] [duty felvesz fegyver]Steve_J_Sorrentino Frakcio: 1 | 1 Db Sniper-t | Raktár: Volt: 10 Lett: 9
+[17:29:34] [Kivesz][LCN]Diego_Aciano kivett 200db MP5 lõszert 115. ház széfjébõl
+[17:30:38] [duty lead fegyver]Steve_J_Sorrentino Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[17:30:38] [duty lead fegyver]Steve_J_Sorrentino Frakcio: 1 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[17:30:38] [duty lead fegyver]Steve_J_Sorrentino Frakcio: 1 | 1 Db M4-t | Raktár Volt: 41 Lett: 42
+[17:30:38] [duty lead fegyver]Steve_J_Sorrentino Frakcio: 1 | 1 Db Sniper-t | Raktár Volt: 9 Lett: 10
+[17:30:38] [duty lead lõszer]Steve_J_Sorrentino Frakcio: 1 | 400 Db Spray-t | Raktár Volt: -390 Lett: 10
+[17:32:03] [Kivesz][VLA]Damien_Creed kivett egy fegyvert a 329. házból: Sniper-t
+[17:32:07] [Kivesz][VLA]Damien_Creed kivett egy fegyvert a 329. házból: M4-t
+[17:32:12] [Átad][VLA]Damien_Creed átadott neki: [VLA]Krisztofer_Vincenzo, egy Sniper-t
+[17:32:16] [Átad][VLA]Damien_Creed átadott neki: [VLA]Krisztofer_Vincenzo, egy M4-t
+[17:32:21] [Kivesz][VLA]Damien_Creed kivett egy fegyvert a 329. házból: M4-t
+[17:32:38] [Kivesz][VLA]Damien_Creed kivett 400db M4 lõszert 329. ház széfjébõl
+[17:32:52] [Kivesz][VLA]Damien_Creed kivett 30db Sniper lõszert 329. ház széfjébõl
+[17:33:07] [Átad][VLA]Damien_Creed átadott 200db M4 lõszert neki: [VLA]Krisztofer_Vincenzo
+[17:33:11] [Átad][VLA]Damien_Creed átadott 30db Sniper lõszert neki: [VLA]Krisztofer_Vincenzo
+[17:39:24] [/fegyverraktár berak fegyver 8] Tom_Zecchin kivett egy MP5 fegyvert a raktárból
+[17:39:29] [/fegyverraktár kivesz lõszer 8] Tom_Zecchin kivett 300db MP5 lõszert a raktárból
+[17:40:03] [/felvesz fegyver] Freddie_B_Scaletta felvette ezt: M4
+[17:40:09] [/felvesz lõszer] Freddie_B_Scaletta felvette ezt: 197db M4 lõszer
+[17:41:18] [Kivesz][Civil]Fekete_Erik kivett 30db MP5 lõszert 207. ház széfjébõl
+[17:41:22] [Kivesz][Civil]Fekete_Erik kivett egy fegyvert a 207. házból: MP5-t
+[17:46:57] [/felvesz lõszer] Henrik_T_Scaletta felvette ezt: 159db MP5 lõszer
+[17:47:12] [/felvesz fegyver] Henrik_T_Scaletta felvette ezt: Shotgun
+[17:47:17] [/felvesz lõszer] Henrik_T_Scaletta felvette ezt: 28db Shotgun lõszer
+[17:47:59] [duty felvesz fegyver]Jizzy_Mc_Deguchi Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 65 Lett: 64
+[17:48:14] [/felvesz fegyver] Markus_D_Zecchin felvette ezt: MP5
+[17:48:42] [duty felvesz fegyver]Michael_Faraday Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 64 Lett: 63
+[17:48:50] [duty felvesz lõszer]Michael_Faraday Frakcio: 1 | 50 Db Deagle-t | Raktár: Volt: 1000 Lett: 950
+[17:56:50] [Weapon-Kivesz][Civil]Algernon_Youngmay kivett egy fegyvert a 534. rendszámú jármû 4. slotjából: MP5-t
+[17:56:59] [Weapon-Berak][Civil]Algernon_Youngmay berakott egy fegyvert a 476 rendszámú jármû 0 slotjába: MP5-t
+[17:58:44] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 202 Lett: 203
+[17:58:44] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 143 Lett: 144
+[17:58:44] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: 143 Lett: 144
+[17:58:44] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Parachute-t | Raktár Volt: 1085 Lett: 1086
+[17:58:44] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Sniper-t | Raktár Volt: 66 Lett: 67
+[17:58:44] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 262 Db MP5-t | Raktár Volt: 4347 Lett: 4609
+[17:58:44] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 281 Db M4-t | Raktár Volt: 9218 Lett: 9499
+[17:58:44] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 50 Db Sniper-t | Raktár Volt: 263 Lett: 313
+[17:58:44] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 378 Db Spray-t | Raktár Volt: -65 Lett: 313
+[18:07:39] [duty felvesz fegyver]Gyorgy_Boyka Frakcio: 13 | 1 Db MP5-t | Raktár: Volt: 71 Lett: 70
+[18:07:51] [duty felvesz lõszer]Gyorgy_Boyka Frakcio: 13 | 100 Db MP5-t | Raktár: Volt: 5089 Lett: 4989
+[18:07:56] [duty felvesz fegyver]Gyorgy_Boyka Frakcio: 13 | 1 Db Rifle-t | Raktár: Volt: 39 Lett: 38
+[18:09:30] [Átad][Yakuza]Peter_D_Wayne átadott neki: [Yakuza]Thomas_Berzerk, egy MP5-t
+[18:09:55] [Átad][USA]Nagato_Brasco átadott neki: [VLA]Kevin_R_Sorrentino, egy M4-t
+[18:10:03] [Átad][USA]Nagato_Brasco átadott 1db M4 lõszert neki: [VLA]Kevin_R_Sorrentino
+[18:10:45] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[18:10:45] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[18:10:45] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[18:10:49] [duty felvesz fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 68 Lett: 67
+[18:10:55] [duty felvesz lõszer]Jin_Sorrentino Frakcio: 1 | 200 Db MP5-t | Raktár: Volt: 2137 Lett: 1937
+[18:11:06] [/fegyverraktár berak fegyver 8] Hugo_Sanchez kivett egy M4 fegyvert a raktárból
+[18:11:14] [/fegyverraktár kivesz lõszer 8] Hugo_Sanchez kivett 10db M4 lõszert a raktárból
+[18:11:52] [Átad][VLA]Kevin_R_Sorrentino átadott neki: [USA]Nagato_Brasco, egy M4-t
+[18:11:55] [Átad][VLA]Kevin_R_Sorrentino átadott 1db M4 lõszert neki: [USA]Nagato_Brasco
+[18:15:12] [duty lead fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[18:15:12] [duty lead fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[18:15:12] [duty lead fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db SilencedColt45-t | Raktár Volt: 658 Lett: 659
+[18:15:12] [duty lead lõszer]Freddie_B_Scaletta Frakcio: 1 | 99 Db SilencedColt45-t | Raktár Volt: 16183 Lett: 16282
+[18:15:12] [duty lead lõszer]Freddie_B_Scaletta Frakcio: 1 | 400 Db Spray-t | Raktár Volt: 15882 Lett: 16282
+[18:16:17] [duty felvesz fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 63 Lett: 62
+[18:16:25] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 100 Db Deagle-t | Raktár: Volt: 950 Lett: 850
+[18:16:27] [duty lead fegyver]Steve_J_Sorrentino Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[18:16:27] [duty lead fegyver]Steve_J_Sorrentino Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[18:16:27] [duty lead lõszer]Steve_J_Sorrentino Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[18:17:01] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 28 Db Shotgun-t | Raktár Volt: 10236 Lett: 10264
+[18:17:01] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 28 Db Shotgun-t | Raktár Volt: 10236 Lett: 10264
+[18:17:08] [duty lead lõszer]Sebastian_Lucas Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[18:17:15] [duty lead fegyver]Henrik_Karlson Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[18:17:15] [duty lead fegyver]Henrik_Karlson Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[18:17:15] [duty lead lõszer]Henrik_Karlson Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[18:17:17] [duty lead lõszer]Sebastian_Lucas Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[18:17:23] [duty lead lõszer]Sebastian_Lucas Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[18:17:30] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Shotgun-t | Raktár Volt: 537 Lett: 538
+[18:17:30] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Shotgun-t | Raktár Volt: 537 Lett: 538
+[18:17:36] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 279 Db MP5-t | Raktár Volt: 1937 Lett: 2216
+[18:17:36] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 279 Db MP5-t | Raktár Volt: 1937 Lett: 2216
+[18:17:40] [duty lead lõszer]Sebastian_Lucas Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[18:17:42] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 2216 Lett: 2066
+[18:17:57] [duty lead fegyver]Carl_Jackson Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[18:17:57] [duty lead fegyver]Carl_Jackson Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[18:17:57] [duty lead lõszer]Carl_Jackson Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[18:18:27] [Átad][LSPD]Stefan_D_Zecchin átadott neki: [LSPD]Freddie_B_Scaletta, egy MP5-t
+[18:18:31] [duty felvesz fegyver]Carl_Jackson Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 40 Lett: 39
+[18:18:31] [Átad][LSPD]Stefan_D_Zecchin átadott 200db MP5 lõszert neki: [LSPD]Freddie_B_Scaletta
+[18:18:35] [duty felvesz fegyver]Stefan_D_Zecchin Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 67 Lett: 66
+[18:21:02] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 144 Lett: 143
+[18:21:06] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár: Volt: 203 Lett: 202
+[18:21:10] [duty felvesz fegyver]Kevin_S_Tomasso Frakcio: 2 | 1 Db Deagle-t | Raktár: Volt: 157 Lett: 156
+[18:21:20] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 300 Db M4-t | Raktár: Volt: 9499 Lett: 9199
+[18:21:24] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 200 Db MP5-t | Raktár: Volt: 4609 Lett: 4409
+[18:21:27] [duty felvesz lõszer]Kevin_S_Tomasso Frakcio: 2 | 50 Db Deagle-t | Raktár: Volt: 146 Lett: 96
+[18:21:28] [/fegyverraktár berak fegyver 8] Hugo_Sanchez berakott egy M4 fegyvert a raktárba
+[18:21:30] [duty felvesz lõszer]Denny_Toretto Frakcio: 2 | 100 Db M4-t | Raktár: Volt: 9199 Lett: 9099
+[18:21:34] [/fegyverraktár berak lõszer 8] Hugo_Sanchez berakott 9db M4 lõszert a raktárba
+[18:22:10] [Kivesz][VLA]Milinte_Brasco kivett egy fegyvert a 528. házból: M4-t
+[18:22:13] [Kivesz][VLA]Milinte_Brasco kivett egy fegyvert a 528. házból: Sniper-t
+[18:22:17] [Kivesz][VLA]Milinte_Brasco kivett 307db M4 lõszert 528. ház széfjébõl
+[18:22:20] [Kivesz][VLA]Milinte_Brasco kivett 44db Sniper lõszert 528. ház széfjébõl
+[18:22:44] [duty felvesz lõszer]Nagato_Brasco Frakcio: 13 | 200 Db M4-t | Raktár: Volt: 8847 Lett: 8647
+[18:26:35] [/eldob fegyver] Milinte_Brasco eldobta ezt: M4
+[18:26:38] [/eldob fegyver] Milinte_Brasco eldobta ezt: Sniper
+[18:26:42] [/eldob lõszer] Milinte_Brasco eldobott 307db M4 lõszert
+[18:26:45] [/eldob lõszer] Milinte_Brasco eldobott 44db Sniper lõszert
+[18:28:13] [/felvesz fegyver] Victor_Jr_Zecchin felvette ezt: M4
+[18:28:18] [/felvesz fegyver] Victor_Jr_Zecchin felvette ezt: Sniper
+[18:28:34] [/fegyverraktár berak fegyver 8] Victor_Jr_Zecchin berakott egy M4 fegyvert a raktárba
+[18:29:30] [/felvesz lõszer] Ferenc_K_Zecchin felvette ezt: 30db Sniper lõszer
+[18:29:33] [/felvesz lõszer] Ferenc_K_Zecchin felvette ezt: 14db Sniper lõszer
+[18:29:38] [/felvesz lõszer] Ferenc_K_Zecchin felvette ezt: 307db M4 lõszer
+[18:30:24] [Átad][VLA]Victor_Jr_Zecchin átadott neki: [VLA]Ferenc_K_Zecchin, egy Sniper-t
+[18:31:10] [duty lead fegyver]Henrik_Sedin Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[18:31:10] [duty lead fegyver]Henrik_Sedin Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[18:31:10] [duty lead lõszer]Henrik_Sedin Frakcio: 13 | 800 Db Spray-t | Raktár Volt: -800 Lett: 0
+[18:34:19] [/fegyverraktár berak fegyver 8] Hugo_Sanchez kivett egy AK47 fegyvert a raktárból
+[18:34:23] [Weapon-Berak][Civil]Fekete_Erik berakott egy fegyvert a 549 rendszámú jármû 0 slotjába: MP5-t
+[18:34:23] [/eldob fegyver] Hugo_Sanchez eldobta ezt: AK47
+[18:34:28] [Weapon-Berak][Civil]Fekete_Erik berakott 18db MP5 lõszert a 549. rendszámú jármûbe
+[18:34:32] [/felvesz fegyver] Milinte_Brasco felvette ezt: AK47
+[18:34:56] [/fegyverraktár kivesz lõszer 8] Hugo_Sanchez kivett 241db AK47 lõszert a raktárból
+[18:35:05] [Átad][VLA]Hugo_Sanchez átadott 241db AK47 lõszert neki: [VLA]Milinte_Brasco
+[18:36:47] [/felvesz fegyver] Freddie_B_Scaletta felvette ezt: SilencedColt45
+[18:36:51] [/felvesz lõszer] Freddie_B_Scaletta felvette ezt: 93db SilencedColt45 lõszer
+[18:37:00] [/eldob fegyver] Antonn_Fedorov eldobta ezt: AK47
+[18:37:14] [/felvesz fegyver] Hugo_Sanchez felvette ezt: AK47
+[18:38:19] [Átad][VLA]Hugo_Sanchez átadott 33db AK47 lõszert neki: [VLA]Victor_Jr_Zecchin
+[18:38:25] [Átad][VLA]Hugo_Sanchez átadott neki: [VLA]Krisztofer_Vincenzo, egy AK47-t
+[18:40:26] [Weapon-Berak][LSPD]Jin_Sorrentino berakott egy fegyvert a 612 rendszámú jármû 0 slotjába: MP5-t
+[18:40:31] [Weapon-Berak][LSPD]Jin_Sorrentino berakott 200db MP5 lõszert a 612. rendszámú jármûbe
+[18:40:44] [Weapon-Berak][LSPD]Stefan_D_Zecchin berakott egy fegyvert a 612 rendszámú jármû 1 slotjába: M4-t
+[18:40:50] [Weapon-Berak][LSPD]Stefan_D_Zecchin berakott egy fegyvert a 612 rendszámú jármû 2 slotjába: Sniper-t
+[18:40:53] [Weapon-Berak][LSPD]Stefan_D_Zecchin berakott egy fegyvert a 612 rendszámú jármû 3 slotjába: MP5-t
+[18:41:06] [Átad][VLA]Victor_Jr_Zecchin átadott 250db AK47 lõszert neki: [VLA]Damien_Creed
+[18:43:54] [duty felvesz fegyver]Jim_Cortez Frakcio: 20 | 1 Db Deagle-t | Raktár: Volt: 322 Lett: 321
+[18:44:01] [/fegyverraktár berak fegyver 8] Hugo_Sanchez kivett egy M4 fegyvert a raktárból
+[18:44:09] [/fegyverraktár kivesz lõszer 8] Hugo_Sanchez kivett 33db M4 lõszert a raktárból
+[18:44:19] [duty felvesz lõszer]Jim_Cortez Frakcio: 20 | 200 Db Deagle-t | Raktár: Volt: 77083 Lett: 76883
+[18:44:21] [Átad][VLA]Hugo_Sanchez átadott neki: [VLA]Markus_D_Zecchin, egy M4-t
+[18:44:36] [Átad][VLA]Hugo_Sanchez átadott 33db M4 lõszert neki: [VLA]Markus_D_Zecchin
+[18:44:39] [duty felvesz fegyver]Jim_Cortez Frakcio: 20 | 1 Db MP5-t | Raktár: Volt: 54 Lett: 53
+[18:48:42] [/eldob lõszer] Tom_Mulex eldobott 120db MP5 lõszert
+[18:49:10] [/felvesz lõszer] Dave_S_Tomasso felvette ezt: 120db MP5 lõszer
+[18:49:58] [Weapon-Kivesz][Civil]Fekete_Erik kivett egy fegyvert a 549. rendszámú jármû 0. slotjából: MP5-t
+[18:50:02] [Weapon-Berak][VLA]Markus_D_Zecchin berakott egy fegyvert a 323 rendszámú jármû 0 slotjába: M4-t
+[18:50:04] [Weapon-Kivesz][Civil]Fekete_Erik kivett 18db MP5 lõszert a 549. rendszámú jármûbõl
+[18:50:06] [Weapon-Berak][VLA]Markus_D_Zecchin berakott 33db M4 lõszert a 323. rendszámú jármûbe
+[18:50:59] [Berak][Civil]Fekete_Erik berakott egy fegyvert a 207. házba: MP5-t
+[18:51:03] [Berak][Civil]Fekete_Erik berakott 18db MP5 lõszert 207. ház széfjébe
+[18:53:37] [Weapon-Kivesz][VLA]Markus_D_Zecchin kivett egy fegyvert a 323. rendszámú jármû 0. slotjából: M4-t
+[18:53:42] [Weapon-Kivesz][VLA]Markus_D_Zecchin kivett 33db M4 lõszert a 323. rendszámú jármûbõl
+[18:57:10] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[18:57:10] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db Parachute-t | Raktár Volt: 1086 Lett: 1087
+[18:57:10] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db M4-t | Raktár Volt: 143 Lett: 144
+[18:57:10] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db Stick-t | Raktár Volt: 143 Lett: 144
+[18:57:10] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 202 Lett: 203
+[18:57:10] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 203 Lett: 204
+[18:57:10] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db Deagle-t | Raktár Volt: 156 Lett: 157
+[18:57:10] [duty lead lõszer]Denny_Toretto Frakcio: 2 | 20 Db Deagle-t | Raktár Volt: 96 Lett: 116
+[18:57:10] [duty lead lõszer]Denny_Toretto Frakcio: 2 | 283 Db MP5-t | Raktár Volt: 4409 Lett: 4692
+[18:57:10] [duty lead lõszer]Denny_Toretto Frakcio: 2 | 256 Db M4-t | Raktár Volt: 9099 Lett: 9355
+[18:57:10] [duty lead lõszer]Denny_Toretto Frakcio: 2 | 7600 Db Spray-t | Raktár Volt: 1755 Lett: 9355
+[19:08:36] [Weapon-Kivesz][LSPD]Stefan_D_Zecchin kivett egy fegyvert a 612. rendszámú jármû 2. slotjából: Sniper-t
+[19:08:40] [Weapon-Kivesz][LSPD]Stefan_D_Zecchin kivett egy fegyvert a 612. rendszámú jármû 1. slotjából: M4-t
+[19:08:43] [Weapon-Kivesz][LSPD]Stefan_D_Zecchin kivett egy fegyvert a 612. rendszámú jármû 0. slotjából: MP5-t
+[19:10:02] [Weapon-Kivesz][LSPD]Jin_Sorrentino kivett egy fegyvert a 612. rendszámú jármû 3. slotjából: MP5-t
+[19:10:07] [Weapon-Kivesz][LSPD]Jin_Sorrentino kivett 200db MP5 lõszert a 612. rendszámú jármûbõl
+[19:12:07] [duty felvesz fegyver]John_Salivan Frakcio: 20 | 1 Db MP5-t | Raktár: Volt: 53 Lett: 52
+[19:12:28] [/eldob fegyver] Markus_D_Zecchin eldobta ezt: M4
+[19:12:41] [duty felvesz fegyver]John_Salivan Frakcio: 20 | 1 Db Rifle-t | Raktár: Volt: 7 Lett: 6
+[19:18:15] [/eldob fegyver] Krisztofer_Vincenzo eldobta ezt: AK47
+[19:21:50] [/felvesz fegyver] Damien_Creed felvette ezt: MP5
+[19:21:56] [/felvesz lõszer] Krisztofer_Vincenzo felvette ezt: 299db MP5 lõszer
+[19:22:04] [/felvesz lõszer] Krisztofer_Vincenzo felvette ezt: 174db AK47 lõszer
+[19:23:38] [Weapon-Berak][VLA]Damien_Creed berakott egy fegyvert a 64 rendszámú jármû 0 slotjába: AK47-t
+[19:23:57] [/felvesz fegyver] Damien_Creed felvette ezt: AK47
+[19:24:19] [Átad][VLA]Damien_Creed átadott neki: [LSPD]Henrik_T_Scaletta, egy AK47-t
+[19:24:23] [/felvesz fegyver] Damien_Creed felvette ezt: AK47
+[19:24:45] [Weapon-Berak][VLA]Damien_Creed berakott egy fegyvert a 64 rendszámú jármû 1 slotjába: AK47-t
+[19:24:48] [Weapon-Berak][VLA]Victor_Jr_Zecchin berakott egy fegyvert a 64 rendszámú jármû 2 slotjába: AK47-t
+[19:25:12] [/felvesz fegyver] Victor_Jr_Zecchin felvette ezt: M4
+[19:25:38] [duty felvesz fegyver]Pablo_Scaletta Frakcio: 20 | 1 Db Rifle-t | Raktár: Volt: 6 Lett: 5
+[19:25:56] [duty felvesz lõszer]Pablo_Scaletta Frakcio: 20 | 50 Db Rifle-t | Raktár: Volt: 788 Lett: 738
+[19:27:36] [/fegyverraktár berak fegyver 8] Hugo_Sanchez kivett egy M4 fegyvert a raktárból
+[19:29:40] [duty felvesz fegyver]Kevin_R_Sorrentino Frakcio: 13 | 1 Db MP5-t | Raktár: Volt: 70 Lett: 69
+[19:29:57] [duty felvesz lõszer]Kevin_R_Sorrentino Frakcio: 13 | 90 Db MP5-t | Raktár: Volt: 4989 Lett: 4899
+[19:31:04] [/felvesz fegyver] Lee_Fooster felvette ezt: MP5
+[19:31:12] [/felvesz lõszer] Lee_Fooster felvette ezt: 51db MP5 lõszer
+[19:33:06] [duty felvesz fegyver]Jin_Sorrentino Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 62 Lett: 61
+[19:33:13] [duty felvesz lõszer]Jin_Sorrentino Frakcio: 1 | 200 Db MP5-t | Raktár: Volt: 866 Lett: 666
+[19:35:34] [duty felvesz fegyver]Denny_Toretto Frakcio: 2 | 1 Db MP5-t | Raktár: Volt: 202 Lett: 201
+[19:35:37] [duty felvesz fegyver]Denny_Toretto Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 142 Lett: 141
+[19:35:42] [duty felvesz lõszer]Denny_Toretto Frakcio: 2 | 200 Db MP5-t | Raktár: Volt: 4092 Lett: 3892
+[19:35:47] [duty felvesz lõszer]Denny_Toretto Frakcio: 2 | 200 Db M4-t | Raktár: Volt: 8755 Lett: 8555
+[19:35:49] [Weapon-Kivesz][VLA]Antonn_Fedorov kivett egy fegyvert a 64. rendszámú jármû 0. slotjából: AK47-t
+[19:36:23] [/fegyverraktár berak fegyver 8] Antonn_Fedorov berakott egy AK47 fegyvert a raktárba
+[19:36:29] [/fegyverraktár berak fegyver 8] Victor_Jr_Zecchin berakott egy M4 fegyvert a raktárba
+[19:36:30] [Weapon-Kivesz][VLA]Antonn_Fedorov kivett egy fegyvert a 64. rendszámú jármû 1. slotjából: AK47-t
+[19:36:42] [Weapon-Kivesz][VLA]Victor_Jr_Zecchin kivett egy fegyvert a 64. rendszámú jármû 2. slotjából: AK47-t
+[19:36:43] [/fegyverraktár berak fegyver 8] Antonn_Fedorov berakott egy AK47 fegyvert a raktárba
+[19:38:34] [Átad][VLA]Victor_Jr_Zecchin átadott neki: [VLA]Ferenc_K_Zecchin, egy MP5-t
+[19:38:40] [Átad][VLA]Victor_Jr_Zecchin átadott 250db MP5 lõszert neki: [VLA]Ferenc_K_Zecchin
+[19:40:22] [Berak][VLA]Victor_Jr_Zecchin berakott egy fegyvert a 70. házba: Sniper-t
+[19:40:23] [duty felvesz fegyver]Horvath_Adrian Frakcio: 20 | 1 Db MP5-t | Raktár: Volt: 52 Lett: 51
+[19:40:25] [Berak][VLA]Victor_Jr_Zecchin berakott egy fegyvert a 70. házba: AK47-t
+[19:40:26] [duty felvesz fegyver]Horvath_Adrian Frakcio: 20 | 1 Db Deagle-t | Raktár: Volt: 321 Lett: 320
+[19:40:31] [Berak][VLA]Krisztofer_Vincenzo berakott egy fegyvert a 55. házba: M4-t
+[19:40:47] [duty felvesz lõszer]Horvath_Adrian Frakcio: 20 | 10 Db MP5-t | Raktár: Volt: 37 Lett: 27
+[19:40:51] [duty felvesz lõszer]Horvath_Adrian Frakcio: 20 | 10 Db MP5-t | Raktár: Volt: 27 Lett: 17
+[19:40:53] [Átad][VLA]Krisztofer_Vincenzo átadott neki: [VLA]Damien_Creed, egy Combat-t
+[19:40:54] [duty felvesz lõszer]Horvath_Adrian Frakcio: 20 | 10 Db MP5-t | Raktár: Volt: 17 Lett: 7
+[19:40:55] [Berak][VLA]Victor_Jr_Zecchin berakott 290db AK47 lõszert 70. ház széfjébe
+[19:40:59] [/fegyverraktár berak lõszer 8] Ferenc_K_Zecchin berakott 307db M4 lõszert a raktárba
+[19:41:01] [Átad][VLA]Krisztofer_Vincenzo átadott 256db Combat lõszert neki: [VLA]Damien_Creed
+[19:41:01] [Berak][VLA]Victor_Jr_Zecchin berakott 189db M4 lõszert 70. ház széfjébe
+[19:41:09] [Berak][VLA]Victor_Jr_Zecchin berakott 15db Sniper lõszert 70. ház széfjébe
+[19:41:15] [Berak][VLA]Krisztofer_Vincenzo berakott 144db M4 lõszert 55. ház széfjébe
+[19:41:15] [duty felvesz lõszer]Horvath_Adrian Frakcio: 20 | 50 Db Deagle-t | Raktár: Volt: 76883 Lett: 76833
+[19:41:38] [Berak][VLA]Krisztofer_Vincenzo berakott 406db AK47 lõszert 55. ház széfjébe
+[19:46:02] [Berak][VLA]Damien_Creed berakott egy fegyvert a 329. házba: Combat-t
+[19:46:05] [Berak][VLA]Damien_Creed berakott egy fegyvert a 329. házba: AK47-t
+[19:46:14] [Berak][VLA]Damien_Creed berakott 249db AK47 lõszert 329. ház széfjébe
+[19:46:20] [Berak][VLA]Damien_Creed berakott 256db Combat lõszert 329. ház széfjébe
+[19:48:16] [Átad][VLA]Ferenc_K_Zecchin átadott neki: [VLA]Markus_D_Zecchin, egy Sniper-t
+[19:48:25] [Átad][VLA]Ferenc_K_Zecchin átadott 41db Sniper lõszert neki: [VLA]Markus_D_Zecchin
+[19:49:33] [duty felvesz fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 60 Lett: 59
+[19:49:38] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 100 Db Deagle-t | Raktár: Volt: 300 Lett: 200
+[19:54:26] [duty lead fegyver]Michael_Faraday Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[19:54:26] [duty lead fegyver]Michael_Faraday Frakcio: 1 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[19:54:26] [duty lead fegyver]Michael_Faraday Frakcio: 1 | 1 Db Deagle-t | Raktár Volt: 59 Lett: 60
+[19:54:26] [duty lead lõszer]Michael_Faraday Frakcio: 1 | 50 Db Deagle-t | Raktár Volt: 200 Lett: 250
+[19:54:26] [duty lead lõszer]Michael_Faraday Frakcio: 1 | 400 Db Spray-t | Raktár Volt: -150 Lett: 250
+[19:57:48] [duty lead fegyver]Pablo_Scaletta Frakcio: 20 | 1 Db MP5-t | Raktár Volt: 51 Lett: 52
+[19:57:48] [duty lead fegyver]Pablo_Scaletta Frakcio: 20 | 1 Db Spray-t | Raktár Volt: 51 Lett: 52
+[19:57:48] [duty lead fegyver]Pablo_Scaletta Frakcio: 20 | 1 Db Stick-t | Raktár Volt: 51 Lett: 52
+[19:57:48] [duty lead fegyver]Pablo_Scaletta Frakcio: 20 | 1 Db Rifle-t | Raktár Volt: 5 Lett: 6
+[19:57:48] [duty lead lõszer]Pablo_Scaletta Frakcio: 20 | 192 Db MP5-t | Raktár Volt: 7 Lett: 199
+[19:57:48] [duty lead lõszer]Pablo_Scaletta Frakcio: 20 | 50 Db Rifle-t | Raktár Volt: 738 Lett: 788
+[19:57:48] [duty lead lõszer]Pablo_Scaletta Frakcio: 20 | 400 Db Spray-t | Raktár Volt: 388 Lett: 788
+[19:57:51] [duty lead fegyver]Henrik_Sedin Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[19:57:51] [duty lead fegyver]Henrik_Sedin Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[19:57:51] [duty lead lõszer]Henrik_Sedin Frakcio: 13 | 246 Db Spray-t | Raktár Volt: -246 Lett: 0
+[19:58:05] [duty felvesz fegyver]Henrik_Sedin Frakcio: 13 | 1 Db MP5-t | Raktár: Volt: 69 Lett: 68
+[19:58:30] [duty felvesz fegyver]Henrik_Sedin Frakcio: 13 | 1 Db Rifle-t | Raktár: Volt: 38 Lett: 37
+[20:01:10] [duty felvesz fegyver]Henrik_Sedin Frakcio: 13 | 1 Db Deagle-t | Raktár: Volt: 68 Lett: 67
+[20:01:30] [duty felvesz lõszer]Henrik_Sedin Frakcio: 13 | 90 Db MP5-t | Raktár: Volt: 4899 Lett: 4809
+[20:02:08] [Átad][VLA]Markus_D_Zecchin átadott neki: [VLA]Ferenc_K_Zecchin, egy Sniper-t
+[20:02:16] [Átad][VLA]Markus_D_Zecchin átadott 41db Sniper lõszert neki: [VLA]Ferenc_K_Zecchin
+[20:04:29] [Weapon-Berak][LSPD]Jin_Sorrentino berakott egy fegyvert a 521 rendszámú jármû 0 slotjába: MP5-t
+[20:04:41] [Weapon-Berak][LSPD]Jin_Sorrentino berakott 200db MP5 lõszert a 521. rendszámú jármûbe
+[20:04:49] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott egy fegyvert a 521 rendszámú jármû 1 slotjába: MP5-t
+[20:04:53] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott egy fegyvert a 521 rendszámú jármû 2 slotjába: Rifle-t
+[20:04:55] [duty lead fegyver]Robert_Scaletta Frakcio: 1 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:04:55] [duty lead fegyver]Robert_Scaletta Frakcio: 1 | 1 Db Parachute-t | Raktár Volt: 1041 Lett: 1042
+[20:04:55] [duty lead fegyver]Robert_Scaletta Frakcio: 1 | 1 Db MP5-t | Raktár Volt: 61 Lett: 62
+[20:04:55] [duty lead fegyver]Robert_Scaletta Frakcio: 1 | 1 Db Rifle-t | Raktár Volt: 309 Lett: 310
+[20:04:55] [duty lead fegyver]Robert_Scaletta Frakcio: 1 | 1 Db Deagle-t | Raktár Volt: 60 Lett: 61
+[20:04:55] [duty lead fegyver]Robert_Scaletta Frakcio: 1 | 1 Db Stick-t | Raktár Volt: 60 Lett: 61
+[20:04:55] [duty lead lõszer]Robert_Scaletta Frakcio: 1 | 100 Db Deagle-t | Raktár Volt: 250 Lett: 350
+[20:04:55] [duty lead lõszer]Robert_Scaletta Frakcio: 1 | 200 Db MP5-t | Raktár Volt: 666 Lett: 866
+[20:04:55] [duty lead lõszer]Robert_Scaletta Frakcio: 1 | 100 Db Rifle-t | Raktár Volt: 1125 Lett: 1225
+[20:04:55] [duty lead lõszer]Robert_Scaletta Frakcio: 1 | 1200 Db Spray-t | Raktár Volt: 25 Lett: 1225
+[20:04:56] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott egy fegyvert a 521 rendszámú jármû 3 slotjába: Deagle-t
+[20:05:01] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott 200db MP5 lõszert a 521. rendszámú jármûbe
+[20:05:14] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott 20db Rifle lõszert a 521. rendszámú jármûbe
+[20:05:20] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott 100db Deagle lõszert a 521. rendszámú jármûbe
+[20:05:24] [Weapon-Berak][LSPD]Freddie_B_Scaletta berakott 50db MP5 lõszert a 521. rendszámú jármûbe
+[20:13:38] [duty felvesz lõszer]Toth_Martin Frakcio: 1 | 20 Db Deagle-t | Raktár: Volt: 350 Lett: 330
+[20:16:04] [duty felvesz fegyver]Kevin_R_Sorrentino Frakcio: 13 | 1 Db Deagle-t | Raktár: Volt: 67 Lett: 66
+[20:16:17] [duty felvesz fegyver]Kevin_R_Sorrentino Frakcio: 13 | 1 Db Rifle-t | Raktár: Volt: 37 Lett: 36
+[20:19:23] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:19:23] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:19:23] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 201 Lett: 202
+[20:19:23] [duty lead fegyver]Denny_Toretto Frakcio: 2 | 1 Db M4-t | Raktár Volt: 141 Lett: 142
+[20:19:23] [duty lead lõszer]Denny_Toretto Frakcio: 2 | 200 Db MP5-t | Raktár Volt: 3892 Lett: 4092
+[20:19:23] [duty lead lõszer]Denny_Toretto Frakcio: 2 | 200 Db M4-t | Raktár Volt: 8555 Lett: 8755
+[20:19:23] [duty lead lõszer]Denny_Toretto Frakcio: 2 | 400 Db Spray-t | Raktár Volt: 8355 Lett: 8755
+[20:19:44] [Weapon-Kivesz][LSPD]Jin_Sorrentino kivett egy fegyvert a 521. rendszámú jármû 0. slotjából: MP5-t
+[20:19:49] [Weapon-Kivesz][LSPD]Jin_Sorrentino kivett 200db MP5 lõszert a 521. rendszámú jármûbõl
+[20:20:02] [Weapon-Kivesz][LSPD]Freddie_B_Scaletta kivett egy fegyvert a 521. rendszámú jármû 1. slotjából: MP5-t
+[20:20:06] [Weapon-Kivesz][LSPD]Freddie_B_Scaletta kivett egy fegyvert a 521. rendszámú jármû 3. slotjából: Deagle-t
+[20:20:08] [Weapon-Kivesz][LSPD]Freddie_B_Scaletta kivett egy fegyvert a 521. rendszámú jármû 2. slotjából: Rifle-t
+[20:20:13] [Weapon-Kivesz][LSPD]Freddie_B_Scaletta kivett 250db MP5 lõszert a 521. rendszámú jármûbõl
+[20:20:19] [Weapon-Kivesz][LSPD]Freddie_B_Scaletta kivett 20db Rifle lõszert a 521. rendszámú jármûbõl
+[20:20:27] [Weapon-Kivesz][LSPD]Freddie_B_Scaletta kivett 100db Deagle lõszert a 521. rendszámú jármûbõl
+[20:20:29] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db M4-t | Raktár: Volt: 42 Lett: 41
+[20:20:33] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 62 Lett: 61
+[20:20:36] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Sniper-t | Raktár: Volt: 10 Lett: 9
+[20:20:41] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db M4-t | Raktár Volt: 41 Lett: 42
+[20:20:41] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db M4-t | Raktár Volt: 41 Lett: 42
+[20:20:55] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Sniper-t | Raktár Volt: 9 Lett: 10
+[20:20:55] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Sniper-t | Raktár Volt: 9 Lett: 10
+[20:21:05] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 100 Db Rifle-t | Raktár: Volt: 1225 Lett: 1125
+[20:21:10] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Rifle-t | Raktár: Volt: 310 Lett: 309
+[20:21:19] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 866 Lett: 716
+[20:21:23] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 50 Db MP5-t | Raktár: Volt: 716 Lett: 666
+[20:23:38] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:23:38] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:23:38] [duty lead lõszer]Tom_Chaplin Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[20:26:42] [duty lead fegyver]Henrik_Sedin Frakcio: 13 | 1 Db Rifle-t | Raktár Volt: 36 Lett: 37
+[20:26:42] [duty lead fegyver]Henrik_Sedin Frakcio: 13 | 1 Db Rifle-t | Raktár Volt: 36 Lett: 37
+[20:26:46] [duty felvesz fegyver]Henrik_Sedin Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 39 Lett: 38
+[20:27:08] [duty felvesz lõszer]Henrik_Sedin Frakcio: 13 | 100 Db M4-t | Raktár: Volt: 8647 Lett: 8547
+[20:33:43] [/felvesz fegyver] Hugo_Sanchez felvette ezt: MP5
+[20:34:07] [/felvesz lõszer] Hugo_Sanchez felvette ezt: 300db MP5 lõszer
+[20:34:13] [duty felvesz fegyver]Costa_Miles Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 38 Lett: 37
+[20:34:22] [duty felvesz lõszer]Costa_Miles Frakcio: 13 | 100 Db M4-t | Raktár: Volt: 8547 Lett: 8447
+[20:35:17] [duty felvesz fegyver]Toth_Martin Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 61 Lett: 60
+[20:35:28] [duty felvesz lõszer]Toth_Martin Frakcio: 1 | 25 Db Deagle-t | Raktár: Volt: 330 Lett: 305
+[20:37:21] [duty lead fegyver]Vin_Alpacino Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:37:21] [duty lead fegyver]Vin_Alpacino Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:37:21] [duty lead lõszer]Vin_Alpacino Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[20:37:28] [duty felvesz fegyver]Vin_Alpacino Frakcio: 20 | 1 Db MP5-t | Raktár: Volt: 52 Lett: 51
+[20:37:32] [duty felvesz fegyver]Vin_Alpacino Frakcio: 20 | 1 Db Rifle-t | Raktár: Volt: 6 Lett: 5
+[20:37:35] [duty felvesz fegyver]Vin_Alpacino Frakcio: 20 | 1 Db Deagle-t | Raktár: Volt: 320 Lett: 319
+[20:37:54] [duty felvesz lõszer]Vin_Alpacino Frakcio: 20 | 150 Db MP5-t | Raktár: Volt: 199 Lett: 49
+[20:37:59] [duty felvesz lõszer]Vin_Alpacino Frakcio: 20 | 20 Db Deagle-t | Raktár: Volt: 76832 Lett: 76812
+[20:38:03] [duty felvesz lõszer]Vin_Alpacino Frakcio: 20 | 20 Db Rifle-t | Raktár: Volt: 788 Lett: 768
+[20:38:10] [duty felvesz lõszer]Vin_Alpacino Frakcio: 20 | 20 Db Rifle-t | Raktár: Volt: 768 Lett: 748
+[20:38:26] [duty felvesz fegyver]Tom_Chaplin Frakcio: 20 | 1 Db MP5-t | Raktár: Volt: 51 Lett: 50
+[20:38:42] [duty felvesz fegyver]Tom_Chaplin Frakcio: 20 | 1 Db MP5-t | Raktár: Volt: 50 Lett: 49
+[20:39:48] [Átad][VLA]Michael_T_Morales átadott neki: [VLA]Hugo_Sanchez, egy Rifle-t
+[20:39:53] [Átad][VLA]Michael_T_Morales átadott 50db Rifle lõszert neki: [VLA]Hugo_Sanchez
+[20:39:56] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db MP5-t | Raktár Volt: 49 Lett: 50
+[20:39:56] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db MP5-t | Raktár Volt: 49 Lett: 50
+[20:40:07] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db MP5-t | Raktár Volt: 50 Lett: 51
+[20:40:07] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db MP5-t | Raktár Volt: 50 Lett: 51
+[20:40:20] [duty felvesz fegyver]Tom_Chaplin Frakcio: 20 | 1 Db Deagle-t | Raktár: Volt: 319 Lett: 318
+[20:40:38] [duty felvesz lõszer]Tom_Chaplin Frakcio: 20 | 200 Db Deagle-t | Raktár: Volt: 76812 Lett: 76612
+[20:40:55] [duty lead fegyver]Vin_Alpacino Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:40:55] [duty lead fegyver]Vin_Alpacino Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:40:55] [duty lead fegyver]Vin_Alpacino Frakcio: 20 | 1 Db MP5-t | Raktár Volt: 51 Lett: 52
+[20:40:55] [duty lead fegyver]Vin_Alpacino Frakcio: 20 | 1 Db Rifle-t | Raktár Volt: 5 Lett: 6
+[20:40:55] [duty lead fegyver]Vin_Alpacino Frakcio: 20 | 1 Db Deagle-t | Raktár Volt: 318 Lett: 319
+[20:40:55] [duty lead lõszer]Vin_Alpacino Frakcio: 20 | 20 Db Deagle-t | Raktár Volt: 76612 Lett: 76632
+[20:40:55] [duty lead lõszer]Vin_Alpacino Frakcio: 20 | 150 Db MP5-t | Raktár Volt: 49 Lett: 199
+[20:40:55] [duty lead lõszer]Vin_Alpacino Frakcio: 20 | 40 Db Rifle-t | Raktár Volt: 748 Lett: 788
+[20:40:55] [duty lead lõszer]Vin_Alpacino Frakcio: 20 | 400 Db Spray-t | Raktár Volt: 388 Lett: 788
+[20:40:58] [duty lead fegyver]Joe_Gates Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:40:58] [duty lead fegyver]Joe_Gates Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:40:58] [duty lead lõszer]Joe_Gates Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[20:41:05] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:41:05] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:41:05] [duty lead lõszer]Ryan_Lennox Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[20:41:13] [duty lead fegyver]Horvath_Adrian Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:41:13] [duty lead fegyver]Horvath_Adrian Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:41:13] [duty lead fegyver]Horvath_Adrian Frakcio: 20 | 1 Db MP5-t | Raktár Volt: 52 Lett: 53
+[20:41:13] [duty lead fegyver]Horvath_Adrian Frakcio: 20 | 1 Db Deagle-t | Raktár Volt: 319 Lett: 320
+[20:41:13] [duty lead lõszer]Horvath_Adrian Frakcio: 20 | 50 Db Deagle-t | Raktár Volt: 76632 Lett: 76682
+[20:41:13] [duty lead lõszer]Horvath_Adrian Frakcio: 20 | 30 Db MP5-t | Raktár Volt: 199 Lett: 229
+[20:41:13] [duty lead lõszer]Horvath_Adrian Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -171 Lett: 229
+[20:41:58] [duty lead fegyver]Joe_Gates Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:41:58] [duty lead fegyver]Joe_Gates Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:41:58] [duty lead lõszer]Joe_Gates Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[20:46:30] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[20:46:30] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[20:46:30] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db Deagle-t | Raktár Volt: 320 Lett: 321
+[20:46:30] [duty lead lõszer]Tom_Chaplin Frakcio: 20 | 200 Db Deagle-t | Raktár Volt: 76682 Lett: 76882
+[20:46:30] [duty lead lõszer]Tom_Chaplin Frakcio: 20 | 400 Db Spray-t | Raktár Volt: 76482 Lett: 76882
+[20:46:37] [duty felvesz fegyver]Joe_Gates Frakcio: 20 | 1 Db Deagle-t | Raktár: Volt: 321 Lett: 320
+[20:46:40] [duty felvesz fegyver]Costa_Miles Frakcio: 13 | 1 Db M4-t | Raktár: Volt: 37 Lett: 36
+[20:46:43] [duty felvesz lõszer]Joe_Gates Frakcio: 20 | 50 Db Deagle-t | Raktár: Volt: 76882 Lett: 76832
+[20:46:46] [duty felvesz lõszer]Costa_Miles Frakcio: 13 | 100 Db M4-t | Raktár: Volt: 8447 Lett: 8347
+[20:47:18] [duty felvesz fegyver]Brandon_Toretto Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 60 Lett: 59
+[20:47:27] [duty felvesz lõszer]Brandon_Toretto Frakcio: 1 | 40 Db Deagle-t | Raktár: Volt: 305 Lett: 265
+[20:47:33] [duty felvesz fegyver]Brandon_Toretto Frakcio: 1 | 1 Db Sniper-t | Raktár: Volt: 10 Lett: 9
+[20:49:57] [Átad][VLA]Krisztofer_Vincenzo átadott 200db MP5 lõszert neki: [VLA]Antonn_Fedorov
+[20:50:54] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Rifle-t | Raktár: Volt: 309 Lett: 308
+[20:50:58] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 61 Lett: 60
+[20:51:04] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 200 Db MP5-t | Raktár: Volt: 666 Lett: 466
+[20:51:09] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 50 Db Rifle-t | Raktár: Volt: 1125 Lett: 1075
+[21:01:50] [duty felvesz fegyver]Gyorgy_Boyka Frakcio: 13 | 1 Db MP5-t | Raktár: Volt: 68 Lett: 67
+[21:01:55] [duty felvesz fegyver]Gyorgy_Boyka Frakcio: 13 | 1 Db Deagle-t | Raktár: Volt: 66 Lett: 65
+[21:02:24] [duty felvesz lõszer]Gyorgy_Boyka Frakcio: 13 | 100 Db MP5-t | Raktár: Volt: 4809 Lett: 4709
+[21:09:47] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[21:09:47] [duty lead fegyver]Tom_Chaplin Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[21:09:47] [duty lead lõszer]Tom_Chaplin Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[21:09:57] [duty lead fegyver]Pablo_Scaletta Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[21:09:57] [duty lead fegyver]Pablo_Scaletta Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[21:09:57] [duty lead lõszer]Pablo_Scaletta Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[21:10:06] [duty lead fegyver]Horvath_Adrian Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[21:10:06] [duty lead fegyver]Horvath_Adrian Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[21:10:06] [duty lead lõszer]Horvath_Adrian Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[21:18:51] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár: Volt: 141 Lett: 140
+[21:18:55] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db M4-t | Raktár: Volt: 8455 Lett: 8255
+[21:19:09] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[21:19:09] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[21:19:09] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 140 Lett: 141
+[21:19:09] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 200 Db M4-t | Raktár Volt: 8255 Lett: 8455
+[21:19:09] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: 8055 Lett: 8455
+[21:19:58] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db MP5-t | Raktár Volt: 200 Lett: 201
+[21:19:58] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db M4-t | Raktár Volt: 140 Lett: 141
+[21:19:58] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Spray-t | Raktár Volt: 140 Lett: 141
+[21:19:58] [duty lead fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Parachute-t | Raktár Volt: 1087 Lett: 1088
+[21:19:58] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 300 Db MP5-t | Raktár Volt: 3492 Lett: 3792
+[21:19:58] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 300 Db M4-t | Raktár Volt: 8155 Lett: 8455
+[21:19:58] [duty lead lõszer]Ralf_S_Tomasso Frakcio: 2 | 400 Db Spray-t | Raktár Volt: 8055 Lett: 8455
+[21:20:14] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Deagle-t | Raktár: Volt: 157 Lett: 156
+[21:20:18] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 50 Db Deagle-t | Raktár: Volt: 116 Lett: 66
+[21:20:50] [duty felvesz fegyver]Ralf_S_Tomasso Frakcio: 2 | 1 Db Deagle-t | Raktár: Volt: 157 Lett: 156
+[21:20:54] [duty felvesz lõszer]Ralf_S_Tomasso Frakcio: 2 | 50 Db Deagle-t | Raktár: Volt: 116 Lett: 66
+[21:35:47] [/fegyverraktár berak fegyver 8] Hugo_Sanchez kivett egy Deagle fegyvert a raktárból
+[21:35:50] [/fegyverraktár berak fegyver 8] Hugo_Sanchez kivett egy Shotgun fegyvert a raktárból
+[21:35:54] [/fegyverraktár berak fegyver 8] Hugo_Sanchez berakott egy M4 fegyvert a raktárba
+[21:35:58] [/fegyverraktár berak fegyver 8] Hugo_Sanchez berakott egy Rifle fegyvert a raktárba
+[21:36:14] [/eldob fegyver] Hugo_Sanchez eldobta ezt: Shotgun
+[21:36:27] [/fegyverraktár berak lõszer 8] Hugo_Sanchez berakott 297db M4 lõszert a raktárba
+[21:36:39] [/fegyverraktár berak lõszer 8] Hugo_Sanchez berakott 45db Rifle lõszert a raktárba
+[21:37:02] [/eldob fegyver] Hugo_Sanchez eldobta ezt: MP5
+[21:37:14] [/fegyverraktár berak lõszer 8] Hugo_Sanchez berakott 300db MP5 lõszert a raktárba
+[21:37:21] [/fegyverraktár kivesz lõszer 8] Hugo_Sanchez kivett 20db Deagle lõszert a raktárból
+[21:43:18] [/felvesz fegyver] Michael_T_Morales felvette ezt: Shotgun
+[21:49:09] [/eldob fegyver] Krist_Roscoe eldobta ezt: MP5
+[21:50:18] [/felvesz fegyver] Krist_Roscoe felvette ezt: MP5
+[21:50:54] [/felvesz fegyver] Sidney_Tribiani felvette ezt: MP5
+[21:51:01] [/felvesz lõszer] Sidney_Tribiani felvette ezt: 300db MP5 lõszer
+[21:51:34] [/felvesz fegyver] Ralf_S_Tomasso felvette ezt: MP5
+[21:51:41] [/felvesz lõszer] Ralf_S_Tomasso felvette ezt: 212db MP5 lõszer
+[21:54:55] [duty lead fegyver]Perez_Esteban Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[21:54:55] [duty lead fegyver]Perez_Esteban Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[21:54:55] [duty lead fegyver]Perez_Esteban Frakcio: 13 | 1 Db MP5-t | Raktár Volt: 67 Lett: 68
+[21:54:55] [duty lead fegyver]Perez_Esteban Frakcio: 13 | 1 Db M4-t | Raktár Volt: 36 Lett: 37
+[21:54:55] [duty lead lõszer]Perez_Esteban Frakcio: 13 | 200 Db MP5-t | Raktár Volt: 4709 Lett: 4909
+[21:54:55] [duty lead lõszer]Perez_Esteban Frakcio: 13 | 244 Db M4-t | Raktár Volt: 8347 Lett: 8591
+[21:54:55] [duty lead lõszer]Perez_Esteban Frakcio: 13 | 800 Db Spray-t | Raktár Volt: 7791 Lett: 8591
+[21:55:22] [duty lead fegyver]Costa_Miles Frakcio: 13 | 1 Db M4-t | Raktár Volt: 37 Lett: 38
+[21:55:22] [duty lead fegyver]Costa_Miles Frakcio: 13 | 1 Db M4-t | Raktár Volt: 37 Lett: 38
+[21:55:27] [duty lead lõszer]Costa_Miles Frakcio: 13 | 100 Db M4-t | Raktár Volt: 8591 Lett: 8691
+[21:55:27] [duty lead lõszer]Costa_Miles Frakcio: 13 | 100 Db M4-t | Raktár Volt: 8591 Lett: 8691
+[22:13:26] [Weapon-Kivesz][LCN]Dom_Aciano kivett egy fegyvert a 28. rendszámú jármû 0. slotjából: Shotgun-t
+[22:13:46] [Weapon-Kivesz][LCN]Dom_Aciano kivett 36db Shotgun lõszert a 28. rendszámú jármûbõl
+[22:16:52] [/fegyverraktár berak fegyver 8] Hugo_Sanchez kivett egy M4 fegyvert a raktárból
+[22:17:28] [/fegyverraktár berak fegyver 8] Hugo_Sanchez berakott egy M4 fegyvert a raktárba
+[22:19:22] [Berak][LCN]Dom_Aciano berakott egy fegyvert a 42. házba: Shotgun-t
+[22:19:31] [Berak][LCN]Dom_Aciano berakott 36db Shotgun lõszert 42. ház széfjébe
+[22:29:25] [/eldob lõszer] Krisztofer_Vincenzo eldobott 399db MP5 lõszert
+[22:29:35] [/felvesz lõszer] Krisztofer_Vincenzo felvette ezt: 399db MP5 lõszer
+[22:29:45] [/eldob fegyver] Krisztofer_Vincenzo eldobta ezt: Rifle
+[22:29:48] [Weapon-Berak][VLA]Yamato_Bosco berakott egy fegyvert a 360 rendszámú jármû 0 slotjába: M4-t
+[22:29:52] [Weapon-Berak][VLA]Yamato_Bosco berakott egy fegyvert a 360 rendszámú jármû 1 slotjába: Sniper-t
+[22:31:55] [Weapon-Kivesz][VLA]Yamato_Bosco kivett egy fegyvert a 360. rendszámú jármû 0. slotjából: M4-t
+[22:31:58] [Weapon-Kivesz][VLA]Yamato_Bosco kivett egy fegyvert a 360. rendszámú jármû 1. slotjából: Sniper-t
+[22:32:19] [Berak][VLA]Krisztofer_Vincenzo berakott egy fegyvert a 55. házba: M4-t
+[22:32:30] [Kivesz][VLA]Krisztofer_Vincenzo kivett egy fegyvert a 55. házból: AK47-t
+[22:32:35] [Berak][VLA]Krisztofer_Vincenzo berakott egy fegyvert a 55. házba: Sniper-t
+[22:32:47] [Kivesz][VLA]Krisztofer_Vincenzo kivett 200db AK47 lõszert 55. ház széfjébõl
+[22:37:24] [Berak][VLA]Damien_Creed berakott egy fegyvert a 329. házba: M4-t
+[22:37:33] [Kivesz][VLA]Damien_Creed kivett egy fegyvert a 329. házból: AK47-t
+[22:37:37] [Berak][VLA]Damien_Creed berakott egy fegyvert a 329. házba: Sniper-t
+[22:37:49] [Kivesz][VLA]Damien_Creed kivett 249db AK47 lõszert 329. ház széfjébõl
+[22:38:23] [/felvesz fegyver] Tyler_WIsh felvette ezt: Rifle
+[22:42:24] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Rifle-t | Raktár Volt: 308 Lett: 309
+[22:42:24] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db MP5-t | Raktár Volt: 60 Lett: 61
+[22:42:24] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Spray-t | Raktár Volt: 60 Lett: 61
+[22:42:24] [duty lead fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Stick-t | Raktár Volt: 60 Lett: 61
+[22:42:24] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 200 Db MP5-t | Raktár Volt: 466 Lett: 666
+[22:42:24] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 50 Db Rifle-t | Raktár Volt: 1075 Lett: 1125
+[22:42:24] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 400 Db Spray-t | Raktár Volt: 725 Lett: 1125
+[22:42:54] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[22:42:54] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[22:42:54] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db Deagle-t | Raktár Volt: 319 Lett: 320
+[22:42:54] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db Combat-t | Raktár Volt: 138 Lett: 139
+[22:42:54] [duty lead lõszer]Ryan_Lennox Frakcio: 20 | 100 Db Deagle-t | Raktár Volt: 76732 Lett: 76832
+[22:42:54] [duty lead lõszer]Ryan_Lennox Frakcio: 20 | 200 Db Combat-t | Raktár Volt: 192011 Lett: 192211
+[22:42:54] [duty lead lõszer]Ryan_Lennox Frakcio: 20 | 400 Db Spray-t | Raktár Volt: 191811 Lett: 192211
+[22:49:16] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Deagle-t | Raktár Volt: 65 Lett: 66
+[22:49:16] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db M4-t | Raktár Volt: 36 Lett: 37
+[22:49:16] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Sniper-t | Raktár Volt: 0 Lett: 1
+[22:49:16] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Rifle-t | Raktár Volt: 37 Lett: 38
+[22:49:16] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Spray-t | Raktár Volt: 37 Lett: 38
+[22:49:16] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Stick-t | Raktár Volt: 37 Lett: 38
+[22:49:16] [duty lead lõszer]Mirajane_Strauss Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -362 Lett: 38
+[22:51:47] [duty felvesz fegyver]Ryan_Lennox Frakcio: 20 | 1 Db AK47-t | Raktár: Volt: 1 Lett: 0
+[22:52:06] [duty felvesz lõszer]Ryan_Lennox Frakcio: 20 | 120 Db AK47-t | Raktár: Volt: 120 Lett: 0
+[22:57:00] [duty felvesz fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db AK47-t | Raktár: Volt: 1 Lett: 0
+[22:57:18] [duty felvesz fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Deagle-t | Raktár: Volt: 66 Lett: 65
+[22:57:25] [duty felvesz lõszer]Mirajane_Strauss Frakcio: 13 | 300 Db AK47-t | Raktár: Volt: 300 Lett: 0
+[22:57:45] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Deagle-t | Raktár Volt: 65 Lett: 66
+[22:57:45] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Deagle-t | Raktár Volt: 65 Lett: 66
+[23:02:51] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 61 Lett: 60
+[23:02:54] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 666 Lett: 516
+[23:02:55] [duty felvesz fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db Deagle-t | Raktár: Volt: 59 Lett: 58
+[23:03:01] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 100 Db Deagle-t | Raktár: Volt: 265 Lett: 165
+[23:03:19] [duty felvesz fegyver]Freddie_B_Scaletta Frakcio: 1 | 1 Db MP5-t | Raktár: Volt: 60 Lett: 59
+[23:03:28] [duty felvesz lõszer]Freddie_B_Scaletta Frakcio: 1 | 150 Db MP5-t | Raktár: Volt: 516 Lett: 366
+[23:08:21] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Rifle-t | Raktár: Volt: 309 Lett: 308
+[23:08:26] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 100 Db Rifle-t | Raktár: Volt: 1125 Lett: 1025
+[23:08:29] [duty felvesz fegyver]Henrik_T_Scaletta Frakcio: 1 | 1 Db Rifle-t | Raktár: Volt: 308 Lett: 307
+[23:09:11] [Átad][LSPD]Henrik_T_Scaletta átadott neki: [LSPD]Freddie_B_Scaletta, egy Rifle-t
+[23:09:18] [Átad][LSPD]Henrik_T_Scaletta átadott 50db Rifle lõszert neki: [LSPD]Freddie_B_Scaletta
+[23:21:08] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[23:21:08] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[23:21:08] [duty lead fegyver]Mirajane_Strauss Frakcio: 13 | 1 Db AK47-t | Raktár Volt: -1 Lett: 0
+[23:21:08] [duty lead lõszer]Mirajane_Strauss Frakcio: 13 | 261 Db AK47-t | Raktár Volt: -261 Lett: 0
+[23:21:08] [duty lead lõszer]Mirajane_Strauss Frakcio: 13 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[23:21:14] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db Spray-t | Raktár Volt: -1 Lett: 0
+[23:21:14] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db Stick-t | Raktár Volt: -1 Lett: 0
+[23:21:14] [duty lead fegyver]Ryan_Lennox Frakcio: 20 | 1 Db AK47-t | Raktár Volt: -1 Lett: 0
+[23:21:14] [duty lead lõszer]Ryan_Lennox Frakcio: 20 | 120 Db AK47-t | Raktár Volt: -120 Lett: 0
+[23:21:14] [duty lead lõszer]Ryan_Lennox Frakcio: 20 | 400 Db Spray-t | Raktár Volt: -400 Lett: 0
+[23:31:14] [Átad][VLA]Damien_Creed átadott neki: [Civil]Sidney_Tribiani, egy MP5-t
+[23:31:23] [Átad][VLA]Damien_Creed átadott 100db MP5 lõszert neki: [Civil]Sidney_Tribiani
+[23:35:40] [Átad][VLA]Damien_Creed átadott neki: [VLA]Krisztofer_Vincenzo, egy MP5-t
+[23:35:47] [Átad][VLA]Damien_Creed átadott 200db MP5 lõszert neki: [VLA]Krisztofer_Vincenzo
+[23:35:58] [Átad][VLA]Damien_Creed átadott 200db MP5 lõszert neki: [Civil]Sidney_Tribiani
+[23:36:07] [Átad][VLA]Damien_Creed átadott neki: [Civil]Sidney_Tribiani, egy MP5-t
+[23:40:09] [Átad][LSPD]Henrik_T_Scaletta átadott 100db Sniper lõszert neki: [USA]Nagato_Brasco
+[23:40:23] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott 1900db Sniper lõszert a 300. rendszámú jármûbe
+[23:40:32] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott 2000db Sniper lõszert a 300. rendszámú jármûbe
+[23:42:27] [/eldob fegyver] Henrik_T_Scaletta eldobta ezt: Rifle
+[23:42:30] [/eldob lõszer] Henrik_T_Scaletta eldobott 45db Rifle lõszert
+[23:43:08] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott egy fegyvert a 300 rendszámú jármû 0 slotjába: Sniper-t
+[23:43:22] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott egy fegyvert a 300 rendszámú jármû 1 slotjába: Sniper-t
+[23:43:44] [/eldob fegyver] Henrik_T_Scaletta eldobta ezt: Deagle
+[23:43:47] [/eldob fegyver] Henrik_T_Scaletta eldobta ezt: Deagle
+[23:43:50] [/eldob fegyver] Henrik_T_Scaletta eldobta ezt: Deagle
+[23:44:06] [/eldob fegyver] Henrik_T_Scaletta eldobta ezt: Rifle
+[23:45:01] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott 4800db M4 lõszert a 300. rendszámú jármûbe
+[23:45:09] [Weapon-Berak][LSPD]Henrik_T_Scaletta berakott 1000db Sniper lõszert a 300. rendszámú jármûbe
+[23:46:08] [/felvesz lõszer] Nagato_Brasco felvette ezt: 45db Rifle lõszer
+[23:48:25] [Weapon-Kivesz][LSPD]Henrik_T_Scaletta kivett 4800db M4 lõszert a 300. rendszámú jármûbõl
+[23:48:32] [Weapon-Kivesz][LSPD]Henrik_T_Scaletta kivett 1900db Sniper lõszert a 300. rendszámú jármûbõl
+[23:48:49] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 5000 Db M4-t | Raktár Volt: 0 Lett: 5000
+[23:48:49] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 5000 Db M4-t | Raktár Volt: 0 Lett: 5000
+[23:48:51] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 2000 Db Sniper-t | Raktár Volt: 0 Lett: 2000
+[23:48:51] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 2000 Db Sniper-t | Raktár Volt: 0 Lett: 2000
+[23:49:08] [Weapon-Kivesz][LSPD]Henrik_T_Scaletta kivett 2000db Sniper lõszert a 300. rendszámú jármûbõl
+[23:49:30] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 2000 Db Sniper-t | Raktár Volt: 2000 Lett: 4000
+[23:49:30] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 2000 Db Sniper-t | Raktár Volt: 2000 Lett: 4000
+[23:49:44] [Weapon-Kivesz][LSPD]Henrik_T_Scaletta kivett 1000db Sniper lõszert a 300. rendszámú jármûbõl
+[23:50:00] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 1000 Db Sniper-t | Raktár Volt: 4000 Lett: 5000
+[23:50:00] [duty lead lõszer]Henrik_T_Scaletta Frakcio: 1 | 1000 Db Sniper-t | Raktár Volt: 4000 Lett: 5000
+[23:50:07] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 50 Db Sniper-t | Raktár: Volt: 5000 Lett: 4950
+[23:50:10] [duty felvesz lõszer]Henrik_T_Scaletta Frakcio: 1 | 200 Db M4-t | Raktár: Volt: 5000 Lett: 4800

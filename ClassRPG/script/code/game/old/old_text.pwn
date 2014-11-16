@@ -1422,13 +1422,13 @@ public OnPlayerText(playerid, text[]) //opt
 						if(emberek % 4 != 0)
 						{
 							if(emberek % 4 == 1)
-								format(txt, sizeof(txt), "%s [%d]", PlayerName(x), fejpenz);
+								format(txt, sizeof(txt), "%s [%d] OK: %s", PlayerName(x), fejpenz, PlayerInfo[x][pContractOka]);
 							else
-								format(txt, sizeof(txt), "%s, %s [%d]", txt, PlayerName(x), fejpenz);
+								format(txt, sizeof(txt), "%s, %s [%d] OK: %s", txt, PlayerName(x), fejpenz, PlayerInfo[x][pContractOka]);
 						}
 						else
 						{
-							format(txt, sizeof(txt), "%s, %s [%d]", txt, PlayerName(x), fejpenz);
+							format(txt, sizeof(txt), "%s, %s [%d] OK: %s", txt, PlayerName(x), fejpenz, PlayerInfo[x][pContractOka]);
 							SendClientMessage(playerid, COLOR_GREY, txt);
 						}
 					}
@@ -1516,7 +1516,11 @@ public OnPlayerText(playerid, text[]) //opt
 			SendClientMessage(playerid, COLOR_LIGHTRED, "A közeledben nincs jármû!");
 			return 0;
 			}
-			if(VanBombaBenne[kocsim] != NINCS) return !Msg(playerid, "Ebben a jármûben már van bomba.");
+			if(VanBombaBenne[kocsim] != NINCS) 
+			{
+			VanBombaBenne[kocsim] = NINCS;
+			return !Msg(playerid, "Bomba hatástalanítva!");
+			}
 			Msg(playerid, "Bomba telepítve, ha beindítják a motort robban!");
 			VanBombaBenne[kocsim] = playerid;
 			return 0;
@@ -1970,7 +1974,7 @@ public OnPlayerText(playerid, text[]) //opt
 						case 25..27, 33, 34: loszer = 100;
 
 						// Közepes gépfegyverek (mp5, tec9, uzi)
-						case 28, 29, 32: loszer = 300;
+						case 29: loszer = 300;
 
 						// Nagy gépfegyverek (m4, ak47)
 						case 30, 31: loszer = 500;

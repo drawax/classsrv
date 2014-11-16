@@ -206,8 +206,8 @@ new MinimumFizuhoz = 7200; //2óra
 #define RACE_VIRTUAL_WORLD	5000
 
 //kórház
-#define K_OLES_IDO 180
-#define K_LAB_IDO 120
+#define K_OLES_IDO 120
+#define K_LAB_IDO 60
 
 // x / kg
 #define P_MAX_MATI 50
