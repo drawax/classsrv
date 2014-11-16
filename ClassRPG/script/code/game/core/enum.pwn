@@ -1036,7 +1036,8 @@ enum pInfo
 	pPBFegyver[4],
 	pBrascoTag,
 	pBrascoRang,
-	pJailokSzama
+	pJailokSzama,
+	pContractOka[128]
 };
 new PlayerInfo[MAX_PLAYERS][pInfo];
 

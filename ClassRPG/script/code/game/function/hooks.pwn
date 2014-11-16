@@ -28,3 +28,15 @@ fpublic SeeHooks_PutPlayerInVehicle(playerid, vehicleid, seatid)
     #define _ALS_PutPlayerInVehicle
 #endif
 #define PutPlayerInVehicle SeeHooks_PutPlayerInVehicle
+
+/*#if defined _ALS_LinkVehicleTointerior
+	#undef LinkVehicleToInterior
+#else
+	#define _ALS_LinkVehicleToInterior
+#endif
+
+#define LinkVehicleToInterior P_LinkVehicleToInterior
+
+#if !defined SetVehicleInterior
+#define SetVehicleInterior LinkVehicleTointerior
+#endif*/

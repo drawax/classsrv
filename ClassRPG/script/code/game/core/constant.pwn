@@ -1180,7 +1180,7 @@ new const KormanyKituntetes[7][32] =
 	{"Konszolidációs Érdemrend"},
 	{"Vörös Csillag Érdemrend"}
 };
-#define MaxRadio 15
+#define MaxRadio 16
 
 new const RadioClass[MaxRadio][3][256] =
 {
@@ -1198,7 +1198,8 @@ new const RadioClass[MaxRadio][3][256] =
 	{"http://adas.diabloradio.hu:8000/128.mp3","Diablo","~g~Diablo Radio"},
 	{"http://radioszerver.hu:8100/;stream.mp3","RadioSom","~g~RadioSom"},
 	{"http://62.204.145.218:8000/city64","radio city","~g~radio city"},
-	{"http://ip.classrpg.net:8050/listen.pls","ClassRPG Rádió","~g~ClassRPG Radio"}
+	{"http://ip.classrpg.net:8050/listen.pls","ClassRPG Rádió","~g~ClassRPG Radio"},
+	{"http://stream.musicfm.hu:8000/musicfm.mp3","MusicFM","~g~MusicFM"}
 
 };
 

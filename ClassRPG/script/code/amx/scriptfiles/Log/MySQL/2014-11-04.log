@@ -1,0 +1,7 @@
+[00:20:39]-[2013] Lost connection to MySQL server during query - [query] SELECT Ertek FROM server WHERE Nev='verzio'
+[02:39:08]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'
+[03:37:39]-[2013] Lost connection to MySQL server during query - [query] SELECT Model, Ara, Hasznalo FROM jarmu_arak
+[04:42:25]-[2003] Can't connect to MySQL server on '127.0.0.1' (111) - [query] DELETE FROM bans WHERE cim='37.221.209.112'
+[07:15:18]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'
+[07:44:55]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'
+[08:09:14]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'

@@ -1,0 +1,5 @@
+[05:13:40]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'
+[05:22:37]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'
+[05:28:32]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'
+[06:17:36]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'
+[07:03:54]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'

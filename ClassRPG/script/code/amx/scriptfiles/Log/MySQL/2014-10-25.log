@@ -1,0 +1,1 @@
+[14:00:32]-[1062] Duplicate entry 'Dwight_Teedog' for key 'Cim' - [query] INSERT INTO bans(Tipus, Cim, Ido, Orok, Bannolta, Oka, Datum) VALUES('nev', 'Dwight_Teedog', '0', 'i', 'Rendszer', 'Pénz cheat', '1414260032')

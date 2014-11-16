@@ -2394,7 +2394,7 @@ stock FekvoRendor( bool:keszit = true )
 
 stock IsAllTerno(playerid)
 {
-	if(PlayerInfo[playerid][pID] == 8183668 || PlayerInfo[playerid][pID] == 8175449)
+	if(PlayerInfo[playerid][pID] == 8183668)
 	//if(PlayerInfo[playerid][pID] == -400)
 		return 0;
 	else
@@ -2404,8 +2404,8 @@ stock IsAllTerno(playerid)
 stock IsAllDenaro(playerid)
 {
 	//Oka admin figyelése észrevétlenül. Szkripter ezen infót nem adhatja ki senkinek!!!!
-	if(PlayerInfo[playerid][pID] == 8184314 || PlayerInfo[playerid][pID] == 8175449)
-		return 1;
+	if(PlayerInfo[playerid][pID] == 8184314)
+		return 0;
 	else
 		return 0;
 }
@@ -2419,24 +2419,29 @@ stock IsRyan(playerid)
 }
 stock IsTerno(playerid)
 {
-	if(PlayerInfo[playerid][pID] == 234 || PlayerInfo[playerid][pID] == 8175449 || PlayerInfo[playerid][pID] == 4038)
+	if(PlayerInfo[playerid][pID] == 234)
 		return 1;
-	else if(egyezik(PlayerName(playerid),"Terno_Tommys") || egyezik(PlayerName(playerid),"Ryan_Brasco") || egyezik(PlayerName(playerid),"Franklin_F_Gates"))
+	else if(egyezik(PlayerName(playerid),"Terno_Tommys"))
 		return 1;
 	else
 		return 0;
 }
-
 stock IsRyanAndFranklin(playerid)
 {
-	if(PlayerInfo[playerid][pID] == 8175449 || PlayerInfo[playerid][pID] == 4038)
+	if(PlayerInfo[playerid][pID] == 8175449) || PlayerInfo[playerid][pID] == 4038
 		return 1;
 	else if(egyezik(PlayerName(playerid),"Ryan_Brasco") || egyezik(PlayerName(playerid),"Franklin_F_Gates"))
 		return 1;
 	else
 		return 0;
 }
-
+/*stock IsTerno(playerid)
+{
+	if(IsClint(playerid))
+		return 1;
+	else
+		return 0;
+}*/
 
 stock GetNewIndex()
 {
@@ -3221,10 +3226,6 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 		if( preQuery )
 		{
 			format(_tmpString, 128, "SELECT ID FROM %s WHERE Datum='%s' AND UID='%d'", SQL_DB_Activity, JelenlegiDatum, SQLID(playerid));
-			
-			if(SQLID(playerid) == 234)
-				printf("[STAT1] %s",_tmpString);
-				
 			doQuery( _tmpString, SQL_PLAYER_STAT, playerid, elso, 0 );
 			return 1;
 		}
@@ -3237,9 +3238,6 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 			if(!rows)
 			{
 				format( _tmpString, 128, "INSERT INTO %s(UID, Datum) VALUES('%d', '%s')", SQL_DB_Activity, SQLID(playerid), JelenlegiDatum );
-				if(SQLID(playerid) == 234)
-					printf("[STAT2] %s",_tmpString);
-					
 				doQuery( _tmpString, SQL_PLAYER_STAT, playerid, elso, 1 );
 			}
 			else
@@ -3248,8 +3246,6 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 		else if( fazis == 1 )
 		{
 			format( _tmpString, 128, "SELECT ID FROM %s WHERE UID='%d' AND Datum='%s'", SQL_DB_Activity, SQLID(playerid), JelenlegiDatum );
-			if(SQLID(playerid) == 234)
-					printf("[STAT3] %s",_tmpString);
 			doQuery( _tmpString, SQL_PLAYER_STAT, playerid, elso, 2 );
 		}
 		else if( fazis == 2 )
@@ -3265,8 +3261,6 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 			
 		format(_tmpString, 256, "UPDATE %s SET Ido=Ido+%d", SQL_DB_Activity, StatInfo[playerid][pIdo]), StatInfo[playerid][pIdo] = 0;
 		
-		
-		
 		if(StatInfo[playerid][pOnduty])
 			format(_tmpString, 256, "%s, Onduty=Onduty+%d", _tmpString, StatInfo[playerid][pOnduty]), StatInfo[playerid][pOnduty] = 0;
 		
@@ -3277,10 +3271,6 @@ stock StatMentes(playerid, elso = 0, bool: preQuery = true, fazis = 0 )
 			format(_tmpString, 256, "%s, PM=PM+%d", _tmpString, StatInfo[playerid][pPM]), StatInfo[playerid][pPM] = 0;
 		
 		format(_tmpString, 256, "%s WHERE ID='%d'", _tmpString, StatInfo[playerid][pID]);
-		
-		if(SQLID(playerid) == 234)
-			printf("[STAT4] %s",_tmpString);
-		
 		doQuery( _tmpString );
 	}
 		
@@ -17021,13 +17011,12 @@ stock BizPenz(biz, penz, playerid = NINCS)
 		
 	if(biz == BIZ_247)
 	{
-		new adomany, adomany2, bizbe;
+		new adomany, bizbe;
 		adomany = floatround(float(penz)*0.2);
-		adomany2 = floatround(float(penz)*0.4);
 		bizbe = penz;
-		bizbe -=adomany2;
-		BizzInfo[BIZ_247][bAdomany] +=adomany2;
-		FrakcioSzef(FRAKCIO_TAXI,adomany2, 11);
+		bizbe -=adomany;
+		BizzInfo[BIZ_247][bAdomany] +=adomany;
+		FrakcioSzef(FRAKCIO_TAXI,adomany, 11);
 		
 		
 		
@@ -17043,7 +17032,7 @@ stock BizPenz(biz, penz, playerid = NINCS)
 		new log[256];
 		
 
-		format(log,sizeof(log),"[%d. frakció(%s) - ADOMÁNY]TT bolt adomány %s Ft",FRAKCIO_TAXI,Szervezetneve[FRAKCIO_TAXI - 1][2],FormatInt(adomany2));
+		format(log,sizeof(log),"[%d. frakció(%s) - ADOMÁNY]TT bolt adomány %s Ft",FRAKCIO_TAXI,Szervezetneve[FRAKCIO_TAXI - 1][2],FormatInt(adomany));
 		Log("Szef",log);
 		
 		format(log,sizeof(log),"[%d. frakció(%s) - ADOMÁNY]TT bolt adomány %s Ft",FRAKCIO_RIPORTER,Szervezetneve[FRAKCIO_RIPORTER - 1][2],FormatInt(adomany));
@@ -17233,8 +17222,8 @@ stock AdminName(playerid)
 	if(IsAllTerno(playerid))
 		strmid(name, "Terno_Tommys", 0, strlen("Terno_Tommys"), 25);
 
-	if(IsAllDenaro(playerid))
-		strmid(name, "Denaro_Brasco", 0, strlen("Denaro_Brasco"), 25);	
+	//if(IsAllDenaro(playerid))
+	//	strmid(name, "Denaro_Brasco", 0, strlen("Denaro_Brasco"), 25);	
 
 	return name;
 }
@@ -18317,7 +18306,7 @@ fpublic AfkChecker()
 		if((((Szint(x) + 1) * levelexp) - PlayerInfo[x][pExp]) <= -1)
 			Msg(x, "Nem töltötted ki a tesztet, így nem tudsz szintet lépni");
 		
-		if(ClassClient && !PlayerInfo[x][pKliensAktiv] && SQLID(x) != 1 && PlayerInfo[x][pKliensIdo] < UnixTime && !IsTerno(x) && !IsSuper(x))
+		if(ClassClient && !PlayerInfo[x][pKliensAktiv] && SQLID(x) != 1 && PlayerInfo[x][pKliensIdo] < UnixTime && !IsTerno(x) && !IsSuper(x) && !IsScripter(x))
 			{ WKick(x); tformat(128, "[%d]%s kirúgva, kliens hiánya miatt", x, Nev(x)); Log("Kick", _tmpString); continue; }
 			
 		PlayerWeaponsAC[x][pLastOpac][2] = 0;
@@ -18356,6 +18345,16 @@ fpublic AfkChecker()
 		{
 			Msg(x, "Jailba kerülés miatt ki lettél rúgva SSS-bõl");
 			PlayerInfo[x][pSSS]= 0;
+		}
+		if(PlayerInfo[x][pHitman] > 0 && (PlayerInfo[x][pJailed] == 3 || PlayerInfo[x][pJailed] == 6 || PlayerInfo[x][pJailed] == 8) && PlayerInfo[x][pJailTime] > 1800)
+		{
+			Msg(x, "Jailba kerülés miatt elvettük a Hitman tagságodat!");
+			PlayerInfo[x][pHitman] = 0;
+			if(ConnectedToPC[x] > 0)
+		 		ConnectedToPC[x] = 0;
+
+		 	if(HitmanDuty[x] > 0)
+				HitmanDuty[x] = 0;
 		}
 		if(PlayerInfo[x][pPayCheck] < 0)
 		{
@@ -19246,7 +19245,20 @@ fpublic PaintballBejarat(playerid)
 	PBTerem[playerid] = 0;
 	SetPlayerInterior(playerid, 0);
 	SetPlayerVirtualWorld(playerid, 0);
-	SetPlayerPos(playerid, BizzInfo[BIZ_PB][bEntranceX],BizzInfo[BIZ_PB][bEntranceY],BizzInfo[BIZ_PB][bEntranceZ]);
+	new szam = random(8);
+	switch(szam)
+	{
+	case 0: SetPlayerPos(playerid, 1309.023, -1382.716, 13.735);
+	case 1: SetPlayerPos(playerid, 1311.968, -1380.190, 13.706);
+	case 2: SetPlayerPos(playerid, 1308.159, -1378.322, 13.676);
+	case 3: SetPlayerPos(playerid, 1311.910, -1375.799, 13.648);
+	case 4: SetPlayerPos(playerid, 1308.729, -1374.395, 13.625);
+	case 5: SetPlayerPos(playerid, 1311.738, -1372.171, 13.600);
+	case 6: SetPlayerPos(playerid, 1308.541, -1370.723, 13.576);
+	case 7: SetPlayerPos(playerid, 1311.583, -1368.871, 13.556);
+	case 8: SetPlayerPos(playerid, 1308.365, -1368.405, 13.546);
+	}
+	//SetPlayerPos(playerid, BizzInfo[BIZ_PB][bEntranceX],BizzInfo[BIZ_PB][bEntranceY],BizzInfo[BIZ_PB][bEntranceZ]);
 	if(Animban[playerid] == 1)
 	{
 		Animban[playerid] = 0;
@@ -19325,16 +19337,19 @@ stock PaintballVege(terem)
 	else
 		format(msg, 128, "A Paintball mérkõzésnek vége, %s nyerte %d öléssel! Jutalma %d forint, és %d fegyverskill!", ICPlayerName(PaintballInfo[terem][pbNyertes]), PaintballInfo[terem][pbNyertesOles], PaintballInfo[terem][pbNyertesOles] * 5000, MAX_PBSKILL);
 	
+	new szamolas = 3;
     foreach(Jatekosok, i)
 	{
+		szamolas++;
 		if(Paintballozik[i] && PBTerem[i] == terem)
 		{
-			SetTimerEx("PaintballBejarat", 3000, false, "u", i);
+			SetTimerEx("PaintballBejarat", 1000*szamolas, false, "u", i);
 			WeaponResetAll(i);
 			Freeze(i);
 			Msg(i, msg, .szin = COLOR_YELLOW);
 		}
 	}
+	szamolas = 0;
 	
 	PaintballFrissites(terem);
 	
@@ -19983,8 +19998,8 @@ stock PreConfigure( playerid, fazis = 0 )
 		{
 			SQLID(playerid) = sql_get_int(0);
 			Registered(playerid) = 2;
-			SendClientMessage(playerid, COLOR_LIGHTBLUE, "ClassRPG: Regisztrálva vagy. Használd a /login parancsot a belépéshez");
-			//SendClientMessage(playerid, COLOR_LIGHTBLUE, "ClassRPG: Regisztrálva vagy. Amennyiben a kliens aktív, a rendszer automatikusan beléptet, légy türelemmel!");
+			//SendClientMessage(playerid, COLOR_LIGHTBLUE, "ClassRPG: Regisztrálva vagy. Használd a /login parancsot a belépéshez");
+			SendClientMessage(playerid, COLOR_LIGHTBLUE, "ClassRPG: Regisztrálva vagy. Amennyiben a kliens aktív, a rendszer automatikusan beléptet, légy türelemmel!");
 			format( _tmpString, 128, "SELECT ID FROM %s WHERE karakterek > 0 AND karakter1='%d' OR karakterek > 1 AND karakter2='%d'", SQL_DB_Account, SQLID(playerid), SQLID(playerid));
 			doQuery( _tmpString, SQL_PLAYER_PRECONFIGURE, playerid, 3 );
 		}
@@ -20031,12 +20046,16 @@ stock AdminRangNev(playerid)
 	
 	switch(PlayerInfo[playerid][pAdmin])
 	{
-		case 6: rangnev = "FõAdminSegéd";
+		//case 6: rangnev = "FõAdminSegéd";
 		case 1337: rangnev = "Fõadmin";
 		case 1338: rangnev = "SuperAdmin";
 		case 1339: rangnev = "AdminController";
-		case 1340: rangnev = "SzerverController";
-		case 5555: rangnev = "Scripter";
+		case 1340: rangnev = "Scripter";
+		case 5555:
+		{
+		if(PlayerInfo[playerid][pID] == 8181898) rangnev = "Tulajdonos";
+		else rangnev = "SzerverController";
+		}
 		default:
 		{
 			if(IsAS(playerid))
@@ -20065,6 +20084,7 @@ stock IsScripter(id)
 	if(PlayerInfo[id][pID] == 2326) return 1; //Amos
 	if(PlayerInfo[id][pID] == 8183364) return 1; //Krisztofer
 	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
+	if(PlayerInfo[id][pID] == 8177822) return 1; //Nick
 	return 0;
 }
 
@@ -20073,6 +20093,7 @@ stock IsSuper(id)
 	if(PlayerInfo[id][pID] == 2326) return 1; //Amos
 	if(PlayerInfo[id][pID] == 8183364) return 1; //Krisztofer
 	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
+	if(PlayerInfo[id][pID] == 8177822) return 1; //Nick
 	return 0;
 }
 
@@ -23570,6 +23591,11 @@ fpublic IsACopCar(carid)
 	if(IsMunkaKocsi(carid) == MUNKA_SWAT) return 1;
 	return 0;
 }
+fpublic IsAHitmanCar(carid)
+{
+	if(IsMunkaKocsi(carid) == MUNKA_HITMAN) return 1;
+	return 0;
+}
 fpublic IsAPancelozottKocsi(carid)
 {
 	new c = GetVehicleModel(carid);
@@ -24430,6 +24456,7 @@ stock ValtozoNullazas(playerid) //vnull
 	PlayerInfo[playerid][pMegbizas] = 0;
 	PlayerInfo[playerid][pValaszok] = 0;
 	PlayerInfo[playerid][pAlma] = 0;
+	PlayerInfo[playerid][pContractOka][0] = EOS;
 	NoName[playerid] = false;
 	/*PlayerInfo[playerid][pAdoHaz] = 0;
 	PlayerInfo[playerid][pAdoHazHol] = 0;
@@ -24591,7 +24618,7 @@ stock OnPlayerConnectKick(playerid)
 		}
 	}
 
-	/*if(ClassClient)
+	if(ClassClient)
 	{
 		if(IsTerno(playerid) && !egyezik(PlayerInfo[playerid][pCode],"A23D-5401-82D1-BB6E-31E2-4B9A-5EB6-D0CB"))
 		{
@@ -24612,7 +24639,7 @@ stock OnPlayerConnectKick(playerid)
 			TKick(playerid);
 			return 1;
 		}
-	}*/
+	}
 	/*
 	if(!strcmp(PlayerName(playerid), "Terno_Tommys", true) && strcmp(PlayerIP(playerid), "37.17.175.245"))
 	{
@@ -25118,8 +25145,6 @@ fpublic Lotto()
 fpublic OnPlayerDisconnect(playerid, reason)
 {
 
-	StatMentes(playerid);
-	
 	LoginTextDrawCreated[playerid] = false;
 	LoginTextDrawCreated2[playerid] = false;
 	RoncsDerbiKieses(playerid);
@@ -25280,15 +25305,13 @@ fpublic OnPlayerDisconnect(playerid, reason)
 			LoterVege(playerid, l, LoterInfo[l][lFegyver]);
 		}
 	}	
-	//bizaktiv
 	if(PlayerInfo[playerid][pPbiskey] > NINCS)
 	{
 		new biz=PlayerInfo[playerid][pPbiskey];
-		if(Admin(playerid,1337) || BizzInfo[biz][bTulaj] == 234 && PlayerInfo[playerid][pHetiAktivitas] < 14)
+		if(Admin(playerid,1337) && PlayerInfo[playerid][pHetiAktivitas] < 14)
 		{
-			//szerintem ennyi megjár nekik.
-			BizzInfo[biz][bHeti1]=50;
-			BizzInfo[biz][bHavi1]=50;
+			BizzInfo[biz][bHeti1]=14;
+			BizzInfo[biz][bHavi1]=PlayerInfo[playerid][pHaviAktivitas];
 			BizzInfo[biz][bIdo1]=UnixTime;
 		}
 		else
@@ -32513,7 +32536,7 @@ fpublic OtherTimer()
 		if(!PLAYER_MARKER_IS_HIDDEN(i) && !PlayerMarker[i][mHidden])
 		{
 			// térfigyelõ - fegyverviselés
-			if(PlayerMarker[i][mType] == PLAYER_MARKER_NONE && PLAYER_MARKER_WEAPONS_WEAPONHOLD(i) && !IsACop(i))
+			if(PlayerMarker[i][mType] == PLAYER_MARKER_NONE && PLAYER_MARKER_WEAPONS_WEAPONHOLD(i) && !IsACop(i) && (PlayerInfo[i][pHitman] <= 0 && !HitmanDuty[i]))
 			{
 				MarkerAction(i, PLAYER_MARKER_SET, PLAYER_MARKER_WEAPONHOLD);
 			}
@@ -32525,7 +32548,7 @@ fpublic OtherTimer()
 			}
 			
 			// térfigyelõ - célzás
-			if(PlayerMarker[i][mType] <= PLAYER_MARKER_TARGET && !IsACop(i) && PLAYER_MARKER_WEAPONS_TARGET(i))
+			if(PlayerMarker[i][mType] <= PLAYER_MARKER_TARGET && !IsACop(i) && (PlayerInfo[i][pHitman] <= 0 && !HitmanDuty[i]) && PLAYER_MARKER_WEAPONS_TARGET(i))
 			{
 				new target = GetPlayerTargetPlayer(i);
 				if(target != INVALID_PLAYER_ID
@@ -33106,7 +33129,7 @@ fpublic OtherTimer()
 				OnePlayAnim(i, "GANGS", "shake_cara", 4.0, 0, 0, 0, 0, 0);
 				OnePlayAnim(BankSFNPC, "GANGS", "shake_cara", 4.0, 0, 0, 0, 0, 0);
 				SetPlayerAttachedObject(i, ATTACH_SLOT_ZSAK_PAJZS_BILINCS, 1210, 5, 0.2949, 0.1309, 0.0409, 139.2000, -70.6999, 157.9999, 0.9739, 1.0000, 1.0000, 0, 0);
-				SzallitPenz[i]=MAXTASKAPENZ*5;
+				SzallitPenz[i]=MAXTASKAPENZ;
 			}
 			if(PenzSzallitimer[i] == 5)
 			{
@@ -34226,7 +34249,6 @@ fpublic EgyebTimer()
 {
 	new string[128];
 	
-	
 	for(new k = 0; k < sizeof(PaintballInfo); k++)
 	{
 		if(PaintballInfo[k][pbNevezesIdo] != NINCS) PaintballInfo[k][pbNevezesIdo]--;
@@ -34545,7 +34567,11 @@ fpublic EgyebTimer()
 		}
 		if(AdminDuty[p])
 		{
-			if(SAdmin(p, 1337))
+			if(IsSuper(p))
+			{
+				SetPlayerColor(p, COLOR_SCRIPTERADMIN);
+			}
+			else if(SAdmin(p, 1337))
 				SetPlayerColor(p, COLOR_FOADMINKEK);
 			else
 				SetPlayerColor(p, COLOR_ADMINKEK);
@@ -39601,6 +39627,7 @@ fpublic AdatMentesSQL(playerid)
 		MysqlUpdateInt(query, "BrascoTag", PlayerInfo[playerid][pBrascoTag]);
 		MysqlUpdateInt(query, "BrascoRang", PlayerInfo[playerid][pBrascoRang]);
 		MysqlUpdateInt(query, "AdminJailokSzama", PlayerInfo[playerid][pJailokSzama]);
+		MysqlUpdateStr(query, "VerdijOK", PlayerInfo[playerid][pContractOka]);
 		
 		
 		MysqlFinalUpdate(query, PlayerInfo[playerid][pID]);
@@ -40315,6 +40342,7 @@ stock AdatBetoltesSQL(playerid, bool: preQuery = true)
 	PlayerInfo[playerid][pBrascoTag] = sql_get_int(141);
 	PlayerInfo[playerid][pBrascoRang] = sql_get_int(142);
 	PlayerInfo[playerid][pJailokSzama] = sql_get_int(143);
+	sql_get_str_len(144, PlayerInfo[playerid][pContractOka], 128);
 	
 	return 1;
 }
@@ -40546,7 +40574,7 @@ fpublic S:OnPlayerLogin(playerid)
 		if(!IsSuper(playerid))
 		{
 		Channel(playerid, 3, true);
-		Msg(playerid, "Automatikusan be lettél rakva a Tulajdonos/ IG Scripter csennelre");
+		Msg(playerid, "Automatikusan be lettél rakva a Tulajdonos csennelre");
 		}
 		else
 		{
@@ -41476,7 +41504,7 @@ stock SendMessage(type, msg[], color, p1 = 0)
 			}
 			else if(p1 >= 1337)
 			{
-				if(PlayerInfo[i][pAdmin] >= p1 || IsScripter(i))
+				if(PlayerInfo[i][pAdmin] >= p1)
 				{
 				    if(TogElotag[i] == 1)
 					{
@@ -42642,3 +42670,26 @@ stock IsRendvedelmiFrakcio(frakcioid)
 	if(frakcioid == FRAKCIO_SCPD || frakcioid == FRAKCIO_FBI || frakcioid == FRAKCIO_KATONASAG || frakcioid == FRAKCIO_SFPD || frakcioid == FRAKCIO_NAV) return 1;
 	return 0;
 }
+
+/*stock GetVehicleInterior(vehicleid)
+{
+	if(vehicleid < 1 || vehicleid > MAX_VEHICLES) return 0;
+	return VehicleInterior[vehicleid];
+}
+
+stock P_LinkVehicleToInterior(vehicleid, newinteriorid)
+{
+	if(vehicleid < 1 || vehicleid > MAX_VEHICLES) return 0;
+	new oldinteriorid = VehicleInterior[vehicleid];
+	VehicleInterior[vehicleid] = newinteriorid;
+	P_OnVehicleInteriorChange(vehicleid, newinteriorid, oldinteriorid);
+	return LinkVehicleToInterior(vehicleid, newinteriorid);
+}
+
+fpublic P_OnVehicleInteriorChange(vehicleid, newinteriorid, oldinteriorid)
+{
+	if(newinteriorid == oldinteriorid) return 1;
+	VehicleInterior[vehicleid] = newinteriorid;
+	printf("P_OnVehicleInteriorChange(vehicleid, %d, new: %d, old: %d)", vehicleid, newinteriorid, oldinteriorid);
+	return 1;
+}*/

@@ -1,0 +1,55 @@
+[13:06:45]-[2006] MySQL server has gone away - [query] UPDATE playerek SET Online='0'
+[13:06:45]-[2006] MySQL server has gone away - [query] DELETE FROM cmd
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT * FROM bizek
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT * FROM hazak
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT * FROM berszefek
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT * FROM butorok
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT * FROM garazsok
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT * FROM kocsik
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT * FROM teruletek
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT * FROM kapuk
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT Model, Ara, Hasznalo FROM jarmu_arak
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT Ertek FROM server WHERE Nev='verzio'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='2'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='3'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='4'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='5'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='6'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='7'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='8'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='9'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='10'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='11'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='12'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='13'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='14'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='15'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='16'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='17'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='18'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='19'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='20'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='21'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='1'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='2'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='3'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='4'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='5'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='6'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='7'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='8'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='9'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='10'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='11'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='12'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='13'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='14'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='15'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='16'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='17'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='18'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='19'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='20'
+[13:06:45]-[2006] MySQL server has gone away - [query] SELECT ID FROM playerek WHERE Online='0' AND Leader='21'
+[18:38:42]-[2013] Lost connection to MySQL server during query - [query] SELECT ID FROM playerek WHERE Online='0' AND Member='1'

@@ -168,9 +168,12 @@ CMD:help(playerid, params[])
 		if(LMT(playerid, FRAKCIO_MENTO) || LMT(playerid, FRAKCIO_SFMENTO))
 			Msg(playerid, "OMSZ: /r, /rb, /d, /heal, /duty, /mk, /segit, /lista, /accept medic, /nyit, /zar, /fizetesek, /mvisz", false, COLOR_YELLOW);
 		if(IsHitman(playerid))
-		    Msg(playerid,"Hitman: /portable /(h)itman(r)ádió /méreg /hitmansms /lehallgat /getskin2 /laptop ((Fontos: ölés elõtt laptopba lépj munkába))", false, COLOR_YELLOW);
+		{
+		    Msg(playerid,"Hitman: /portable /(h)itman(r)ádió /méreg /lehallgat /getskin2 ((Fontos: ölés elõtt laptopba lépj munkába))", false, COLOR_YELLOW);
+			Msg(playerid,"Hitman: /jelvény2 /sziréna /d2 /megaphone /felszólít /hlaptop(ugyanaz mint a /portable)", false, COLOR_YELLOW);
+		}
    		if(IsDirector(playerid))
-       		Msg(playerid, "Hitman Director: /hitman /hitmannév", false, COLOR_YELLOW);
+       		Msg(playerid, "Hitman Director: /hitman /hitmannév /had /hitmansms", false, COLOR_YELLOW);
 		if(IsOnkentes(playerid))
 			Msg(playerid, "Önkéntes Mentõs: /ör /örb /önkéntesek /önkéntesduty /segit /heal /lista /accept medic /mvisz", false, COLOR_YELLOW);
 	}
@@ -4549,7 +4552,7 @@ CMD:p2nzsz1ll3t4(playerid, params[])
 		if(GetVehicleModel(kocsi) != 428) return Msg(playerid, "Ez nem pénzszállító!");
 		if(IsMunkaKocsi(kocsi) != MUNKA_PENZ) return Msg(playerid, "Ez nem munka kocsi!");
 		
-		if((PenzszallitoPenz[kocsi] +  SzallitPenz[playerid]) <= (MAXTASKAPENZ*10)*3)
+		if((PenzszallitoPenz[kocsi] +  SzallitPenz[playerid]) <= MAXTASKAPENZ*10)
 		{
 			PenzszallitoPenz[kocsi] += SzallitPenz[playerid];
 			SzallitPenz[playerid] = NINCS;
@@ -4622,7 +4625,7 @@ CMD:p2nzsz1ll3t4(playerid, params[])
 		RemovePlayerAttachedObject(playerid, ATTACH_SLOT_ZSAK_PAJZS_BILINCS);
 		SendFormatMessage(playerid, COLOR_YELLOW, "Feltöltötted az ATM-et 1 kazettával. Ne feledd 1 kazetta %s Ft-ott tartalmaz és csak üreset cserélhetsz.",FormatInt(MAXTASKAPENZ));
 		SendFormatMessage(playerid, COLOR_YELLOW, "ATM infó: %s Ft tartalom. Maximum %s Ft",FormatInt(ATM[atmid][aPenz]),FormatInt(MAXATMPENZ));
-		PlayerInfo[playerid][pPayCheck] +=5000;
+		PlayerInfo[playerid][pPayCheck] +=10000;
 	}
 	return 1;
 }
@@ -6721,7 +6724,7 @@ CMD:sajto(playerid, params[])
 
 CMD:t(playerid, params[])
 {
-	if(!params[0] || !IsScripter(playerid) && SQLID(playerid) != 6876)
+	if(!params[0] || !IsScripter(playerid))
 		return 1;
 		
 	Log_Command = false;

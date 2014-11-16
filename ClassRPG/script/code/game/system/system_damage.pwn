@@ -433,7 +433,8 @@ stock OnPlayerHit(playerid, attacker, damageType, Float:amount, bodypart)
 	// TÉRFIGYELÕ //
 	////////////////
 	if(attacker != INVALID_PLAYER_ID
-		&& 22 <= damageType <= 38 && !PLAYER_MARKER_IS_HIDDEN(attacker) && !PlayerMarker[attacker][mHidden] && !IsACop(attacker) && PlayerMarker[attacker][mLastShoot] != UnixTime
+		&& 22 <= damageType <= 38 && !PLAYER_MARKER_IS_HIDDEN(attacker) && !PlayerMarker[attacker][mHidden] && !IsACop(attacker) && (PlayerInfo[attacker][pHitman] <= 0 && !HitmanDuty[attacker])
+		&& PlayerMarker[attacker][mLastShoot] != UnixTime
 		&& (PLAYER_MARKER_WEAPONS_SHOOT(attacker)
 			|| (WeaponArmed(attacker) == WEAPON_RIFLE || WeaponArmed(attacker) == WEAPON_SNIPER) && GetDistanceBetweenPlayers(attacker, playerid) <= PLAYER_MARKER_RIFLE_DISTANCE)
 	)
