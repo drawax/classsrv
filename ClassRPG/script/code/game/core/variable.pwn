@@ -8,7 +8,7 @@ stock
 	_tmpString[256] // nehogy lecsökkentsd a _tmpString méretét!
 ;
 
-
+new IsElsoKerekCucc[MAX_PLAYERS];
 new AdminDutySkin[MAX_PLAYERS];
 new OnAirID = 255;
 new PilotaRadar[MAX_PLAYERS];

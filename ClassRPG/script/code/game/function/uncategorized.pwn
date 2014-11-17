@@ -22934,7 +22934,7 @@ fpublic OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 	if(IsPlayerNPC(playerid)) return 1;
 	
 	seo_carEntering[playerid] = 15;
-	
+	IsElsoKerekCucc[playerid] = 0;
 	new model = GetVehicleModel( vehicleid );
 	
 	if(PajzsNala[playerid] == true)
@@ -24294,6 +24294,7 @@ stock ValtozoNullazas(playerid) //vnull
 	ObjectIDje[playerid][1] = -1;
 	ObjectIDje[playerid][2] = 0;
 	FlyModeBa[playerid] = false;
+	IsElsoKerekCucc[playerid] = 0;
 	PD_Fegyver_Felvett[playerid] = 0;
 	KocsiAlakitModel[playerid] = 0;
 	KocsiAlakitID[playerid] = NINCS;
@@ -28394,7 +28395,30 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 	#define HOLDING(%0) ((newkeys & (%0)) == (%0))
 	#define PRESSED(%0) (((newkeys & (%0)) == (%0)) && ((oldkeys & (%0)) != (%0)))
 	#define RELEASED(%0) (((newkeys & (%0)) != (%0)) && ((oldkeys & (%0)) == (%0)))
-
+	if(newkeys & KEY_SPRINT && GetPlayerState(playerid) == PLAYER_STATE_DRIVER)
+ 	{
+            if(IsElsoKerekCucc[playerid] == 1)
+            {
+	            if(GetPlayerSpeed(playerid) <= 3)
+	            {
+	                new vehicleid = GetPlayerVehicleID(playerid);
+	            	new Float:Xv, Float:Yv, Float:Zv, Float:absV;
+				    GetVehicleVelocity(vehicleid, Xv, Yv, Zv);
+				    absV = floatsqroot(floatpower(floatabs(Xv),2)+floatpower(floatabs(Yv),2)+floatpower(floatabs(Zv),2));
+				    if(absV < 20.0)
+				    {
+				        new Float:Zangle;
+				        GetVehicleZAngle(vehicleid, Zangle);
+				        GetVehicleVelocity(vehicleid, Xv, Yv, Zv);
+				        Xv = (9.5 * absV * floatsin(Zangle, degrees));
+				        Yv = (9.5 * absV * floatcos(Zangle, degrees));
+				        SetVehicleAngularVelocity(vehicleid, Yv, Xv, 0);
+				    }
+				}
+			 	else if(GetPlayerSpeed(playerid) >= 3) return 0;
+			}
+			else if(IsElsoKerekCucc[playerid] != 1) return 0;
+    }
 	if(PRESSED(KEY_FIRE) && Munkaban[playerid] == MUNKA_KUKAS && AMT(playerid, MUNKA_KUKAS))
 	{
 		if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT && VanSzemetNala[playerid])
@@ -31093,7 +31117,16 @@ fpublic OnPlayerStateChange(playerid, newstate, oldstate) // opsc
 		//printf("OnNPCStateChange(npc: %d, newstate: %d, oldstate: %d)", playerid, newstate, oldstate);
 		return 1;
 	}
-	
+	//Marci kerekes cucca
+	if(newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER)
+	{
+		IsElsoKerekCucc[playerid] = 0;
+		//SendClientMessage(playerid, COLOR_BLUE, "WHEELIE: Bekapcsolásához írd be: /wheelie be");
+	}
+	if(oldstate == PLAYER_STATE_DRIVER && newstate == PLAYER_STATE_ONFOOT)
+	{
+	    IsElsoKerekCucc[playerid] = 0;
+	}
 	if(oldstate == PLAYER_STATE_DRIVER)
 	{
 		if(Sisak[playerid] == 1)
@@ -31616,6 +31649,7 @@ fpublic UnLockCar(carid)
 
 fpublic OnPlayerExitVehicle(playerid, vehicleid)
 {
+	IsElsoKerekCucc[playerid] = 0;
 	if(PlayerRaceTuning[playerid][tNitro] > 0 && PlayerRaceTuning[playerid][tNitroIdo] == 0 && KocsibanVan[playerid])
 		PlayerRaceTuning[playerid][tNitroIdo] = 0;
 
@@ -36501,6 +36535,16 @@ stock ToresFekvorendor(playerid)
 	}
  	return 1;
  }
+
+stock GetPlayerSpeed(playerid)
+{
+    new Float:ST[4];
+    if(IsPlayerInAnyVehicle(playerid))
+    GetVehicleVelocity(GetPlayerVehicleID(playerid),ST[0],ST[1],ST[2]);
+    else GetPlayerVelocity(playerid,ST[0],ST[1],ST[2]);
+    ST[3] = floatsqroot(floatpower(floatabs(ST[0]), 2.0) + floatpower(floatabs(ST[1]), 2.0) + floatpower(floatabs(ST[2]), 2.0)) * 179.28625;
+    return floatround(ST[3]);
+}
 
 stock SaveIRC()
 {

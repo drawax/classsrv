@@ -10,6 +10,27 @@
  *    í: 3   õ: 6   û: 9    *  
  ****************************/
 
+CMD:wheelie(playerid, params[])
+{
+	new jarmu;
+	jarmu = GetPlayerVehicleID(playerid);
+	if(!Admin(playerid, 1))
+			return SendClientMessage(playerid, COLOR_LIGHTRED, "[Hiba]: Ezt a parancsot nem használhatod!");
+	if(GetVehicleModel(jarmu) != 475) return Msg(playerid,"Csak Sabre kocsiban használható.");
+	if(strcmp(params,"be",true) == 0)
+	{
+		IsElsoKerekCucc[playerid] = 1;
+		SendClientMessage(playerid, COLOR_BLUE, "Marci kerekes cucca bekapcsolva");
+	}
+	else if(strcmp(params,"ki",true) == 0)
+	{
+		IsElsoKerekCucc[playerid] = 0;
+		SendClientMessage(playerid, COLOR_RED, "Marci kerekes cucca kikapcsolva");
+	}
+	else return SendClientMessage(playerid, COLOR_BLUE, "Használat: /wheelie [be/ki]");
+	return 1;
+}
+
 ALIAS(b5k2s):poke;
 ALIAS(b5k):poke;
 CMD:poke(playerid, params[])
