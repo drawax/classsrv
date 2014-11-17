@@ -31121,7 +31121,7 @@ fpublic OnPlayerStateChange(playerid, newstate, oldstate) // opsc
 	if(newstate == PLAYER_STATE_DRIVER || newstate == PLAYER_STATE_PASSENGER)
 	{
 		IsElsoKerekCucc[playerid] = 0;
-		//SendClientMessage(playerid, COLOR_BLUE, "WHEELIE: Bekapcsolásához írd be: /wheelie be");
+		//SendClientMessage(playerid, COLOR_BLUE, "WHEELIE: Bekapcsolásához írd be: /wheelie be"); 
 	}
 	if(oldstate == PLAYER_STATE_DRIVER && newstate == PLAYER_STATE_ONFOOT)
 	{
