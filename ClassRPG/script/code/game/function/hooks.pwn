@@ -22,7 +22,7 @@ fpublic SeeHooks_PutPlayerInVehicle(playerid, vehicleid, seatid)
     CallLocalFunction("OnPutPlayerInVehicle", "ddd", playerid, vehicleid, seatid);
 }
 
-#if defined _ALS_PutPlayerInVehicle
+#if defined _ALS_PutPlayerInVehicle // TESZTKRISZ
     #undef PutPlayerInVehicle
 #else
     #define _ALS_PutPlayerInVehicle
