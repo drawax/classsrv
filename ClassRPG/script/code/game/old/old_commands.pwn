@@ -11945,6 +11945,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		return 1;
 	}
+
 	if(egyezik(cmd, "/race"))
 	{
 		if(ResiVan[2]) return Msg(playerid,"Verseny letiltva restart miatt....");
@@ -17566,7 +17567,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	if(egyezik(cmd, "/hitman"))
 	{
 	    if(!IsDirector(playerid) && !IsScripter(playerid)) return Msg(playerid, "a-a");
-		if(params < 1) return Msg(playerid, "/Hitman [Viadal / Megbízás / Leader / iFelvesz  / Kirúg]");
+		if(params < 1) return Msg(playerid, "/Hitman [Viadal / Megbízás / Leader / Felvesz / iFelvesz  / Kirúg]");
 
 		if(egyezik(param[1], "Felvesz"))
 		{
@@ -34524,7 +34525,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			FloodMegprobal[playerid]=10;
 		}
 	}
-	if(egyezik(cmd, "/felszólít2") || egyezik(cmd, "/felszolit2")) 
+	if(egyezik(cmd, "/felszólít2") || egyezik(cmd, "/felszolit2"))
 	{
 		if(FloodMegprobal[playerid]>0)
 		{
@@ -41847,7 +41848,6 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			tmp = strtok(cmdtext, idx);
 			level = strval(tmp);
 			if(level > sizeof(Rangok) || level < 0) { SendClientMessage(playerid, COLOR_GREY, "   Nincs ilyen meló!"); return 1; }
-            if (PlayerInfo[playerid][pAdmin] >= 1337)
 			{
 				if(IsPlayerConnected(para1))
 			    {
@@ -43058,9 +43058,9 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		    Msg(playerid, "Sikeresen javítva!");
 			if(!IsScripter(playerid))
 			{
-			new javitasszoveg[128];
-			format(javitasszoveg, sizeof(javitasszoveg), "<< %s megjavított egy jármûvet! >>", AdminName(playerid));
-			SendMessage(SEND_MESSAGE_ADMIN, javitasszoveg, COLOR_RED);
+				new javitasszoveg[128];
+				format(javitasszoveg, sizeof(javitasszoveg), "<< %s megjavított egy jármûvet! >>", AdminName(playerid));
+				SendMessage(SEND_MESSAGE_ADMIN, javitasszoveg, COLOR_LIGHTRED, 1);
 			}
 		}
 		return 1;

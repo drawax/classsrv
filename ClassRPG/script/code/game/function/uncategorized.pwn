@@ -16190,7 +16190,6 @@ stock LegalisSzervezetTagja(playerid)
 	return 0;
 }*/
 
-
 stock KocsiSofor(kocsi)
 {
 	new player = NINCS;
@@ -17579,7 +17578,7 @@ stock TextDrawUpdate(playerid, textdraw)
 		new ideiglenes;
 		ideiglenes = (Szint(jatekos) + 1) * levelexp;
 
-		Format(string, "~r~~h~%s~b~ (%d)~n~~r~~h~Szint: ~l~%d (mžg %d ¦ra)~n~~r~~h~‡let: ~l~%.0f / %.0f~n~~r~~h~P?ncžl: ~l~%.0f%%",PlayerName(jatekos),jatekos, Szint(jatekos), (ideiglenes - PlayerInfo[jatekos][pExp]), MAXHP, iPlayerHealth[jatekos], iPlayerArmour[jatekos]);
+		Format(string, "~r~~h~%s~b~ (%d)~n~~r~~h~Szint: ~l~%d (mžg %d ¦ra)~n~~r~~h~‡let: ~l~%.0f / %.0f~n~~r~~h~P˜ncžl: ~l~%.0f%%",PlayerName(jatekos),jatekos, Szint(jatekos), (ideiglenes - PlayerInfo[jatekos][pExp]), MAXHP, iPlayerHealth[jatekos], iPlayerArmour[jatekos]);
 
 		TextDrawSetString(InfoTextDraw2[playerid], string);
 		
@@ -17684,20 +17683,20 @@ stock TextDrawUpdate(playerid, textdraw)
 			{
 				new Float:x,Float:y,Float:z;
 				GetPlayerPos(jatekos, x, y, z);
-				Format(magassag, "~n~~r~~h~Magass?g: ~l~%.3f ",z);
+				Format(magassag, "~n~~r~~h~Magass˜g: ~l~%.3f ",z);
 			}	
 			if(!IsABicikli(jarmu))
 			{
 				
 				if(IsTerno(playerid))
-					Format(string, "~l~---[ J?rm« ]---~n~~r~~h~Model: ~l~%s~n %s ~n~~r~~h~Sžr¬lžs: ~l~%.0f%%~n~~r~~h~Sebessžg: ~l~%d km/h ~n~~r~~h~Km: ~l~%.2f Km%s ~n~~r~~h~%s[%.1f]", GetVehicleModelName(jarmu, true),BenzinInfo, serules, sebesseg, KmSzamol[jarmu]/1000,magassag,aksi,CarPart[jarmu][cAkkumulator]);
+					Format(string, "~l~---[ J˜rm« ]---~n~~r~~h~Model: ~l~%s~n %s ~n~~r~~h~Sžr¬lžs: ~l~%.0f%%~n~~r~~h~Sebessžg: ~l~%d km/h ~n~~r~~h~Km: ~l~%.2f Km%s ~n~~r~~h~%s[%.1f]", GetVehicleModelName(jarmu, true),BenzinInfo, serules, sebesseg, KmSzamol[jarmu]/1000,magassag,aksi,CarPart[jarmu][cAkkumulator]);
 
 				else
-					Format(string, "~l~---[ J?rm« ]---~n~~r~~h~Model: ~l~%s~n %s ~n~~r~~h~Sžr¬lžs: ~l~%.0f%%~n~~r~~h~Sebessžg: ~l~%d km/h ~n~~r~~h~Km: ~l~%.2f Km%s ~n~~r~~h~%s", GetVehicleModelName(jarmu, true),BenzinInfo, serules, sebesseg, KmSzamol[jarmu]/1000,magassag,aksi);
+					Format(string, "~l~---[ J˜rm« ]---~n~~r~~h~Model: ~l~%s~n %s ~n~~r~~h~Sžr¬lžs: ~l~%.0f%%~n~~r~~h~Sebessžg: ~l~%d km/h ~n~~r~~h~Km: ~l~%.2f Km%s ~n~~r~~h~%s", GetVehicleModelName(jarmu, true),BenzinInfo, serules, sebesseg, KmSzamol[jarmu]/1000,magassag,aksi);
 
 			}
 			else
-				Format(string, "~l~---[ J?rm« ]---~n~~r~~h~Model: ~l~%s~n ~~r~~h~Sžr¬lžs: ~l~%.0f%%~n~~r~~h~Sebessžg: ~l~%d km/h", GetVehicleModelName(jarmu, true), serules, sebesseg);
+				Format(string, "~l~---[ J˜rm« ]---~n~~r~~h~Model: ~l~%s~n ~~r~~h~Sžr¬lžs: ~l~%.0f%%~n~~r~~h~Sebessžg: ~l~%d km/h", GetVehicleModelName(jarmu, true), serules, sebesseg);
 			
 			if(sebesseg > 30 && TrafiPax[jatekos][tBuntetheto] == 0 && !OnDuty[jatekos] && !AdminDuty[jatekos]) TrafipaxCheck(jatekos, sebesseg, jarmu);
 		
@@ -17715,7 +17714,7 @@ stock TextDrawUpdate(playerid, textdraw)
 		korhazido =KorhazIdo[jatekos];
 		
 		if(JatekosZsak[jatekos] >= 0)
-			Format(string, "~l~---[ Zs?k ]---~n~~r~Pžnz: ~l~%dFt (%.0f%%)", JatekosZsak[jatekos], floatround((float(JatekosZsak[jatekos]) / float(MAXZSAKPENZ)) * 100.0));
+			Format(string, "~l~---[ Zs˜k ]---~n~~r~Pžnz: ~l~%dFt (%.0f%%)", JatekosZsak[jatekos], floatround((float(JatekosZsak[jatekos]) / float(MAXZSAKPENZ)) * 100.0));
 		if(Loterben[jatekos] >= 0)
 			Format(string, "~l~---[ L§tžr ]---~n~~r~Pont: ~l~%ddb - Id§: %dmp",LoterInfo[Loterben[jatekos]][lTalalat], LoterInfo[Loterben[jatekos]][lIdo]-UnixTime);
 		if(Paintballozik[jatekos])
@@ -17723,11 +17722,11 @@ stock TextDrawUpdate(playerid, textdraw)
 		if(PlayerInfo[jatekos][pJailed] > 0 || PlayerInfo[jatekos][pKozmunka] != 0)
 			Format(string, "~r~B¨rt¨n: ~l~%dmp", PlayerInfo[jatekos][pJailTime]);
 		if(korhazido > 0)
-			Format(string, "~r~K¦rh?z: ~l~%dmp", korhazido);
+			Format(string, "~r~K¦rh˜z: ~l~%dmp", korhazido);
 		if(PlayerRaceInfo[jatekos][xVersenyen] != NINCS)
 			Format(string, "~r~Helyezžsed: ~l~%d", PlayerRaceInfo[jatekos][xHelyezes]);
 		if(GetVehicleModel(GetPlayerVehicleID(jatekos)) == 408)
-			Format(string, "~r~Szemžttart?ly: ~l~%ddb/20db", SzemetAKocsiban[GetPlayerVehicleID(jatekos)]);
+			Format(string, "~r~Szemžttart˜ly: ~l~%ddb/20db", SzemetAKocsiban[GetPlayerVehicleID(jatekos)]);
 		if(Taxi[jatekos][tDuty])
 		{
 			new sofor = jatekos;
@@ -17848,7 +17847,7 @@ stock ShowTextDraw(playerid, textdraw, szin = TEXTDRAWBOX_COLOR_BLACK)
 		if(!InfoTextDrawCreated[playerid])
 		{
 			InfoTextDrawCreated[playerid] = 1;
-			id = TextDrawCreate(0, 428, "Inform?ci¦k bet¨ltžse...");
+			id = TextDrawCreate(0, 428, "Inform˜ci¦k bet¨ltžse...");
 
 			TextDrawAlignment(id, 1);
 			TextDrawFont(id, 1);
@@ -28495,7 +28494,7 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			KocsiRiaszto[carid] = 0;
 			Inditasgatlo[carid] = 0;
 			SetJarmu(carid, KOCSI_RIASZTO, 0);
-			GameTextForPlayer(playerid, "~w~J?rm«~n~~r~nyitva", 4000, 3);
+			GameTextForPlayer(playerid, "~w~J˜rm«~n~~r~nyitva", 4000, 3);
 			if(CarInfo[vs][cRiaszto] >= 1)
 				Cselekves(playerid, "kinyitotta a jármûvét és kikapcsolta a riasztót",0);
 			else
@@ -28508,7 +28507,7 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			CarInfo[vs][cLock] = 1;
 			KocsiRiaszto[carid] = 1;
 			SetJarmu(carid, KOCSI_RIASZTO, 0);
-			GameTextForPlayer(playerid, "~w~J?rm«~n~~r~z?rva", 4000, 3);
+			GameTextForPlayer(playerid, "~w~J˜rm«~n~~r~z˜rva", 4000, 3);
 			if(CarInfo[vs][cRiaszto] >= 1)
 				Cselekves(playerid, "bezárta a jármûvét és bekapcsolta a riasztót",0);
 			else
@@ -28848,8 +28847,8 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 			}
 		}*/
-		new kocsika = GetPlayerVehicleID(legkozelebbi);
-		if(fail != 1 && EMPKE[kocsika])
+		new kocsika = GetPlayerVehicleID(playerid);
+		if(fail != 1 && EMPKE[kocsika] && CarInfo[kocsika][cEMP] > 1)
 		{
 			switch(CarInfo[kocsika][cEMP])
 			{
@@ -28876,9 +28875,11 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 			}
 		}
+		
 		if(random(2) == 1)
 		{
 			Cselekves(playerid, "megpróbált sokkolni, de nem sikerült");
+
 			KocsitSokkolt[playerid] = 10;
 		
 			Sokkol[playerid] = false;
@@ -29844,6 +29845,8 @@ fpublic OnPlayerDeath(playerid, killerid, reason)
 		format(hitmanstring,128,"<< %s teljesítette a megbízást >>", PlayerInfo[killerid][pHitmanNev]);
 		SendMessage(SEND_MESSAGE_HITMAN, hitmanstring, COLOR_YELLOW);
 		SendFormatMessage(killerid, COLOR_LIGHTBLUE, "A megbízást teljesítetted. A cég átutalta a pénzt a számládra. (%dFt)", PlayerInfo[playerid][pHeadValue]);
+		Format(_tmpString, "[Hitman] %s megölte %s-t", PlayerInfo[killerid][pHitmanNev], PlayerName(playerid));
+		EgyebLog(_tmpString);
 
 		PlayerInfo[killerid][pAccount] += PlayerInfo[playerid][pHeadValue];
 		PlayerInfo[playerid][pHeadValue] = 0;
@@ -31489,7 +31492,7 @@ fpublic OnPlayerStateChange(playerid, newstate, oldstate) // opsc
 			{
 				//print("NO");
 			    new string3[128];
-				format(string3, sizeof(string3), "~w~Ez a kocsi bžrelhet§~n~?ra:~g~%dFT~n~~w~Bžrlžs:~g~/rentcar",BizzInfo[BIZ_BERLES1][bEntranceCost]);
+				format(string3, sizeof(string3), "~w~Ez a kocsi bžrelhet§~n~˜ra:~g~%dFT~n~~w~Bžrlžs:~g~/rentcar",BizzInfo[BIZ_BERLES1][bEntranceCost]);
 				GameTextForPlayer(playerid, string3, 5000, 3);
 				
 				Gyujtas[newcar] = false;
@@ -31505,7 +31508,7 @@ fpublic OnPlayerStateChange(playerid, newstate, oldstate) // opsc
 			{
 				//print("NO");
 			    new string4[128];
-				format(string4, sizeof(string4), "~w~Ez a kocsi bžrelhet§~n~?ra:~g~%dFT~n~~w~Bžrlžs:~g~/rentcar",BizzInfo[BIZ_BERLES2][bEntranceCost]);
+				format(string4, sizeof(string4), "~w~Ez a kocsi bžrelhet§~n~˜ra:~g~%dFT~n~~w~Bžrlžs:~g~/rentcar",BizzInfo[BIZ_BERLES2][bEntranceCost]);
 				GameTextForPlayer(playerid, string4, 5000, 3);
 				
 				Gyujtas[newcar] = false;
@@ -31521,7 +31524,7 @@ fpublic OnPlayerStateChange(playerid, newstate, oldstate) // opsc
 			{
 				//print("NO");
 			    new string5[128];
-				format(string5, sizeof(string5), "~w~Ez a kocsi bžrelhet§~n~?ra:~g~%dFT~n~~w~Bžrlžs:~g~/rentcar",BizzInfo[BIZ_HAJO][bEntranceCost]);
+				format(string5, sizeof(string5), "~w~Ez a kocsi bžrelhet§~n~˜ra:~g~%dFT~n~~w~Bžrlžs:~g~/rentcar",BizzInfo[BIZ_HAJO][bEntranceCost]);
 				GameTextForPlayer(playerid, string5, 5000, 3);
 				
 				Gyujtas[newcar] = false;
@@ -31728,7 +31731,7 @@ fpublic OnPlayerExitVehicle(playerid, vehicleid)
 	if(KocsiRadio[vehicleid] > 0 && Zsebradio[playerid] == 0)
 	{
 		StopAudioStreamForPlayer(playerid);
-		GameTextForPlayer(playerid, "~r~R?DI KIKAPCSOLVA", 950, 5);
+		GameTextForPlayer(playerid, "~r~R˜DI KIKAPCSOLVA", 950, 5);
 		TextDrawUpdate(playerid, TD_Info);
 		//Msg(playerid, "Lefutott");
 	}
@@ -33457,7 +33460,7 @@ fpublic OtherTimer()
 		{
 			if(Aukcio[aIdo] == 9)
 			{
-				format(result, 128, "Árverés vezetõ: Senki többet??");
+				format(result, 128, "Árverés vezetõ: Senki többet˜?");
 				ProxDetector(B_Tavol, ArveresNPC, result, COLOR_LIGHTBLUE, COLOR_LIGHTBLUE, COLOR_LIGHTBLUE, COLOR_LIGHTBLUE, COLOR_LIGHTBLUE);
 				SetPlayerChatBubble(ArveresNPC, result, COLOR_WHITE, B_Normal, 5000);
 
@@ -33735,7 +33738,7 @@ fpublic SetPlayerUnjail()
 				PlayerInfo[i][pJailed] = 0;
 				JailTime[i] = 0;
 				SendClientMessage(i, COLOR_GRAD1,"Letöltötted a büntetésed!");
-				format(string, sizeof(string), "~g~Szabad vagy~n~~w~Lžgy j¦ polg?r!");
+				format(string, sizeof(string), "~g~Szabad vagy~n~~w~Lžgy j¦ polg˜r!");
 				//SetPlayerPos(i, -1605.507446, 711.250549, 13.365664);
 				GameTextForPlayer(i, string, 5000, 1);
 				ClearPlayerCrime(i);
@@ -34825,7 +34828,7 @@ fpublic Hatar()
 	//new string[256];
 	foreach(Jatekosok, p)
 	{
-	if(RendesJatekos(p) && !IsACop(p) && !IsHitman(p) && !AdminDuty[p] && Tevezik[p] == NINCS)
+	if(RendesJatekos(p) && !IsACop(p) && !HitmanDuty[p] && !AdminDuty[p] && Tevezik[p] == NINCS)
 	//	if(RendesJatekos(p))
 		{
 			if(HatartAtlepte[p] > 0) continue;
@@ -42709,7 +42712,7 @@ stock RandomTokAjandek(playerid)
 	SendFormatMessage(playerid, COLOR_LIGHTRED, "ClassRPG: A következõ tököt %d perc múlva nyithatod.", TimeToOpenPumpkin);
 	return 1;
 }*/
-/* Amos teszként ideírt szövege, töröld*/
+
 stock IsRendvedelmiFrakcio(frakcioid)
 {
 	if(frakcioid == FRAKCIO_SCPD || frakcioid == FRAKCIO_FBI || frakcioid == FRAKCIO_KATONASAG || frakcioid == FRAKCIO_SFPD || frakcioid == FRAKCIO_NAV) return 1;
@@ -42737,5 +42740,4 @@ fpublic P_OnVehicleInteriorChange(vehicleid, newinteriorid, oldinteriorid)
 	VehicleInterior[vehicleid] = newinteriorid;
 	printf("P_OnVehicleInteriorChange(vehicleid, %d, new: %d, old: %d)", vehicleid, newinteriorid, oldinteriorid);
 	return 1;
-}
-
+}*/

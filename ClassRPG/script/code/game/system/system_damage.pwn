@@ -350,7 +350,7 @@ stock OnPlayerHit(playerid, attacker, damageType, Float:amount, bodypart)
 	////////////////////
 	// PREVENT DAMAGE //
 	////////////////////
-	if(IsPlayerNPC(playerid) || Ajtozott[playerid] > 0 || AdminDuty[playerid] || Warozott[playerid] >= UnixTime || NoDamage[playerid] || SpawnVedelem[playerid]
+	if(IsPlayerNPC(playerid) || Ajtozott[playerid] > 0 || AdminDuty[playerid] || ScripterDuty[playerid] || Warozott[playerid] >= UnixTime || NoDamage[playerid] || SpawnVedelem[playerid]
 		|| PlayerVehicle[playerid] != NINCS && ArmoredVehicle[PlayerVehicle[playerid]]
 		|| attacker != INVALID_PLAYER_ID && ( NemMozoghat(attacker) || AdminDuty[attacker] )
 	)
@@ -654,7 +654,7 @@ stock OnPlayerHit(playerid, attacker, damageType, Float:amount, bodypart)
 		{
 			SendFormatMessage(playerid, COLOR_LIGHTRED, "ClassRPG: Lábon lõttek, ezért súlyosan megsebesültél (#%d)", PlayerInfo[attacker][pBID]);
 			Msg(attacker, "Lábon lõtted, ezért megsebesült.");
-			if(!AdminDuty[attacker] && !Harcol[attacker] && !Paintballozik[attacker] && !Kikepzoben[attacker] && !Halal[attacker])
+			if(!AdminDuty[attacker] && ScripterDuty[attacker] && !Harcol[attacker] && !Paintballozik[attacker] && !Kikepzoben[attacker] && !Halal[attacker])
 			{
 				PlayerInfo[attacker][pOlesIdo] +=K_LAB_IDO;
 				tformat(128, "%s plusz kórház jail ideje %d másodpercre nõtt (+"#K_LAB_IDO"mp)", PlayerName(attacker), PlayerInfo[attacker][pOlesIdo]);
