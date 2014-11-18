@@ -11945,7 +11945,6 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		return 1;
 	}
-
 	if(egyezik(cmd, "/race"))
 	{
 		if(ResiVan[2]) return Msg(playerid,"Verseny letiltva restart miatt....");
@@ -34525,7 +34524,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			FloodMegprobal[playerid]=10;
 		}
 	}
-	if(egyezik(cmd, "/felszólít2") || egyezik(cmd, "/felszolit2"))
+	if(egyezik(cmd, "/felszólít2") || egyezik(cmd, "/felszolit2")) 
 	{
 		if(FloodMegprobal[playerid]>0)
 		{

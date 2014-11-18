@@ -16190,6 +16190,7 @@ stock LegalisSzervezetTagja(playerid)
 	return 0;
 }*/
 
+
 stock KocsiSofor(kocsi)
 {
 	new player = NINCS;
@@ -28847,8 +28848,8 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 			}
 		}*/
-		new kocsika = GetPlayerVehicleID(playerid);
-		if(fail != 1 && EMPKE[kocsika] && CarInfo[kocsika][cEMP] > 1)
+		new kocsika = GetPlayerVehicleID(legkozelebbi);
+		if(fail != 1 && EMPKE[kocsika])
 		{
 			switch(CarInfo[kocsika][cEMP])
 			{
@@ -28875,11 +28876,9 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 			}
 		}
-		
 		if(random(2) == 1)
 		{
 			Cselekves(playerid, "megpróbált sokkolni, de nem sikerült");
-
 			KocsitSokkolt[playerid] = 10;
 		
 			Sokkol[playerid] = false;
