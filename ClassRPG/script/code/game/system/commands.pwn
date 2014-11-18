@@ -1318,7 +1318,7 @@ CMD:vadasz(playerid, params[])
 CMD:ondutyskin(playerid, params[])
 {
 	if(!Admin(playerid, 1)) return 1;
-	if(!AdminDuty[playerid]) return Msg(playerid, "Nem vagy ondutyban!");
+	if(!AdminDuty[playerid] && !ScripterDuty[playerid]) return Msg(playerid, "Nem vagy ondutyban!");
 	if(!AdminDutySkin[playerid])
 	{
 		AdminDutySkin[playerid] = 1;

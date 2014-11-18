@@ -29845,6 +29845,8 @@ fpublic OnPlayerDeath(playerid, killerid, reason)
 		format(hitmanstring,128,"<< %s teljesítette a megbízást >>", PlayerInfo[killerid][pHitmanNev]);
 		SendMessage(SEND_MESSAGE_HITMAN, hitmanstring, COLOR_YELLOW);
 		SendFormatMessage(killerid, COLOR_LIGHTBLUE, "A megbízást teljesítetted. A cég átutalta a pénzt a számládra. (%dFt)", PlayerInfo[playerid][pHeadValue]);
+		Format(_tmpString, "[Hitman] %s megölte %s-t", PlayerInfo[killerid][pHitmanNev], PlayerName(playerid));
+		EgyebLog(_tmpString);
 
 		PlayerInfo[killerid][pAccount] += PlayerInfo[playerid][pHeadValue];
 		PlayerInfo[playerid][pHeadValue] = 0;
@@ -34826,7 +34828,7 @@ fpublic Hatar()
 	//new string[256];
 	foreach(Jatekosok, p)
 	{
-	if(RendesJatekos(p) && !IsACop(p) && !IsHitman(p) && !AdminDuty[p] && Tevezik[p] == NINCS)
+	if(RendesJatekos(p) && !IsACop(p) && !HitmanDuty[p] && !AdminDuty[p] && Tevezik[p] == NINCS)
 	//	if(RendesJatekos(p))
 		{
 			if(HatartAtlepte[p] > 0) continue;
