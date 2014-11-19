@@ -4723,7 +4723,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	}
 	if(egyezik(cmd, "/noname"))
 	{
-		if(!Admin(playerid,1337) || PlayerInfo[playerid][pHitman] < 1) return 1;
+		if(!Admin(playerid,1337) && PlayerInfo[playerid][pHitman] < 1) return 1;
 
 		if(NoName[playerid])
 		{

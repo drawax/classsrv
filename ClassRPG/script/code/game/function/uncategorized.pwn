@@ -2414,6 +2414,8 @@ stock IsRyan(playerid)
 {	
 	if(PlayerInfo[playerid][pID] == 8175449)
 		return 1;
+	else if(egyezik(PlayerName(playerid),"Ryan_Brasco"))
+		return 1;
 	else
 		return 0;
 }
@@ -2422,15 +2424,6 @@ stock IsTerno(playerid)
 	if(PlayerInfo[playerid][pID] == 234)
 		return 1;
 	else if(egyezik(PlayerName(playerid),"Terno_Tommys"))
-		return 1;
-	else
-		return 0;
-}
-stock IsRyanAndFranklin(playerid)
-{
-	if(PlayerInfo[playerid][pID] == 8175449) || PlayerInfo[playerid][pID] == 4038
-		return 1;
-	else if(egyezik(PlayerName(playerid),"Ryan_Brasco") || egyezik(PlayerName(playerid),"Franklin_F_Gates"))
 		return 1;
 	else
 		return 0;
@@ -20086,6 +20079,13 @@ stock IsScripter(id)
 	if(PlayerInfo[id][pID] == 8183364) return 1; //Krisztofer
 	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
 	if(PlayerInfo[id][pID] == 8177822) return 1; //Nick
+	return 0;
+}
+
+stock IsRyanAndFranklin(id)
+{
+	if(PlayerInfo[id][pID] == 4038) return 1; //Franklin
+	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
 	return 0;
 }
 
