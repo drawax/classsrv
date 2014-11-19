@@ -3614,7 +3614,7 @@ CMD:detektor(playerid, params[])
 	else if(!sscanf(params, "s[32]", m)) SendFormatMessage(playerid, COLOR_ADD, "Ebben a jármûben %d-as szintû detektor van", CarInfo[vs][cDetektor]);
 	return 1;
 }
-/*CMD:emp(playerid, params[])
+CMD:emp(playerid, params[])
 {
 	new v = GetPlayerVehicleID(playerid), vs = IsAVsKocsi(v), m[32];
 	if(!IsPlayerInAnyVehicle(playerid)) return Msg(playerid, "Csak jármûben használható!");
@@ -3638,7 +3638,7 @@ CMD:detektor(playerid, params[])
 	}
 	else if(!sscanf(params, "s[32]", m)) SendFormatMessage(playerid, COLOR_ADD, "Ebben a jármûben %d-as szintû EMP van", CarInfo[vs][cEMP]);
 	return 1;
-}*/
+}
 
 ALIAS(szem2t):szemet;
 CMD:szemet(playerid, params[])
