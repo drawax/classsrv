@@ -28848,7 +28848,7 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			}
 		}*/
 		//new kocsika = GetPlayerVehicleID(playerid);
-		new kocsika = GetClosestVehicle(playerid);
+		new kocsika = GetClosestVehicle(legkozelebbi);
 		if(fail != 1 && EMPKE[kocsika] && CarInfo[kocsika][cEMP] > 0)
 		{
 			switch(CarInfo[kocsika][cEMP])
