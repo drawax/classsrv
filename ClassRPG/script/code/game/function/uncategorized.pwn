@@ -28847,8 +28847,9 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 			}
 		}*/
-		new kocsika = GetPlayerVehicleID(playerid);
-		if(fail != 1 && EMPKE[kocsika] && CarInfo[kocsika][cEMP] > 1)
+		//new kocsika = GetPlayerVehicleID(playerid);
+		new kocsika = GetClosestVehicle(playerid);
+		if(fail != 1 && EMPKE[kocsika] && CarInfo[kocsika][cEMP] > 0)
 		{
 			switch(CarInfo[kocsika][cEMP])
 			{
@@ -29726,6 +29727,12 @@ fpublic OnPlayerDeath(playerid, killerid, reason)
 		{*/
 		format(_tmpString, 128, "%s megölte %s-t ezzel: %s - Pénz: %dFt - Pos: %.0f, %.0f, %.0f", name2, PlayerName(playerid), aWeaponNames[reason], penz, ArrExt(pos));
 		KillLog(_tmpString, 1);
+		//Hitman kill logolás by Ryan
+		if(HitmanDuty[killerid] == 1)
+		{
+			Format(_tmpString, "[Hitman] %s megölte %s-t ezzel: %s - Pénz: %dFt - Pos: %.0f, %.0f, %.0f", PlayerInfo[killerid][pHitmanNev], PlayerName(playerid), aWeaponNames[reason], penz, ArrExt(pos));
+			EgyebLog(_tmpString);
+		}
 		RKFigyelo[playerid][RKido] = UnixTime + RK_FIGYELO_IDO;
 		RKFigyelo[playerid][RKx] = pos[0];
 		RKFigyelo[playerid][RKy] = pos[1];
@@ -29766,6 +29773,11 @@ fpublic OnPlayerDeath(playerid, killerid, reason)
 			else if(IsHitman(killerid) && HitmanDuty[killerid] == 1 && PlayerInfo[playerid][pHeadValue] > 0)
 				format(_tmpString, 128, "%s megölte %s-t ezzel: %s - Pénz: %dFt - Pos: %.0f, %.0f, %.0f", PlayerInfo[killerid][pHitmanNev],  PlayerName(playerid), aWeaponNames[reason], penz, ArrExt(pos));
 			else*/
+		if(HitmanDuty[killerid] == 1)
+		{
+			Format(_tmpString, "[Hitman] %s megölte %s-t ezzel: %s - Pénz: %dFt - Pos: %.0f, %.0f, %.0f", PlayerInfo[killerid][pHitmanNev], PlayerName(playerid), aWeaponNames[reason], penz, ArrExt(pos));
+			EgyebLog(_tmpString);
+		}
 		format(_tmpString, 128, "%s megölte %s-t ezzel: %s - Pénz: %dFt - Pos: %.0f, %.0f, %.0f", name2, PlayerName(playerid), aWeaponNames[reason], penz, ArrExt(pos));
 		RKFigyelo[playerid][RKido] = UnixTime + RK_FIGYELO_IDO;
 		RKFigyelo[playerid][RKx] = pos[0];
@@ -29845,8 +29857,6 @@ fpublic OnPlayerDeath(playerid, killerid, reason)
 		format(hitmanstring,128,"<< %s teljesítette a megbízást >>", PlayerInfo[killerid][pHitmanNev]);
 		SendMessage(SEND_MESSAGE_HITMAN, hitmanstring, COLOR_YELLOW);
 		SendFormatMessage(killerid, COLOR_LIGHTBLUE, "A megbízást teljesítetted. A cég átutalta a pénzt a számládra. (%dFt)", PlayerInfo[playerid][pHeadValue]);
-		Format(_tmpString, "[Hitman] %s megölte %s-t", PlayerInfo[killerid][pHitmanNev], PlayerName(playerid));
-		EgyebLog(_tmpString);
 
 		PlayerInfo[killerid][pAccount] += PlayerInfo[playerid][pHeadValue];
 		PlayerInfo[playerid][pHeadValue] = 0;

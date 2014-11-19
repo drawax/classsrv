@@ -2041,27 +2041,39 @@ CMD:carresi(playerid, params[])
 }
 
 ALIAS(l6szerek):loszerek;
-CMD:loszerek(playerid, params[])
+CMD:loszerek(playerid, params[]) //Javítottam - Ryan
 {
 	if(!MunkaLeader(playerid, FRAKCIO_SCPD) && !MunkaLeader(playerid, FRAKCIO_FBI) && !MunkaLeader(playerid, FRAKCIO_KATONASAG) && !MunkaLeader(playerid, FRAKCIO_NAV) && !Admin(playerid, 1)) return 1;
 	
 	new frakcio;
 	SendClientMessage(playerid, COLOR_LIGHTGREEN, "================================ LÕSZEREK ================================");
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_SCPD || Admin(playerid, 1)) frakcio=FRAKCIO_SCPD;
-	SendFormatMessage(playerid, COLOR_WHITE, "[Rendõrség] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
-	SendFormatMessage(playerid, COLOR_WHITE, "[Rendõrség] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_SCPD || Admin(playerid, 1)) 
+	{
+		frakcio=FRAKCIO_SCPD;
+		SendFormatMessage(playerid, COLOR_WHITE, "[Rendõrség] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
+		SendFormatMessage(playerid, COLOR_WHITE, "[Rendõrség] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
+	}
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_FBI || Admin(playerid, 1)) frakcio=FRAKCIO_FBI;
-	SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
-	SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_FBI || Admin(playerid, 1))
+	{
+		frakcio=FRAKCIO_FBI;
+		SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
+		SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
+	}
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_NAV || Admin(playerid, 1)) frakcio=FRAKCIO_NAV;
-	SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
-	SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_NAV || Admin(playerid, 1))
+	{
+		frakcio=FRAKCIO_NAV;
+		SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
+		SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
+	}
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_KATONASAG || Admin(playerid, 1)) frakcio=FRAKCIO_KATONASAG;
-	SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
-	SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_KATONASAG || Admin(playerid, 1))
+	{
+		frakcio=FRAKCIO_KATONASAG;
+		SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
+		SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
+	}
 	SendClientMessage(playerid, COLOR_LIGHTGREEN,"================================ LÕSZEREK ================================");
 	return 1;
 }
@@ -2072,21 +2084,33 @@ CMD:fegyverek(playerid, params[])
 	
 	new frakcio;
 	SendClientMessage(playerid, COLOR_LIGHTGREEN, "================================ FEGYVEREK ================================");
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_SCPD || Admin(playerid, 1)) frakcio=FRAKCIO_SCPD;
-	SendFormatMessage(playerid, COLOR_WHITE, "[LSPD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
-	SendFormatMessage(playerid, COLOR_WHITE, "[LSPD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_SCPD || Admin(playerid, 1))
+	{
+		frakcio=FRAKCIO_SCPD;
+		SendFormatMessage(playerid, COLOR_WHITE, "[LSPD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
+		SendFormatMessage(playerid, COLOR_WHITE, "[LSPD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
+	}
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_FBI || Admin(playerid, 1)) frakcio=FRAKCIO_FBI;
-	SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
-	SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_FBI || Admin(playerid, 1))
+	{
+		frakcio=FRAKCIO_FBI;
+		SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
+		SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
+	}
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_NAV || Admin(playerid, 1)) frakcio=FRAKCIO_NAV;
-	SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
-	SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_NAV || Admin(playerid, 1))
+	{
+		frakcio=FRAKCIO_NAV;
+		SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
+		SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
+	}
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_KATONASAG || Admin(playerid, 1)) frakcio=FRAKCIO_KATONASAG;
-	SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
-	SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_KATONASAG || Admin(playerid, 1))
+	{
+		frakcio=FRAKCIO_KATONASAG;
+		SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
+		SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
+	}
 	SendClientMessage(playerid, COLOR_LIGHTGREEN,"================================ FEGYVEREK ================================");
 	return 1;
 }
