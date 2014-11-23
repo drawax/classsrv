@@ -1441,6 +1441,13 @@ public OnPlayerText(playerid, text[]) //opt
 			return 0;
 		}
 
+		if(egyezik(tmp, "cian"))
+		{
+			Msg(playerid, "Megmérgezted magad");
+			SetHealth(playerid, 0);
+			return 0;
+		}
+
 		if(egyezik(tmp, "célpontok") || egyezik(tmp, "celpontok"))
 		{
 			new emberek;
@@ -1995,16 +2002,11 @@ public OnPlayerText(playerid, text[]) //opt
 		else
 		{
 		    SendClientMessage(playerid, COLOR_WHITE, "====[ Laptop ]====");
-			if(IsDirector(playerid))
-			{
-					SendClientMessage(playerid, COLOR_YELLOW, "| Felvétel | - /hitman Felvesz [név], majd /hitmannév [név] [hitmanneve]");
-					SendClientMessage(playerid, COLOR_YELLOW, "| Contract törlés | - /contracttörlés [név/id]");
-			}
 			SendClientMessage(playerid, COLOR_YELLOW2, "| - Tagok - Hírdetés");
-			SendClientMessage(playerid, COLOR_YELLOW2, "| - Vérdíjak  - Ruha - /jelvény2");
-			SendClientMessage(playerid, COLOR_YELLOW2, "| - Célpontok - Lenyomoz - Álnév");
-			SendClientMessage(playerid, COLOR_YELLOW2, "| - Rendelés - Bilincs - Bombatavol");
-			SendClientMessage(playerid, COLOR_YELLOW2, "| - Bomba - Munka - /méreg [id]");
+			SendClientMessage(playerid, COLOR_YELLOW2, "| - Vérdíjak  - Ruha - cian");
+			SendClientMessage(playerid, COLOR_YELLOW2, "| - Célpontok - lenyomoz - Álnév");
+			SendClientMessage(playerid, COLOR_YELLOW2, "| - Rendelés - Bilincs - bombatavol");
+			SendClientMessage(playerid, COLOR_YELLOW2, "| - Bomba - Munka - lenyomoz");
 		    return 0;
 		}
 

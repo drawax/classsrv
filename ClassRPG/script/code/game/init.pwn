@@ -107,7 +107,7 @@
 
 // CLASSRPG :: Systems (after)
 #include "system\commands.pwn"
-#include "system\omsz.pwn"
+//#include "system\omsz.pwn" Ideiglenesen kiszedtem amíg nem 100%-os by Amos
 
 // CLASSRPG :: old code
 #include "old\old_commands.pwn"

@@ -10,27 +10,6 @@
  *    í: 3   õ: 6   û: 9    *  
  ****************************/
 
-CMD:wheelie(playerid, params[])
-{
-	new jarmu;
-	jarmu = GetPlayerVehicleID(playerid);
-	if(!Admin(playerid, 1))
-			return SendClientMessage(playerid, COLOR_LIGHTRED, "[Hiba]: Ezt a parancsot nem használhatod!");
-	if(GetVehicleModel(jarmu) != 475) return Msg(playerid,"Csak Sabre kocsiban használható.");
-	if(strcmp(params,"be",true) == 0)
-	{
-		IsElsoKerekCucc[playerid] = 1;
-		SendClientMessage(playerid, COLOR_BLUE, "Marci kerekes cucca bekapcsolva");
-	}
-	else if(strcmp(params,"ki",true) == 0)
-	{
-		IsElsoKerekCucc[playerid] = 0;
-		SendClientMessage(playerid, COLOR_RED, "Marci kerekes cucca kikapcsolva");
-	}
-	else return SendClientMessage(playerid, COLOR_BLUE, "Használat: /wheelie [be/ki]");
-	return 1;
-}
-
 ALIAS(b5k2s):poke;
 ALIAS(b5k):poke;
 CMD:poke(playerid, params[])
@@ -189,12 +168,9 @@ CMD:help(playerid, params[])
 		if(LMT(playerid, FRAKCIO_MENTO) || LMT(playerid, FRAKCIO_SFMENTO))
 			Msg(playerid, "OMSZ: /r, /rb, /d, /heal, /duty, /mk, /segit, /lista, /accept medic, /nyit, /zar, /fizetesek, /mvisz", false, COLOR_YELLOW);
 		if(IsHitman(playerid))
-		{
-		    Msg(playerid,"Hitman: /portable /(h)itman(r)ádió /méreg /lehallgat /getskin2 ((Fontos: ölés elõtt laptopba lépj munkába))", false, COLOR_YELLOW);
-			Msg(playerid,"Hitman: /jelvény2 /sziréna /d2 /megaphone /felszólít /hlaptop(ugyanaz mint a /portable)", false, COLOR_YELLOW);
-		}
+		    Msg(playerid,"Hitman: /portable /(h)itman(r)ádió /méreg /hitmansms /lehallgat /getskin2 /laptop ((Fontos: ölés elõtt laptopba lépj munkába))", false, COLOR_YELLOW);
    		if(IsDirector(playerid))
-       		Msg(playerid, "Hitman Director: /hitman /hitmannév /had /hitmansms", false, COLOR_YELLOW);
+       		Msg(playerid, "Hitman Director: /hitman /hitmannév", false, COLOR_YELLOW);
 		if(IsOnkentes(playerid))
 			Msg(playerid, "Önkéntes Mentõs: /ör /örb /önkéntesek /önkéntesduty /segit /heal /lista /accept medic /mvisz", false, COLOR_YELLOW);
 	}
@@ -322,6 +298,15 @@ CMD:felismeri(playerid, params[])
 		return 1;
 	
 	}
+}
+
+ALIAS(ment6st1ska):mentostaska;
+CMD:mentostaska(playerid, params[])
+{
+	if(LMT(playerid, FRAKCIO_MENTO)){
+		OMSZTaskaInfo(playerid);
+		Cselekves(playerid, "megnézte a Mentõs táskája tartalmát");}
+	return 1;
 }
 
 CMD:zuhanok(playerid, params[])
@@ -457,7 +442,7 @@ CMD:gy4gyszer(playerid, params[])
 	}
 	return 1;
 }
-ALIAS(uscc):taxi; // /uscc-re is müködik a /taxi by Amos
+//Már fölöslegessé vált alias kivéve by Amos
 CMD:taxi(playerid, params[])
 {
 	if(!LMT(playerid,FRAKCIO_TAXI)) return Msg(playerid, "Csak taxisok!");
@@ -1318,7 +1303,7 @@ CMD:vadasz(playerid, params[])
 CMD:ondutyskin(playerid, params[])
 {
 	if(!Admin(playerid, 1)) return 1;
-	if(!AdminDuty[playerid] && !ScripterDuty[playerid]) return Msg(playerid, "Nem vagy ondutyban!");
+	if(!AdminDuty[playerid]) return Msg(playerid, "Nem vagy ondutyban!");
 	if(!AdminDutySkin[playerid])
 	{
 		AdminDutySkin[playerid] = 1;
@@ -2041,39 +2026,27 @@ CMD:carresi(playerid, params[])
 }
 
 ALIAS(l6szerek):loszerek;
-CMD:loszerek(playerid, params[]) //Javítottam - Ryan
+CMD:loszerek(playerid, params[])
 {
 	if(!MunkaLeader(playerid, FRAKCIO_SCPD) && !MunkaLeader(playerid, FRAKCIO_FBI) && !MunkaLeader(playerid, FRAKCIO_KATONASAG) && !MunkaLeader(playerid, FRAKCIO_NAV) && !Admin(playerid, 1)) return 1;
 	
 	new frakcio;
 	SendClientMessage(playerid, COLOR_LIGHTGREEN, "================================ LÕSZEREK ================================");
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_SCPD || Admin(playerid, 1)) 
-	{
-		frakcio=FRAKCIO_SCPD;
-		SendFormatMessage(playerid, COLOR_WHITE, "[Rendõrség] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
-		SendFormatMessage(playerid, COLOR_WHITE, "[Rendõrség] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
-	}
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_SCPD || Admin(playerid, 1)) frakcio=FRAKCIO_SCPD;
+	SendFormatMessage(playerid, COLOR_WHITE, "[Rendõrség] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
+	SendFormatMessage(playerid, COLOR_WHITE, "[Rendõrség] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_FBI || Admin(playerid, 1))
-	{
-		frakcio=FRAKCIO_FBI;
-		SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
-		SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
-	}
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_FBI || Admin(playerid, 1)) frakcio=FRAKCIO_FBI;
+	SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
+	SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_NAV || Admin(playerid, 1))
-	{
-		frakcio=FRAKCIO_NAV;
-		SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
-		SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
-	}
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_NAV || Admin(playerid, 1)) frakcio=FRAKCIO_NAV;
+	SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
+	SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_KATONASAG || Admin(playerid, 1))
-	{
-		frakcio=FRAKCIO_KATONASAG;
-		SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
-		SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
-	}
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_KATONASAG || Admin(playerid, 1)) frakcio=FRAKCIO_KATONASAG;
+	SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][1], FrakcioInfo[frakcio][fSilenced][1], FrakcioInfo[frakcio][fMp5][1], FrakcioInfo[frakcio][fM4][1], FrakcioInfo[frakcio][fShotgun][1]);
+	SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][1], FrakcioInfo[frakcio][fCombat][1],FrakcioInfo[frakcio][fRifle][1],FrakcioInfo[frakcio][fParachute]);
 	SendClientMessage(playerid, COLOR_LIGHTGREEN,"================================ LÕSZEREK ================================");
 	return 1;
 }
@@ -2084,33 +2057,21 @@ CMD:fegyverek(playerid, params[])
 	
 	new frakcio;
 	SendClientMessage(playerid, COLOR_LIGHTGREEN, "================================ FEGYVEREK ================================");
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_SCPD || Admin(playerid, 1))
-	{
-		frakcio=FRAKCIO_SCPD;
-		SendFormatMessage(playerid, COLOR_WHITE, "[LSPD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
-		SendFormatMessage(playerid, COLOR_WHITE, "[LSPD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
-	}
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_SCPD || Admin(playerid, 1)) frakcio=FRAKCIO_SCPD;
+	SendFormatMessage(playerid, COLOR_WHITE, "[LSPD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
+	SendFormatMessage(playerid, COLOR_WHITE, "[LSPD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_FBI || Admin(playerid, 1))
-	{
-		frakcio=FRAKCIO_FBI;
-		SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
-		SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
-	}
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_FBI || Admin(playerid, 1)) frakcio=FRAKCIO_FBI;
+	SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
+	SendFormatMessage(playerid, COLOR_WHITE, "[FBI] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_NAV || Admin(playerid, 1))
-	{
-		frakcio=FRAKCIO_NAV;
-		SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
-		SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
-	}
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_NAV || Admin(playerid, 1)) frakcio=FRAKCIO_NAV;
+	SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
+	SendFormatMessage(playerid, COLOR_WHITE, "[SASD] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
 	//
-	if(PlayerInfo[playerid][pLeader] == FRAKCIO_KATONASAG || Admin(playerid, 1))
-	{
-		frakcio=FRAKCIO_KATONASAG;
-		SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
-		SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
-	}
+	if(PlayerInfo[playerid][pLeader] == FRAKCIO_KATONASAG || Admin(playerid, 1)) frakcio=FRAKCIO_KATONASAG;
+	SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Deagle: %d | Silenced: %d | Mp5: %d | M4: %d | Shotgun: %d",FrakcioInfo[frakcio][fDeagle][0], FrakcioInfo[frakcio][fSilenced][0], FrakcioInfo[frakcio][fMp5][0], FrakcioInfo[frakcio][fM4][0], FrakcioInfo[frakcio][fShotgun][0]);
+	SendFormatMessage(playerid, COLOR_WHITE, "[CCMF] Sniper: %d | Combat: %d | Rifle: %d | Ejtõernyõ: %d",FrakcioInfo[frakcio][fSniper][0], FrakcioInfo[frakcio][fCombat][0],FrakcioInfo[frakcio][fRifle][0],FrakcioInfo[frakcio][fParachute]);
 	SendClientMessage(playerid, COLOR_LIGHTGREEN,"================================ FEGYVEREK ================================");
 	return 1;
 }
@@ -3614,7 +3575,7 @@ CMD:detektor(playerid, params[])
 	else if(!sscanf(params, "s[32]", m)) SendFormatMessage(playerid, COLOR_ADD, "Ebben a jármûben %d-as szintû detektor van", CarInfo[vs][cDetektor]);
 	return 1;
 }
-CMD:emp(playerid, params[])
+/*CMD:emp(playerid, params[])
 {
 	new v = GetPlayerVehicleID(playerid), vs = IsAVsKocsi(v), m[32];
 	if(!IsPlayerInAnyVehicle(playerid)) return Msg(playerid, "Csak jármûben használható!");
@@ -3638,7 +3599,7 @@ CMD:emp(playerid, params[])
 	}
 	else if(!sscanf(params, "s[32]", m)) SendFormatMessage(playerid, COLOR_ADD, "Ebben a jármûben %d-as szintû EMP van", CarInfo[vs][cEMP]);
 	return 1;
-}
+}*/
 
 ALIAS(szem2t):szemet;
 CMD:szemet(playerid, params[])
@@ -4597,7 +4558,7 @@ CMD:p2nzsz1ll3t4(playerid, params[])
 		if(GetVehicleModel(kocsi) != 428) return Msg(playerid, "Ez nem pénzszállító!");
 		if(IsMunkaKocsi(kocsi) != MUNKA_PENZ) return Msg(playerid, "Ez nem munka kocsi!");
 		
-		if((PenzszallitoPenz[kocsi] +  SzallitPenz[playerid]) <= (MAXTASKAPENZ*10)*3)
+		if((PenzszallitoPenz[kocsi] +  SzallitPenz[playerid]) <= MAXTASKAPENZ*10)
 		{
 			PenzszallitoPenz[kocsi] += SzallitPenz[playerid];
 			SzallitPenz[playerid] = NINCS;
@@ -4670,11 +4631,11 @@ CMD:p2nzsz1ll3t4(playerid, params[])
 		RemovePlayerAttachedObject(playerid, ATTACH_SLOT_ZSAK_PAJZS_BILINCS);
 		SendFormatMessage(playerid, COLOR_YELLOW, "Feltöltötted az ATM-et 1 kazettával. Ne feledd 1 kazetta %s Ft-ott tartalmaz és csak üreset cserélhetsz.",FormatInt(MAXTASKAPENZ));
 		SendFormatMessage(playerid, COLOR_YELLOW, "ATM infó: %s Ft tartalom. Maximum %s Ft",FormatInt(ATM[atmid][aPenz]),FormatInt(MAXATMPENZ));
-		PlayerInfo[playerid][pPayCheck] +=5000;
+		PlayerInfo[playerid][pPayCheck] +=10000;
 	}
 	return 1;
 }
-CMD:msg(playerid,params[])//[ADMINOKNAK] 5-ös és 6-ös színnel kiegészítve (riporter és sürgösségi szín) by Amos 
+CMD:msg(playerid,params[])
 {
    
    Log_Command = false;
@@ -4693,7 +4654,7 @@ CMD:msg(playerid,params[])//[ADMINOKNAK] 5-ös és 6-ös színnel kiegészítve (ripor
    if(szinid > 6 || szinid < 1)
    {
       Msg(playerid, "/msg [player] [szinid] [szoveg]");
-      Msg(playerid,"Színek: 1 COLOR_GREY | 2 COLOR_LIGHTRED | 3 COLOR_YELLOW | 4 COLOR_WHITE | 5 COLOR_ALLDEPT | 6 COLOR_NEWS");
+      Msg(playerid,"Színek: 1 COLOR_GREY | 2 COLOR_LIGHTRED | 3 COLOR_YELLOW | 4 COLOR_WHITE | 5 COLOR_ALLDEPT | 6 COLOR_NEWS");//[ADMINOKNAK] 5-ös és 6-ös színnel kiegészítve (riporter és sürgösségi szín) by Amos 
    
       return 1;
    }
@@ -5100,9 +5061,9 @@ CMD:onkentesek(playerid, params[])
 		if(IsOnkentes(x))
 		{
 			if(Onkentesszolgalatban[x])
-				SendFormatMessage(playerid, COLOR_GREEN, "[%i]%s (Szolgálatban) | Tel.: %s", x, ICPlayerName(x), FormatNumber( PlayerInfo[x][pPnumber], 0, '-' ));
+				SendFormatMessage(playerid, COLOR_GREEN, "[%i]%s (Szolgálatban) | Tel.: %s | Mentései: %ddb", x, ICPlayerName(x), FormatNumber( PlayerInfo[x][pPnumber], 0, '-'), PlayerInfo[x][pMechSkill]);
 			else
-				SendFormatMessage(playerid, COLOR_RED, "[%i]%s (Nincs szolgálatban)", x, ICPlayerName(x));
+				SendFormatMessage(playerid, COLOR_RED, "[%i]%s (Nincs szolgálatban) | Mentései: %ddb", x, ICPlayerName(x), PlayerInfo[x][pMechSkill]);// Önkéntesek mentéseit a /önkéntesek-ben mutatja.
 			count++;
 		}
 	}
@@ -5138,7 +5099,7 @@ CMD:onkentes(playerid, params[])
 	}
 	else
 	{	
-		if(ido < 1 || ido > 120) return Msg(playerid, "Minimum 1 és maximum 120 óra lehet!");
+		if(ido < 1 || ido > 240) return Msg(playerid, "Minimum 1 és maximum 240 óra lehet!"); //OMSZ leader kérésére az idõ duplázva by Amos
 		PlayerInfo[target][pOnkentes] = UnixTime + ido*3600;
 		SendFormatMessage(playerid, COLOR_YELLOW, "Kinevezted %s-t önkéntes mentõsnek %d óráig!", PlayerName(target), ido);
 		SendFormatMessage(target, COLOR_YELLOW, "%s kinevezett önkéntes mentõsnek %d óráig! A munkához szükséges parancsokat a /help beírásával találhatsz!", PlayerName(playerid), ido);
@@ -6769,7 +6730,7 @@ CMD:sajto(playerid, params[])
 
 CMD:t(playerid, params[])
 {
-	if(!params[0] || !IsScripter(playerid))
+	if(!params[0] || !IsScripter(playerid) && SQLID(playerid) != 6876)
 		return 1;
 		
 	Log_Command = false;
