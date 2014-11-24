@@ -13048,13 +13048,18 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
         {
 			if(GetDistanceBetweenPlayers(playerid, player) > 3.0) return Msg(playerid,"Õ nincs a közeledben.");
 			if(IsPlayerNPC(player)) return Msg(playerid,"NPC-nek? Nem-nem.");
-			//if(LMT(playerid, FRAKCIO_FBI && PlayerInfo[playerid][pRank] < 11) || PlayerInfo[playerid][pHitman] < 1) return Msg(playerid,"Minimum F.B.I. Igazgatói poszt");
 			if(!LMT(playerid, FRAKCIO_FBI) && PlayerInfo[playerid][pHitman] < 1) return Msg(playerid,"Nem használhatod ezt a parancsot.");
 			if(Felhatalmazva[player] == 0)
 		    {	
 				if(player == INVALID_PLAYER_ID) return Msg(playerid,"Nincs ilyen játékos!");
 		        if(params < 3) return Msg(playerid,"/felhatalmazas ad [JátékosID/NévRészlet] [Oka]");
-	            strtok(cmdtext, idx); strtok(cmdtext, idx);
+				new result[128];
+				if(sscanf(pms, "{s[2]}rs[128]", player, result))
+				// Magyarázat Amoséknak: A megjegyzés jelbe {} az 2-es azt jelzi hogy az elsõ paramér 2 karakterbõl áll és ki kell hagyni (vagyis az "ad" -ot)
+				//Mivel ez: {} a kihagyás jele az sscanfba. az r jelenti a játékost, az s pedig string. Ez a két sor a lentebbi zöld helyett van. nézzétek mennyivel rövidebb.
+					return SendClientMessage(playerid, COLOR_WHITE, "/felhatalmazas ad [JátékosID/NévRészlet] [Oka]");
+				if(strlen(result) > 128) return Msg(playerid, "Maximum 128 karakter hossz! Fogalmazz röviden!");
+	            /*strtok(cmdtext, idx); strtok(cmdtext, idx);
 				new length = strlen(cmdtext);
 				while ((idx < length) && (cmdtext[idx] <= ' '))
 				{
@@ -13069,7 +13074,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				}
 				result[idx - offset] = EOS;
 
-				if(strlen(result) > 128) return Msg(playerid, "Maximum 128 karakter hossz! Fogalmazz röviden!");
+				if(strlen(result) > 128) return Msg(playerid, "Maximum 128 karakter hossz! Fogalmazz röviden!");*/
 				strmid(Felhatalmazas[player], result, 0, strlen(result));
 				Felhatalmazva[player] = 1;
 				SendFormatMessage(playerid,COLOR_GREEN,"Felhatalmaztad %s-t! Felhat. Tartalma: %s",PlayerName(player),result);
@@ -14879,32 +14884,16 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		SendClientMessage(playerid, COLOR_LIGHTGREEN, "* Felvettél egy álruhát.");
 		SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s felvett egy álruhát.", ICPlayerName(playerid));
 	}
-	if(egyezik(cmd, "/álnév"))
+	if(egyezik(cmd, "/álnév")) //SScanf by Ryan
 	{
 			if(!LMT(playerid, FRAKCIO_FBI) && !Admin(playerid, 1337)) return 1;
 			if(LMT(playerid, FRAKCIO_FBI) && !Admin(playerid, 1337)) return Msg(playerid, "/pda..");
 			if(LMT(playerid, FRAKCIO_FBI) && !Munkarang(playerid, 4) && !Admin(playerid, 1337)) return Msg(playerid, "Minimum 4es rang.");
-			new length = strlen(cmdtext);
-			while ((idx < length) && (cmdtext[idx] <= ' '))
-			{
-				idx++;
-			}
-			new offset = idx;
 			new result[MAX_PLAYER_NAME];
-			while ((idx < length) && ((idx - offset) < (sizeof(result) - 1)))
-			{
-				result[idx - offset] = cmdtext[idx];
-				idx++;
-			}
-			result[idx - offset] = EOS;
+   			if(sscanf(pms, "s[MAX_PLAYER_NAME]", result))
+				return SendClientMessage(playerid, COLOR_WHITE, "Használat: /álnév [újnév]");
 
-			if(!strlen(result) && PlayerInfo[playerid][pHamisNev] == 0)
-			{
-				SendClientMessage(playerid, COLOR_GRAD1, "Használata: /álnév [újnév]");
-				return 1;
-			}
-
-			if(!strlen(result) && PlayerInfo[playerid][pHamisNev] != 0)
+			if(strlen(result) < 1 && PlayerInfo[playerid][pHamisNev] != 0)
 			{
 				SendClientMessage(playerid, COLOR_GRAD1, "Újra a régi neved van!");
 				PlayerInfo[playerid][pHamisNev] = 0;
@@ -15426,21 +15415,10 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					SendFormatMessage(playerid, COLOR_LIGHTRED, "ClassRPG: Jelenleg %s a neve.", BenzinKutak[bid][bNev]);
 					return 1;
 				}
-				strtok(cmdtext, idx); strtok(cmdtext, idx);
-
-				new length = strlen(cmdtext);
-				while ((idx < length) && (cmdtext[idx] <= ' '))
-				{
-					idx++;
-				}
-				new offset = idx;
-				new result[64];
-				while ((idx < length) && ((idx - offset) < (sizeof(result) - 1)))
-				{
-					result[idx - offset] = cmdtext[idx];
-					idx++;
-				}
-				result[idx - offset] = EOS;
+				new result[128]; //sscanf by Ryan
+				if(sscanf(pms, "{s[4]}{s[3]}s[128]", result))
+					return SendClientMessage(playerid, COLOR_WHITE, "/Benzinkút adat név [név]");
+	
 				if(SpecKarakterek(result, ",/\\():;|"))
 					return Msg(playerid, "A névben hibás karakterek vannak!");
 
@@ -30173,11 +30151,13 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	    return 1;
   	}
 
-	if(strcmp(cmd, "/ujadatok", true) == 0)
+	if(strcmp(cmd, "/ujadatok", true) == 0) //sscanf by Ryan
 	{
 	    if(Admin(playerid, 1337))
 	    {
 			new hazak = sizeof(HouseInfo), hazszam = -1;
+			new csakneki[MAX_PLAYER_NAME];
+			new ara, csak;
 			for(new i = 0; i < hazak; i++)
 			{
 				if (PlayerToPoint(3, playerid,HouseInfo[i][hEntrancex], HouseInfo[i][hEntrancey], HouseInfo[i][hEntrancez]))
@@ -30188,36 +30168,14 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
     		    SendClientMessage(playerid, COLOR_RED, "Nem vagy a ház bejáratánál!");
     		    return 1;
     		}
+			if(sscanf(pms, "dd", ara, csak))
+				return Msg(playerid, "Használata: /ujadatok [ára] [csak(0-1)]");
 
-			tmp = strtok(cmdtext, idx);
-			if(strlen(tmp) == 0) return SendClientMessage(playerid, 0xFFFFFFFF, "Használata: /ujadatok [ára] [csak(0-1)] [csaknév(név)]");
-			new ara = strval(tmp);
-
-			tmp = strtok(cmdtext, idx);
-			if(strlen(tmp) == 0) return SendClientMessage(playerid, COLOR_GRAD2, "Használata: /ujadatok [ára] [csak(0-1)] [csakneki(név)]");
-			new csak = strval(tmp);
-
-			new csakneki[MAX_PLAYER_NAME];
 
 			if(csak == 1)
 			{
-				new length = strlen(cmdtext);
-				while ((idx < length) && (cmdtext[idx] <= ' '))
-				{
-					idx++;
-				}
-				new offset = idx;
-				while ((idx < length) && ((idx - offset) < (sizeof(csakneki) - 1)))
-				{
-					csakneki[idx - offset] = cmdtext[idx];
-					idx++;
-				}
-				csakneki[idx - offset] = EOS;
-				if(!strlen(csakneki))
-				{
-					SendClientMessage(playerid, COLOR_GRAD2, "Használata: /ujadatok [ára] [csak(0-1)] [csakneki(név)]");
-					return 1;
-				}
+				if(sscanf(pms, "dds[MAX_PLAYER_NAME]", ara, csak, csakneki))
+					return Msg(playerid,"Használata: /ujadatok [ára] [csak(0-1)] [csakneki(név)]");
 			}
 			else
 			    csakneki = "Nemigenyles";
@@ -30231,7 +30189,6 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			else
 			    format(string, sizeof(string), "Ház %d adatai átállitva! (Ára:%dFT | Csak neki:%s)",hazszam,ara,csakneki);
 			SendClientMessage(playerid, COLOR_GREEN, string);
-			//HazUpdate(hazszam, "Ara='%d', Csak='%d', Neki='%s'", ara, csak, csakneki);
 			HazUpdate(hazszam, HAZ_Value, HAZ_Csak, HAZ_Csakneki);
 	    }
 	    return 1;
@@ -30574,72 +30531,41 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	    }
 	    return 1;
 	}
-	if(strcmp(cmd, "/ujhaz", true) == 0)
+	if(strcmp(cmd, "/ujhaz", true) == 0) // sscanf by Ryan
 	{
 	    if(IsScripter(playerid))
 	    {
 			new ureshaz = UresHazKereses();
+			new csakneki[MAX_PLAYER_NAME];
+			new interior, ar, csak;
 	        if(ureshaz == -1)
 	        {
 				format(string, sizeof(string), "Max %d a megengedett ház!", sizeof(HouseInfo));
 				SendClientMessage(playerid, COLOR_RED, string);
 				return 1;
 			}
-
-			tmp = strtok(cmdtext, idx);
-			if(strlen(tmp) == 0) return SendClientMessage(playerid, COLOR_GRAD2, "/ujhaz [belso(1-37)] [ára] [csak(0-1)] [csakneki(név)]");
-			new interior = strval(tmp);
-
-			tmp = strtok(cmdtext, idx);
-			if(strlen(tmp) == 0) return SendClientMessage(playerid, COLOR_GRAD2, "/ujhaz [belso(1-37)] [ára] [csak(0-1)] [csakneki(név)]");
-			new cost = strval(tmp);
-
-			tmp = strtok(cmdtext, idx);
-			if(strlen(tmp) == 0) return SendClientMessage(playerid, COLOR_GRAD2, "/ujhaz [belso(1-37)] [ára] [csak(0-1)] [csakneki(név)]");
-			new csak = strval(tmp);
-
-			new csakneki[MAX_PLAYER_NAME];
-
+			if(sscanf(pms, "ddd", interior, ar, csak))
+				return Msg(playerid, "Használata: /ujhaz [belso(1-37)] [ára] [csak(0-1)]");
+				
 			if(interior < 1 || interior > 37)
 			{
 				SendClientMessage(playerid, COLOR_LIGHTRED, "1-37 legyen az inti szám!");
 				return 1;
 			}
-
 			if(csak == 1)
 			{
-				new length = strlen(cmdtext);
-				while ((idx < length) && (cmdtext[idx] <= ' '))
-				{
-					idx++;
-				}
-				new offset = idx;
-				while ((idx < length) && ((idx - offset) < (sizeof(csakneki) - 1)))
-				{
-					csakneki[idx - offset] = cmdtext[idx];
-					idx++;
-				}
-				csakneki[idx - offset] = EOS;
-				if(!strlen(csakneki))
-				{
-					SendClientMessage(playerid, COLOR_GRAD2, "/ujhaz [belso] [ára] [csak(0-1)] [csakneki(név)]");
-					return 1;
-				}
+				if(sscanf(pms, "ddds[MAX_PLAYER_NAME]", interior, ar, csak, csakneki))
+					return Msg(playerid, "Használata: /ujhaz [belso] [ára] [csak(0-1)] [csakneki(név)]");
 			}
 			else
 			    csakneki = "Nemigenyles";
 
 			new nev[MAX_PLAYER_NAME] = "Nincs_Tulaj";
-
 			new Float:x, Float:y, Float:z;
    			GetPlayerPos(playerid, x, y, z);
 
-			//printf("ID:%d Parancs:/ujhaz %d %d",playerid,interior,cost);
-			//printf("Uj haz berakasa folyamatban...");
-
 			HouseInfo[ureshaz][Van] = 1;
 			HouseInfo[ureshaz][Uj] = 1;
-
 			HouseInfo[ureshaz][hEntrancex] = x;
 			HouseInfo[ureshaz][hEntrancey] = y;
 			HouseInfo[ureshaz][hEntrancez] = z;
@@ -30648,7 +30574,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			HouseInfo[ureshaz][hArmour] = 0;
 			HouseInfo[ureshaz][hOwner] = nev;
 			HouseInfo[ureshaz][hTulaj] = NINCS;
-			HouseInfo[ureshaz][hValue] = cost;
+			HouseInfo[ureshaz][hValue] = ar;
 			HouseInfo[ureshaz][hHel] = 0;
 			HouseInfo[ureshaz][hArm] = 0;
 			HouseInfo[ureshaz][hLock] = 0;
@@ -30668,22 +30594,19 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			HouseInfo[ureshaz][hAlma] = 0;
 			HouseInfo[ureshaz][hTipus] = 1;
 
-			//printf("Uj haz adatai elmentve!");
-
 			if(csak != 1)
-				format(string, sizeof(string), "Az új ház elkészült! Száma %d! (Belsõ %i, Ára %iFT)", ureshaz,interior,cost);
+				format(string, sizeof(string), "Az új ház elkészült! Száma %d! (Belsõ %i, Ára %iFT)", ureshaz,interior,ar);
 			else
-			    format(string, sizeof(string), "Az új ház elkészült! Száma %d! (Belsõ %i, Ára %iFT, Csak neki: %s)", ureshaz,interior,cost, csakneki);
+			    format(string, sizeof(string), "Az új ház elkészült! Száma %d! (Belsõ %i, Ára %iFT, Csak neki: %s)", ureshaz,interior,ar, csakneki);
 			SendClientMessage(playerid, COLOR_GREEN, string);
 
 			SetPlayerPos(playerid,IntInfo[interior][iExitX],IntInfo[interior][iExitY],IntInfo[interior][iExitZ]);
 			SetPlayerInterior(playerid, IntInfo[interior][iNumber]);
 			SetPlayerVirtualWorld(playerid, ureshaz);
 			HazPickup[ureshaz] = UjPickup(1273, 23, x,y,z);
-
 			new nevek[128], adatok[256];
 			nevek = "ID, Eladva, Tulaj, Csak, Neki, X, Y, Z, Ara, Belso";
-			Format(adatok, "'%d', '0', 'Nincs_Tulaj', '%d', '%s', '%f', '%f', '%f', '%d', '%d'", ureshaz, csak, csakneki, x, y, z, cost, interior);
+			Format(adatok, "'%d', '0', 'Nincs_Tulaj', '%d', '%s', '%f', '%f', '%f', '%d', '%d'", ureshaz, csak, csakneki, x, y, z, ar, interior);
 			Mysql_Insert(SQL_DB_Hazak, nevek, adatok);
 
 	    }
@@ -32225,25 +32148,16 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 	}
 
-	if(egyezik(cmd, "/erõsítés") || egyezik(cmd, "/bk") || egyezik(cmd, "/erosites"))
+	if(egyezik(cmd, "/erõsítés") || egyezik(cmd, "/bk") || egyezik(cmd, "/erosites")) // sscanf by Ryan
 	{
 		if(!IsACop(playerid) && !LMT(playerid, FRAKCIO_MENTO) && !LMT(playerid, FRAKCIO_TUZOLTO) && !LMT(playerid, FRAKCIO_ONKORMANYZAT)) return Msg(playerid, "Nem használhatod ezt a parancsot!");
 		if(OnDuty[playerid]==0) return Msg(playerid, "Nem vagy szolgálatban!");
 		if(Erosites[playerid] == true) return Msg(playerid, "Már hívtál erõsítést!");
 		if(NemMozoghat(playerid)) return Msg(playerid, "A-a!");
-		new length = strlen(cmdtext);
-		while ((idx < length) && (cmdtext[idx] <= ' '))
-		{
-			idx++;
-		}
-		new offset = idx;
 		new result[70];
-		while ((idx < length) && ((idx - offset) < (sizeof(result) - 1)))
-		{
-			result[idx - offset] = cmdtext[idx];
-			idx++;
-		}
-		result[idx - offset] = EOS;
+		sscanf(pms, "s[70]", result);
+			//return SendClientMessage(playerid, COLOR_WHITE, "Használat: /bk [Üzeneted]");
+			
 		Cselekves(playerid, "erõsítést kért.");
 		SendRadioMessageFormat(FRAKCIO_SCPD, COLOR_DBLUE, "** %s erõsítést kért! Zöld színnel jelöljük a gps-en! Információ: %s", ICPlayerName(playerid), result);
 		SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "** %s erõsítést kért! Zöld színnel jelöljük a gps-en! Információ: %s", ICPlayerName(playerid), result);
@@ -33767,7 +33681,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 	}
 //----------------------------------[advertise]-----------------------------------------------
-	if(egyezik(cmd, "/ad") || egyezik(cmd, "/advertise") || egyezik(cmd, "/hirdet"))
+	if(egyezik(cmd, "/ad") || egyezik(cmd, "/advertise") || egyezik(cmd, "/hirdet")) //sscanf by Ryan
 	{
 	    if(!Bortonben(playerid))
 	    {
@@ -33788,30 +33702,16 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				else if(egyezik(tmp, "illegalis") || egyezik(tmp, "illegális"))
 					illegalis = 1;
 			}
-			new length = strlen(cmdtext);
-			while ((idx < length) && (cmdtext[idx] <= ' '))
-			{
-				idx++;
-			}
-			new offset = idx;
 			new szoveg[128];
-			while ((idx < length) && ((idx - offset) < (sizeof(szoveg) - 1)))
+			if(sscanf(pms, "s[128]", szoveg))
+				return SendClientMessage(playerid, COLOR_WHITE, "Használat: /ad [hirdetés]");
+			if(!illegalis)
 			{
-				szoveg[idx - offset] = cmdtext[idx];
-				idx++;
+				SendClientMessage(playerid, COLOR_GRAD2, "Használata: /ad [hirdetés]");
+				SendClientMessage(playerid, COLOR_GRAD2, "Ha oktatót keresel, /oktatók");
 			}
-			szoveg[idx - offset] = EOS;
-			if(!strlen(szoveg))
-			{
-				if(!illegalis)
-				{
-					SendClientMessage(playerid, COLOR_GRAD2, "Használata: /ad [hirdetés]");
-					SendClientMessage(playerid, COLOR_GRAD2, "Ha oktatót keresel, /oktatók");
-				}
-				else
-					SendClientMessage(playerid, COLOR_GRAD2, "Használata: /ad [legális/illegális] [hirdetés]");
-				return 1;
-			}
+			else
+				SendClientMessage(playerid, COLOR_GRAD2, "Használata: /ad [legális/illegális] [hirdetés]");
 
 			if(SzovegEllenorzes(playerid, szoveg, "/ad", ELLENORZES_HIRDETES))
 				return 1;
@@ -33819,8 +33719,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			if(illegalis && !ladds || !illegalis && !adds)
 				return SendClientMessage(playerid, COLOR_GRAD2, "Már adtak fel hirdetést, próbáld meg késõbb...");
 
-			if(strlen(szoveg) < 10 || strlen(szoveg) > 85)
-				return SendClientMessage(playerid, COLOR_GREY, "Minimum 10, maximum 85 karakter!");
+			if(strlen(szoveg) < 10 || strlen(szoveg) > 75)
+				return SendClientMessage(playerid, COLOR_GREY, "Minimum 10, maximum 75 karakter!");
 
 			if(PlayerInfo[playerid][pConnectTime] < 10)
 				return SendClientMessage(playerid, COLOR_GREY, "Még nem játszottál eleget, hogy használhasd!");
@@ -33864,7 +33764,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			Msg(playerid, "Börtönben nem lehet!");
 		return 1;
 	}
-	if(egyezik(cmd, "/had") || egyezik(cmd, "/hadvertise") || egyezik(cmd, "/hitmanhirdet"))
+	if(egyezik(cmd, "/had") || egyezik(cmd, "/hadvertise") || egyezik(cmd, "/hitmanhirdet")) // sscanf By Ryan
 	{
 		if(!IsDirector(playerid)) return Msg(playerid, "Nem vagy director!");
 	    if(!Bortonben(playerid))
@@ -33875,24 +33775,9 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			if(PlayerInfo[playerid][pPnumber]==0)
 			return Msg(playerid, "Nincs telefonod így nem adhatsz fel hírdetést!");
 			
-			new length = strlen(cmdtext);
-			while ((idx < length) && (cmdtext[idx] <= ' '))
-			{
-				idx++;
-			}
-			new offset = idx;
 			new szoveg[128];
-			while ((idx < length) && ((idx - offset) < (sizeof(szoveg) - 1)))
-			{
-				szoveg[idx - offset] = cmdtext[idx];
-				idx++;
-			}
-			szoveg[idx - offset] = EOS;
-			if(!strlen(szoveg))
-			{
-				SendClientMessage(playerid, COLOR_GRAD2, "Használata: /had [hirdetés]");
-				return 1;
-			}
+			if(sscanf(pms, "s[128]", szoveg))
+				return SendClientMessage(playerid, COLOR_WHITE, "Használat: /had [hirdetés]");
 
 			if(SzovegEllenorzes(playerid, szoveg, "/had", ELLENORZES_HIRDETES))
 				return 1;
@@ -43455,7 +43340,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		return 1;
 	}
-	if(strcmp(cmd, "/ban", true) == 0)
+	if(strcmp(cmd, "/ban", true) == 0) // sscanf by Ryan
 	{
 		if(!Admin(playerid, 2) && !IsScripter(playerid)) return 1;
 	    if(IsPlayerConnected(playerid))
@@ -43501,26 +43386,15 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 
 					    GetPlayerName(giveplayerid, giveplayer, sizeof(giveplayer));
 						GetPlayerName(playerid, sendername, sizeof(sendername));
-						new length = strlen(cmdtext);
-						while ((idx < length) && (cmdtext[idx] <= ' '))
-						{
-							idx++;
-						}
-						new offset = idx;
 						new result[128];
-						while ((idx < length) && ((idx - offset) < (sizeof(result) - 1)))
-						{
-							result[idx - offset] = cmdtext[idx];
-							idx++;
-						}
-						result[idx - offset] = EOS;
-						if(!strlen(result))
-							return SendClientMessage(playerid, COLOR_GRAD2, "Használat: /ban [játékos] [idõ - óra] [oka]");
+						new meddig[128];
+						if(sscanf(pms, "rds[128]", giveplayer, meddig, result))
+							return SendClientMessage(playerid, COLOR_WHITE, "Használat: /ban [játékos] [idõ - óra] [oka]");
 
 						if(!IsNumeric(param[2]) && !egyezik(param[2], "örök") && !egyezik(param[2], "orok") || IsNumeric(param[2]) && strval(param[2]) <= 0)
 							return SendClientMessage(playerid, COLOR_GRAD2, "Helyesen kell megadnod az idõtartamot! (Szám vagy \"örök\"!)");
 
-						new meddig[128];
+						//new meddig[128];
 						if(ido < 24) Format(meddig, "%d órára", ido);
 						else if(ido >= 24 && ido < (24*7))
 						{
@@ -51297,20 +51171,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					{
 					    GetPlayerName(giveplayerid, giveplayer, sizeof(giveplayer));
 						GetPlayerName(playerid, sendername, sizeof(sendername));
-						new length = strlen(cmdtext);
-						while ((idx < length) && (cmdtext[idx] <= ' '))
-						{
-							idx++;
-						}
-						new offset = idx;
 						new result[128];
-						while ((idx < length) && ((idx - offset) < (sizeof(result) - 1)))
-						{
-							result[idx - offset] = cmdtext[idx];
-							idx++;
-						}
-						result[idx - offset] = EOS;
-						if(!strlen(result))
+						if(sscanf(pms, "rds[128]", giveplayer, moneys, result))
 						{
 							SendClientMessage(playerid, COLOR_GRAD2, "Használat: /ticket [playerid/névrészlet] [bírság] [oka]");
 							return 1;
@@ -51457,26 +51319,20 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	   	{
 			if(PlayerInfo[playerid][pLevel] < 3) return Msg(playerid, "Minimum 3as szint.");
 			tmp = strtok(cmdtext, idx);
-<<<<<<< Updated upstream
 			if(!strlen(tmp))
 				return SendClientMessage(playerid, COLOR_GRAD1, "Használat: /contract [playerid/PartOfName] [amount]");
-=======
 			//if(!strlen(tmp))
 			//	return SendClientMessage(playerid, COLOR_GRAD1, "Használat: /felbérlés [playerid/névrészlet] [fizetség] [oka]");
 			new oka[128];
 			
 			if(sscanf(pms, "uds[128]", giveplayerid, moneys, oka)) return SendClientMessage(playerid, COLOR_GRAD1, "Használat: /felbérlés [playerid/névrészlet] [fizetség] [oka]");
->>>>>>> Stashed changes
 
 			giveplayerid = ReturnUser(tmp);
 			tmp = strtok(cmdtext, idx);
-<<<<<<< Updated upstream
 			if(!strlen(tmp))
 				return SendClientMessage(playerid, COLOR_GRAD1, "Használat: /contract [playerid/PartOfName] [amount]");
-=======
 			//if(!strlen(tmp))
 			//	return SendClientMessage(playerid, COLOR_GRAD1, "Használat: /felbérlés [playerid/névrészlet] [fizetség] [oka]");
->>>>>>> Stashed changes
 
 			moneys = strval(tmp);
 			new minimum = PlayerInfo[giveplayerid][pLevel] * 180000;

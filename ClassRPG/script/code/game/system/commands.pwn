@@ -3575,7 +3575,7 @@ CMD:detektor(playerid, params[])
 	else if(!sscanf(params, "s[32]", m)) SendFormatMessage(playerid, COLOR_ADD, "Ebben a jármûben %d-as szintû detektor van", CarInfo[vs][cDetektor]);
 	return 1;
 }
-/*CMD:emp(playerid, params[])
+CMD:emp(playerid, params[])
 {
 	new v = GetPlayerVehicleID(playerid), vs = IsAVsKocsi(v), m[32];
 	if(!IsPlayerInAnyVehicle(playerid)) return Msg(playerid, "Csak jármûben használható!");
@@ -3599,7 +3599,7 @@ CMD:detektor(playerid, params[])
 	}
 	else if(!sscanf(params, "s[32]", m)) SendFormatMessage(playerid, COLOR_ADD, "Ebben a jármûben %d-as szintû EMP van", CarInfo[vs][cEMP]);
 	return 1;
-}*/
+}
 
 ALIAS(szem2t):szemet;
 CMD:szemet(playerid, params[])
@@ -5708,7 +5708,10 @@ CMD:fegyver(playerid, params[])
 			        SendClientMessage(playerid, COLOR_LIGHTRED, "Nem vagy a mati készítõ helyénél, a gyárban");
 			        return 1;
 		}
-			
+		
+		if( MunkaFolyamatban[playerid] )
+			return Msg(playerid, "Nyugi-nyugi");
+		
 		new slot, fegyo;
 		if(IsNumeric(param2))
 		{
@@ -5726,17 +5729,6 @@ CMD:fegyver(playerid, params[])
 			if(weapon < 16 || weapon == 17 || weapon == 18 || weapon > 38 || weapon > MAX_WEAPONS)
 				return Msg(playerid, "A-a!");
 				
-			/*new level = PlayerInfo[playerid][pCarSkill];
-			new veszteseg = 0;
-			if(level <= 15)
-				veszteseg = WeaponPrice[weapon][wWeaponMat]/3;
-			else if(level >= 16 && level <= 85)
-				veszteseg = WeaponPrice[weapon][wWeaponMat]/5;
-			else if(level >= 86 && level <= 125)
-				veszteseg = WeaponPrice[weapon][wWeaponMat]/10;
-			else if(level >= 126 && level <= 185)
-				veszteseg = WeaponPrice[weapon][wWeaponMat]/15;
-			else if(level >= 186) veszteseg = 0;*/
 			
 			new weapontipus;
 			if(weapon == 22 || weapon == 23 || weapon == 24) 
@@ -5764,7 +5756,6 @@ CMD:fegyver(playerid, params[])
 			GameTextForPlayer(playerid,"~w~~n~~n~~n~~n~~n~~n~~n~~n~~n~Szetszeded a fegyvert... Varj...", 3000, 3);
 			TogglePlayerControllable(playerid, false);
 			ApplyAnimation(playerid, "SCRATCHING", "scmid_l", 4.0, 1, 1, 1, 1, -1);
-			//new db = WeaponPrice[weapon][wWeaponMat]; //-veszteseg;
 			MunkaTimerID[playerid]=SetTimerEx("Munkavege", (MunkaIdo[6]*5), false, "ddd", playerid, M_FEGYOSZETSZED, fegyo);
 		}
 		else
@@ -5801,17 +5792,6 @@ CMD:fegyver(playerid, params[])
 			else if(level <= 125 && weapontipus == 4) return Msg(playerid, "Ehhez minimum 4es skill kell!");
 			else if(level <= 185 && weapontipus == 5) return Msg(playerid, "Ehhez minimum 5ös skill kell!");
 			
-			/*new veszteseg = 0;
-			if(level >= 0 && level <= 15)
-				veszteseg = WeaponPrice[weapon][wWeaponMat]/3;
-			if(level >= 16 && level <= 85)
-				veszteseg = WeaponPrice[weapon][wWeaponMat]/5;
-			else if(level >= 86 && level <= 125)
-				veszteseg = WeaponPrice[weapon][wWeaponMat]/10;
-			else if(level >= 126 && level <= 185)
-				veszteseg = WeaponPrice[weapon][wWeaponMat]/15;
-			else if(level >= 186)
-				veszteseg = 0;*/
 			
 			PlayerInfo[playerid][pCarSkill] += 2;
 
@@ -5820,7 +5800,6 @@ CMD:fegyver(playerid, params[])
 			GameTextForPlayer(playerid,"~w~~n~~n~~n~~n~~n~~n~~n~~n~~n~Szetszeded a fegyvert... Varj...", 3000, 3);
 			TogglePlayerControllable(playerid, false);
 			ApplyAnimation(playerid, "SCRATCHING", "scmid_l", 4.0, 1, 1, 1, 1, -1);
-			//new vege = fegyo-veszteseg;
 			MunkaTimerID[playerid]=SetTimerEx("Munkavege", (MunkaIdo[6]*5), false, "ddd", playerid, M_FEGYOSZETSZED, fegyo);
 		}
 	}

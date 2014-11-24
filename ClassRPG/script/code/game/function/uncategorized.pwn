@@ -16203,6 +16203,19 @@ stock KocsiSofor(kocsi)
 	}
 	return player;
 }
+stock KocsiSoforKetto(kocsi)
+{
+	new player = NINCS;
+	foreach(Jatekosok, p)
+	{
+		if(IsPlayerInVehicle(p, kocsi) && GetPlayerState(p) == PLAYER_STATE_DRIVER && CarInfo[kocsi][cEMP] > 0)
+		{
+			player = p;
+			break;
+		}
+	}
+	return player;
+}
 
 fpublic RaceTimer()
 {
@@ -24580,15 +24593,15 @@ stock OnPlayerConnectKick(playerid)
 		}
 	}
 
-	/*if(ClassClient)
+	if(ClassClient)
 	{
-		if(IsTerno(playerid) && !egyezik(PlayerInfo[playerid][pCode],"A23D-5401-82D1-BB6E-31E2-4B9A-5EB6-D0CB"))
+		if(IsRyan(playerid) && !egyezik(PlayerInfo[playerid][pCode],"8702-245A-51A9-58FB-34F5-C1B2-2677-2AFF"))
 		{
 			new string[128];
-			format(string, 128,"ClassRPG: %s kibannolva Terno szelleme által | Oka: Ne gyere már fel a karimmal légyszives... Köszi, pápá :)", PlayerIP(playerid));
+			format(string, 128,"ClassRPG: %s kibannolva Teplán szelleme által | Oka: Túl kicsi a farkad, hogy ezzel a névvel felgyere:( Páápá", PlayerIP(playerid));
 			SendMessage(SEND_MESSAGE_ADMIN,string,COLOR_LIGHTRED,1);
 			Msg(playerid,string);
-			SeeBan(playerid, 0, NINCS, "Terno karakter", true, false);
+			SeeBan(playerid, 0, NINCS, "Ryan karakter", true, false);
 			TKick(playerid);
 			return 1;
 		}
@@ -24601,9 +24614,7 @@ stock OnPlayerConnectKick(playerid)
 			TKick(playerid);
 			return 1;
 		}
-<<<<<<< Updated upstream
-	}*/
-=======
+	
 		if(egyezik(PlayerName(playerid), "Amos_Vincenzo") && !egyezik(PlayerInfo[playerid][pCode],"6C6A-B24B-DE2B-48D6-2F1E-6DDB-4B08-FBB4")) 
 		{// Le kell védeni a karimat és ezt itéltem pluszba a legjobbnak, mert dinamikusip by Amos
 			Format(_tmpString, "ClassRPG: %s kibannolva FiredNox védõszelleme által | Oka: Ne gyere már fel a karimmal légyszives... Köszi, pápá :)", PlayerIP(playerid));
@@ -24614,19 +24625,6 @@ stock OnPlayerConnectKick(playerid)
 			return 1;
 		}
 	}
->>>>>>> Stashed changes
-	/*
-	if(!strcmp(PlayerName(playerid), "Terno_Tommys", true) && strcmp(PlayerIP(playerid), "37.17.175.245"))
-	{
-		if(strcmp(PlayerIP(playerid), "127.0.0.1"))
-		{
-			SendFormatMessageToAll(COLOR_LIGHTRED, "ClassRPG: %s kibannolva Terno szelleme által | Oka: Ne gyere már fel a karimmal légyszives... Köszi, pápá :)", PlayerIP(playerid));
-			SeeBan(playerid, 0, NINCS, "Terno karakter", true, false);
-			TKick(playerid);
-			return 1;
-		}
-	}
-	*/
 	return 0;
 }
 
@@ -28796,7 +28794,7 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 			}
 		}*/
-		new kocsika = GetPlayerVehicleID(playerid);
+		new kocsika = KocsiSoforKetto(legkozelebbi);
 		if(fail != 1 && EMPKE[kocsika] && CarInfo[kocsika][cEMP] > 1)
 		{
 			switch(CarInfo[kocsika][cEMP])
@@ -35433,8 +35431,6 @@ fpublic Munkavege(playerid, Munka, db, db2, db3)
 			if(MunkaFolyamatban[playerid] == 1)
 		    {
 				new darab = 0;
-				//new darab = WeaponPrice[weapon][wWeaponMat];
-				//new colt,sil,dea,shot,comb,ak,m4,rifle,snip;
 				if(db == 22) //Colt
 					darab = 1500;
 				else if(db == 23) //Silenced
@@ -35455,33 +35451,12 @@ fpublic Munkavege(playerid, Munka, db, db2, db3)
 					darab = 8000;
 				else if(db == 34) //sniper
 					darab = 50000;
-				//new level = PlayerInfo[playerid][pCarSkill];
 			    if(PlayerInfo[playerid][pMats] + darab > MAXMATI)
 			    {
 			        new matija = PlayerInfo[playerid][pMats];
 				    format(string2, sizeof(string2), "Sikeresen készítettél %ddb materialt, de csak %d-t birsz el, ezért %d-t itthagysz", darab, MAXMATI, ((matija + darab) - MAXMATI));
 				    PlayerInfo[playerid][pMats] += (MAXMATI - matija);
 		    	}
-				/*else if(level <= 185 && level >= 126) // Skill4
-		    	{
-					format(string2, sizeof(string2), "Sikeresen készítettél %ddb materialst! (SK4) Összesen %ddb-od van", darab * 0.009, (PlayerInfo[playerid][pMats] + darab * 0.009));
-				    PlayerInfo[playerid][pMats] += darab * 0.009;
-		    	}
-				else if(level <= 125 && level >= 86) // Skill 3
-		    	{
-					format(string2, sizeof(string2), "Sikeresen készítettél %ddb materialst! (SK3) Összesen %ddb-od van", darab * 0.008, (PlayerInfo[playerid][pMats] + darab * 0.008));
-				    PlayerInfo[playerid][pMats] += darab * 0.008;
-		    	}
-				else if(level <= 85 && level >= 16) // Skill 2
-		    	{
-					format(string2, sizeof(string2), "Sikeresen készítettél %ddb materialst! (SK2) Összesen %ddb-od van", darab * 0.007, (PlayerInfo[playerid][pMats] + darab * 0.007));
-				    PlayerInfo[playerid][pMats] += darab * 0.007;
-		    	}
-				else if(level <= 15) // Skill 1
-		    	{
-					format(string2, sizeof(string2), "Sikeresen készítettél %ddb materialst! (SK1) Összesen %ddb-od van", darab, (PlayerInfo[playerid][pMats] + darab));
-				    PlayerInfo[playerid][pMats] += darab;
-		    	}*/
 				else
 		    	{
 					format(string2, sizeof(string2), "Sikeresen készítettél %ddb materialst! Összesen %ddb-od van", darab, (PlayerInfo[playerid][pMats] + darab));
