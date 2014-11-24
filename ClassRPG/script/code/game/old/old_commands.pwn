@@ -14294,20 +14294,6 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			SendClientMessage(playerid, Pink, "Kapcsolódás a központi szerverre. Kérem várjon.");
 		}
 	}
-	if(egyezik(cmd, "/laptop"))
-	{
-		if(!LMT(playerid, FRAKCIO_CIA)) return 1;
-		if(CIABelepve[playerid] == 1)
-		{
-			SendFormatMessage(playerid, Pink, "Server Disconnected. Jó munkát %s Ügynök.", ICPlayerName(playerid));
-			CIABelepve[playerid] = 0;
-		}
-		else
-		{
-			SetTimerEx("Ciakapcsolodas", 5000, false, "d", playerid);
-			SendClientMessage(playerid, Pink, "Kapcsolódás a központi szerverre. Kérem várjon.");
-		}
-	}
 	if(egyezik(cmd, "/harcstílus") || egyezik(cmd, "/harcstilus"))
 	{
 	    if(PlayerInfo[playerid][pStilus] < 1) return Msg(playerid, "Nem tanultál meg semmilyen Harc Stílust!");
@@ -48543,6 +48529,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		SendClientMessage(playerid, COLOR_YELLOW2, "| - Rendelés - Bilincs - Munka");
 		SendClientMessage(playerid, COLOR_YELLOW2, "| - Bomba - Bombatavol");
 		SendClientMessage(playerid, COLOR_YELLOW2, "| - /jelvény2 - /méreg [id]");
+		SendClientMessage(playerid, COLOR_YELLOW2, "| - /d2 - /felszólít2");
 		ConnectedToPC[playerid] = 255;
 	    return 1;
 	}
@@ -51172,7 +51159,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					    GetPlayerName(giveplayerid, giveplayer, sizeof(giveplayer));
 						GetPlayerName(playerid, sendername, sizeof(sendername));
 						new result[128];
-						if(sscanf(pms, "rds[128]", giveplayer, moneys, result))
+						if(sscanf(pms, "rds[128]", giveplayerid, moneys, result))
 						{
 							SendClientMessage(playerid, COLOR_GRAD2, "Használat: /ticket [playerid/névrészlet] [bírság] [oka]");
 							return 1;

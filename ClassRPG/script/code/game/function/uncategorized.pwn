@@ -17186,24 +17186,6 @@ fpublic Fbikapcsolodas(playerid)
 	Belepve[playerid] = 1;
 	return 1;
 }
-fpublic Ciakapcsolodas(playerid)
-{
-	SendClientMessage(playerid, Pink, "Kapcsolódva a C.I.A. központi szerverhez. Lehetõségek:");
-	SendClientMessage(playerid, Pink2, "| Jelszó");
-	SendClientMessage(playerid, Pink, "| Clearplayer - Clearcar");
-	SendClientMessage(playerid, Pink2, "| Aktiválás - Deaktiválás");
-	SendClientMessage(playerid, Pink, "| Bankszámla - Adatnézés");
-	SendClientMessage(playerid, Pink2, "| Lehallgatás - Lefoglalás");
-	SendClientMessage(playerid, Pink, "| Lenyomozás - Telefonlehallgatás");
-	SendClientMessage(playerid, Pink2, "| Álnév");
-	SendClientMessage(playerid, Pink, "| Beépülés");
-	SendClientMessage(playerid, Pink2, "| Poloska - [be/ki]");
-	SendClientMessage(playerid, Pink, "| Rendõrfelfüggesztés");
-	if(Munkarang(playerid, 10)) SendClientMessage(playerid, Pink2, "| Bezárás - Nyitás");
-	SendClientMessage(playerid, Pink, "							                Logout					");
-	CIABelepve[playerid] = 1;
-	return 1;
-}
 
 stock IsClintCar(vs)
 {
@@ -24212,7 +24194,7 @@ stock ValtozoNullazas(playerid) //vnull
 	PSzam5[playerid] = 0; PSzam6[playerid] = 0; PSzam7[playerid] = 0; PSzam8[playerid] = 0;
 	PSzam1[playerid] = 0; PSzam2[playerid] = 0; PSzam3[playerid] = 0; PSzam4[playerid] = 0;
 	TudReportolni[playerid] = 0; Locsolas[playerid] = NINCS; Locsolniakar[playerid] = NINCS;
-	BViadal[playerid] = 0; Nevek[playerid] = 0; Biztos[playerid] = 0; Belepve[playerid] = 0; CIABelepve[playerid] = 0; Fbicelpont[playerid] = NINCS; 
+	BViadal[playerid] = 0; Nevek[playerid] = 0; Biztos[playerid] = 0; Belepve[playerid] = 0; Fbicelpont[playerid] = NINCS; 
 	PrivatEngedely[playerid] = NINCS; PrivatAr[playerid] = NINCS; PrivatAjanlat[playerid] = NINCS; VizsgaAr[playerid] = 0; VizsgaAjanlat[playerid] = NINCS; C4Kocsiban[playerid] = NINCS; C4Z[playerid] = 0.000000; C4Y[playerid] = 0.000000; C4X[playerid] = 0.000000; C4Lerakva[playerid] = 0; PlayerInfo[playerid][pCodeBanned] = -1;
 	CsatlakozottSzamla[playerid] = NINCS; Szondaztat[playerid] = NINCS; KereskedoKocsiCsere[playerid] = NINCS; KereskedoKocsiElad[playerid] = NINCS; KereskedoKocsiVetel[playerid] = NINCS; Rabol[playerid] = 0; PlayerInfo[playerid][pFPSlimiter] = 0; PlayerInfo[playerid][pFPSlimiterWarn] = 0; //Tankol[playerid] = 0;
 	Edzik[playerid] = 0; TanultStilus[playerid] = 0; AdasVeteliNeki[playerid] = NINCS; AdasVeteliTipus[playerid] = NINCS; MostLepettBe[playerid] = 1; /*Fegyvere[playerid] = 0;*/

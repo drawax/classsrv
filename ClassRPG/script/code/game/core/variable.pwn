@@ -406,7 +406,6 @@ new reporttiltva[MAX_PLAYERS];
 new tuningolo[MAX_PLAYERS];
 new VanBombaBenne[MAX_VEHICLES];
 new Belepve[MAX_PLAYERS];
-new CIABelepve[MAX_PLAYERS];
 new Szajkendo[MAX_PLAYERS];
 new Maszk[MAX_PLAYERS];
 new BankAjto;
