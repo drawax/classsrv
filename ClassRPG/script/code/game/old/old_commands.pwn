@@ -32033,7 +32033,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			SokkObject[kocsi] = INVALID_OBJECT_ID;
 		}
 		RemovePlayerFromVehicle(playerid);
-		if(IsKocsi(vehicleid, "uttisztito") || IsKocsi(vehicleid, "Kamion") || IsKocsi(vehicleid, "Farmer")  || IsKocsi(vehicleid, "Funyiro") || IsKocsi(vehicleid,"Kukas") || IsKocsi(vehicleid, "Szerelo") || IsKocsi(vehicleid, "Favago") || IsKocsi(vehicleid, "Hulla") || IsKocsi(kocsi, "Prod") || IsKocsi(vehicleid, "Taxi"))
+		if(IsKocsi(vehicleid, "uttisztito") || IsKocsi(vehicleid, "Kamion") || IsKocsi(vehicleid, "Farmer")  || IsKocsi(vehicleid, "Funyiro") /*|| IsKocsi(vehicleid,"Kukas")*/ || IsKocsi(vehicleid, "Szerelo") || IsKocsi(vehicleid, "Favago") || IsKocsi(vehicleid, "Hulla") || IsKocsi(kocsi, "Prod") || IsKocsi(vehicleid, "Taxi"))
 		{
 			engineOn[kocsi] = 0;
 			Gyujtas[kocsi] = false;
@@ -48877,7 +48877,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			Tankolaskozben[kocsi] = true;
 			Msg(playerid, "Elkezdted megtankolni a jármûvedet");
 			Cselekves(playerid, "elkezdte megtankolni a jármûvét.");
-			if(IsKocsi(kocsi, "uttisztito") || IsKocsi(kocsi, "Kamion") || IsKocsi(kocsi, "Farmer")  || IsKocsi(kocsi, "Funyiro") || IsKocsi(kocsi,"Kukas") || IsKocsi(kocsi, "Szerelo") || IsKocsi(kocsi, "Favago") || IsKocsi(kocsi, "Hulla") || IsKocsi(kocsi, "Prod") || IsKocsi(kocsi, "Taxi"))
+			if(IsKocsi(kocsi, "uttisztito") || IsKocsi(kocsi, "Kamion") || IsKocsi(kocsi, "Farmer")  || IsKocsi(kocsi, "Funyiro") /*|| IsKocsi(kocsi,"Kukas")*/ || IsKocsi(kocsi, "Szerelo") || IsKocsi(kocsi, "Favago") || IsKocsi(kocsi, "Hulla") || IsKocsi(kocsi, "Prod") || IsKocsi(kocsi, "Taxi"))
 			{
 				PlayerInfo[playerid][pElhasznaltUzemanyag][1] ++;
 				PlayerInfo[playerid][pElhasznaltUzemanyag][2] = kocsi;
@@ -48939,7 +48939,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			Tankolaskozben[kocsi] = true;
 			Msg(playerid, "Elkezdted megtankolni a jármûvedet");
 			Cselekves(playerid, "elkezdte megtankolni a jármûvét.");
-			if(IsKocsi(kocsi, "uttisztito") || IsKocsi(kocsi, "Kamion") || IsKocsi(kocsi, "Farmer")  || IsKocsi(kocsi, "Funyiro") || IsKocsi(kocsi,"Kukas") || IsKocsi(kocsi, "Szerelo") || IsKocsi(kocsi, "Favago") || IsKocsi(kocsi, "Hulla") || IsKocsi(kocsi, "Prod") || IsKocsi(kocsi, "Taxi"))
+			if(IsKocsi(kocsi, "uttisztito") || IsKocsi(kocsi, "Kamion") || IsKocsi(kocsi, "Farmer")  || IsKocsi(kocsi, "Funyiro") /*|| IsKocsi(kocsi,"Kukas")*/ || IsKocsi(kocsi, "Szerelo") || IsKocsi(kocsi, "Favago") || IsKocsi(kocsi, "Hulla") || IsKocsi(kocsi, "Prod") || IsKocsi(kocsi, "Taxi"))
 			{
 				PlayerInfo[playerid][pElhasznaltUzemanyag][1] ++;
 				PlayerInfo[playerid][pElhasznaltUzemanyag][2] = kocsi;

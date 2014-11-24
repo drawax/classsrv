@@ -461,7 +461,7 @@ stock MunkaNevek(targetid, job)
 			else if(PlayerInfo[targetid][pJob1] == MUNKA_FUNYIRO) jtext = "Fûnyíró";
 			else if(PlayerInfo[targetid][pJob1] == MUNKA_EPITESZ) jtext = "Építész";
 			//else if(PlayerInfo[targetid][pJob1] == MUNKA_PANCEL) jtext = "Páncélkészítõ";
-			else if(PlayerInfo[targetid][pJob1] == MUNKA_KUKAS) jtext = "Kukás";
+			//else if(PlayerInfo[targetid][pJob1] == MUNKA_KUKAS) jtext = "Kukás";
 			else if(PlayerInfo[targetid][pJob1] == MUNKA_HULLA) jtext = "Hullaszállító";
 			else if(PlayerInfo[targetid][pJob1] == MUNKA_PENZ) jtext = "PénzSzállító";
 			else if(PlayerInfo[targetid][pJob1] == MUNKA_VADASZ) jtext = "Vadász";
@@ -489,7 +489,7 @@ stock MunkaNevek(targetid, job)
 			else if(PlayerInfo[targetid][pJob2] == MUNKA_FUNYIRO) jtext = "Fûnyíró";
 			else if(PlayerInfo[targetid][pJob2] == MUNKA_EPITESZ) jtext = "Építész";
 			//else if(PlayerInfo[targetid][pJob2] == MUNKA_PANCEL) jtext = "Páncélkészítõ";
-			else if(PlayerInfo[targetid][pJob2] == MUNKA_KUKAS) jtext = "Kukás";
+			//else if(PlayerInfo[targetid][pJob2] == MUNKA_KUKAS) jtext = "Kukás";
 			else if(PlayerInfo[targetid][pJob2] == MUNKA_HULLA) jtext = "Hullaszállító";
 			else if(PlayerInfo[targetid][pJob2] == MUNKA_PENZ) jtext = "PénzSzállító";
 			else if(PlayerInfo[targetid][pJob2] == MUNKA_VADASZ) jtext = "Vadász";
@@ -12341,12 +12341,12 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SendClientMessage(playerid, COLOR_LIGHTGREEN, "Felvetted az új munkádat: Építész | Ahhoz, hogy felmondj, le kell dolgoznod még 2,5 órát");
 					TogglePlayerControllable(playerid, true);
 				}
-				case 14:
+				/*case 14:
 				{
 					UjMunka(playerid, MunkaFelvetel[playerid], MUNKA_KUKAS);
 					SendClientMessage(playerid, COLOR_LIGHTGREEN, "Felvetted az új munkádat: Kukás | Ahhoz, hogy felmondj, le kell dolgoznod még 2,5 órát");
 					TogglePlayerControllable(playerid, true);
-				}
+				}*/
 				case 15:
 				{
 			    		
@@ -16633,7 +16633,7 @@ stock BizbeVan(playerid)
 	return biz;
 }
 
-stock HazKukaFrissites(q)
+/*stock HazKukaFrissites(q)
 {
 	new i = NINCS;
 	for(new k = 0; k < sizeof(TrashInfo); k++)
@@ -16693,7 +16693,7 @@ stock SzemetLerak()
 	}
 	printf("%d kuka létrehozva [KukaFrissites]", count);
 	ABroadCastFormat(COLOR_LIGHTRED, 1, "<< Minden házhoz szemét lerakva (%ddb) >>", count);
-}
+}*/
 
 stock FaLerak(playerid, Float:xpoz, Float:ypoz, Float:zpoz)
 {
@@ -20550,7 +20550,7 @@ stock KocsiRespawn(kocsi, bool:respawn = true)
 	}
 
 	if(IsAPancelozottKocsi(kocsi)) SetVehicleHealth(kocsi, 100000);
-	if(IsKocsi(kocsi, "Prod") || IsKocsi(kocsi, "uttisztito") || IsKocsi(kocsi, "Kamion") || IsKocsi(kocsi, "Farmer")  || IsKocsi(kocsi, "Funyiro") || IsKocsi(kocsi,"Kukas") || IsKocsi(kocsi, "Szerelo") || IsKocsi(kocsi, "Favago") || IsKocsi(kocsi, "Hulla") || IsKocsi(kocsi, "Taxi"))
+	if(IsKocsi(kocsi, "Prod") || IsKocsi(kocsi, "uttisztito") || IsKocsi(kocsi, "Kamion") || IsKocsi(kocsi, "Farmer")  || IsKocsi(kocsi, "Funyiro") /*|| IsKocsi(kocsi,"Kukas")*/ || IsKocsi(kocsi, "Szerelo") || IsKocsi(kocsi, "Favago") || IsKocsi(kocsi, "Hulla") || IsKocsi(kocsi, "Taxi"))
 	{
 		SetVehicleHealth(kocsi, 1000.0);
 		RepairVehicle(kocsi);
@@ -22124,7 +22124,7 @@ stock SajatKocsi(id, kocsi)
 		if(kocsi == HireCar[id])
 		    return 1;
 
-		if(IsKocsi(kocsi, "Prod") || IsKocsi(kocsi, "uttisztito") || IsKocsi(kocsi, "Gokart")  || IsKocsi(kocsi, "Kamion") || IsKocsi(kocsi, "Pilota") || IsKocsi(kocsi, "Farmer")  || IsKocsi(kocsi, "Funyiro") || IsKocsi(kocsi,"Kukas") || IsKocsi(kocsi, "Szerelo") || IsKocsi(kocsi, "Busz") || IsKocsi(kocsi, "Szabad") || IsKocsi(kocsi, "Postas") || IsKocsi(kocsi, "Pizza") || IsKocsi(kocsi, "Taxi") || IsKocsi(kocsi, "Favago") || IsKocsi(kocsi, "Hulla"))
+		if(IsKocsi(kocsi, "Prod") || IsKocsi(kocsi, "uttisztito") || IsKocsi(kocsi, "Gokart")  || IsKocsi(kocsi, "Kamion") || IsKocsi(kocsi, "Pilota") || IsKocsi(kocsi, "Farmer")  || IsKocsi(kocsi, "Funyiro") /*|| IsKocsi(kocsi,"Kukas")*/ || IsKocsi(kocsi, "Szerelo") || IsKocsi(kocsi, "Busz") || IsKocsi(kocsi, "Szabad") || IsKocsi(kocsi, "Postas") || IsKocsi(kocsi, "Pizza") || IsKocsi(kocsi, "Taxi") || IsKocsi(kocsi, "Favago") || IsKocsi(kocsi, "Hulla"))
 			return 1;
 
 	/*	if(kocsi > UtolsoKocsi)
@@ -22856,14 +22856,14 @@ fpublic JatekosBeszallas(playerid, vehicleid)
 			nemnekivalo = 1;
 		}
 	}
-	if(munka == MUNKA_KUKAS)
+	/*if(munka == MUNKA_KUKAS)
 	{
 		if(!AMT(playerid, MUNKA_KUKAS))
 		{
 	        SendClientMessage(playerid, COLOR_LIGHTRED, "Nem vagy kukás!");
 			nemnekivalo = 1;
 		}
-	}
+	}*/
 	if(munka == MUNKA_BUS)
 	{
 		if(!AMT(playerid, MUNKA_BUS))
@@ -23152,11 +23152,11 @@ stock IsKocsi(carid, tipus[])
 		if(munka == MUNKA_FUNYIRO)
 			return 1;
 	}
-	else if(egyezik(tipus, "Kukas"))
+	/*else if(egyezik(tipus, "Kukas"))
 	{
 		if(munka == MUNKA_KUKAS)
 			return 1;
-	}
+	}*/
 	else if(egyezik(tipus, "Szerelo"))
 	{
 		if(munka == MUNKA_SZERELO)
@@ -25510,7 +25510,7 @@ fpublic OnPlayerDisconnect(playerid, reason)
 	}
 	//CheckUtolso();
 	
-	if(VanSzemetNala[playerid])
+	/*if(VanSzemetNala[playerid])
 	{
 		RemovePlayerAttachedObject(playerid, ATTACH_SLOT_ZSAK_PAJZS_BILINCS);
 		VanSzemetNala[playerid] = false;
@@ -25538,7 +25538,7 @@ fpublic OnPlayerDisconnect(playerid, reason)
 	}
 	if(SzemetDebug[playerid])
 		SzemetDebug[playerid] = false;
-		
+		*/
 	if(Jelvenytlopott[playerid])
 	{
 		JelvenyNeve[playerid] = "Ismeretlen";
@@ -28348,7 +28348,7 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 	#define PRESSED(%0) (((newkeys & (%0)) == (%0)) && ((oldkeys & (%0)) != (%0)))
 	#define RELEASED(%0) (((newkeys & (%0)) != (%0)) && ((oldkeys & (%0)) == (%0)))
 
-	if(PRESSED(KEY_FIRE) && Munkaban[playerid] == MUNKA_KUKAS && AMT(playerid, MUNKA_KUKAS))
+	/*if(PRESSED(KEY_FIRE) && Munkaban[playerid] == MUNKA_KUKAS && AMT(playerid, MUNKA_KUKAS))
 	{
 		if(GetPlayerState(playerid) == PLAYER_STATE_ONFOOT && VanSzemetNala[playerid])
 		{
@@ -28376,7 +28376,7 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 			SetTimerEx("Munkavege", SzemetAKocsiban[vehicleid]*3000, false, "ddd", playerid, M_SZEMETLERAKAS, vehicleid);
 			Freeze(playerid);
 		}
-	}
+	}*/
 	
 	if(IsPlayerInAnyVehicle(playerid) && GetPlayerState(playerid) == PLAYER_STATE_DRIVER && (HOLDING(KEY_DOWN) || HOLDING(KEY_HANDBRAKE) || HOLDING(KEY_JUMP) || PRESSED(KEY_DOWN) || PRESSED(KEY_HANDBRAKE) || PRESSED(KEY_JUMP)) && engineOn[GetPlayerVehicleID(playerid)] == 1)
 	{
@@ -30636,7 +30636,7 @@ fpublic OnObjectMoved(objectid)
 
 fpublic OnPlayerPickUpDynamicPickup(playerid, pickupid)
 {
-	if(AMT(playerid, MUNKA_KUKAS) && Munkaban[playerid] == MUNKA_KUKAS && !VanSzemetNala[playerid] && !IsPlayerInAnyVehicle(playerid) && MunkaFolyamatban[playerid] == 0)
+	/*if(AMT(playerid, MUNKA_KUKAS) && Munkaban[playerid] == MUNKA_KUKAS && !VanSzemetNala[playerid] && !IsPlayerInAnyVehicle(playerid) && MunkaFolyamatban[playerid] == 0)
 	{
 		for(new k = 0; k < sizeof(TrashInfo); k++)
 		{
@@ -30653,7 +30653,7 @@ fpublic OnPlayerPickUpDynamicPickup(playerid, pickupid)
 				break;
 			}
 		}
-	}
+	}*/
 	if(AMT(playerid, MUNKA_FARMER))
 	{
 	    new i = -1;
@@ -30709,12 +30709,12 @@ fpublic OnPlayerPickUpDynamicPickup(playerid, pickupid)
 	if(!ParancsAjto[playerid] && (pstate == PLAYER_STATE_ONFOOT || pstate == PLAYER_STATE_DRIVER)) for(new a = 0; a < MAXAJTO; a++)
 	{
 		
-		for(new i = 0; i < sizeof(TrashInfo); i++)
+		/*for(new i = 0; i < sizeof(TrashInfo); i++)
 		{
 			if(PlayerToPoint(2.0,playerid,TrashInfo[i][tSzemetPos][0],TrashInfo[i][tSzemetPos][1],TrashInfo[i][tSzemetPos][2],0,0))
 				return 1;
 		
-		}
+		}*/
 		
 		
 		if(!Ajtok[a][Van]) continue;
@@ -33953,7 +33953,7 @@ fpublic CheckGas()
 			{
 				if(sofor != NINCS)
 				{
-					if(IsKocsi(v, "uttisztito") || IsKocsi(v, "Kamion") || IsKocsi(v, "Farmer")  || IsKocsi(v, "Funyiro") || IsKocsi(v,"Kukas") || IsKocsi(v, "Szerelo") || IsKocsi(v, "Favago") || IsKocsi(v, "Hulla") || IsKocsi(v, "prod") || IsKocsi(v, "Taxi"))
+					if(IsKocsi(v, "uttisztito") || IsKocsi(v, "Kamion") || IsKocsi(v, "Farmer")  || IsKocsi(v, "Funyiro") || /*IsKocsi(v,"Kukas") ||*/ IsKocsi(v, "Szerelo") || IsKocsi(v, "Favago") || IsKocsi(v, "Hulla") || IsKocsi(v, "prod") || IsKocsi(v, "Taxi"))
 					{
 						
 						if(PlayerInfo[sofor][pElhasznaltUzemanyag][1] > PlayerInfo[sofor][pElhasznaltUzemanyag][0] && PlayerInfo[sofor][pElhasznaltUzemanyag][2] == v)
@@ -38075,7 +38075,7 @@ fpublic SyncUp()
 
 	time = UnixTime;
 	
-	if(ResiKukaFrissites)
+	/*if(ResiKukaFrissites)
 	{
 		for(new h = 0; h < sizeof(TrashInfo); h++)
 		{
@@ -38086,7 +38086,7 @@ fpublic SyncUp()
 		}
 		SzemetLerak();
 		ResiKukaFrissites = false;
-	}
+	}*/
 
 	foreach(Jatekosok, playerid)
 	{

@@ -161,8 +161,8 @@ CMD:help(playerid, params[])
 			Msg(playerid,"Fûnyíró: /fûnyírás", false, COLOR_YELLOW);
 		if(AMT(playerid, MUNKA_EPITESZ))
 			Msg(playerid,"Építész: /felújítás", false, COLOR_YELLOW);
-		if(AMT(playerid, MUNKA_KUKAS))
-			Msg(playerid,"Kukás: /kuka", false, COLOR_YELLOW);
+		//if(AMT(playerid, MUNKA_KUKAS))
+			//Msg(playerid,"Kukás: /kuka", false, COLOR_YELLOW);
 		if(AMT(playerid, MUNKA_VADASZ))
 			Msg(playerid,"Vadász: /vadász", false, COLOR_YELLOW);
 		if(LMT(playerid, FRAKCIO_MENTO) || LMT(playerid, FRAKCIO_SFMENTO))
@@ -3601,7 +3601,7 @@ CMD:emp(playerid, params[])
 	return 1;
 }
 
-ALIAS(szem2t):szemet;
+/*ALIAS(szem2t):szemet;
 CMD:szemet(playerid, params[])
 {
 	new mitakarvele[32];
@@ -3667,7 +3667,7 @@ CMD:szemet(playerid, params[])
 		Msg(playerid, "Szemét debugolva");
 	}
 	return 1;
-}
+}*/
 
 CMD:rk(playerid, params[])
 {
@@ -3719,7 +3719,7 @@ CMD:taxisok(playerid, params[])
 	return 1;
 }
 
-ALIAS(kukas):kuka;
+/*ALIAS(kukas):kuka;
 ALIAS(kuk1s):kuka;
 CMD:kuka(playerid, params[])
 {
@@ -3785,7 +3785,7 @@ CMD:kuka(playerid, params[])
 		SendClientMessage(playerid, COLOR_GRAD1, "A játékosok házai elõtt a szemetek a játékosok fizetéseikor újra lerakódnak.");
 	}
 	return 1;
-}
+}*/
 ALIAS(h3rek):news;
 CMD:news(playerid, params[])
 {

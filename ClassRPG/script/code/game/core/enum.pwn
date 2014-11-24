@@ -611,7 +611,7 @@ enum kincsInfo
 };
 new Kincs[MAX_KINCS][kincsInfo];
 
-enum szemetinfo
+/*enum szemetinfo
 {
 	bool:tHazSzemet,
 	bool:tSzemet,
@@ -619,7 +619,7 @@ enum szemetinfo
 	tSzemetPickup,
 	Text3D:tSzemetLabel,
 };
-new TrashInfo[MAXSZEMET][szemetinfo];
+new TrashInfo[MAXSZEMET][szemetinfo];*/
 
 enum cInfo
 {

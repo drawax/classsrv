@@ -34,7 +34,7 @@ new bool:Poloskazott[MAX_PLAYERS]; // Le van-e poloskázva az illetõ
 new Poloskazta[MAX_PLAYERS]; // Ki poloskázta le õt
 new bool:Poloska[MAX_PLAYERS]; // Be van-e kapcsolva a poloska
 new Invitejog[MAX_PLAYERS];
-new bool:ResiKukaFrissites;
+//new bool:ResiKukaFrissites;
 new bool:FBIBeepules;
 new bool:FBIAlnev;
 new ASzint[MAX_PLAYERS];
@@ -726,9 +726,9 @@ new Mento[MAX_PLAYERS][128], MentoHelyszin[MAX_PLAYERS][64], MentoLegi[MAX_PLAYE
 new CallTuzOk[MAX_PLAYERS][128], CallTuz[MAX_PLAYERS];
 new fszallit;
 new HullakSzama[MAX_VEHICLES];
-new SzemetAKocsiban[MAX_VEHICLES];
+new /*SzemetAKocsiban[MAX_VEHICLES];
 new bool:VanSzemetNala[MAX_PLAYERS] = false;
-new bool:SzemetDebug[MAX_PLAYERS] = false;
+new bool:SzemetDebug[MAX_PLAYERS] = false;*/
 new bool:Erosites[MAX_VEHICLES];
 new swatsilenced;
 new swatdeagle;
