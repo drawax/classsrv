@@ -726,7 +726,7 @@ new Mento[MAX_PLAYERS][128], MentoHelyszin[MAX_PLAYERS][64], MentoLegi[MAX_PLAYE
 new CallTuzOk[MAX_PLAYERS][128], CallTuz[MAX_PLAYERS];
 new fszallit;
 new HullakSzama[MAX_VEHICLES];
-new /*SzemetAKocsiban[MAX_VEHICLES];
+/*new SzemetAKocsiban[MAX_VEHICLES];
 new bool:VanSzemetNala[MAX_PLAYERS] = false;
 new bool:SzemetDebug[MAX_PLAYERS] = false;*/
 new bool:Erosites[MAX_VEHICLES];

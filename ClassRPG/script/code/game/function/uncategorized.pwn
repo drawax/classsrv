@@ -17719,8 +17719,8 @@ stock TextDrawUpdate(playerid, textdraw)
 			Format(string, "~r~K¦rh?z: ~l~%dmp", korhazido);
 		if(PlayerRaceInfo[jatekos][xVersenyen] != NINCS)
 			Format(string, "~r~Helyezžsed: ~l~%d", PlayerRaceInfo[jatekos][xHelyezes]);
-		if(GetVehicleModel(GetPlayerVehicleID(jatekos)) == 408)
-			Format(string, "~r~Szemžttart?ly: ~l~%ddb/20db", SzemetAKocsiban[GetPlayerVehicleID(jatekos)]);
+		/*if(GetVehicleModel(GetPlayerVehicleID(jatekos)) == 408)
+			Format(string, "~r~Szemžttart?ly: ~l~%ddb/20db", SzemetAKocsiban[GetPlayerVehicleID(jatekos)]);*/
 		if(Taxi[jatekos][tDuty])
 		{
 			new sofor = jatekos;
@@ -22970,11 +22970,11 @@ fpublic OnPlayerEnterVehicle(playerid, vehicleid, ispassenger)
 		ClearAnimations(playerid);
 		return true;
 	}
-	if(VanSzemetNala[playerid])
+	/*if(VanSzemetNala[playerid])
 	{
 		Msg(playerid, "Szemetes zsák van nálad, elõbb tedd le azt, vagy tedd be a szemeteskocsi tartályába!");
 		ResetPlayerPos(playerid);
-	}
+	}*/
 	if(ov[playerid] == 0)
 	{
 		if(Bikes(vehicleid)) 
@@ -24488,7 +24488,7 @@ stock ValtozoNullazas(playerid) //vnull
 	PlayerInfo[playerid][pJelveny] = 1;
 	JailTime[playerid] = 0;
 	CellaID[playerid] = NINCS;
-	SzemetDebug[playerid] = false;
+	//SzemetDebug[playerid] = false;
 	IdgScripter[playerid] = false;
 	PBTerem[playerid] = 0;
 	//Meghalt[playerid] = false;
@@ -35676,7 +35676,7 @@ fpublic Munkavege(playerid, Munka, db, db2, db3)
 				MunkaFolyamatban[playerid] = 0;
 			}
 		}
-		else if(Munka == M_SZEMETLERAKAS)
+		/*else if(Munka == M_SZEMETLERAKAS)
 		{
 			if(!IsPlayerInAnyVehicle(playerid))
 			{
@@ -35693,7 +35693,7 @@ fpublic Munkavege(playerid, Munka, db, db2, db3)
 				MunkaFolyamatban[playerid] = 0;
 				UnFreeze(playerid);
 			}
-		}
+		}*/
 		else if(Munka == M_WIFICONNECT)
 		{
 			if(PlayerInfo[playerid][pLaptop] == 0) { MunkaFolyamatban[playerid] = 0; return 1; }
@@ -39069,7 +39069,7 @@ fpublic PayDay()
 				GiveMoney(i, checks);
 				GiveMoney(i, kamat);
 			}
-			HazKukaFrissites(i);
+			//HazKukaFrissites(i);
 			new bevetel;
 			SendClientMessage(i, COLOR_WHITE, "===== [ {FA9600}Bank Információ{FFFFFF} ] =====");
 			if(PlayerInfo[i][pBankSzamla] > 0)

@@ -595,7 +595,7 @@ public OnGameModeInit()
 	UpdateFolytatodik[uKocsi] = NINCS;
 	UpdateFolytatodik[uBiz] = NINCS;
 	UpdateFolytatodik[uTerulet] = NINCS;
-	ResiKukaFrissites = true;
+	//ResiKukaFrissites = true;
 	Csendvan = false;
 	ModBetoltve = 1;
 	OnModBetoltve();

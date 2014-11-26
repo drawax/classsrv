@@ -30707,20 +30707,16 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		return true;
 	}
 
-	if(egyezik(cmd, "/ujmodel"))
+	if(egyezik(cmd, "/ujmodel")) // sscanf by ryan
 	{
 	    if(IsPlayerConnected(playerid))
 		{
 			if(!Admin(playerid, 1337)) return 1;
-
-			tmp = strtok(cmdtext, idx);
-			if(!strlen(tmp))
-			{
-				SendClientMessage(playerid, COLOR_GRAD2, "Használat: /ujmodel [model]");
-				return 1;
-			}
+			new kocsikaa[32];
+			if(sscanf(pms, "s", kocsikaa))
+				return SendClientMessage(playerid, COLOR_WHITE, "Használat: /ujmodel [model]");
 			new model;
-			model = GetVehicleModelIDFromName(tmp);
+			model = GetVehicleModelIDFromName(kocsikaa);
 
 			if(model == -1)
 			{
@@ -30733,13 +30729,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			new kocsi = GetClosestVehicle(playerid);
 			if(GetPlayerDistanceFromVehicle(playerid, kocsi) > 5.0) return Msg(playerid, "Nincs jármû a közeledben!");
 
-			new vs = IsAVsKocsi(kocsi);
-			
-			/*if(!Admin(playerid, 5555))
-				if(IsABicikli(kocsi)) return Msg(playerid, "Ezt kérlek ne alakítsd kocsivá, ha muszáj keresd Terno-t");*/
-			
+			new vs = IsAVsKocsi(kocsi);			
 			if(vs == NINCS) return Msg(playerid, "Ez nem V-s!");
-			
 
 			CarInfo[vs][cModel] = model;
 			new Float:a,Float:x,Float:y,Float:z;
@@ -30752,8 +30743,6 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			
 			DestroyVehicle(kocsi);
 
-			
-			
 			SendFormatMessage(playerid, COLOR_YELLOW,"x: %.3f y:%.3f z:%.3f a:%.3f",x, y, z, a);
 			CarInfo[vs][cId] = UjKocsi(model, x, y, z, a, CarInfo[vs][cColorOne], CarInfo[vs][cColorTwo], GetPlayerInterior(playerid),  GetPlayerVirtualWorld(playerid));
 			
