@@ -233,6 +233,24 @@ new MinimumFizuhoz = 7200; //2óra
 #define KELLNPC
 #define KELLBUSZNPC
 
+//Ryan úszás lekérdezõ definíciók
+/*#define ANIM_SWIM1 1544 
+#define ANIM_SWIM2 1540
+#define ANIM_SWIM3 1541
+#define ANIM_SWIM4 1538
+#define ANIM_SWIM5 1539
+#define ANIM_JUMP1 1197
+#define ANIM_JUMP2 1195
+#define ANIM_JUMP3 1198
+#define ANIM_JUMP4 1064
+#define ANIM_JUMP5 1062
+#define ANIM_JUMP6 1542
+
+#if !defined SWIM_NO_CALLBACKS
+    #define SWIM_USE_CALLBACKS
+#endif
+*/
+
 new const LegalisFrakciok[11] = {1, 2, 4, 7, 9, 10, 12, 13, 15, 16, 20};
 
 new const SzervezetLimit[22] = {
@@ -249,13 +267,13 @@ new const SzervezetLimit[22] = {
 	22, //	Vagos 		11
 	30, //	Tûzoltóság 	12
 	20, //	Katonaság 	13
-	25, //	SFPD	    14
-	20, //	C.I.A 		15
+	0, //	SFPD-NINCS  14
+	0, //	NINCS		15
 	30, //	Oktató 		16
 	22, //	GSF 		17
 	0, 	//	NINCS 		18
 	0, 	//	NINCS 		19
-	17, //	NAV 		20
+	17, //	SASD 		20
 	22	//	Turkey 		21
 };
 
@@ -320,24 +338,24 @@ new IllegalisMunkak[6] = {
 	12,//{MUNKA_PANCEL, "Páncélkészítõ", 12}
 };
 
-new LegalisMunkak[17][3][20] = {
-	{MUNKA_DETEKTIV, "Detektív", 3},
-	{MUNKA_UGYVED, "Ügyvéd", 5},
-	{MUNKA_FAVAGO, "Favágó", 4},
-	{MUNKA_TESTOR, "Testõr", 3},
-	{MUNKA_PILOTA, "Pilóta", 12},
-	{MUNKA_UTTISZTITO, "Úttisztító", 1},
-	{MUNKA_PIZZAS, "Pizzafutár", 1},
-	{MUNKA_BUS, "Buszsofõr", 2},
-	{MUNKA_POSTAS, "Postás", 4},
-	{MUNKA_KAMIONOS, "Kamionos", 3},
-	{MUNKA_FARMER, "Farmer", 2},
-	{MUNKA_FUNYIRO, "Fûnyíró", 1},
-	{MUNKA_EPITESZ, "Építész", 5},
-	{MUNKA_KUKAS, "Kukás", 2},
-	{MUNKA_HULLA, "Hullaszállító", 3},
-	{MUNKA_PENZ, "PénzSzállító", 4},
-	{MUNKA_VADASZ, "Vadász", 15}
+new LegalisMunkak[16][3][20] = {
+	{MUNKA_DETEKTIV, "Detektív", 3}, // 1
+	{MUNKA_UGYVED, "Ügyvéd", 5}, // 2
+	{MUNKA_FAVAGO, "Favágó", 4}, // 3
+	{MUNKA_TESTOR, "Testõr", 3}, // 4
+	{MUNKA_PILOTA, "Pilóta", 12}, // 5
+	{MUNKA_UTTISZTITO, "Úttisztító", 1}, // 6
+	{MUNKA_PIZZAS, "Pizzafutár", 1}, // 7
+	{MUNKA_BUS, "Buszsofõr", 2}, // 8
+	{MUNKA_POSTAS, "Postás", 4}, // 9
+	{MUNKA_KAMIONOS, "Kamionos", 3}, // 10
+	{MUNKA_FARMER, "Farmer", 2}, // 11
+	{MUNKA_FUNYIRO, "Fûnyíró", 1}, // 12
+	{MUNKA_EPITESZ, "Építész", 5}, // 13
+	//{MUNKA_KUKAS, "Kukás", 2}, // 14
+	{MUNKA_HULLA, "Hullaszállító", 3}, // 15
+	{MUNKA_PENZ, "PénzSzállító", 4}, // 16
+	{MUNKA_VADASZ, "Vadász", 15} // 17
 };
 
 new const VersenySzorzo[8] = { //Százalékban

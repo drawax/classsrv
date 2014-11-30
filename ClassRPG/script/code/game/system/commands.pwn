@@ -6709,7 +6709,7 @@ CMD:sajto(playerid, params[])
 
 CMD:t(playerid, params[])
 {
-	if(!params[0] || !IsScripter(playerid) && SQLID(playerid) != 6876)
+	if(!params[0] || !IsScripter(playerid))
 		return 1;
 		
 	Log_Command = false;

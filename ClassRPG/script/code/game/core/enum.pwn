@@ -1492,6 +1492,13 @@ enum xtinfo
 }
 new PlayerRaceTuning[MAX_PLAYERS][xtinfo];
 
+/*enum empgeci
+{
+	eEMP
+}
+new PlayerEMP[MAX_PLAYERS][empgeci];*/
+
+
 enum rinfo
 {
 	rStatusz,

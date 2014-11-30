@@ -39,6 +39,7 @@ new bool:FBIBeepules;
 new bool:FBIAlnev;
 new ASzint[MAX_PLAYERS];
 new bool:Loginspawnolas[MAX_PLAYERS];
+//new EMPVANEJATEKOSNAKKOCSIBA[MAX_PLAYERS]; // Teszt by Ryan
 new bool:Jelvenytloptak[MAX_PLAYERS]; // Akitõl ellopták
 new bool:Jelvenytlopott[MAX_PLAYERS]; // Aki ellopta
 new JelvenyNeve[MAX_PLAYERS][MAX_PLAYER_NAME]; // Akitõl ellopták annak a neve
@@ -831,3 +832,4 @@ new TimeToOpenPumpkin = 5;*/
 new Felhatalmazas[MAX_PLAYERS][256];
 new Felhatalmazva[MAX_PLAYERS];
 //new VehicleInterior[MAX_VEHICLES];
+//new bool:swimming[MAX_PLAYERS];//Úszás

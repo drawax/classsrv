@@ -1093,14 +1093,20 @@ Dialog:tuning(playerid, response, listitem, inputtext[])
 				}
 				D_Tuning[playerid] = D_TUNING_TUNINGPACK_MEG;
 				D_Tuning_SelectedItem[playerid] = listitem;
-				D_Tuning_ItemCost[playerid] = 5000000;
+				if(D_AdminTuning[playerid]) // Atuningolásnál is levonta az 5 milliót. Javítva by Ryan
+					D_Tuning_ItemCost[playerid] = 0;
+				else
+					D_Tuning_ItemCost[playerid] = 5000000;
 				ShowVehicleEditor(playerid);
 			}
 			case 2:
 			{
 				D_Tuning[playerid] = D_TUNING_TUNINGPACK_MEG;
 				D_Tuning_SelectedItem[playerid] = listitem;
-				D_Tuning_ItemCost[playerid] = 5000000;
+				if(D_AdminTuning[playerid])
+					D_Tuning_ItemCost[playerid] = 0;
+				else
+					D_Tuning_ItemCost[playerid] = 5000000;
 				ShowVehicleEditor(playerid);
 				
 				if(model == 560)

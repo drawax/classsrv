@@ -335,6 +335,7 @@
 #define BIZ_BERSZEF 29
 #define BIZ_LOTER 30
 #define BIZ_ADASVETELI 31
+#define BIZ_GYOGYSZERGYAR 32
 
 //Dialog
 #define DIALOG_NINCS				(0)

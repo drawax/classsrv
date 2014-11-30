@@ -102,7 +102,7 @@
 #define MAX_DROP_ITEMS 1000
 #define MAX_BSZEF 500
 #define MAXTERULET 30
-#define MAXBIZ 32
+#define MAXBIZ 33
 #define MAXHAZ 600
 #define MAXGARAZS 600
 #define MAXAJTO 330

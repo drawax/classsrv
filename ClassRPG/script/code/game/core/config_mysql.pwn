@@ -7,13 +7,13 @@
 
 // MYSQL :: MAIN CREDENTIALS
 #define SQL_User "root"
-#define SQL_Jelszo "MymyQaWunu"
-#define SQL_Adatbazis "clstest2"
+#define SQL_Jelszo "MdeTLy985LLW"
+#define SQL_Adatbazis "classrpg"
 
 // MYSQL :: TEST CREDENTIALS
 #define SQL_UserTeszt "root"
-#define SQL_JelszoTeszt "MymyQaWunu"
-#define SQL_AdatbazisTeszt "ClassTesztSzerver"
+#define SQL_JelszoTeszt "MdeTLy985LLW"
+#define SQL_AdatbazisTeszt "classrpgtest"
 
 // MYSQL :: TABLES
 #define SQL_DB_Account "accountok"
