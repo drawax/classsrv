@@ -8,6 +8,13 @@ stock
 	_tmpString[256] // nehogy lecsökkentsd a _tmpString méretét!
 ;
 
+//RYAN UCP tiltások miatt tiltás ok "nullázása"
+/*new tiltassemmi[128] = "semmi";
+new tiltasures[128] = "ures";
+new tiltasnincsegy[128] = "NINCS";
+new tiltasnincsketto[128] = "nincs";*/
+
+
 
 new AdminDutySkin[MAX_PLAYERS];
 new OnAirID = 255;

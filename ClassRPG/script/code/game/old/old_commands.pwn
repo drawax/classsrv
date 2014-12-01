@@ -23329,7 +23329,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	if(egyezik(cmd, "/tiltás") || egyezik(cmd, "/tiltas"))
 	{
 		if(PlayerInfo[playerid][pAdmin] < 3 && params < 1 && !IsScripter(playerid)) return Msg(playerid, "/tiltás [Jogsi / Felold]");
-		if(PlayerInfo[playerid][pAdmin] > 3 && params < 1 || IsScripter(playerid) && params < 1) return Msg(playerid, "/tiltas [AS / Jogsi / Frakcio / fegyver / Felold / Leader / Report]");
+		if(PlayerInfo[playerid][pAdmin] > 3 && params < 1 || IsScripter(playerid) && params < 1) return Msg(playerid, "/tiltas [AS / Jogsi / Frakcio / Fegyver / Felold / Leader / Report]");
 
 		new player, oka[128];
 		new ido;
@@ -23470,8 +23470,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		else if(egyezik(param[1], "felold"))
 		{
-			if(PlayerInfo[playerid][pAdmin] > 6 && params < 3 || IsScripter(playerid) && params < 3) Msg(playerid, "Használata: /tiltas felold [AS / Jogsi / Frakcio / fegyver / leader] [Játékos]");
-			if(params < 3) Msg(playerid, "Használata: /tiltas felold Jogsi [Játékos]");
+			if(PlayerInfo[playerid][pAdmin] > 6 && params < 3 || IsScripter(playerid) && params < 3) Msg(playerid, "Használata: /tiltas felold [AS / Jogsi / Frakcio / Fegyver / Leader] [Játékos]");
+			else if(PlayerInfo[playerid][pAdmin] < 6 && params < 3) Msg(playerid, "Használata: /tiltas felold Jogsi [Játékos]");
 
 			if(egyezik(param[2], "as"))
 			{
@@ -23481,6 +23481,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 						return Msg(playerid, "Nincs ilyen játékos");
 				if(PlayerInfo[giveplayerid][pAsTilt]==0) return Msg(playerid, "Nincs eltíltva");
 				PlayerInfo[giveplayerid][pAsTilt]=0;
+				strmid(PlayerInfo[giveplayerid][pAsTiltOk], "ures", 0, 4, 128);
 
 				ABroadCastFormat(COLOR_LIGHTRED, 1, "<< Admin %s levette az Adminsegéd tiltást róla: %s >>", AdminName(playerid),PlayerName(giveplayerid));
 				SendFormatMessage(giveplayerid, COLOR_YELLOW, "<< Admin %s levette az Adminsegéd tiltást rólad >>",AdminName(playerid));
@@ -23494,6 +23495,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 						return Msg(playerid, "Nincs ilyen játékos");
 				if(PlayerInfo[giveplayerid][pLeaderTilt]==0) return Msg(playerid, "Nincs eltíltva");
 				PlayerInfo[giveplayerid][pLeaderTilt]=0;
+				strmid(PlayerInfo[giveplayerid][pLeaderoka], "semmi", 0, 5, 128);
 
 				ABroadCastFormat(COLOR_LIGHTRED, 1, "<< Admin %s levette a leader tiltást róla: %s >>", AdminName(playerid),PlayerName(giveplayerid));
 				SendFormatMessage(giveplayerid, COLOR_YELLOW, "<< Admin %s levette a leader tiltást rólad >>",AdminName(playerid));
@@ -23513,6 +23515,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				}
 
 				PlayerInfo[giveplayerid][pJogsiTiltIdo]=0;
+				strmid(PlayerInfo[giveplayerid][pJogsiTiltOk], "semmi", 0, 5, 128);
 				format(string, sizeof(string), "%s levette a tíltást a vizsgáztatástól!",PlayerName(playerid));
 				SendClientMessage(giveplayerid, COLOR_YELLOW, string);
 				format(string, sizeof(string), "%s -ról levetted a tíltást!",PlayerName(giveplayerid));
@@ -23528,6 +23531,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 						return Msg(playerid, "Nincs ilyen játékos");
 
 				PlayerInfo[giveplayerid][pFrakcioTiltIdo]=0;
+				strmid(PlayerInfo[giveplayerid][pFrakcioTiltOk], "semmi", 0, 5, 128);
 
 				ABroadCastFormat(COLOR_LIGHTRED, 1, "<< Admin %s levette a frakció tiltást róla: %s >>", AdminName(playerid),PlayerName(giveplayerid));
 				SendFormatMessage(giveplayerid, COLOR_YELLOW, "<< Admin %s levette a frakció tiltást rólad >>",AdminName(playerid));
@@ -23542,7 +23546,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 						return Msg(playerid, "Nincs ilyen játékos");
 
 				PlayerInfo[giveplayerid][pFegyverTiltIdo]=0;
-
+				strmid(PlayerInfo[giveplayerid][pFegyverTiltOk], "semmi", 0, 5, 128);
 				ABroadCastFormat(COLOR_LIGHTRED, 1, "<< Admin %s levette a fegyver tiltást róla: %s >>", AdminName(playerid),PlayerName(giveplayerid));
 				SendFormatMessage(giveplayerid, COLOR_YELLOW, "<< Admin %s levette a fegyver tiltást rólad >>",AdminName(playerid));
 				return 1;
@@ -23555,6 +23559,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 						return Msg(playerid, "Nincs ilyen játékos");
 				if(PlayerInfo[giveplayerid][pReportTilt]==0) return Msg(playerid, "Nincs eltiltva");
 				PlayerInfo[giveplayerid][pReportTilt]=0;
+				strmid(PlayerInfo[giveplayerid][pReportTiltOk], "Nincs", 0, 5, 128);
 
 				ABroadCastFormat(COLOR_LIGHTRED, 1, "<< Admin %s levette a reporttiltást róla: %s >>", AdminName(playerid),PlayerName(giveplayerid));
 				SendFormatMessage(giveplayerid, COLOR_YELLOW, "<< Admin %s újra engedélyezte, hogy reportolhass! >>",AdminName(playerid));
@@ -41272,6 +41277,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			}
 			case 2:
 			{
+				if(!Admin(playerid, 1340)) return Msg(playerid, "Ezt a paramétert csak 1340-es Adminszinttõl használhatod!");
 			    PlayerInfo[giveplayerid][pPnumber] = amount;
 			    SendFormatMessage(playerid, COLOR_GREEN, "Játékos telefonszáma átírva erre: %s", FormatNumber( amount, 0, '-' ));
 			}
@@ -41337,6 +41343,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			}
 			case 15:
 			{
+				if(!Admin(playerid, 1340)) return Msg(playerid, "Ezt a paramétert csak 1340-es Adminszinttõl használhatod!");
 				PlayerInfo[giveplayerid][pPremiumPont] = amount;
 				SendFormatMessage(playerid, COLOR_GREEN, "Játékos prémium pontjai átírva erre: %d", amount);
 			}
@@ -41418,11 +41425,13 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			}
 			case 31:
 			{
+				if(!Admin(playerid, 1340)) return Msg(playerid, "Ezt a paramétert csak 1340-es Adminszinttõl használhatod!");
 				PlayerInfo[giveplayerid][pKredit] = amount;
 				SendFormatMessage(playerid, COLOR_GREEN, "Játékos Kreditjeinek száma átírva erre: %d", amount);
 			}
 			case 32:
 			{
+				if(!Admin(playerid, 1340)) return Msg(playerid, "Ezt a paramétert csak 1340-es Adminszinttõl használhatod!");
 				PlayerInfo[giveplayerid][pArany] = amount;
 				SendFormatMessage(playerid, COLOR_GREEN, "Játékos Aranyainak száma átírva erre: %d (Zsebében)", amount);
 			}
@@ -50150,6 +50159,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				SendFormatMessage(jatekos, COLOR_LIGHTBLUE, "%s fogadta a szerelõ hívásod!", ICPlayerName(playerid));
 				SendFormatMessageToAll(COLOR_LIGHTBLUE, "Szerelõ %s fogadta %s hívását", ICPlayerName(playerid), ICPlayerName(jatekos));
 				SetPlayerMarkerForPlayer(playerid, jatekos, COLOR_RED);
+				//SetPlayerMarkerForPlayer(jatekos, playerid, COLOR_RED); // Aki hívta annak jelzi a szerelõt
 		
 				return 1;
 		}

@@ -28831,7 +28831,7 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				{
 					switch(random(100))
 					{
-						case 1..50: fail = 2;
+						case 1..100: fail = 2; // Teszt erejéig
 					}
 				}
 			}
@@ -38783,19 +38783,19 @@ stock JatszottOra(playerid)
 	}
 	if(PlayerInfo[playerid][pJogsiTiltIdo] > 0)
 	{
-		if(PlayerInfo[playerid][pJogsiTiltIdo] == 1) Msg(playerid, "Lejárt a vizsgáztatástól való eltítlásod! Újra vizsgázhatsz.");
-		PlayerInfo[playerid][pJogsiTiltIdo] -= 1, strmid(PlayerInfo[playerid][pJogsiTiltOk], "NINCS", 0, 5, 128);
+		if(PlayerInfo[playerid][pJogsiTiltIdo] == 1) Msg(playerid, "Lejárt a vizsgáztatástól való eltíltásod! Újra vizsgázhatsz.");
+		PlayerInfo[playerid][pJogsiTiltIdo] -= 1, strmid(PlayerInfo[playerid][pJogsiTiltOk], "semmi", 0, 5, 128);
 	}
 	if(PlayerInfo[playerid][pFrakcioTiltIdo]>0)
 	{
-		if(PlayerInfo[playerid][pFrakcioTiltIdo] == 1) Msg(playerid, "Lejárt a frakciótól való eltítlásod!");
-		PlayerInfo[playerid][pFrakcioTiltIdo] -= 1;
+		if(PlayerInfo[playerid][pFrakcioTiltIdo] == 1) Msg(playerid, "Lejárt a frakciótól való eltíltásod!");
+		PlayerInfo[playerid][pFrakcioTiltIdo] -= 1, strmid(PlayerInfo[playerid][pFrakcioTiltOk], "semmi", 0, 5, 128);
 
 	}
 	if(PlayerInfo[playerid][pFegyverTiltIdo]>0)
 	{
-		if(PlayerInfo[playerid][pFegyverTiltIdo] == 1) Msg(playerid, "Lejárt a fegyverrõl való eltítlásod!");
-		PlayerInfo[playerid][pFegyverTiltIdo] -= 1;
+		if(PlayerInfo[playerid][pFegyverTiltIdo] == 1) Msg(playerid, "Lejárt a fegyverrõl való eltíltásod!");
+		PlayerInfo[playerid][pFegyverTiltIdo] -= 1, strmid(PlayerInfo[playerid][pFegyverTiltOk], "semmi", 0, 5, 128);
 	
 	}
 	if(PlayerInfo[playerid][pBoatLic] > 0)
