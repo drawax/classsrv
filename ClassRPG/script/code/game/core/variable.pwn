@@ -14,6 +14,10 @@ new tiltasures[128] = "ures";
 new tiltasnincsegy[128] = "NINCS";
 new tiltasnincsketto[128] = "nincs";*/
 
+//Ryan LV Tõzsde rendszer
+new bool:VanLezer;
+new TozsdeJelszo[24];
+new lezer[21];
 
 
 new AdminDutySkin[MAX_PLAYERS];

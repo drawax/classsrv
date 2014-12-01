@@ -49319,7 +49319,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	    {
 			if(!IsACop(playerid))
 		    {
-				if(params < 1) return Msg(playerid, "/hack [államkassza/utalás/bankszámla/szöktetés/kamera/jármû/riaszto]");
+				if(params < 1) return Msg(playerid, "/hack [államkassza/utalás/bankszámla/szöktetés/kamera/jármû/riaszto/lézer]");
 				new skill;
 				skill = SkillLevel(PlayerInfo[playerid][pHackingSkill]);
 				new bool:bukta = false;
@@ -49641,6 +49641,47 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 						PlayerInfo[playerid][pHack] = 900;
 					    SendClientMessage(playerid, COLOR_YELLOW, "Feljelentettek hackerkedésért!");
 						CopMsg(COLOR_ALLDEPT, "Biztonsági õr: Figyelem! Valaki megpróbálta feltörni a San Fierroi bank kameráit! Vége.");
+						PlayerInfo[playerid][pHackingSkill] ++;
+						SetPlayerCriminal(playerid,255, "Hackerkedés!");
+						if(PlayerInfo[playerid][pMobilnet] != NINCS && !LaptopConnected[playerid])
+							PlayerInfo[playerid][pMobilnet] += skill/2;
+					}
+				}
+				//Ryan LV Lézer es cucca
+				else if(egyezik(param[1], "lezer") || egyezik(param[1], "lézer"))
+				{
+					if(!IsRyan(playerid))
+						return SendClientMessage(playerid, COLOR_LIGHTRED, "Egyelõre csak Teplán bá használhatja ezt a parancsot!");
+					if(skill < 12) return Msg(playerid, "Minimum skill 12!");
+					if(VanLezer) return Msg(playerid, "A lézerek most is ki vannak kapcsolva!");
+					if(!PlayerToPoint(3, playerid, 0, 0, 0)) 
+					{
+						Msg(playerid, "Nem vagy az LV-i tõzsde elektromos paneljénél!((GPS-en jelezve))");
+						SetPlayerCheckpoint(playerid, 0 ,0 ,0 , 5);
+					}
+					if(bukta == false)
+					{
+						PlayerInfo[playerid][pHackingSkill] += 2;
+						PlayerInfo[playerid][pHack] = 4800;
+						//SendClientMessage(playerid, COLOR_YELLOW, "Sikeresen feltörted a Las Venturasi Tõzsde lézer rendszerét!");
+						//SendClientMessage(playerid, COLOR_YELLOW, "Tíz percetek van mire a rendõrség rájön, és visszakapcsolják a lézert!");
+						
+						Cselekves(playerid,"Elõveszi a Laptopját és csatlakozik a vezérlõre.");
+	        	        GameTextForPlayer(playerid,"~w~~n~~n~~n~~n~~n~~n~~n~~n~Jelszó feltörése...",60000,3);
+	        	        SetTimerEx("TozsdeFeltoresTimer", 60000, 0, "i", playerid);
+	        	       	Freeze(playerid, 60000);
+  		       			MunkaFolyamatban[playerid] = 1;
+						
+						//LezerKikapcs();
+						//SetTimerEx("LvTozsdeLezerTimer", 600000, false, "i", playerid);
+						if(PlayerInfo[playerid][pMobilnet] != NINCS && !LaptopConnected[playerid])
+							PlayerInfo[playerid][pMobilnet] += skill;
+					}
+					else
+					{
+						PlayerInfo[playerid][pHack] = 900;
+					    SendClientMessage(playerid, COLOR_YELLOW, "Feljelentettek hackerkedésért!");
+						CopMsg(COLOR_ALLDEPT, "Tõzsde Számítógépes Rendszere: Figyelem! Valaki megpróbálta kikapcsolni Las Venturai Tõzsde lézereit! Vége.");
 						PlayerInfo[playerid][pHackingSkill] ++;
 						SetPlayerCriminal(playerid,255, "Hackerkedés!");
 						if(PlayerInfo[playerid][pMobilnet] != NINCS && !LaptopConnected[playerid])

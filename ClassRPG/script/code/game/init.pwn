@@ -91,6 +91,7 @@
 #include "system\system_tuning.pwn"
 #include "system\system_ytplayer.pwn"
 #include "system\tablet"
+#include "system\teplan.pwn" // Tepi Tõzsde rendszere
 
 // CLASSRPG :: Functions & hooks
 #include "function\hooks.pwn"
@@ -108,6 +109,7 @@
 // CLASSRPG :: Systems (after)
 #include "system\commands.pwn"
 //#include "system\omsz.pwn" Ideiglenesen kiszedtem amíg nem 100%-os by Amos
+
 
 // CLASSRPG :: old code
 #include "old\old_commands.pwn"

@@ -28829,10 +28829,7 @@ fpublic OnPlayerKeyStateChange(playerid, newkeys, oldkeys)
 				}
 				case 3:
 				{
-					switch(random(100))
-					{
-						case 1..100: fail = 2; // Teszt erejéig
-					}
+					fail = 2; // Teszt erejéig
 				}
 			}
 		}
