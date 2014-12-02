@@ -38864,6 +38864,23 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			{
 				if(GetPlayerVirtualWorld(playerid) == 0 && GetPlayerInterior(playerid) == 0)
 				{
+					if(!IsHitman(playerid)) return 1; // Csak hitman tud bemenni
+					if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER)
+						return Msg(playerid, "Ezen az úton csak jármûvel lehet bemenni... Használd a másik bejáratot!");
+					Tele(playerid, 2300.872, 2498.494, 2.949, true, 9555,0);
+					foreach(Jatekosok, x)
+					{
+						if(!IsPlayerInVehicle(x, GetPlayerVehicleID(playerid))) continue;
+						SetPlayerInterior(x, 1);
+						SetPlayerVirtualWorld(playerid, 1555);
+					}
+					SetVehicleZAngle(GetPlayerVehicleID(playerid), 268.0);
+				}
+			}
+			/*if(PlayerToPoint(5.0, playerid,2274.210, -1107.507, 37.548 )) //Hitman HQ Garázs - Ryan
+			{
+				if(GetPlayerVirtualWorld(playerid) == 0 && GetPlayerInterior(playerid) == 0)
+				{
 					if(PlayerInfo[playerid][pHitman] < 1) return 1; // Csak hitman tud bemenni - Ryan
 					if(GetPlayerState(playerid) == 2)
 					{
@@ -38876,12 +38893,20 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 						SetPlayerFacingAngle(playerid, 268);
 						SetPlayerPos(playerid,2300.872, 2498.494, 2.949);
 					}
+					foreach(Jatekosok, x)
+					{
+						if(!IsPlayerInVehicle(x, GetPlayerVehicleID(playerid))) continue;
+						SetPlayerInterior(x, 0);
+						SetPlayerVirtualWorld(playerid, 9555);
+						Msg(playerid, "Isten hozott a bérgyilkosok hazájában! Válaszd ki a neked megfelelõ kocsit a gyilkoláshoz.");
+					}
 					SetPlayerInterior(playerid, 0);
 					SetPlayerVirtualWorld(playerid,9555);
 					Msg(playerid, "Isten hozott a bérgyilkosok hazájában! Válaszd ki a neked megfelelõ kocsit a gyilkoláshoz.");
+					
 				
 				}
-			}
+			}*/
 			if(PlayerToPoint(5.0, playerid, 1423.3461,-1553.3212,13.5391))//netkávézó
 			{
 				Tele(playerid, 1416.9039,-1554.0294,13.9759);
@@ -39429,7 +39454,25 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				SetPlayerPos(playerid, -2541.3821,-47.4891,16.5329);
 				return 1;
 			}
-			else if(PlayerToPoint(5.0, playerid,2301.484, 2497.554, 2.845)) //Hitman HQ Garázs - Ryan
+			else if(PlayerToPoint(5.0, playerid,2301.484, 2497.554, 2.845)) //Hitman HQ Garázs KI - Ryan
+			{
+				if(GetPlayerVirtualWorld(playerid) == 9555 && GetPlayerInterior(playerid) == 0)
+				{
+					if(!IsHitman(playerid)) return 1; // Csak hitman tud kimenni
+					if(GetPlayerState(playerid) != PLAYER_STATE_DRIVER)
+						return Msg(playerid, "Ezen az úton csak jármûvel lehet kimenni... Használd a másik kijáratot!");
+					Tele(playerid, 2274.349, -1108.054, 37.664, true, 0,0);
+					foreach(Jatekosok, x)
+					{
+						if(!IsPlayerInVehicle(x, GetPlayerVehicleID(playerid))) continue;
+						SetPlayerInterior(x, 0);
+						SetPlayerVirtualWorld(playerid, 0);
+						Msg(playerid, "Ne feledd, sose bukj le! Sok sikert!");
+					}
+					SetVehicleZAngle(GetPlayerVehicleID(playerid), 154);
+				}
+			}
+			/*else if(PlayerToPoint(5.0, playerid,2301.484, 2497.554, 2.845)) //Hitman HQ Garázs - Ryan
 			{
 				if(GetPlayerVirtualWorld(playerid) == 9555 && GetPlayerInterior(playerid) == 0)
 				{
@@ -39449,7 +39492,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					SetPlayerVirtualWorld(playerid,0);
 					Msg(playerid, "Ne feledd, sose bukj le! Sok sikert!");
 				}
-			}
+			}*/
 			else if(PlayerToPoint(2.0, playerid, 1773.3752,-1527.5599,-72.4829))//Camorra lépcsõház
 			{
 				SetPlayerPos(playerid, 1804.5605,-1561.5798,-81.2067);
@@ -49308,6 +49351,92 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}//not connected
 		return 1;
 	}
+	//Tesztre 
+	if(egyezik(cmd,"/tõzsde") || egyezik(cmd,"/tozsde"))
+	{
+		if(!IsRyan(playerid))
+			return SendClientMessage(playerid, COLOR_LIGHTRED, "Egyelõre csak Ryan bá használhatja ezt a parancsot!");
+		if(params < 1) return Msg(playerid,"/jelszó [Aktiválás/ Deaktiválás / Átír/Megnéz]");
+		if(egyezik(param[1],"aktiválás") || egyezik(param[1],"aktivalas"))
+		{
+			if(params < 2) return Msg(playerid,"/jelszó Aktiválás [jelszó]");
+			if(egyezik(param[2], TozsdeJelszo))
+			{
+				Msg(playerid,"Helyes Jelszó, Bank védelem újra aktív!");
+				LezerBekapcs();
+				SendRadioMessageFormat(FRAKCIO_SCPD, COLOR_DBLUE, "** Értesítés: %s aktiválta Las Venturas-i Tõzsde védelmi rendszerét", ICPlayerName(playerid));
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "** Értesítés: %s aktiválta Las Venturas-i Tõzsde védelmi rendszerét", ICPlayerName(playerid));
+				SendRadioMessageFormat(FRAKCIO_NAV, COLOR_DBLUE, "** Értesítés: %s aktiválta Las Venturas-i Tõzsde védelmi rendszerét", ICPlayerName(playerid));
+				foreach(Jatekosok, b)
+					TozsdeRiaszto(b, false);
+			}
+			else
+				Msg(playerid,"Hiba! Helytelen jelszó!");
+		}
+		else  if(egyezik(param[1],"deaktiválás") || egyezik(param[1],"deaktivalas"))
+		{
+			if(params < 2) return Msg(playerid,"/jelszó Dektiválás [jelszó]");
+			if(egyezik(param[2], TozsdeJelszo))
+			{
+				Msg(playerid,"Helyes Jelszó, Bank védelem deaktiválva!");
+				LezerKikapcs();
+				SendRadioMessageFormat(FRAKCIO_SCPD, COLOR_DBLUE, "** Értesítés: %s aktiválta Las Venturas-i Tõzsde védelmi rendszerét", ICPlayerName(playerid));
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "** Értesítés: %s aktiválta Las Venturas-i Tõzsde védelmi rendszerét", ICPlayerName(playerid));
+				SendRadioMessageFormat(FRAKCIO_NAV, COLOR_DBLUE, "** Értesítés: %s aktiválta Las Venturas-i Tõzsde védelmi rendszerét", ICPlayerName(playerid));
+				foreach(Jatekosok, b)
+					TozsdeRiaszto(b, false);
+			}
+			else
+				Msg(playerid,"Hiba! Helytelen jelszó!");
+		}
+		else if(egyezik(param[1],"átír") || egyezik(param[1],"atir"))
+		{
+			if(IsACop(playerid) && Munkarang(playerid, 6))
+			{
+				if(params < 2) return Msg(playerid,"/jelszó Átír [jelszó]");
+				if(strlen(param[2]) >= 5 && strlen(param[2]) <= 10)
+				{
+					new jelszo[10];
+					SendFormatMessage(playerid, COLOR_YELLOW,"Jelszó Sikeresen Módosítva! | Új jelszó: %s", param[2]);
+					Format(jelszo,"%s",param[2]);
+					TozsdeJelszo =  jelszo;
+				}
+				else
+					Msg(playerid,"Hiba: A jelszó minimum 5, maximum 10 karakter lehet!");
+			}
+			else
+			{
+				Msg(playerid,"Nincs jogod a használatára!");
+				return 1;
+			}
+		}
+		else if(egyezik(param[1],"megnéz") || egyezik(param[1],"megnez"))
+		{
+			if(IsACop(playerid) && Munkarang(playerid, 6))
+			{
+				SendFormatMessage(playerid,COLOR_YELLOW,"A jelszó: %s",TozsdeJelszo);
+				return 1;
+			}
+			else
+			{
+				Msg(playerid,"Nincs jogod a használatára!");
+				return 1;
+			}
+		}
+		else
+		{
+			Msg(playerid,"/jelszó [Beír/Átír/Megnéz]");
+			return 1;
+		}
+		return 1;
+	}
+	
+	if(egyezik(cmd, "/hackidõ")) // Lézer teszthez
+	{
+		if(!IsRyan(playerid)) return Msg(playerid,"Nem nem");
+		PlayerInfo[playerid][pHack] = 0;
+		Msg (playerid,"Nullázva a hackelési idõ");
+	}
 	if(egyezik(cmd, "/hack"))
 	{
 		if(Szint(playerid) < IllegalisMunkak[4]) return SendFormatMessage(playerid, COLOR_LIGHTRED, "LEVEL %d -tõl",IllegalisMunkak[4]);
@@ -49653,21 +49782,23 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(!IsRyan(playerid))
 						return SendClientMessage(playerid, COLOR_LIGHTRED, "Egyelõre csak Teplán bá használhatja ezt a parancsot!");
 					if(skill < 12) return Msg(playerid, "Minimum skill 12!");
-					if(VanLezer) return Msg(playerid, "A lézerek most is ki vannak kapcsolva!");
-					if(!PlayerToPoint(3, playerid, 0, 0, 0)) 
+					if(!VanLezer) return Msg(playerid, "A lézerek most is ki vannak kapcsolva!");
+					if(!PlayerToPoint(10.0, playerid, -1988.6638,1117.8837,54.4726))
+					if(!PlayerToPoint(3, playerid, 0, 0, 0))
 					{
 						Msg(playerid, "Nem vagy az LV-i tõzsde elektromos paneljénél!((GPS-en jelezve))");
 						SetPlayerCheckpoint(playerid, 0 ,0 ,0 , 5);
+						return 1; // Kell a visszatérési érték hogy ne fusson tovább a kód
 					}
 					if(bukta == false)
 					{
 						PlayerInfo[playerid][pHackingSkill] += 2;
-						PlayerInfo[playerid][pHack] = 4800;
+						PlayerInfo[playerid][pHack] = 7200; // 2 óra múlva hackelhet
 						//SendClientMessage(playerid, COLOR_YELLOW, "Sikeresen feltörted a Las Venturasi Tõzsde lézer rendszerét!");
 						//SendClientMessage(playerid, COLOR_YELLOW, "Tíz percetek van mire a rendõrség rájön, és visszakapcsolják a lézert!");
 						
-						Cselekves(playerid,"Elõveszi a Laptopját és csatlakozik a vezérlõre.");
-	        	        GameTextForPlayer(playerid,"~w~~n~~n~~n~~n~~n~~n~~n~~n~Jelszó feltörése...",60000,3);
+						Cselekves(playerid,"elõveszi a laptopját és csatlakozik a vezérlõre.");
+	        	        GameTextForPlayer(playerid,"~w~~n~~n~~n~~n~~n~~n~~n~~n~Jelszo feltorese...",60000,3);
 	        	        SetTimerEx("TozsdeFeltoresTimer", 60000, 0, "i", playerid);
 	        	       	Freeze(playerid, 60000);
   		       			MunkaFolyamatban[playerid] = 1;
@@ -49681,7 +49812,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					{
 						PlayerInfo[playerid][pHack] = 900;
 					    SendClientMessage(playerid, COLOR_YELLOW, "Feljelentettek hackerkedésért!");
-						CopMsg(COLOR_ALLDEPT, "Tõzsde Számítógépes Rendszere: Figyelem! Valaki megpróbálta kikapcsolni Las Venturai Tõzsde lézereit! Vége.");
+						CopMsgFormat(COLOR_ALLDEPT, "Tõzsde Számítógépes Rendszere: Figyelem! %s megpróbálta kikapcsolni Las Venturai Tõzsde lézereit! Vége.", ICPlayerName(playerid));
 						PlayerInfo[playerid][pHackingSkill] ++;
 						SetPlayerCriminal(playerid,255, "Hackerkedés!");
 						if(PlayerInfo[playerid][pMobilnet] != NINCS && !LaptopConnected[playerid])

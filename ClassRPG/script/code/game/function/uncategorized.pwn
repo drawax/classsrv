@@ -6219,6 +6219,16 @@ stock OnModBetoltve()
 	CityArea[vLV][cPosX] = Float:{  774.589,  2798.610};
 	CityArea[vLV][cPosY] = Float:{  645.575,  2877.821};
 	
+	
+	
+	//Ryan Lézer
+
+	lezerzona = CreateDynamicRectangle(2129.953, 1611.851, 2158.419, 1622.601, 1333, 1, -1); // minX minY maxX maxY VW INTI PLAYER - Ryan
+	
+	//Ryan Lézer
+	
+	
+	
 	Varosok[vLS] = CreateDynamicRectangle(CityArea[vLS][cPosX][0], CityArea[vLS][cPosY][0], CityArea[vLS][cPosX][1], CityArea[vLS][cPosY][1]);
 	Varosok[vSF] = CreateDynamicRectangle(CityArea[vSF][cPosX][0], CityArea[vSF][cPosY][0], CityArea[vSF][cPosX][1], CityArea[vSF][cPosY][1]);
 	Varosok[vLV] = CreateDynamicRectangle(CityArea[vLV][cPosX][0], CityArea[vLV][cPosY][0], CityArea[vLV][cPosX][1], CityArea[vLV][cPosY][1]);
@@ -6289,13 +6299,19 @@ stock ForgalommalSzemben(playerid, areaid)
 	return 1;
 }
 
+
 fpublic OnPlayerEnterDynamicArea(playerid, areaid)
 {
+	LezerKorzet(playerid, areaid);
 	ForgalommalSzemben(playerid, areaid);
 	return 1;
 }
 fpublic OnPlayerLeaveDynamicArea(playerid, areaid)
 {
+	if(areaid == lezerzona)
+	{
+		SendClientMessage(playerid, COLOR_LIGHTRED, "Kiléptél a lézer mezõbõl!");
+	}
 	ForgalommalSzemben(playerid, areaid);
 	
 	if(Harcol[playerid] && areaid == TeruletInfo[ HarcolTerulet[playerid] ][tArea])
@@ -6303,7 +6319,6 @@ fpublic OnPlayerLeaveDynamicArea(playerid, areaid)
 		HarcKieses(playerid, "Elhagyta a zónát");
 		SendClientMessage(playerid, COLOR_LIGHTRED, "Figyelmeztetés: Elhagytad a zónát, így már nem veszel részt a harcban!");
 	}
-	
 	
 	
 	return 1;

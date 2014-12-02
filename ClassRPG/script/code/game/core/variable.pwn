@@ -15,9 +15,10 @@ new tiltasnincsegy[128] = "NINCS";
 new tiltasnincsketto[128] = "nincs";*/
 
 //Ryan LV Tõzsde rendszer
-new bool:VanLezer;
-new TozsdeJelszo[24];
-new lezer[21];
+new bool:VanLezer; // Be van e kapcsolva a lézer vagy nincs
+new TozsdeJelszo[24]; // Jelszó
+new lezer[21]; //A dynamic objectek tömbje
+new lezerzona; //A zóna
 
 
 new AdminDutySkin[MAX_PLAYERS];

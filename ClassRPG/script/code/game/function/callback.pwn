@@ -131,6 +131,9 @@ public OnGameModeInit()
 	LoadRejtekhely();
 	LoadWifi();
 
+	LezerBekapcs();
+	UjTozsdeJelszo();
+
 	TeruletekBetoltese();
 	
 	AjtoSF[0]= CreateDynamicPickup(1318,23,2169.9451,1589.8287,999.9761,1555,1,NINCS);
