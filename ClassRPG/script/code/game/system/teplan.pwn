@@ -101,7 +101,7 @@
 	return 1;
 }*/
 
-//Ryan LÉZER KÖRZET
+//Ryan LÉZER KÖRZET 
 stock LezerKorzet(playerid, areaid)
 {
 	if(areaid == lezerzona)
