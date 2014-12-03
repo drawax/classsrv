@@ -842,7 +842,7 @@ fpublic INI_Load_Userdata(playerid, name[], value[])
 	INI_Int("lecsukta",PlayerInfo[playerid][plecsukta]);
 
 	INI_Int("HTojas",PlayerInfo[playerid][pTojas]);
-	/*INI_Custom("Mikulas","p<,>ddd",PlayerInfo[playerid][pMikulasSapka],PlayerInfo[playerid][pMikulasCsomag],PlayerInfo[playerid][pVirgacs]);*/
+	INI_Custom("Mikulas","p<,>ddd",PlayerInfo[playerid][pMikulasSapka],PlayerInfo[playerid][pMikulasCsomag],PlayerInfo[playerid][pVirgacs]);
 	INI_Custom("Ajandek","p<,>dd",PlayerInfo[playerid][pAjandekUnixtime],PlayerInfo[playerid][pAjandek]);
 	INI_Int("AllJailTime",JailTime[playerid]);
 	INI_Int("Vadaszengedely", PlayerInfo[playerid][pVadaszEngedely]);
@@ -1287,11 +1287,11 @@ fpublic INI_Save(type, a)
 		INI_WriteInt(ini,"lecsukta",PlayerInfo[a][plecsukta]);
 		
 		INI_WriteInt(ini, "HTojas",PlayerInfo[a][pTojas]);
-		/*INI_WriteInt(ini,"pMikulasSapka",PlayerInfo[a][pMikulasSapka]);
+		INI_WriteInt(ini,"pMikulasSapka",PlayerInfo[a][pMikulasSapka]);
 		INI_WriteInt(ini,"pMikulasCsomag",PlayerInfo[a][pMikulasCsomag]);
 		
 		format(_tmpString, 128, "%d,%d,%d",PlayerInfo[a][pMikulasSapka],PlayerInfo[a][pMikulasCsomag],PlayerInfo[a][pVirgacs]);
-		INI_WriteString(ini, "Mikulas", _tmpString);*/
+		INI_WriteString(ini, "Mikulas", _tmpString);
 		
 		format(_tmpString,128, "%d,%d",PlayerInfo[a][pAjandekUnixtime],PlayerInfo[a][pAjandek]);
 		INI_WriteString(ini, "Ajandek", _tmpString);
@@ -3365,7 +3365,7 @@ stock BankkartyaFizet(playerid, osszeg, bool:levon = true, bool:jelez = true)
 
 stock IdojarasValt(playerid = NINCS, ujido = NINCS)
 {
-	//new Float:pos[3];
+	new Float:pos[3];
 	if(playerid == NINCS)
 	{
 		if(ujido == NINCS) SetWeather(12);
@@ -3373,11 +3373,11 @@ stock IdojarasValt(playerid = NINCS, ujido = NINCS)
 		
 		foreach(Jatekosok, player)
 		{
-			/*if(Idojaras[player] == NINCS) for(new o = 0; o < MAX_HO_OBJECT; o++)
-				DestroyDynamicObject(HoObject[player][o]), HoObject[player][o] = INVALID_OBJECT_ID;*/
+			if(Idojaras[player] == NINCS) for(new o = 0; o < MAX_HO_OBJECT; o++)
+				DestroyDynamicObject(HoObject[player][o]), HoObject[player][o] = INVALID_OBJECT_ID;
 			
 			Idojaras[player] = ujido;
-			/*if(ujido == NINCS && Havazas[player])
+			if(ujido == NINCS && Havazas[player])
 			{
 				GetPlayerPos(player, ArrExt(pos));
 				
@@ -3388,7 +3388,7 @@ stock IdojarasValt(playerid = NINCS, ujido = NINCS)
 			{
 				if(Idojaras[player] == NINCS) for(new o = 0; o < MAX_HO_OBJECT; o++)
 					DestroyDynamicObject(HoObject[player][o]), HoObject[player][o] = INVALID_OBJECT_ID;
-			}*/
+			}
 		}
 	}
 	else
@@ -3396,11 +3396,11 @@ stock IdojarasValt(playerid = NINCS, ujido = NINCS)
 		if(ujido == NINCS) SetPlayerWeather(playerid, 12);
 		else SetPlayerWeather(playerid, ujido);
 		
-		/*if(Idojaras[playerid] == NINCS) for(new o = 0; o < MAX_HO_OBJECT; o++)
-			DestroyDynamicObject(HoObject[playerid][o]), HoObject[playerid][o] = INVALID_OBJECT_ID;*/
+		if(Idojaras[playerid] == NINCS) for(new o = 0; o < MAX_HO_OBJECT; o++)
+			DestroyDynamicObject(HoObject[playerid][o]), HoObject[playerid][o] = INVALID_OBJECT_ID;
 		
 		Idojaras[playerid] = ujido;
-		/*if(ujido == NINCS && Havazas[playerid])
+		if(ujido == NINCS && Havazas[playerid])
 		{
 			GetPlayerPos(playerid, ArrExt(pos));
 			
@@ -3411,7 +3411,7 @@ stock IdojarasValt(playerid = NINCS, ujido = NINCS)
 		{
 			if(Idojaras[playerid] == NINCS) for(new o = 0; o < MAX_HO_OBJECT; o++)
 				DestroyDynamicObject(HoObject[playerid][o]), HoObject[playerid][o] = INVALID_OBJECT_ID;
-		}*/
+		}
 	}
 }
 
@@ -11916,7 +11916,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					BizzInfo[BIZ_247][bProducts]--;
 					TogglePlayerControllable(playerid, true);
 				}
-				case 28:
+				/*case 28:
 				{
 					//if(1417824000 < UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd 2014 December 6-tól!");
 					//if(PlayerInfo[playerid][pMikulasSapka] > 0) return Msg(playerid, "Neked van mikulás sapkád");
@@ -11938,12 +11938,12 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					TogglePlayerControllable(playerid, true);
 				
 				
-				}
-				/*
+				}*/
+				
 				case 28:
 				{
-					if(1417824000 < UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd 2014 December 6-tól!");
-					//if(PlayerInfo[playerid][pMikulasSapka] > 0) return Msg(playerid, "Neked van mikulás sapkád");
+					if(1417824000 > UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
+					if(PlayerInfo[playerid][pMikulasSapka] > 0) return Msg(playerid, "Neked van mikulás sapkád");
 					if(!BankkartyaFizet(playerid, 5000))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
@@ -11953,7 +11953,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						return 1;
 					}
 					BizPenz(BIZ_247, 5000);
-					//PlayerInfo[playerid][pMikulasSapka] = 1;
+					PlayerInfo[playerid][pMikulasSapka] = 1;
 					format(string, sizeof(string), "Vettél egy mikulás sapkát!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy mikulás sapkát!", 1);
@@ -11962,10 +11962,10 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					TogglePlayerControllable(playerid, true);
 				
 				
-				}*/
+				}
 				case 29:
 				{
-					if(1417824000 < UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
+					if(1417824000 > UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
 					//if(PlayerInfo[playerid][pMikulasSapka] > 0) return Msg(playerid, "Neked van mikulás sapkád");
 					if(!BankkartyaFizet(playerid, 1000))
 					{
@@ -11976,7 +11976,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						return 1;
 					}
 					BizPenz(BIZ_247, 1000);
-					//PlayerInfo[playerid][pMikulasCsomag]++;
+					PlayerInfo[playerid][pMikulasCsomag]++;
 					format(string, sizeof(string), "Vettél egy mikulás csomagot!\n");
 					Msg(playerid,"/mikulás");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
@@ -11988,7 +11988,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				}
 				case 30:
 				{
-					if(1417824000 < UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
+					if(1417824000 > UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
 					//if(PlayerInfo[playerid][pMikulasSapka] > 0) return Msg(playerid, "Neked van mikulás sapkád");
 					if(!BankkartyaFizet(playerid, 1000))
 					{
@@ -11999,7 +11999,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						return 1;
 					}
 					BizPenz(BIZ_247, 1000);
-					//PlayerInfo[playerid][pVirgacs]+=5;
+					PlayerInfo[playerid][pVirgacs]+=5;
 					format(string, sizeof(string), "Vettél öt virgácsot!\n");
 					Msg(playerid,"/mikulás");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
@@ -22254,7 +22254,7 @@ fpublic IdojarasValtozas()
 	LoadVersion();
 	
 	new idojaras[128];
-	new idojarasok[14] = {
+	new idojarasok[15] = {
 		0,	// Tiszta
 		3,	// Felhõs
 		4,	// Ködös
@@ -22269,7 +22269,7 @@ fpublic IdojarasValtozas()
 		17,	// Tiszta
 		18,	// Tiszta
 		20,	// Erõsen borús
-		//NINCS	// Havazás
+		NINCS,	// Havazás
 	};
 	if(!IdoJaras[iValtas])
 	{
@@ -22297,7 +22297,7 @@ fpublic IdojarasValtozas()
 			case 9: idojaras = "Erõs köd várható";
 			
 			// Havazás
-			//case NINCS: idojaras = "Havazás várható";
+			case NINCS: idojaras = "Havazás várható";
 		}
 		SendFormatMessageToAll(COLOR_NEWS, "<< Idõjárás elõrejelzés: %s >>", idojaras);
 	}
@@ -22328,7 +22328,7 @@ fpublic IdojarasValtozas()
 			case 9: idojaras = "Erõs köd van, vigyázz, nehogy neki menj valakinek!";
 			
 			// Havazás
-			//case NINCS: idojaras = "Esik a hó, vigyázz az utakon!";
+			case NINCS: idojaras = "Esik a hó, vigyázz az utakon!";
 		}
 		SendFormatMessageToAll(COLOR_NEWS, "<< Idõjárás jelentés: %s >>", idojaras);
 		//SetWeather(IdoJaras[iMost]);
@@ -24135,7 +24135,7 @@ stock ValtozoNullazas(playerid) //vnull
 	PlayerInfo[playerid][plecsukta] = NINCS;
 
 	PlayerInfo[playerid][pTojas] = NINCS;
-	//PlayerInfo[playerid][pMikulasSapka] = NINCS; PlayerInfo[playerid][pMikulasCsomag] = NINCS; PlayerInfo[playerid][pVirgacs] = NINCS;
+	PlayerInfo[playerid][pMikulasSapka] = NINCS; PlayerInfo[playerid][pMikulasCsomag] = NINCS; PlayerInfo[playerid][pVirgacs] = NINCS;
 	
 	PlayerInfo[playerid][pAjandekUnixtime] = NINCS; PlayerInfo[playerid][pAjandek] = NINCS; 
 	
@@ -25449,9 +25449,9 @@ fpublic OnPlayerDisconnect(playerid, reason)
 	BejelentoFelirat(playerid, false);
 	AdminNevek(playerid, false);
 	
-	/*for(new o = 0; o < MAX_HO_OBJECT; o++)
+	for(new o = 0; o < MAX_HO_OBJECT; o++)
 		if(IsValidDynamicObject(HoObject[playerid][o]))
-			DestroyDynamicObject(HoObject[playerid][o]), HoObject[playerid][o] = INVALID_OBJECT_ID;*/
+			DestroyDynamicObject(HoObject[playerid][o]), HoObject[playerid][o] = INVALID_OBJECT_ID;
 	
 	if(KincsMutat[playerid])
 	{
@@ -32703,15 +32703,30 @@ fpublic OtherTimer()
 				}
 			}
 		}
-		/*if(Idojaras[i] == NINCS)
+		if(Idojaras[i] == NINCS)
 		{
+			new Float:pos[3];
 			GetPlayerPos(i, ArrExt(pos));
 			for(new o = 0; o < MAX_HO_OBJECT; o++)
 				if(HoObject[i][o] != INVALID_OBJECT_ID)
-					SetDynamicObjectPos(HoObject[i][o], pos[0], pos[1], pos[2] - 5);
+				{
+					new szam = random(1);
+					if(szam == 1)
+					{
+						new szam2 = random(1);
+						if(szam2 == 1) SetDynamicObjectPos(HoObject[i][o], pos[0] + random(5), pos[1] + random(5), pos[2] - 0.5);
+						else SetDynamicObjectPos(HoObject[i][o], pos[0] + random(5), pos[1] - random(5), pos[2] - 0.5);
+					}
+					else
+					{
+						new szam2 = random(1);
+						if(szam2 == 1) SetDynamicObjectPos(HoObject[i][o], pos[0] - random(5), pos[1] + random(5), pos[2] - 0.5);
+						else SetDynamicObjectPos(HoObject[i][o], pos[0] - random(5), pos[1]- random(5), pos[2] - 0.5);
+					}
+				}
 
 			Streamer_Update(i);
-		}*/
+		}
 
 		if(BejelentIdo[i])
 		{
@@ -36276,8 +36291,8 @@ fpublic ShowZseb(playerid, targetid)
 		format(coordsstring, sizeof(coordsstring), "Kötszer: %ddb | Cigi: %ddb | Kaja: %d/%d | Alma: %d/%d | Akkutöltõ: %ddb | Bikázókábel: %s | Motorolaj: %ddb | Arany: %ddb", kotszer, cigi, MAXKAJA, kaja, MAXALMA, alma, tolto, bkabel, olaj, arany);
 		SendClientMessage(playerid, COLOR_GRAD3, coordsstring);
 		
-		/*format(coordsstring, sizeof(coordsstring), "Mikulás sapka: %d | Virgács: %d | Mikulás csomag: %d",PlayerInfo[playerid][pMikulasSapka],PlayerInfo[playerid][pVirgacs],PlayerInfo[playerid][pMikulasCsomag]);
-		SendClientMessage(playerid, COLOR_GRAD3, coordsstring);*/
+		format(coordsstring, sizeof(coordsstring), "Mikulás sapka: %d | Virgács: %d | Mikulás csomag: %d",PlayerInfo[playerid][pMikulasSapka],PlayerInfo[playerid][pVirgacs],PlayerInfo[playerid][pMikulasCsomag]);
+		SendClientMessage(playerid, COLOR_GRAD3, coordsstring);
 
 		// fegyverek és lõszerek listázása
 		new str[128], wep;

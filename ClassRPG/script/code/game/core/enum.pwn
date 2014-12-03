@@ -974,8 +974,8 @@ enum pInfo
  	pJarmubenUlt,
  	bool:pHullaMutat,
  	pHullaIcon[MAX_HULLA],
-	/*pMikulasSapka,
-	pMikulasCsomag,*/
+	pMikulasSapka,
+	pMikulasCsomag,
 	pLoves,
 	pEllatva,
 	pBSA,

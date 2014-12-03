@@ -90,6 +90,7 @@ stock SkinDataRecalculate()
 	SkinData[84] = -8175449; 	// Ryan
 	SkinData[202] = -2326; 		// FiredNox
 	SkinData[48] = -4038; 		// Franklin 
+	SkinData[294] = -8189725; 		// Nagato
 	 
 	for(new i = 1; i < MAX_SKIN; i++)
 	{

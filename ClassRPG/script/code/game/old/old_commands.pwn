@@ -1898,12 +1898,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		return 1;
 	}
 
-	/*if(egyezik(cmd, "/mikulas") || egyezik(cmd, "/mikulás"))
+	if(egyezik(cmd, "/mikulas") || egyezik(cmd, "/mikulás"))
 	{
 		if(params < 1) return Msg(playerid, "/mikulás [sapka / csomag / virgács / ruha]");
 		
 
-		if(egyezik(param[1], "ruha"))
+		/*if(egyezik(param[1], "ruha"))
 		{
 			if(!Admin(playerid,1)) return 1;
 			if(params < 2) return  Msg(playerid, "/mikulás ruha [miki/krampusz]");
@@ -1913,8 +1913,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				SetPlayerSkin(playerid,75);
 			
 			return 1;
-		}
-		if(1388620800 < UnixTime) return Msg(playerid, "Sajnálom eddig ment a móka!");
+		}*/
+		if(1417824000 > UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
 		if(egyezik(param[1],"virgács"))
 		{
 			
@@ -1971,7 +1971,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			ProxDetector(30.0, playerid, string, COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE,COLOR_PURPLE);
 			return 1;
 		}
-	}*/
+	}
 
 	if(egyezik(cmd, "/pmblock"))
 	{
@@ -4294,7 +4294,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	{
 		
 		if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem használhatod ezt a parancsot!");
-		if(params < 1) return Msg(playerid, "Használat: /fbi [Öltöny / Páncél]");
+		if(params < 1) return Msg(playerid, "Használat: /fbi [Öltöny / Páncél / HRT]");
 		/*if(egyezik(param[1],"felszereles") || egyezik(param[1],"felszerelés"))
 		{
 			if(OnDuty[playerid] == 0)
@@ -4319,7 +4319,60 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				Munkaruha(playerid, 0);
 			}	
 		}*/
-		if(egyezik(param[1], "páncél") || egyezik(param[1], "pancel"))
+		if(egyezik(param[1],"hrt"))
+		{
+			if(!PlayerToPoint(10,playerid,1776.9928,-1305.2573,13.6280) && !PlayerToPoint(10, playerid, 254.5128,76.6169,1003.6406) && !PlayerToPoint(10, playerid, 765.4164,-1361.2086,13.6391) && !PlayerToPoint(10, playerid, 279.9878,1855.0756,8.7759) && !PlayerToPoint(10, playerid, 226.2606,122.4216,999.0523)) return Msg(playerid, "Nem vagy az FBI bázison!");
+			SetPlayerSkin(playerid, 18);
+			
+			WeaponResetAll(playerid);
+			
+			if(FrakcioInfo[FRAKCIO_FBI][fDeagle][1] > 30 && FrakcioInfo[FRAKCIO_FBI][fDeagle][0] > 0)
+			{
+				WeaponGiveWeapon(playerid, WEAPON_DEAGLE, 30);
+				FrakcioInfo[FRAKCIO_FBI][fDeagle][0]--;
+				FrakcioInfo[FRAKCIO_FBI][fDeagle][1] -=30;
+			}
+			else Msg(playerid, "Nincs elég deagle raktáron!");
+					
+			if(FrakcioInfo[FRAKCIO_FBI][fMp5][1] > 150 && FrakcioInfo[FRAKCIO_FBI][fMp5][0] > 0)	
+			{
+				WeaponGiveWeapon(playerid, WEAPON_MP5, 200);
+				FrakcioInfo[FRAKCIO_FBI][fMp5][0]--;
+				FrakcioInfo[FRAKCIO_FBI][fMp5][1] -=200;
+			}
+			else Msg(playerid, "Nincs elég mp5 raktáron!");
+			
+			if(FrakcioInfo[FRAKCIO_FBI][fM4][1] > 250 && FrakcioInfo[FRAKCIO_FBI][fM4][0] > 0)
+			{
+				WeaponGiveWeapon(playerid, WEAPON_M4, 250);
+				FrakcioInfo[FRAKCIO_FBI][fM4][0]--;
+				FrakcioInfo[FRAKCIO_FBI][fM4][1] -=250;
+			}
+			else Msg(playerid, "Nincs elég m4 raktáron!");
+			
+			if(FrakcioInfo[FRAKCIO_FBI][fSniper][1] > 30 && FrakcioInfo[FRAKCIO_FBI][fSniper][0] > 0)
+			{
+				WeaponGiveWeapon(playerid, WEAPON_SNIPER, 30);
+				FrakcioInfo[FRAKCIO_FBI][fSniper][0]--;
+				FrakcioInfo[FRAKCIO_FBI][fSniper][1] -=30;
+			}
+			else Msg(playerid, "Nincs elég sniper raktáron!");
+			
+			if(FrakcioInfo[FRAKCIO_FBI][fCombat][1] > 60 && FrakcioInfo[FRAKCIO_FBI][fCombat][0] > 0)
+			{
+				WeaponGiveWeapon(playerid, WEAPON_COMBAT, 60);
+				FrakcioInfo[FRAKCIO_FBI][fCombat][0]--;
+				FrakcioInfo[FRAKCIO_FBI][fCombat][1] -=60;
+			}
+			else Msg(playerid, "Nincs elég combat raktáron!");
+			
+			WeaponGiveWeapon(playerid, WEAPON_KNIFE);
+			WeaponGiveWeapon(playerid, WEAPON_PARACHUTE);
+			
+			Cselekves(playerid, "felvette a HRT felszerelést.");
+			return 1;
+		}
+		else if(egyezik(param[1], "páncél") || egyezik(param[1], "pancel"))
 		{
 			if(!PlayerToPoint(10,playerid,1776.9928,-1305.2573,13.6280) && !PlayerToPoint(10, playerid, 254.5128,76.6169,1003.6406) && !PlayerToPoint(10, playerid, 765.4164,-1361.2086,13.6391) && !PlayerToPoint(10, playerid, 279.9878,1855.0756,8.7759) && !PlayerToPoint(10, playerid, 226.2606,122.4216,999.0523)) return Msg(playerid, "Nem vagy az FBI bázison!");
 			if(OnDuty[playerid] == 0) return Msg(playerid, "Nem vagy szolgálatban!");
@@ -6763,12 +6816,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			new x = UjRendelesIndex();
 			if(x == NINCS) return Msg(playerid, "Jelenleg nem adhatsz le rendelést, kérlek próbáld meg késõbb!");
 
-			SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_YELLOW, "<< %s fegyverszállítást rendelt! Szervezet: %s ((/fegyverszállítás lista)) >>", ICPlayerName(playerid), Szervezetneve[PlayerInfo[playerid][pMember] - 1][0]);
+			SendRadioMessageFormat(FRAKCIO_FBI, COLOR_YELLOW, "<< %s fegyverszállítást rendelt! Szervezet: %s ((/fegyverszállítás lista)) >>", ICPlayerName(playerid), Szervezetneve[PlayerInfo[playerid][pMember] - 1][0]);
 			
 			if(id == 1)
-				SendClientMessage(playerid, COLOR_LIGHTRED, "Rendelésed rögzítettük! A katonaság hamarosan leszállítja a megrendelt lõszereket!");
+				SendClientMessage(playerid, COLOR_LIGHTRED, "Rendelésed rögzítettük! Az FBI hamarosan leszállítja a megrendelt lõszereket!");
 			else
-				SendClientMessage(playerid, COLOR_LIGHTRED, "Rendelésed rögzítettük! A katonaság hamarosan leszállítja a megrendelt fegyvereket!");
+				SendClientMessage(playerid, COLOR_LIGHTRED, "Rendelésed rögzítettük! Az FBI hamarosan leszállítja a megrendelt fegyvereket!");
 				
 			SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Combat: %ddb | M4: %ddb | Sniper: %ddb | Deagle: %ddb | MP5: %ddb", fegyverek[0],fegyverek[1],fegyverek[2],fegyverek[3],fegyverek[4]);
 			SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Silenced: %ddb | Shoutgun: %ddb | Rifle: %ddb | Ak47 %ddb | Ejtõernyõ: %ddb",fegyverek[5],fegyverek[6],fegyverek[7],fegyverek[8],fegyverek[9]);
@@ -6797,7 +6850,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(param[1], "lista"))
 		{
-		    if(!LMT(playerid, FRAKCIO_KATONASAG)) return Msg(playerid, "Nem vagy katona!");
+		    if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
 			
 		    SendClientMessage(playerid, COLOR_ORANGE, "======= [ Rendelés lista ] =======");
 		    new i = NINCS, szam = NINCS;
@@ -6817,7 +6870,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(param[1], "megnéz") || egyezik(param[1], "megnez"))
 		{
-		    if(!LMT(playerid, FRAKCIO_KATONASAG)) return Msg(playerid, "Nem vagy katona!");
+		    if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
 			
 		    if(params != 2)
 		        return Msg(playerid, "Használata: /fegyverszállítás Megnéz [Rendelés ID]");
@@ -6839,7 +6892,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(param[1], "töröl") || egyezik(param[1], "torol"))
 		{
-		    if(!LMT(playerid, FRAKCIO_KATONASAG)) return Msg(playerid, "Nem vagy katona!");
+		    if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
 		    if(params != 2)
 		        return Msg(playerid, "Használata: /fegyverszállítás Töröl [Rendelés ID]");
 
@@ -6854,8 +6907,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		if(egyezik(param[1], "bepakol"))
 		{
 		    if(FloodCheck(playerid)) return 1;
-			if(!LMT(playerid, FRAKCIO_KATONASAG)) return Msg(playerid, "Nem vagy katona!");
-			if(!Munkarang(playerid, 8)) return Msg(playerid, "Minimum rang 8!");
+			if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+			if(!Munkarang(playerid, 7)) return Msg(playerid, "Minimum rang 7!");
 			new ara;
 			
 			
@@ -6905,12 +6958,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szSilenced][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_SILENCED;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szSilenced][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. Silenced: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. Silenced: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			
 			}
 			else if(egyezik(param[3], "ejtõernyõ"))
@@ -6925,12 +6978,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szDeagle][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*LO_Parachute;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szParachute] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. EJTÕERNYÕ: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. EJTÕERNYÕ: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "deagle"))
 			{
@@ -6944,12 +6997,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szDeagle][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_DEAGLE;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szDeagle][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. DEAGLE: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. DEAGLE: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "shotgun"))
 			{
@@ -6963,12 +7016,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szShoutgun][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_SHOTGUN;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szShoutgun][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. Shotgun: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. Shotgun: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "mp5"))
 			{
@@ -6982,12 +7035,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szMP5][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_MP5;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szMP5][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. MP5: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. MP5: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "M4"))
 			{
@@ -7001,12 +7054,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szM4][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_M4;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szM4][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. M4: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. M4: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "combat"))
 			{
@@ -7020,12 +7073,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szCombat][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_COMBAT;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szCombat][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. COMBAT: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. COMBAT: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "sniper"))
 			{
@@ -7039,12 +7092,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szSniper][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_SNIPER;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szSniper][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. SNIPER: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. SNIPER: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "rifle"))
 			{
@@ -7058,12 +7111,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szRifle][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_RIFLE;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szRifle][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. RIFLE: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. RIFLE: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "ak47"))
 			{
@@ -7077,12 +7130,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szAk47][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_AK47;
 				}
-				if(FrakcioInfo[FRAKCIO_KATONASAG][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szAk47][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_KATONASAG, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. SNIPER: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_KATONASAG][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. SNIPER: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
 			}
 
 		}
@@ -7102,8 +7155,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		else if(egyezik(param[1], "kezd"))
 		{
 		    if(FloodCheck(playerid)) return 1;
-			if(!LMT(playerid, FRAKCIO_KATONASAG)) return Msg(playerid, "Nem vagy katona!");
-			if(!Munkarang(playerid, 8)) return Msg(playerid, "Minimum rang 8!");
+			if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+			if(!Munkarang(playerid, 7)) return Msg(playerid, "Minimum rang 7!");
 			if(fszallit == 1) return Msg(playerid, "Már van elkezdett szállítás!");
 			if(!PlayerToPoint(20, playerid, 2682.427, -2524.759, 13.237))
 			{
@@ -7281,8 +7334,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		else if(egyezik(param[1], "befejez"))
 		{
 			if(fszallit == 0) return Msg(playerid, "Nincs elkezdett szállítás");
-			if(!LMT(playerid, FRAKCIO_KATONASAG)) return Msg(playerid, "Nem vagy Katona!");
-			if(!Munkarang(playerid, 7)) return Msg(playerid, "Minimum rang 8!");
+			if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+			if(!Munkarang(playerid, 7)) return Msg(playerid, "Minimum rang 7!");
 			for(new car = 0; car < MAX_VEHICLES; car++)
 			{
 				Szallito[car][szSilenced][1]=0;
@@ -43184,6 +43237,20 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			//if(weather < 0||weather > 45) { SendClientMessage(playerid, COLOR_GREY, "   Weather ID can't be below 0 or above 45 !"); return 1; }
 			SetPlayerWeather(playerid, weather);
 			SendClientMessage(playerid, COLOR_GREY, "   Idõjárás átállítva(csak neked)!");
+		}
+		return 1;
+	}
+	if(strcmp(cmd, "/idojarastest", true) == 0)
+	{
+	    if(IsPlayerConnected(playerid))
+	    {
+	        if(!IsScripter(playerid))
+			{
+			    SendClientMessage(playerid, COLOR_GRAD1, "   Ezt a parancsot nem használhatod!");
+			    return 1;
+			}
+			IdojarasValt(NINCS, NINCS);
+			IdoJaras[iMost] = NINCS;
 		}
 		return 1;
 	}

@@ -1332,8 +1332,8 @@ new const BuyCuccok[31][55] = {
 	"Vészhívó(3 hívás) - 15.000Ft",
 	"Vészhívó(30 hívás) - 80.000 Ft",
 	"Rádió(frakció) - 50.000 Ft",
-	"Húsvéti tojás 5 DB - 1.000 Ft",
-	//"Mikulás Sapka - 5.000 Ft",
+	//"Húsvéti tojás 5 DB - 1.000 Ft",
+	"Mikulás Sapka - 5.000 Ft",
 	"Mikulás Csomag - 1.000 Ft",
 	"Virgács 5db- 1.000 Ft",
 	"Mobilnet - 40.000 Ft"

@@ -2875,7 +2875,7 @@ CMD:arany(playerid, params[])
 	return 1;
 }
 
-/*CMD:havazas(playerid, params[])
+CMD:havazas(playerid, params[])
 {
 	if(Havazas[playerid])
 	{
@@ -2899,7 +2899,7 @@ CMD:arany(playerid, params[])
 	}
 	
 	return 1;
-}*/
+}
 /*CMD:gos(playerid, params[])
 {
 	if(!IsScripter(playerid)) return 1;

@@ -210,7 +210,7 @@ new MinimumFizuhoz = 7200; //2óra
 #define K_LAB_IDO 60
 
 // x / kg
-#define P_MAX_MATI 50
+#define P_MAX_MATI 25
 #define P_MAX_KOKAIN 200
 #define P_MAX_HEROIN 300
 #define P_MAX_MARISKA 400
