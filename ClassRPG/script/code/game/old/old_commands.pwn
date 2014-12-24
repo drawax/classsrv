@@ -5035,6 +5035,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	
 	if(egyezik(cmd, "/war"))
 	{
+		if(!IsRyan(playerid)) return Msg(playerid, "Ideiglenesen kivéve!");
 		if(ResiVan[1]) return Msg(playerid, "Szerver restart van/lesz, vagy SCRIPTER letiltotta a wart.");
 		if(LegalisSzervezetTagja(playerid) || Civil(playerid)) return 1;
 
@@ -6850,7 +6851,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(param[1], "lista"))
 		{
-		    if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+		    if(!LMT(playerid, FRAKCIO_ONKORMANYZAT)) return Msg(playerid, "Nem vagy az Önkormányzat tagja!");
 			
 		    SendClientMessage(playerid, COLOR_ORANGE, "======= [ Rendelés lista ] =======");
 		    new i = NINCS, szam = NINCS;
@@ -6870,7 +6871,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(param[1], "megnéz") || egyezik(param[1], "megnez"))
 		{
-		    if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+		    if(!LMT(playerid, FRAKCIO_ONKORMANYZAT)) return Msg(playerid, "Nem vagy az Önkormányzat tagja!");
 			
 		    if(params != 2)
 		        return Msg(playerid, "Használata: /fegyverszállítás Megnéz [Rendelés ID]");
@@ -6892,7 +6893,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(param[1], "töröl") || egyezik(param[1], "torol"))
 		{
-		    if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+		    if(!LMT(playerid, FRAKCIO_ONKORMANYZAT)) return Msg(playerid, "Nem vagy az Önkormányzat tagja!");
 		    if(params != 2)
 		        return Msg(playerid, "Használata: /fegyverszállítás Töröl [Rendelés ID]");
 
@@ -6907,7 +6908,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		if(egyezik(param[1], "bepakol"))
 		{
 		    if(FloodCheck(playerid)) return 1;
-			if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+			if(!LMT(playerid, FRAKCIO_ONKORMANYZAT)) return Msg(playerid, "Nem vagy az Önkormányzat tagja!");
 			if(!Munkarang(playerid, 7)) return Msg(playerid, "Minimum rang 7!");
 			new ara;
 			
@@ -6958,12 +6959,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szSilenced][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_SILENCED;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szSilenced][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. Silenced: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. Silenced: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			
 			}
 			else if(egyezik(param[3], "ejtõernyõ"))
@@ -6978,12 +6979,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szDeagle][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*LO_Parachute;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szParachute] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. EJTÕERNYÕ: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. EJTÕERNYÕ: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "deagle"))
 			{
@@ -6997,12 +6998,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szDeagle][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_DEAGLE;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szDeagle][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. DEAGLE: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. DEAGLE: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "shotgun"))
 			{
@@ -7016,12 +7017,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szShoutgun][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_SHOTGUN;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szShoutgun][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. Shotgun: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. Shotgun: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "mp5"))
 			{
@@ -7035,12 +7036,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szMP5][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_MP5;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szMP5][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. MP5: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. MP5: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "M4"))
 			{
@@ -7054,12 +7055,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szM4][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_M4;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szM4][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. M4: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. M4: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "combat"))
 			{
@@ -7073,12 +7074,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szCombat][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_COMBAT;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szCombat][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. COMBAT: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. COMBAT: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "sniper"))
 			{
@@ -7092,12 +7093,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szSniper][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_SNIPER;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szSniper][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. SNIPER: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. SNIPER: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "rifle"))
 			{
@@ -7111,12 +7112,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szRifle][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_RIFLE;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szRifle][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. RIFLE: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. RIFLE: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 			else if(egyezik(param[3], "ak47"))
 			{
@@ -7130,12 +7131,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					if(szam + Szallito[car][szAk47][id] > MAX_FEGYVER) return SendFormatMessage(playerid, COLOR_LIGHTRED,"Ebbõl a fegyverbõl maximum %ddb szállítható!",MAX_FEGYVER);
 					ara = szam*FE_AK47;
 				}
-				if(FrakcioInfo[FRAKCIO_FBI][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
+				if(FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] < ara) return SendFormatMessage(playerid,COLOR_YELLOW,"A szállításhoz nincs elég pénz a széfbe. Ára: %s", FormatNumber( ara, 0, ',' ));
 				
 				Szallito[car][szAk47][id] += szam;
 				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Beraktál %d darabot a fegyverszállítóba!", szam);
-				SendRadioMessageFormat(FRAKCIO_FBI, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. SNIPER: %d DB", ICPlayerName(playerid),szam);
-				FrakcioInfo[FRAKCIO_FBI][fPenz] -=ara;
+				SendRadioMessageFormat(FRAKCIO_ONKORMANYZAT, COLOR_DBLUE, "HQ: %s fegyverraktárban pakol fegyverszállításra. SNIPER: %d DB", ICPlayerName(playerid),szam);
+				FrakcioInfo[FRAKCIO_ONKORMANYZAT][fPenz] -=ara;
 			}
 
 		}
@@ -7155,7 +7156,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		else if(egyezik(param[1], "kezd"))
 		{
 		    if(FloodCheck(playerid)) return 1;
-			if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+			if(!LMT(playerid, FRAKCIO_ONKORMANYZAT)) return Msg(playerid, "Nem vagy az Önkormányzat tagja!");
 			if(!Munkarang(playerid, 7)) return Msg(playerid, "Minimum rang 7!");
 			if(fszallit == 1) return Msg(playerid, "Már van elkezdett szállítás!");
 			if(!PlayerToPoint(20, playerid, 2682.427, -2524.759, 13.237))
@@ -7334,7 +7335,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		else if(egyezik(param[1], "befejez"))
 		{
 			if(fszallit == 0) return Msg(playerid, "Nincs elkezdett szállítás");
-			if(!LMT(playerid, FRAKCIO_FBI)) return Msg(playerid, "Nem vagy az FBI tagja!");
+			if(!LMT(playerid, FRAKCIO_ONKORMANYZAT)) return Msg(playerid, "Nem vagy az Önkormányzat tagja!");
 			if(!Munkarang(playerid, 7)) return Msg(playerid, "Minimum rang 7!");
 			for(new car = 0; car < MAX_VEHICLES; car++)
 			{
@@ -12401,7 +12402,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(f,"lista"))
 		{
-			if(params < 2) return Msg(playerid,"/gps lista [személyes / boltok / egyéb / bizniszek]");
+			if(params < 2) return Msg(playerid,"/gps lista [személyes / egyéb / bizniszek]");
 			if(egyezik(param[2], "személyes") || egyezik(param[2], "szemelyes") )
 			{
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "==============GPS - személyes lista==============");
@@ -12414,7 +12415,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				SendClientMessage(playerid, COLOR_LIGHTRED, "_____ A parancsok ékezet nélkül is mûködnek _____");
 				return 1;
 			}
-			if(egyezik(param[2], "boltok"))
+			/*if(egyezik(param[2], "boltok"))
 			{
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "==============GPS - boltok lista==============");
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "/gps [funkció]");
@@ -12424,7 +12425,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "* Egyéb: turkey autókereskedõ, autokerhq");
 				SendClientMessage(playerid, COLOR_LIGHTRED, "_____ A parancsok ékezet nélkül is mûködnek _____");
 				return 1;
-			}
+			}*/
 			if(egyezik(param[2],"egyéb"))
 			{
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "==============GPS - egyéb lista==============");
@@ -12515,6 +12516,37 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				return 1;
 			}
 			SetPlayerCheckpoint(playerid,BizzInfo[i][bEntranceX],BizzInfo[i][bEntranceY],BizzInfo[i][bEntranceZ],2.5);
+			return 1;
+		}
+		if(egyezik(f, "bolt"))
+		{
+			if(params < 2) return Msg(playerid,"/gps bolt [ID]");
+			
+			new i = strval(param[2]);
+			if(i >= MAX_BOLTOK)
+			{
+				SendFormatMessage(playerid, COLOR_LIGHTRED, "Szerintem elírtál valamit. Csak 0-%d-ig vannak", MAX_BOLTOK-1);
+				return 1;
+			}
+			if (Boltok[i][boltBejaratPosX] < 1 && Boltok[i][boltBejaratPosY] < 1 && Boltok[i][boltBejaratPosZ] < 1)
+				return Msg(playerid,"Nem létezõ bolt / Nincs beállított bejárati pozíció!");
+			SetPlayerCheckpoint(playerid,Boltok[i][boltBejaratPosX],Boltok[i][boltBejaratPosY],Boltok[i][boltBejaratPosZ],2.5);
+			return 1;
+		}
+		
+		if(egyezik(f, "aruleado") || egyezik(f, "áruleadó"))
+		{
+			if(params < 2) return Msg(playerid,"/gps áruleadó [ID]");
+			
+			new i = strval(param[2]);
+			if(i >= MAX_BOLTOK)
+			{
+				SendFormatMessage(playerid, COLOR_LIGHTRED, "Szerintem elírtál valamit. Csak 0-%d-ig vannak", MAX_BOLTOK-1);
+				return 1;
+			}
+			if (Boltok[i][boltAruPosX] < 1 && Boltok[i][boltAruPosY] < 1 && Boltok[i][boltAruPosZ] < 1)
+				return Msg(playerid,"Nem létezõ bolt / Nincs beállított leadási pozíció!");
+			SetPlayerCheckpoint(playerid,Boltok[i][boltAruPosX],Boltok[i][boltAruPosY],Boltok[i][boltAruPosZ],Boltok[i][boltAruTav]);
 			return 1;
 		}
 
@@ -15314,6 +15346,749 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			SendClientMessage(playerid, COLOR_LIGHTRED, "=======Nincs ADR engedélyed, ezért nem szállíthatsz üzemanyagot.=======");
 		}
 	}
+	if(egyezik(cmd, "/termekek") || egyezik(cmd, "/termékek"))
+	{
+		SendClientMessage(playerid, COLOR_GRAD2, "|1 Telefon | 2 Telefonkönyv | 3 GPS | 4 Vontatókötél");
+		SendClientMessage(playerid, COLOR_GRAD2, "|5 Kötszer | 6 Sorsjegy | 7 Dobókocka");
+		SendClientMessage(playerid, COLOR_GRAD2, "|8 Csirke| 9 Hamburger | 10 Pizza | 11 Szendvics");
+		SendClientMessage(playerid, COLOR_GRAD2, "|12 SzendvicsPack | 13 Cigi | 14 Vihargyújtó | 15 Nikotin tapasz | 16 Kis cs. Óvszer");
+		SendClientMessage(playerid, COLOR_GRAD2, "|17 Nagy cs. Óvszer | 18 Laptop | 19 Horgászbot | 20 Csali | 21 MP4");
+		SendClientMessage(playerid, COLOR_GRAD2, "|22 Csipogó | 23 Virágcsokor | 24 Fejkendõ | 25 Vészhívó | 26 Vészhívó");
+		SendClientMessage(playerid, COLOR_GRAD2, "|27 Frakció rádió | 28 Mikulás sapka | 29 Mikulás csomag | 30 Virgács");
+		SendClientMessage(playerid, COLOR_GRAD2, "|31 Mobilnet");
+	}
+	
+	if(egyezik(cmd, "/arlista") || egyezik(cmd, "/árlista"))
+	{
+		new melyikbolt = IsBoltbaVan(playerid);
+		new marcibuzi = GetPlayerVirtualWorld(playerid);
+		if(melyikbolt == NINCS) return Msg(playerid,"Nem vagy boltban!");
+		
+		if(params < 1)
+		{
+			SendClientMessage(playerid, COLOR_GRAD2, "|1 Telefon | 2 Telefonkönyv | 3 GPS | 4 Vontatókötél");
+			SendClientMessage(playerid, COLOR_GRAD2, "|5 Kötszer | 6 Sorsjegy | 7 Dobókocka");
+			SendClientMessage(playerid, COLOR_GRAD2, "|8 Csirke| 9 Hamburger | 10 Pizza | 11 Szendvics");
+			SendClientMessage(playerid, COLOR_GRAD2, "|12 SzendvicsPack | 13 Cigi | 14 Vihargyújtó | 15 Nikotin tapasz | 16 Kis cs. Óvszer");
+			SendClientMessage(playerid, COLOR_GRAD2, "|17 Nagy cs. Óvszer | 18 Laptop | 19 Horgászbot | 20 Csali | 21 MP4");
+			SendClientMessage(playerid, COLOR_GRAD2, "|22 Csipogó | 23 Virágcsokor | 24 Fejkendõ | 25 Vészhívó | 26 Vészhívó");
+			SendClientMessage(playerid, COLOR_GRAD2, "|27 Frakció rádió | 28 Mikulás sapka | 29 Mikulás csomag | 30 Virgács");
+			SendClientMessage(playerid, COLOR_GRAD2, "|31 Mobilnet");
+		
+			Msg(playerid, "/árlista [Termék neve / ID]");
+			return 1;
+		}
+		
+		if(egyezik(param[1], "telefon") || egyezik(param[1], "1"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Telefon ára: - %dFt", Boltok[marcibuzi][bTelefon]);
+			
+		if(egyezik(param[1], "telefonkönyv") || egyezik(param[1], "telefonkonyv") || egyezik(param[1], "2"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Telefonkönyv ára: - %dFt", Boltok[marcibuzi][bTeloKonyv]);
+			
+		if(egyezik(param[1], "gps") || egyezik(param[1], "3"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* GPS ára: - %dFt", Boltok[marcibuzi][bGPS]);
+			
+		if(egyezik(param[1], "vontatókötél") || egyezik(param[1], "vontatokotel") || egyezik(param[1], "4"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Vontatókötél ára: - %dFt", Boltok[marcibuzi][bVontatokotel]);
+			
+		if(egyezik(param[1], "kötszer") || egyezik(param[1], "kotszer") || egyezik(param[1], "5"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Kötszer ára: - %dFt", Boltok[marcibuzi][bKotszer]);
+			
+		if(egyezik(param[1], "sorsjegy") || egyezik(param[1], "6"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Kaparós sorsjegy ára: - %dFt", Boltok[marcibuzi][bSorsjegy]);
+			
+		if(egyezik(param[1], "kocka") || egyezik(param[1], "dobokocka") || egyezik(param[1], "dobókocka") || egyezik(param[1], "7"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Telefon ára: - %dFt", Boltok[marcibuzi][bKocka]);
+
+		if(egyezik(param[1], "csirke") || egyezik(param[1], "8"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Fagyasztott csirke ára: - %dFt", Boltok[marcibuzi][bCsirke]);
+
+		if(egyezik(param[1], "hamburger") || egyezik(param[1], "9"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Fagyasztott hamburger ára: - %dFt", Boltok[marcibuzi][bHambi]);
+
+		if(egyezik(param[1], "pizza") || egyezik(param[1], "10"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Fagyasztott pizza ára: - %dFt", Boltok[marcibuzi][bPizza]);
+
+		if(egyezik(param[1], "szendvics") || egyezik(param[1], "11"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Szendvics ára: - %dFt", Boltok[marcibuzi][bSzendvics]);
+
+		if(egyezik(param[1], "szendvicspack") || egyezik(param[1], "12"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Szendvics csomag ára: - %dFt", Boltok[marcibuzi][bSzendvicsCsomag]);
+
+		if(egyezik(param[1], "cigi") || egyezik(param[1], "13"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Egy doboz cigi ára: - %dFt", Boltok[marcibuzi][bCigi]);
+
+		if(egyezik(param[1], "öngyújtó") || egyezik(param[1], "vihargyújtó") || egyezik(param[1], "vihargyujto") || egyezik(param[1], "14"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Telefon ára: - %dFt", Boltok[marcibuzi][bGyujto]);
+
+		if(egyezik(param[1], "nikotintapasz") || egyezik(param[1], "15"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Nikotin tapasz ára: - %dFt", Boltok[marcibuzi][bNikotinTapasz]);
+
+		if(egyezik(param[1], "kisovszer") || egyezik(param[1], "kisóvszer") || egyezik(param[1], "16"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Kis csomag óvszer ára: - %dFt", Boltok[marcibuzi][bKisOvszer]);
+
+		if(egyezik(param[1], "nagyovszer") || egyezik(param[1], "nagyóvszer") || egyezik(param[1], "17"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Nagy csomag óvszer ára: - %dFt", Boltok[marcibuzi][bNagyOvszer]);
+
+		if(egyezik(param[1], "laptop") || egyezik(param[1], "18"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Laptop ára: - %dFt", Boltok[marcibuzi][bLaptop]);
+
+		if(egyezik(param[1], "horgaszbot") || egyezik(param[1], "horgászbot") || egyezik(param[1], "19"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Horgászbot ára: - %dFt", Boltok[marcibuzi][bHorgaszbot]);
+
+		if(egyezik(param[1], "csali") || egyezik(param[1], "20"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Csali ára: - %dFt", Boltok[marcibuzi][bCsali]);
+
+		if(egyezik(param[1], "mpnegy") || egyezik(param[1], "mp4") || egyezik(param[1], "21"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* MP4 ára: - %dFt", Boltok[marcibuzi][bMP]);
+
+		if(egyezik(param[1], "csipogo") || egyezik(param[1], "csipogó") || egyezik(param[1], "22"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Csipogó ára: - %dFt", Boltok[marcibuzi][bCsipogo]);
+
+		if(egyezik(param[1], "viragcsokor") || egyezik(param[1], "virágcsokor") || egyezik(param[1], "23"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Virágcsokor: - %dFt", Boltok[marcibuzi][bViragcsokor]);
+
+		if(egyezik(param[1], "fejkendo") || egyezik(param[1], "fejkendõ") || egyezik(param[1], "24"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Fejkendõ ára: - %dFt", Boltok[marcibuzi][bFejkendo]);
+			
+		if(egyezik(param[1], "veszhivo") || egyezik(param[1], "vészhívó") || egyezik(param[1], "25"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Vészhívó ára: - %dFt", Boltok[marcibuzi][bVeszhivo]);
+			
+		if(egyezik(param[1], "veszhivocsomag") || egyezik(param[1], "vészhívócsomag") || egyezik(param[1], "26"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Vészhívó csomag ára: - %dFt", Boltok[marcibuzi][bVeszhivoCsomag]);
+
+		if(egyezik(param[1], "radio") || egyezik(param[1], "rádió") || egyezik(param[1], "27"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Frakció rádió ára: - %dFt", Boltok[marcibuzi][bFkRadio]);
+
+		if(egyezik(param[1], "mikulassapka") || egyezik(param[1], "mikulássapka") || egyezik(param[1], "28"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Mikulás sapka ára: - %dFt", Boltok[marcibuzi][bMikiSapi]);
+
+		if(egyezik(param[1], "mikulascsomag") || egyezik(param[1], "mikuláscsomag") || egyezik(param[1], "29"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Nagy csomag óvszer ára: - %dFt", Boltok[marcibuzi][bMikiCsomi]);
+
+		if(egyezik(param[1], "virgacs") || egyezik(param[1], "virgács") || egyezik(param[1], "30"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Virgács ára: - %dFt", Boltok[marcibuzi][bVirgacs]);
+
+		if(egyezik(param[1], "mobilnet") || egyezik(param[1], "31"))
+			return SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Mobilnet ára: - %dFt", Boltok[marcibuzi][bMobilnet]);
+	}
+	
+	if(egyezik(cmd, "/bolt"))
+	{
+		new melyikbolt = IsBoltbaVan(playerid);
+		if(params < 1)
+		{
+			if(IsScripter(playerid) || Admin(playerid, 1340))
+			{
+				Msg(playerid, "/bolt [Funkció]");
+				Msg(playerid, "Funkciók: Áthelyez, Bejárat, Go, Adat, Törlés");
+				return 1;
+			}
+			else if(melyikbolt != NINCS && SQLID(playerid) == Boltok[melyikbolt][boltTulajID])
+			{
+				Msg(playerid, "/bolt [Funkció]");
+				Msg(playerid, "Funkciók: Infó, Adat");
+				return 1;
+			}
+			else
+			{
+				Msg(playerid, "/bolt [Funkció]");
+				Msg(playerid, "Funkció: Infó");
+				return 1;
+			}
+		}
+		if(egyezik(param[1], "adat"))
+		{
+			new marcibuzi = IsBoltbaVan(playerid);
+			if(marcibuzi == NINCS) return Msg(playerid, "Nem vagy boltban.");
+			if(SQLID(playerid) != Boltok[marcibuzi][boltTulajID] && !IsScripter(playerid) && !Admin(playerid, 1338)) return Msg(playerid,"Ez a bolt nem a tiéd!");
+			if(params < 2)
+			{	
+				Msg(playerid, "/bolt adat [Funkció]");
+				Msg(playerid, "Funkció: ár, széf, átad, név");
+				return 1;
+			}
+			if(egyezik(param[2], "átad") || egyezik(param[2], "atad"))
+			{
+				//new vwgeec = GetPlayerVirtualWorld(playerid);
+				//new intigeec = GetPlayerInterior(playerid);
+				if(SQLID(playerid) != Boltok[marcibuzi][boltTulajID] && !Admin(playerid, 1340)) return Msg(playerid,"Ez a bolt nem a tied...");
+				if(params < 3) return Msg(playerid, "/bolt adat átad [játékos]");
+				new player = ReturnUser(param[3]);
+				if(player == INVALID_PLAYER_ID) return Msg(playerid, "Nincs ilyen játékos.");
+				
+				if(PlayerInfo[player][pBoltTulaj] != NINCS) return Msg(playerid,"Neki már van három boltja!");
+				
+				
+				if(GetDistanceBetweenPlayers(playerid, player) > 2)
+					return Msg(playerid, "Nincs a közeledben!");
+				if(Boltok[marcibuzi][boltSzef] < 0) 
+				{
+					Msg(playerid,"Mivel minuszba van a széf levontuk tõled....");
+					PenzLevesz(playerid, Boltok[marcibuzi][boltSzef]);
+				}	
+				
+				Boltok[marcibuzi][boltTulajID] = SQLID(player);	
+				strmid(Boltok[marcibuzi][boltTulaj], PlayerName(player), 0, strlen(PlayerName(player)), 255);
+				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*A boltodat átadtad neki %s", ICPlayerName(player));
+				SendClientMessage(player, COLOR_LIGHTGREEN, "*Te lettél ennek a boltnak a tulaja.");
+				BoltAdatFrissites(marcibuzi);
+				CorrectPlayerDatas(playerid);
+				CorrectPlayerDatas(player);
+			}
+			if(egyezik(param[2], "ár") || egyezik(param[2], "ar"))
+			{
+				Msg(playerid,"Termékek nevei: /termekek");
+				if(!Admin(playerid, 1340) && !IsScripter(playerid) && SQLID(playerid) != Boltok[marcibuzi][boltTulajID]) return 1;
+				if(params < 4) return Msg(playerid, "/bolt adat ár [Termék neve / ID] [Ára]");
+			
+				if(egyezik(param[3], "telefon") || egyezik(param[3], "1"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bTelefon] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Telefon ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}	
+				if(egyezik(param[3], "telefonkönyv") || egyezik(param[3], "telefonkonyv") || egyezik(param[3], "2"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bTeloKonyv] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Telefonkönyv ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "gps") || egyezik(param[3], "3"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bGPS] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* GPS ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "vontatókötél") || egyezik(param[3], "vontatokotel") || egyezik(param[3], "4"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bVontatokotel] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Vontatókötél ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "kötszer") || egyezik(param[3], "kotszer") || egyezik(param[3], "5"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bKotszer] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Kötszer ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "sorsjegy") || egyezik(param[3], "6"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bSorsjegy] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Kaparós sorsjegy ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "kocka") || egyezik(param[3], "dobokocka") || egyezik(param[3], "dobókocka") || egyezik(param[3], "7"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bKocka] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Telefon ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "csirke") || egyezik(param[3], "8"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bCsirke] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Fagyasztott csirke ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "hamburger") || egyezik(param[3], "9"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bHambi] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Fagyasztott hamburger ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "pizza") || egyezik(param[3], "10"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bPizza] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Fagyasztott pizza ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "szendvics") || egyezik(param[3], "11"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bSzendvics] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Szendvics ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "szendvicspack") || egyezik(param[3], "12"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bSzendvicsCsomag] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Szendvics csomag ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "cigi") || egyezik(param[3], "13"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bCigi] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Egy doboz cigi ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "öngyújtó") || egyezik(param[3], "vihargyújtó") || egyezik(param[3], "vihargyujto") || egyezik(param[3], "14"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bGyujto] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Telefon ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "nikotintapasz") || egyezik(param[3], "15"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bNikotinTapasz] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Nikotin tapasz ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "kisovszer") || egyezik(param[3], "kisóvszer") || egyezik(param[3], "16"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bKisOvszer] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Kis csomag óvszer ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "nagyovszer") || egyezik(param[3], "nagyóvszer") || egyezik(param[3], "17"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bNagyOvszer] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Nagy csomag óvszer ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "laptop") || egyezik(param[3], "18"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bLaptop] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Laptop ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "horgaszbot") || egyezik(param[3], "horgászbot") || egyezik(param[3], "19"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bHorgaszbot] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Horgászbot ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "csali") || egyezik(param[3], "20"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bCsali] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Csali ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "mpnegy") || egyezik(param[3], "mp4") || egyezik(param[3], "21"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bMP] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* MP4 ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "csipogo") || egyezik(param[3], "csipogó") || egyezik(param[3], "22"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bCsipogo] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Csipogó ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "viragcsokor") || egyezik(param[3], "virágcsokor") || egyezik(param[3], "23"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bViragcsokor] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Virágcsokor átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "fejkendo") || egyezik(param[3], "fejkendõ") || egyezik(param[3], "24"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bFejkendo] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Fejkendõ ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "veszhivo") || egyezik(param[3], "vészhívó") || egyezik(param[3], "25"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bVeszhivo] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Vészhívó ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "veszhivocsomag") || egyezik(param[3], "vészhívócsomag") || egyezik(param[3], "26"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bVeszhivoCsomag] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Vészhívó csomag ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "radio") || egyezik(param[3], "rádió") || egyezik(param[3], "27"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bFkRadio] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Frakció rádió ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "mikulassapka") || egyezik(param[3], "mikulássapka") || egyezik(param[3], "28"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bMikiSapi] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Mikulás sapka ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "mikulascsomag") || egyezik(param[3], "mikuláscsomag") || egyezik(param[3], "29"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bMikiCsomi] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Nagy csomag óvszer ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "virgacs") || egyezik(param[3], "virgács") || egyezik(param[3], "30"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bVirgacs] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Virgács ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "mobilnet") || egyezik(param[3], "31"))
+				{
+					new ar = strval(param[4]);
+					if(ar < 0 || ar > 500000) return Msg(playerid,"Nem-nem! 0 - 500.000 Ft");
+					Boltok[marcibuzi][bMobilnet] = ar;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Mobilnet ára átírva - %dFt", ar);
+					BoltAdatFrissites(marcibuzi);
+				}
+				return 1;
+			}
+			if(egyezik(param[2], "Széf") || egyezik(param[2], "szef"))
+			{
+				if(params < 4)
+				{
+					Msg(playerid, "/bolt adat széf [be / ki] [összeg]");
+					SendFormatMessage(playerid, COLOR_LIGHTRED, "ClassRPG: Jelenleg %dFt van benne.", Boltok[marcibuzi][boltSzef]);
+					BoltAdatFrissites(marcibuzi);
+					return 1;
+				}
+				new osszeg = strval(param[4]);
+				if(osszeg < 1) return Msg(playerid, "Te mit csinálsz?!");
+				if(egyezik(param[3], "be"))
+				{
+					if(GetMoney(playerid) < osszeg) return Msg(playerid, "Nincs elég pénzed.");
+					GiveMoney(playerid, -osszeg);
+					Boltok[marcibuzi][boltSzef] += osszeg;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*Beraktál a széfbe %dFt-ot, most %dFt van benne.", osszeg, Boltok[marcibuzi][boltSzef]);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "ki"))
+				{
+					if(Boltok[marcibuzi][boltSzef] < osszeg) return Msg(playerid, "Nincs elég pénz a széfben.");
+					GiveMoney(playerid, osszeg);
+					Boltok[marcibuzi][boltSzef] -= osszeg;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*Kivettél a széfbõl %dFt-ot, most %dFt van benne.", osszeg, Boltok[marcibuzi][boltSzef]);
+					BoltAdatFrissites(marcibuzi);
+				}
+			}
+			if(egyezik(param[2], "prod"))
+			{
+				//new melyikbolt = IsBoltbaVan(playerid);
+				if(params < 3)
+				{
+					if(IsScripter(playerid) || Admin(playerid, 1340))
+					{
+						Msg(playerid, "/bolt adat prod [Funkció]");
+						Msg(playerid, "Funkciók: maxprod, prodmennyiség, prodár, prodleadás, megnéz");
+						return 1;
+					}
+					else if(melyikbolt != NINCS && SQLID(playerid) == Boltok[melyikbolt][boltTulajID])
+					{
+						Msg(playerid, "/bolt [Funkció]");
+						Msg(playerid, "Funkciók: prodar, megnéz ");
+						return 1;
+					}
+					else
+					{
+						Msg(playerid, "Nem-nem!");
+						return 1;
+					}
+				}
+				if(egyezik(param[3], "maxprod"))
+				{
+					if(!IsScripter(playerid)) return Msg(playerid, "Te mit képzelsz?");
+					if(params < 4) return Msg(playerid, "/bolt adat prod maxprod [összeg]");
+					new osszeg = strval(param[4]);
+					if(osszeg < 1 || osszeg > 5000) return Msg(playerid, "Te mit csinálsz?!");
+					Boltok[marcibuzi][boltMaxProdMennyiseg] = osszeg;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*Átállítottad a Maximum Prodot %ddb-ra (Bolt ID: %d)", Boltok[marcibuzi][boltMaxProdMennyiseg], marcibuzi);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "prodmennyiség") || egyezik(param[3], "prodmennyiseg"))
+				{
+					if(!IsScripter(playerid)) return Msg(playerid, "Te mit képzelsz?");
+					if(params < 4) return Msg(playerid, "/bolt adat prod prodmennyiség [összeg]");
+					new osszeg = strval(param[4]);
+					if(osszeg < 1 || osszeg > Boltok[marcibuzi][boltMaxProdMennyiseg]) return Msg(playerid, "Te mit csinálsz?!");
+					Boltok[marcibuzi][boltProdMennyiseg] = osszeg;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*Átállítottad a Prodok számát %ddb-ra (Bolt ID: %d)", Boltok[marcibuzi][boltProdMennyiseg], marcibuzi);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "prodar") || egyezik(param[3], "prodár"))
+				{
+					if(params < 4) return Msg(playerid, "/bolt adat prod prodar [összeg]");
+					new osszeg = strval(param[4]);
+					if(osszeg < 1200 || osszeg > 50000) return Msg(playerid, "Azért hülye ne legyél már...Köszi (1,200 - 50,000 Ft)");
+					Boltok[marcibuzi][boltProdVetelAr] = osszeg;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*Átállítottad a Prod vételárat %dFt-ra (Bolt ID: %d)", Boltok[marcibuzi][boltProdVetelAr], marcibuzi);
+					BoltAdatFrissites(marcibuzi);
+				}
+				if(egyezik(param[3], "megnéz"))
+				{
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*Jelenlegi prod vételára: %dFt prod mennyisége pedig: %ddb (Bolt ID: %d)", Boltok[marcibuzi][boltProdVetelAr],Boltok[marcibuzi][boltProdMennyiseg], marcibuzi);
+				}
+				if(egyezik(param[3], "prodleadas") || egyezik(param[3], "prodleadás"))
+				{
+					if(!IsScripter(playerid)) return Msg(playerid, "Te mit képzelsz?");
+					
+					if(params < 5)
+						return Msg(playerid, "/bolt adat prod prodleadas [BoltID] [Táv]");
+					
+					
+					/*new boltocska = strval(param[4]);
+					boltocska = Boltok[marcibuzi][boltPozVW];*/
+					
+					marcibuzi = strval(param[4]);
+					
+					new Float:X, Float:Y, Float:Z;
+					new Float:tav = strval(param[5]);
+					GetPlayerPos(playerid, X,Y,Z);
+					Boltok[marcibuzi][boltAruPosX] = X;
+					Boltok[marcibuzi][boltAruPosY] = Y;
+					Boltok[marcibuzi][boltAruPosZ] = Z;
+					Boltok[marcibuzi][boltAruTav] = tav;
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*Átállítottad a Prod leadási helyét! (Új Koord.: X: %f Y: %f Z: %f Távolság: %f) ID:%d)", Boltok[marcibuzi][boltAruPosX],Boltok[marcibuzi][boltAruPosY],Boltok[marcibuzi][boltAruPosZ],Boltok[marcibuzi][boltAruTav], marcibuzi);
+					BoltAdatFrissites(marcibuzi);
+				}
+				
+			}
+			if(egyezik(param[2], "Név") || egyezik(param[2], "nev"))
+			{
+				if(params < 3)
+				{
+					Msg(playerid, "/bolt adat név [név]");
+					SendFormatMessage(playerid, COLOR_LIGHTRED, "ClassRPG: Jelenleg %s a neve.", Boltok[marcibuzi][boltNev]);
+					return 1;
+				}
+				new result[128]; 
+				if(sscanf(pms, "{s[4]}{s[3]}s[128]", result))
+					return SendClientMessage(playerid, COLOR_WHITE, "/bolt adat név [név]");
+	
+				if(SpecKarakterek(result, ",/\\():;|"))
+					return Msg(playerid, "A névben hibás karakterek vannak!");
+
+				strmid(Boltok[marcibuzi][boltNev], result, 0, strlen(result), 255);
+				SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* A bolt neve %s lett.", result);
+				BoltAdatFrissites(marcibuzi);
+			}
+		}
+		if(egyezik(param[1], "Info") || egyezik(param[1], "Infó"))
+		{
+			new b = 0;
+			for(new k = 0; k < MAX_BOLTOK; k++)
+			{
+				if(GetPlayerVirtualWorld(playerid) == Boltok[k][boltPozVW])
+				{
+					b = 1;
+					SendFormatMessage(playerid, COLOR_LIGHTRED,"============[Bolt Infó - %s]============", Boltok[k][boltNev]);
+					SendFormatMessage(playerid, COLOR_LIGHTGREEN, "*Tulaj: %s", Boltok[k][boltTulaj]); 
+					SendClientMessage(playerid, COLOR_LIGHTGREEN, "*Bolt árai: /árlista ");
+					return 1;
+				}
+			}
+			if(b < 1) return Msg(playerid, "Nem vagy boltban.");
+		}
+		
+		if(egyezik(param[1], "áthelyez") || egyezik(param[1], "athelyez"))
+		{
+			if(!Admin(playerid, 1338) && !IsScripter(playerid)) return 1;
+			if(params < 2)
+			{
+				Msg(playerid, "/bolt áthelyez [Bolt ID]");
+				Msg(playerid , "Ha újat raksz le, elõbb nézd meg hogy nincs-e már valahova lerakva! (/bolt [go] [id])");
+				return 1;
+			}
+			new marcibuzi = strval(param[2]);
+			if(marcibuzi < 0 || marcibuzi > MAX_BOLTOK)
+			{
+				SendFormatMessage(playerid, COLOR_LIGHTRED, "* Az ID nem lehet kissebb mint 0, és nem lehet nagyobb mint %d", MAX_BOLTOK);
+				return 1;
+			}
+			new vwgenyo   = GetPlayerVirtualWorld(playerid);
+			new intigenyo = GetPlayerInterior(playerid);
+			if(Boltok[marcibuzi][boltTulajID] == 0)
+			{
+				strmid(Boltok[marcibuzi][boltTulaj], "Class_City", 0, strlen("Class_City"), 20);
+				strmid(Boltok[marcibuzi][boltNev], "Onkormanyzati_CBA", 0, strlen("Onkormanyzati_CBA"), 34);
+				Boltok[marcibuzi][boltMaxProdMennyiseg] = 1000;
+				Boltok[marcibuzi][boltProdVetelAr] = 1200;
+				Boltok[marcibuzi][boltProdMennyiseg] = 500;
+				Boltok[marcibuzi][bTelefon] = 50000;
+				Boltok[marcibuzi][bTeloKonyv] = 5000;
+				Boltok[marcibuzi][bGPS] = 40000;
+				Boltok[marcibuzi][bVontatokotel] = 40000;
+				Boltok[marcibuzi][bKotszer] = 1200;
+				Boltok[marcibuzi][bSorsjegy] = 500;
+				Boltok[marcibuzi][bKocka] = 800;
+				Boltok[marcibuzi][bCsirke] = 1500;
+				Boltok[marcibuzi][bHambi] = 1500;
+				Boltok[marcibuzi][bPizza] = 1500;
+				Boltok[marcibuzi][bSzendvics] = 1300;
+				Boltok[marcibuzi][bSzendvicsCsomag] = 7000;
+				Boltok[marcibuzi][bCigi] = 1500;
+				Boltok[marcibuzi][bGyujto] = 1300;
+				Boltok[marcibuzi][bNikotinTapasz] = 3500;
+				Boltok[marcibuzi][bKisOvszer] = 1200;
+				Boltok[marcibuzi][bNagyOvszer] = 2200;
+				Boltok[marcibuzi][bLaptop] = 250000;
+				Boltok[marcibuzi][bHorgaszbot] = 15000;
+				Boltok[marcibuzi][bCsali] = 3500;
+				Boltok[marcibuzi][bMP] = 11000;
+				Boltok[marcibuzi][bCsipogo] = 4500;
+				Boltok[marcibuzi][bViragcsokor] = 3200;
+				Boltok[marcibuzi][bFejkendo] = 1900;
+				Boltok[marcibuzi][bVeszhivo] = 15000;
+				Boltok[marcibuzi][bVeszhivoCsomag] = 80000;
+				Boltok[marcibuzi][bFkRadio] = 50000;
+				Boltok[marcibuzi][bMikiSapi] = 3500;
+				Boltok[marcibuzi][bMikiCsomi] = 5000;
+				Boltok[marcibuzi][bVirgacs] = 1400;
+				Boltok[marcibuzi][bMobilnet] = 40000;
+			}
+			Boltok[marcibuzi][boltPozVW] = vwgenyo;
+			Boltok[marcibuzi][boltPozInti] = intigenyo;
+			AKTIV_BOLTOK++;
+			ABroadCastFormat(COLOR_LIGHTRED, 1, "<< %s lerakott/áthelyezett egy boltot >>", AdminName(playerid));
+			SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* %d számú bolt átrakva! (VW: %d Inti: %d)", marcibuzi, vwgenyo, intigenyo);
+			BoltAdatFrissites(marcibuzi);
+		}
+		if(egyezik(param[1], "Go"))
+		{
+			if(!Admin(playerid, 1338) && !IsScripter(playerid)) return 1;
+			if(params < 2) return Msg(playerid, "/bolt Go [Bolt ID]");
+			
+			new marcibuzi = strval(param[2]);
+			if(marcibuzi < 0 || marcibuzi > MAX_BOLTOK)
+			{
+				SendFormatMessage(playerid, COLOR_LIGHTRED, "* Az ID nem lehet kissebb mint 0, és nem lehet nagyobb mint %d", MAX_BOLTOK);
+				return 1;
+			}
+			if (Boltok[marcibuzi][boltBejaratPosX] < 1 && Boltok[marcibuzi][boltBejaratPosY] < 1 && Boltok[marcibuzi][boltBejaratPosZ] < 1)
+				return Msg(playerid,"Ennek a boltnak nincs beállítva bejárati pozíciója!");
+			SetPlayerPos(playerid, Boltok[marcibuzi][boltBejaratPosX], Boltok[marcibuzi][boltBejaratPosY], Boltok[marcibuzi][boltBejaratPosZ]);
+			
+			SetPlayerInterior(playerid, 0);
+			SetPlayerVirtualWorld(playerid, 0);
+			SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Teleportálva a %d számú bolthoz.. ", marcibuzi);
+		}
+		if(egyezik(param[1], "bejárat") || egyezik(param[1], "bejarat"))
+		{
+			if(!Admin(playerid, 1340) && !IsScripter(playerid)) return 1;
+			if(params < 2) return Msg(playerid, "/bolt bejárat [Bolt ID]");
+			new marcibuzi = strval(param[2]);
+			if(marcibuzi < 0 || marcibuzi > MAX_BOLTOK)
+			{
+				SendFormatMessage(playerid, COLOR_LIGHTRED, "* Az ID nem lehet kissebb mint 0, és nem lehet nagyobb mint %d", MAX_BOLTOK-1);
+				return 1;
+			}
+			new Float:X, Float:Y, Float:Z;
+			GetPlayerPos(playerid, X,Y,Z);
+			Boltok[marcibuzi][boltBejaratPosX] = X;
+			Boltok[marcibuzi][boltBejaratPosY] = Y;
+			Boltok[marcibuzi][boltBejaratPosZ] = Z;
+			SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* A %d számú bolt bejárata átállítva..", marcibuzi);
+		}
+		if(egyezik(param[1], "törlés") || egyezik(param[1], "torles"))
+		{
+			if(!Admin(playerid, 1340) && !IsScripter(playerid)) return 1;
+			if(params < 1) return Msg(playerid, "/bolt törlés");
+			if(!IsBoltbaVan(playerid)) return Msg(playerid,"Nem vagy egy boltban sem!");
+			new vwgenyo   = GetPlayerVirtualWorld(playerid);
+			new intigenyo = GetPlayerInterior(playerid);
+			new marcibuzi;
+			if(params < 2)  marcibuzi = melyikbolt;
+			else marcibuzi = strval(param[2]);
+			
+			
+			Boltok[marcibuzi][boltTulajID] = NINCS;
+			
+			Boltok[marcibuzi][bTelefon] = 0;
+			Boltok[marcibuzi][bTeloKonyv] = 0;
+			Boltok[marcibuzi][bGPS] = 0;
+			Boltok[marcibuzi][bVontatokotel] = 0;
+			Boltok[marcibuzi][bKotszer] = 0;
+			Boltok[marcibuzi][bSorsjegy] = 0;
+			Boltok[marcibuzi][bKocka] = 0;
+			Boltok[marcibuzi][bCsirke] = 0;
+			Boltok[marcibuzi][bHambi] = 0;
+			Boltok[marcibuzi][bPizza] = 0;
+			Boltok[marcibuzi][bSzendvics] = 0;
+			Boltok[marcibuzi][bSzendvicsCsomag] = 0;
+			Boltok[marcibuzi][bCigi] = 0;
+			Boltok[marcibuzi][bGyujto] = 0;
+			Boltok[marcibuzi][bNikotinTapasz] = 0;
+			Boltok[marcibuzi][bKisOvszer] = 0;
+			Boltok[marcibuzi][bNagyOvszer] = 0;
+			Boltok[marcibuzi][bLaptop] = 0;
+			Boltok[marcibuzi][bHorgaszbot] = 0;
+			Boltok[marcibuzi][bCsali] = 0;
+			Boltok[marcibuzi][bMP] = 0;
+			Boltok[marcibuzi][bCsipogo] = 0;
+			Boltok[marcibuzi][bViragcsokor] = 0;
+			Boltok[marcibuzi][bFejkendo] = 0;
+			Boltok[marcibuzi][bVeszhivo] = 0;
+			Boltok[marcibuzi][bVeszhivoCsomag] = 0;
+			Boltok[marcibuzi][bFkRadio] = 0;
+			Boltok[marcibuzi][bMikiSapi] = 0;
+			Boltok[marcibuzi][bMikiCsomi] = 0;
+			Boltok[marcibuzi][bVirgacs] = 0;
+			Boltok[marcibuzi][bMobilnet] = 0;
+			
+			strmid(Boltok[marcibuzi][boltTulaj], PlayerName(playerid), 0, strlen(PlayerName(playerid)), 255);
+			ABroadCastFormat(COLOR_LIGHTRED, 1, "<< %s törölt egy boltot(%d) >>", AdminName(playerid), marcibuzi);
+			SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* %d számú bolt törölve! (VW: %d Inti: %d)", marcibuzi, vwgenyo, intigenyo);
+			BoltAdatFrissites(marcibuzi);
+		}	
+	}
 	if(egyezik(cmd, "/benzinkút") || egyezik(cmd, "/benzinkut"))
 	{
 		new melyikkut = IsAtGasStation(playerid);
@@ -15737,6 +16512,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				return 1;
 			}
 			SetPlayerPos(playerid,  BenzinKutak[bid][bPosX], BenzinKutak[bid][bPosY], BenzinKutak[bid][bPosZ]);
+			SetPlayerInterior(playerid, 0);
+			SetPlayerVirtualWorld(playerid, 0);
 			SendFormatMessage(playerid, COLOR_LIGHTGREEN, "* Teleportálva a %d számú benzinkúthoz.. (Koordínáta: X: %f | Y: %f | Z: %f | HatóTávolság: %f)", bid, BenzinKutak[bid][bPosX], BenzinKutak[bid][bPosY], BenzinKutak[bid][bPosZ], BenzinKutak[bid][bTav]);
 		}
 		if(egyezik(param[1], "törlés") || egyezik(param[1], "torles"))
@@ -27331,7 +28108,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		if(!strlen(tmp))
 		{
 			SendClientMessage(playerid,COLOR_LIGHTRED,"Használata: /átad [Név(részlet)/Id] [mit]");
-			SendClientMessage(playerid,COLOR_LIGHTRED,"Amit átadhatsz: Kaja, Cserje, Mák, Mûanyag, Cannabis, Kokain, Heroin, Marihuana, Mati, Cigi, Kötszer, Fegyver, Lõszer, Mellény Zsák, Alma, ajándék, aspirin, cataflan");
+			SendClientMessage(playerid,COLOR_LIGHTRED,"Amit átadhatsz: Kaja, Cserje, Mák, Mûanyag, Cannabis, Kokain, Heroin, Marihuana, Mati, Cigi, Kötszer, Fegyver, Lõszer, Mellény, Zsák");
+			SendClientMessage(playerid,COLOR_LIGHTRED,"Amit átadhatsz: Alma, Ajándék, Aspirin, Cataflan, Öngyújtó");
 			return 1;
 		}
 
@@ -27385,7 +28163,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	        }
 			if(PlayerInfo[playerid][pC4] == 0)
 			{
-				SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs mellényed!");
+				SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs C4-ed!");
 				return 1;
 			}
 			if(PlayerInfo[neki][pC4] == 1)
@@ -27398,6 +28176,28 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			SendFormatMessage(playerid, COLOR_LIGHTBLUE, " Átadtál egy C4-t neki: %s", kinek);
 			SendFormatMessage(neki, COLOR_LIGHTBLUE, "%s átadott neked 1 C4-t!", kuldo);
 		}
+		if(egyezik(mit, "öngyújtó") || egyezik(mit, "gyújtó") || egyezik(mit, "gyujto") || egyezik(mit, "ongyujto"))
+		{
+			if(GetDistanceBetweenPlayers(playerid,neki) > 5)
+	        {
+		        SendClientMessage(playerid, COLOR_GREY, " Õ nincs a közeledben!");
+		        return 1;
+	        }
+			if(PlayerInfo[playerid][pGyujto] == 0)
+			{
+				SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs öngyújtód!");
+				return 1;
+			}
+			if(PlayerInfo[neki][pGyujto] == 1)
+			{
+				SendClientMessage(playerid, COLOR_LIGHTRED, "Neki már van öngyújtója!");
+				return 1;
+			}
+			PlayerInfo[neki][pGyujto] = 1;
+			PlayerInfo[playerid][pGyujto] = 0;
+			SendFormatMessage(playerid, COLOR_LIGHTBLUE, "Átadtál egy öngyújtót neki: %s", kinek);
+			SendFormatMessage(neki, COLOR_LIGHTBLUE, "%s átadott neked egy öngyújtót!", kuldo);
+		}
 		if(egyezik(mit, "ajándék") || egyezik(mit, "ajandek"))
 		{
 		
@@ -27407,7 +28207,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			PlayerInfo[neki][pAjandek] = PlayerInfo[playerid][pAjandek];
 			PlayerInfo[playerid][pAjandek] = NINCS;
 		}
-		if(egyezik(mit, "aspirin"))
+		if(egyezik(mit, "aspirin") || egyezik(mit, "aszpirin"))
 		{
 			db = strval(param[3]);
 			if(db < 1)
@@ -27448,7 +28248,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				format(PlayerInfo[playerid][pFegyverTiltOk], 128, "átad fegyver paintball vagy lõtéren");
 				PlayerInfo[playerid][pFegyverTiltIdo] = PlayerInfo[playerid][pHaviAktivitas]*2;
 				
-				Msg(playerid, "Nah most meg vagy élvezd a fegyver eltiltásodat!");
+				Msg(playerid, "Na most megvagy! Élvezd a fegyver eltiltásodat!");
 				return 1;
 			}
 			
@@ -31337,7 +32137,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				else if(PlayerInfo[i][pLeader] == FRAKCIO_NAV)
 					nev = "SASD";
 				else if(PlayerInfo[i][pLeader] == FRAKCIO_TUZOLTO)
-					nev = "Tuzoltóság";
+					nev = "Tûzoltóság";
 				else if(PlayerInfo[i][pLeader] == FRAKCIO_KATONASAG)
 					nev = "USAF";
 				else
@@ -36783,12 +37583,225 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		return 1;
 	}
+	if(egyezik(cmd, "/áru") || egyezik(cmd, "/aru"))
+	{
+		if(params < 1)
+		{
+			Msg(playerid, "/áru [Funkció]");
+			Msg(playerid, "Funkciók: felpakol, feltöltés, megnéz, lista");
+			return 1;
+		}
+		if(egyezik(param[1], "lista"))
+		{
+			SendClientMessage(playerid, COLOR_ORANGE, "================= [ Boltok ] =================");
+		    new x = NINCS;
+		    for(;++x < MAX_BOLTOK;)
+		    {
+		        if(Boltok[x][boltAruTav] > 0)
+		            SendFormatMessage(playerid, COLOR_GREEN, "ID: %d | Árucikkek: %d / %d | Vételár: %dFt | Tulaj: %s | Név: %s", x, Boltok[x][boltProdMennyiseg],Boltok[x][boltMaxProdMennyiseg],Boltok[x][boltProdVetelAr], Boltok[x][boltTulaj], Boltok[x][boltNev]);
+			}
+		}
+		if(egyezik(param[1], "megnéz") || egyezik(param[1], "megnez"))
+		{
+			if(IsPlayerConnected(playerid))
+			{
+				new tmpcar = GetPlayerVehicleID(playerid);
+				if(!IsATruck(tmpcar))
+				{
+					GameTextForPlayer(playerid, "~r~Nem vagy aruszallito/teherszallito kocsiban!", 5000, 1);
+					return 1;
+				}
+				format(string, sizeof(string), "Árucikkek: %d/%d.", MAXPROD,PlayerHaul[tmpcar][pLoad]);
+				SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
+			}
+			return 1;
+		}
+		if(egyezik(param[1], "felpakol"))
+		{
+			if(IsPlayerConnected(playerid))
+			{
+				new tmpcar = GetPlayerVehicleID(playerid);
+				new ProdAr = 500;
+				if(PlayerToPoint(60.0, playerid, 2487.3169, -2106.0815, 13.5445))
+				{
+					if(IsATruck(tmpcar))
+					{
+						if(PlayerHaul[tmpcar][pLoad] < MAXPROD)
+						{
+							new mennyiseg = strval(param[2]);
+							if(!strlen(param[2]))
+							{
+								SendClientMessage(playerid, COLOR_GRAD1, "Használat: /áru felpakol [mennyiség]");
+								return 1;
+							}
+							if(mennyiseg < 1 || mennyiseg > MAXPROD) { SendFormatMessage(playerid, COLOR_GREY, "A kocsiban max %d árucikk fér el!", MAXPROD); return 1; }
+							new check= PlayerHaul[tmpcar][pLoad] + mennyiseg;
+							if(check > MAXPROD)
+							{
+								format(string, sizeof(string), "A kocsi maximum %d árucikket bír el!",MAXPROD);
+								SendClientMessage(playerid, COLOR_GREY, string);
+								return 1;
+							}
+							new osszeg = mennyiseg*ProdAr;
+							if(GetMoney(playerid) >= osszeg)
+							{
+								PlayerHaul[tmpcar][pLoad] += mennyiseg;
+								format(string, sizeof(string), "Árucikkek: %d/%d.", MAXPROD, PlayerHaul[tmpcar][pLoad]);
+								SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
+								format(string, sizeof(string), "Vettél %d árucikket %dFt-ért", mennyiseg,osszeg);
+								SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
+								GiveMoney(playerid,-osszeg);
+								return 1;
+							}
+							else
+							{
+								format(string, sizeof(string), "Nincs elég pénzed(%dFt) %d áru megvételére!", osszeg, mennyiseg);
+								SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
+								return 1;
+							}
+						}
+						else
+						{
+								format(string, sizeof(string), "Árucikkek: %d/%d.", MAXPROD, PlayerHaul[tmpcar][pLoad]);
+								SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
+								return 1;
+						}
+					}
+					else
+					{
+						SendClientMessage(playerid, TEAM_GROVE_COLOR, "Nem vagy teherszállító kocsiban!");
+						return 1;
+					}
+				}
+				else SendClientMessage(playerid, TEAM_GROVE_COLOR, "Nem vagy az árufeltöltõ telepen!");
+			}
+		}
+		if(egyezik(param[1], "feltöltés") || egyezik(param[1], "feltoltes"))
+		{
+			if(params < 2)
+			{
+				Msg(playerid, "/áru feltöltés [Funkció]");
+				Msg(playerid, "Funkciók: biznisz, bolt");
+				return 1;
+			}
+			new cashmade;
+			new tmpcar;
+			if(IsPlayerConnected(playerid))
+			{
+				tmpcar = GetPlayerVehicleID(playerid);
+				if(!IsATruck(tmpcar))
+				{
+					GameTextForPlayer(playerid, "~r~Nem vagy teherszállítóban!", 5000, 1);
+					return 1;
+				}
+				if(PlayerHaul[tmpcar][pLoad] == 0)
+				{
+					GameTextForPlayer(playerid, "~r~A kocsi ures", 5000, 1);
+					format(string, sizeof(string), "Árucikkek: %d/%d.", MAXPROD, PlayerHaul[tmpcar][pLoad]);
+					SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
+					return 1;
+				}
+				if(egyezik(param[2], "biznisz"))
+				{
+					for(new i = 0; i < sizeof(BizzInfo); i++)
+					{
+						if (PlayerToPoint(10, playerid,BizzInfo[i][bEntranceX], BizzInfo[i][bEntranceY], BizzInfo[i][bEntranceZ]))
+						{
+							for(new l = PlayerHaul[tmpcar][pLoad]; l > 0; l--)
+							{
+								if(BizzInfo[i][bProducts] == BizzInfo[i][bMaxProducts])
+								{
+									GameTextForPlayer(playerid, "~r~A biznisz tele", 5000, 1);
+									SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Árucikkek: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
+									PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
+									return 1;
+								}
+								if(BizzInfo[i][bPriceProd] > BizzInfo[i][bTill])
+								{
+									GameTextForPlayer(playerid, "~r~Nem tudjuk kifizetni mindet", 5000, 1);
+									SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Árucikkek: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
+									PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
+									return 1;
+								}
+								PlayerHaul[tmpcar][pLoad]--;
+								BizzInfo[i][bProducts]++;
+								cashmade = cashmade+BizzInfo[i][bPriceProd];
+								ConsumingMoney[playerid] = 1;
+								GiveMoney(playerid,BizzInfo[i][bPriceProd]);
+							
+								BizPenz(i, -BizzInfo[i][bPriceProd]);
+								if(PlayerHaul[tmpcar][pLoad] == 0)
+								{
+									SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Árucikkek: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
+									GameTextForPlayer(playerid, "~r~A kocsi ures", 5000, 1);
+									return 1;
+								}
+							}
+						
+							BizUpdate(i, BIZ_Till, BIZ_Products);
+							return 1;
+						}
+					}
+				}
+				if(egyezik(param[2], "bolt"))
+				{
+					for(new i = 0; i < sizeof(Boltok); i++)
+					{
+						if (PlayerToPoint(Boltok[i][boltAruTav], playerid,Boltok[i][boltAruPosX], Boltok[i][boltAruPosY], Boltok[i][boltAruPosZ]))
+						{
+							for(new l = PlayerHaul[tmpcar][pLoad]; l > 0; l--)
+							{
+								if(Boltok[i][boltProdMennyiseg] == Boltok[i][boltMaxProdMennyiseg])
+								{
+									GameTextForPlayer(playerid, "~r~A biznisz tele", 5000, 1);
+									SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Árucikkek: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
+									return 1;
+								}
+								if(Boltok[i][boltProdVetelAr] > Boltok[i][boltSzef])
+								{
+									GameTextForPlayer(playerid, "~r~Nem tudjuk kifizetni mindet", 5000, 1);
+									SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Árucikkek: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
+									return 1;
+								}
+								PlayerHaul[tmpcar][pLoad]--;
+								Boltok[i][boltProdMennyiseg]++;
+								cashmade = cashmade+Boltok[i][boltProdVetelAr];
+								ConsumingMoney[playerid] = 1;
+								GiveMoney(playerid,Boltok[i][boltProdVetelAr]);
+							
+								Boltok[i][boltSzef] -= Boltok[i][boltProdVetelAr];
+								BoltAdatFrissites(i);
+								if(PlayerHaul[tmpcar][pLoad] == 0)
+								{
+									SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Árucikkek: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
+									GameTextForPlayer(playerid, "~r~A kocsi ures", 5000, 1);
+									return 1;
+								}
+							}
+							BoltAdatFrissites(i);
+							return 1;
+						}
+					}
+				}
+			}
+			GameTextForPlayer(playerid, "~r~Messze vagy a bolttol vagy biznisztol", 5000, 1);
+			return 1;
+		}
+		return 1;
+	}
 	if(egyezik(cmd, "/buy") || egyezik(cmd, "/vesz") || egyezik(cmd, "/abuy") || egyezik(cmd, "/avesz"))
 	{
 		//if(!PlayerToPoint(100, playerid,-30.875, -88.9609, 1004.53) && !PlayerToPoint(100, playerid, 1347.6865,1328.8383,10.8400)) return Msg(playerid, "Nem vagy 24/7-ben/autósboltban.");
-		if(PlayerToPoint(100, playerid,-30.875, -88.9609, 1004.53) && GetPlayerInterior(playerid) != 6)
+		//if(PlayerToPoint(100, playerid,-30.875, -88.9609, 1004.53) && GetPlayerInterior(playerid) != 6 || IsBoltbaVan(playerid)) teszt erejéig
+		
+		
+		new bolt = IsBoltbaVan(playerid);
+		if(bolt != NINCS)
 		{	
 			if(MunkaFolyamatban[playerid]) return Msg(playerid, "Jelenleg nem vásárolhatsz semmit!");
+			
+			if(Boltok[bolt][boltProdMennyiseg] < 1)
+				return GameTextForPlayer(playerid, "~r~•res a bolt!", 5000, 1);
 			new szoveg[750], id;
 			while(id < sizeof(BuyCuccok))
 			{
@@ -38255,149 +39268,6 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		return 1;
 	}
-	if(strcmp(cmd, "/load", true) == 0)
-	{
-	    if(IsPlayerConnected(playerid))
-		{
-			new tmpcar = GetPlayerVehicleID(playerid);
-			if(!IsATruck(tmpcar))
-			{
-				GameTextForPlayer(playerid, "~r~Nem vagy prodos/teherszallito kocsiban!", 5000, 1);
-				return 1;
-			}
-			format(string, sizeof(string), "Prodok: %d/%d.", MAXPROD,PlayerHaul[tmpcar][pLoad]);
-			SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
-		}
-		return 1;
-	}
-	if(strcmp(cmd, "/buyprods", true) == 0)
-	{
-	    if(IsPlayerConnected(playerid))
-		{
-			new tmpcar = GetPlayerVehicleID(playerid);
-			new compcost = 430;
-			if(PlayerToPoint(60.0, playerid, 2487.3169, -2106.0815, 13.5445))
-			{
-				if(IsATruck(tmpcar))
-				{
-					if(PlayerHaul[tmpcar][pLoad] < MAXPROD)
-					{
-					    new amount;
-					    tmp = strtok(cmdtext, idx);
-						if(!strlen(tmp))
-						{
-							SendClientMessage(playerid, COLOR_GRAD1, "Használat: /buyprods [amount]");
-							return 1;
-						}
-						amount = strval(tmp);
-						if(amount < 1 || amount > MAXPROD) { SendFormatMessage(playerid, COLOR_GREY, "A kocsiban max %d prod fér el!", MAXPROD); return 1; }
-						new check= PlayerHaul[tmpcar][pLoad] + amount;
-						if(check > MAXPROD)
-						{
-						    format(string, sizeof(string), "A kocsi maximum %d prodot bír el!",MAXPROD);
-						    SendClientMessage(playerid, COLOR_GREY, string);
-						    return 1;
-						}
-						new cost = amount*compcost;
-						if(GetMoney(playerid) >= cost)
-						{
-							PlayerHaul[tmpcar][pLoad] += amount;
-							format(string, sizeof(string), "Prodok: %d/%d.", MAXPROD, PlayerHaul[tmpcar][pLoad]);
-							SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
-							format(string, sizeof(string), "Vettél %d prodot %dFt-ért", amount,cost);
-							SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
-							GiveMoney(playerid,-cost);
-							PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
-							return 1;
-						}
-						else
-						{
-							format(string, sizeof(string), "Nincs elég pénzed(%dFt) %d pod megvételére!", cost, amount);
-							SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
-							return 1;
-						}
-					}
-					else
-					{
-							format(string, sizeof(string), "Prodok: %d/%d.", MAXPROD, PlayerHaul[tmpcar][pLoad]);
-							SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
-							return 1;
-					}
-				}
-				else
-				{
-					SendClientMessage(playerid, TEAM_GROVE_COLOR, "Nem vagy teherszállító kocsiban!");
-					return 1;
-				}
-			}
-		}
-		return 1;
-	}
-	if(strcmp(cmd, "/sellprods", true) == 0)
-	{
-	    new cashmade;
-	    new tmpcar;
-	    if(IsPlayerConnected(playerid))
-		{
-			tmpcar = GetPlayerVehicleID(playerid);
-			if(!IsATruck(tmpcar))
-			{
-				GameTextForPlayer(playerid, "~r~Nem vagy teherszállítóban!", 5000, 1);
-				return 1;
-			}
-			if(PlayerHaul[tmpcar][pLoad] == 0)
-			{
-				GameTextForPlayer(playerid, "~r~A kocsi ures", 5000, 1);
-				format(string, sizeof(string), "Prodok: %d/%d.", MAXPROD, PlayerHaul[tmpcar][pLoad]);
-				SendClientMessage(playerid, TEAM_GROVE_COLOR, string);
-				return 1;
-			}
-			for(new i = 0; i < sizeof(BizzInfo); i++)
-			{
-				if (PlayerToPoint(10, playerid,BizzInfo[i][bEntranceX], BizzInfo[i][bEntranceY], BizzInfo[i][bEntranceZ]))
-				{
-					//printf("Found House :%d",i);
-					for(new l = PlayerHaul[tmpcar][pLoad]; l > 0; l--)
-					{
-						if(BizzInfo[i][bProducts] == BizzInfo[i][bMaxProducts])
-						{
-							GameTextForPlayer(playerid, "~r~A biznisz tele", 5000, 1);
-							SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Prodok: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
-							PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
-							return 1;
-						}
-						if(BizzInfo[i][bPriceProd] > BizzInfo[i][bTill])
-						{
-							GameTextForPlayer(playerid, "~r~Nem tudjuk kifizetni mindet", 5000, 1);
-							SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Prodok: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
-							PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
-							return 1;
-						}
-						PlayerHaul[tmpcar][pLoad]--;
-						BizzInfo[i][bProducts]++;
-						cashmade = cashmade+BizzInfo[i][bPriceProd];
-						ConsumingMoney[playerid] = 1;
-						GiveMoney(playerid,BizzInfo[i][bPriceProd]);
-					
-						BizPenz(i, -BizzInfo[i][bPriceProd]);
-						//BizzInfo[i][bTill] -= BizzInfo[i][bPriceProd];
-						if(PlayerHaul[tmpcar][pLoad] == 0)
-						{
-						    SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Kaptál érte %dFt-ot | Prodok: %d/%d.", cashmade, MAXPROD, PlayerHaul[tmpcar][pLoad]);
-							GameTextForPlayer(playerid, "~r~A kocsi ures", 5000, 1);
-							PlayerPlaySound(playerid, 1052, 0.0, 0.0, 0.0);
-							return 1;
-						}
-					}
-				
-					BizUpdate(i, BIZ_Till, BIZ_Products);
-					return 1;
-				}
-			}
-		}
-		GameTextForPlayer(playerid, "~r~Messze vagy a biznisztol", 5000, 1);
-		return 1;
-	}
 	if(egyezik(cmd, "/kiképzõ") || egyezik(cmd, "/kikepzo"))
 	{
 		if(params < 1) return Msg(playerid, "/kiképzõ [bérel / belép / kilép]");
@@ -38924,8 +39794,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 					foreach(Jatekosok, x)
 					{
 						if(!IsPlayerInVehicle(x, GetPlayerVehicleID(playerid))) continue;
-						SetPlayerInterior(x, 1);
-						SetPlayerVirtualWorld(playerid, 1555);
+						SetPlayerInterior(x, 0);
+						SetPlayerVirtualWorld(playerid, 9555);
 					}
 					SetVehicleZAngle(GetPlayerVehicleID(playerid), 268.0);
 				}
@@ -41344,7 +42214,194 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			SendFormatMessage(playerid,COLOR_GREEN, "Játékos: %s | RP-Teszt érvényességi ideje átírva! Még %d óráig érvényes!",PlayerName(jatekos), ido);
 		}
 	}*/
-	
+	/*if(egyezik(cmd, "/setar")) Ryan TT Bolt
+	{
+		if(!IsRyan(playerid)) return 1;
+		if(params < 2)
+		{
+			SendClientMessage(playerid, COLOR_WHITE, "Használat: /setar [statcode] [Érték]");
+			SendClientMessage(playerid, COLOR_GRAD2, "|1 Telefon | 2 Telefonkönyv | 3 GPS | 4 Vontatókötél");
+			SendClientMessage(playerid, COLOR_GRAD2, "|5 Kötszer | 6 Kaparós sorsjegy | 7 Dobókocka");
+			SendClientMessage(playerid, COLOR_GRAD2, "|8 Csirke| 9 Hamburger | 10 Fagyasztott pizza | 11 Szendvics");
+			SendClientMessage(playerid, COLOR_GRAD2, "|12 Szendvics csomag | 13 Cigi(doboz) | 14 Vihargyújtó | 15 Nikotin tapasz | 16 Kis cs. Óvszer");
+            SendClientMessage(playerid, COLOR_GRAD2, "|17 Nagy cs. Óvszer | 18 Laptop | 19 Horgászbot | 20 Csali | 21 MP4");
+			SendClientMessage(playerid, COLOR_GRAD2, "|22 Csipogó | 23 Virágcsokor | 24 Fejkendõ | 25 Vészhívó | 26 Vészhívó");
+			SendClientMessage(playerid, COLOR_GRAD2, "|27 Frakció rádió | 28 Mikulás sapka | 29 Mikulás csomag | 30 Virgács");
+			SendClientMessage(playerid, COLOR_GRAD2, "|31 Mobilnet");
+			return 1;
+		}
+		switch(stat) // Egyelõre csak változók miatt
+		{
+			case 1:
+			{
+				PlayerInfo[giveplayerid][bTelefon] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos szintje átírva erre: %d", amount);
+			}
+			case 2:
+			{
+				if(!Admin(playerid, 1340)) return Msg(playerid, "Ezt a paramétert csak 1340-es Adminszinttõl használhatod!");
+			    PlayerInfo[giveplayerid][bTeloKonyv] = amount;
+			    SendFormatMessage(playerid, COLOR_GREEN, "Játékos telefonszáma átírva erre: %s", FormatNumber( amount, 0, '-' ));
+			}
+			case 3:
+			{
+			    PlayerInfo[giveplayerid][bGPS] = amount;
+			    SendFormatMessage(playerid, COLOR_GREEN, "Játékos szintlépési ideje átírva erre: %d", amount);
+			}
+			case 4:
+			{
+			    PlayerInfo[giveplayerid][bVontatokotel] = amount;
+			    SendFormatMessage(playerid, COLOR_GREEN, "Játékos detektív skillje átírva erre: %d", amount);
+			}
+			case 5:
+			{
+			    PlayerInfo[giveplayerid][bKotszer] = amount;
+			    SendFormatMessage(playerid, COLOR_GREEN, "Játékos ügyvéd skillje átírva erre: %d", amount);
+			}
+			case 6:
+			{
+			    PlayerInfo[giveplayerid][bSorsjegy] = amount;
+			    SendFormatMessage(playerid, COLOR_GREEN, "Játékos mentõ skillje átírva erre: %d", amount);
+			}
+			case 7:
+			{
+			    PlayerInfo[giveplayerid][bKocka] = amount;
+			    SendFormatMessage(playerid, COLOR_GREEN, "Játékos riporter skillje átírva erre: %d", amount);
+			}
+			case 8:
+			{
+				PlayerInfo[giveplayerid][bCsirke] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos autótolvaj skillje átírva erre: %d", amount);
+			}
+			case 9:
+			{
+				PlayerInfo[giveplayerid][pHambi] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos drogdíler skillje átírva erre: %d", amount);
+			}
+			case 10:
+			{
+				PlayerInfo[giveplayerid][bPizza] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos neme átírva átírva erre: %d (1=Férfi | 2=Nõ)", amount);
+			}
+			case 11:
+			{
+				PlayerInfo[giveplayerid][bSzendvics] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos játszott órái átírva erre: %d", amount);
+			}
+			case 12:
+			{
+				PlayerInfo[giveplayerid][bSzendvicsCsomag] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos életkora átírva erre: %d", amount);
+			}
+			case 13:
+			{
+				PlayerInfo[giveplayerid][bCigi] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékosnál lévõ materials száma átírva erre: %d", amount);
+			}
+			case 14:
+			{
+			   ClearMarriage(giveplayerid); bGyujto
+			   SendClientMessage(playerid, COLOR_GREEN, "Játékos házassága törölve!");
+			}
+			case 15:
+			{
+				if(!Admin(playerid, 1340)) return Msg(playerid, "Ezt a paramétert csak 1340-es Adminszinttõl használhatod!");
+				PlayerInfo[giveplayerid][bNikotinTapasz] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos prémium pontjai átírva erre: %d", amount);
+			}
+			case 16:
+			{
+				PlayerInfo[giveplayerid][bKisOvszer] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos prémium csomagja átírva erre: %d", amount);
+			}
+			case 17:
+			{
+				PlayerInfo[giveplayerid][bNagyOvszer] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos prémium ideje átírva erre: %d (UnixTime-ban megadott idõ kell!)", amount);
+			}
+			case 18:
+			{
+				if(!Admin(playerid, 1338)) return Msg(playerid, "Ezt a paramétert csak 1338-as Adminszinttõl használhatod!");
+				PlayerInfo[giveplayerid][bLaptop] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos bankszámla száma átírva erre: %s", FormatNumber( amount, 0, '-' ));
+			}
+			case 19:
+			{
+				PlayerInfo[giveplayerid][bHorgaszbot] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos munkája átírva erre: %d", amount);
+			}
+			case 20:
+			{
+			    PlayerInfo[giveplayerid][bCsali] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos második munkája átírva erre: %d", amount);
+			}
+			case 21:
+			{
+			    PlayerInfo[giveplayerid][bMP] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos kötelezõ munkaideje (felmondás elõtt) átírva erre: %d", amount);
+			}
+			case 22:
+			{
+				PlayerInfo[giveplayerid][bCsipogo] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos második munkájának kötelezõ munkaideje (felmondás elõtt) átírva erre: %d", amount);
+			}
+			case 23:
+			{
+				PlayerInfo[giveplayerid][bViragcsokor] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékosnál lévõ heroin száma átírva erre: %d", amount);
+			}
+			case 24:
+			{
+				PlayerInfo[giveplayerid][bFejkendo] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékosnál lévõ marihuana átírva erre: %d", amount);
+			}
+			case 25:
+			{
+				PlayerInfo[giveplayerid][bVeszhivo] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékosnál lévõ kokain átírva erre: %d", amount);
+			}
+			case 26:
+			{
+				PlayerInfo[giveplayerid][pAlma] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékosnál lévõ alma átírva erre: %d", amount);
+			}
+			case 27:
+			{
+				PlayerInfo[giveplayerid][bFkRadio] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos hacker skillje átírva erre: %d", amount);
+			}
+			case 28:
+			{
+				PlayerInfo[giveplayerid][bMikiSapi] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos halász skillje átírva erre: %d", amount);
+			}
+			case 29:
+			{
+				PlayerInfo[giveplayerid][bMikiCsomi] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos betörõ skillje átírva erre: %d", amount);
+			}
+			case 30:
+			{
+				PlayerInfo[giveplayerid][bVirgacs] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos fegyvergyártó skillje átírva erre: %d", amount);
+			}
+			case 31:
+			{
+				if(!Admin(playerid, 1340)) return Msg(playerid, "Ezt a paramétert csak 1340-es Adminszinttõl használhatod!");
+				PlayerInfo[giveplayerid][bMobilnet] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos Kreditjeinek száma átírva erre: %d", amount);
+			}
+			case 32:
+			{
+				if(!Admin(playerid, 1340)) return Msg(playerid, "Ezt a paramétert csak 1340-es Adminszinttõl használhatod!");
+				PlayerInfo[giveplayerid][pArany] = amount;
+				SendFormatMessage(playerid, COLOR_GREEN, "Játékos Aranyainak száma átírva erre: %d (Zsebében)", amount);
+			}
+			default:
+			{
+				SendClientMessage(playerid, COLOR_LIGHTRED, "Hiba történt! Ellenõrizd a beírt értékeket!");
+			}
+	}*/
 	if(egyezik(cmd, "/setstat"))
 	{
 		if(!SAdmin(playerid, 1337) && !IsScripter(playerid)) return 1;
@@ -49423,10 +50480,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	{
 		if(!IsRyan(playerid))
 			return SendClientMessage(playerid, COLOR_LIGHTRED, "Egyelõre csak Ryan bá használhatja ezt a parancsot!");
-		if(params < 1) return Msg(playerid,"/jelszó [Aktiválás/ Deaktiválás / Átír/Megnéz]");
+		if(params < 1) return Msg(playerid,"/tõzsde [Aktiválás/ Deaktiválás / Átír/Megnéz]");
 		if(egyezik(param[1],"aktiválás") || egyezik(param[1],"aktivalas"))
 		{
-			if(params < 2) return Msg(playerid,"/jelszó Aktiválás [jelszó]");
+			if(!IsACop(playerid)) return Msg(playerid,"Nem vagy rendvédelem tagja!");
+			if(!Munkarang(playerid, 6)) return Msg(playerid,"Minimum rang 6!");
+			if(params < 2) return Msg(playerid,"/tõzsde Aktiválás [jelszó]");
 			if(egyezik(param[2], TozsdeJelszo))
 			{
 				Msg(playerid,"Helyes Jelszó, Bank védelem újra aktív!");
@@ -49440,9 +50499,33 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			else
 				Msg(playerid,"Hiba! Helytelen jelszó!");
 		}
+		if(egyezik(param[1],"részvény") || egyezik(param[1],"reszveny"))
+		{
+			if(!IsRyan(playerid)) return Msg(playerid,"Fejlesztés alatt!");
+			new mennyiseg;
+			mennyiseg = strval(param[3]);
+			if(egyezik(param[2],"vesz"))
+			{
+				
+				if(params < 3) return Msg(playerid,"/tõzsde részvény vesz [mennyiség]");
+				PlayerInfo[playerid][pReszveny] = PlayerInfo[playerid][pReszveny] + mennyiseg;
+			
+			}
+			else if(egyezik(param[2],"elad"))
+			{
+				if(params < 3) return Msg(playerid,"/tõzsde részvény elad [mennyiség]");
+				PlayerInfo[playerid][pReszveny] = PlayerInfo[playerid][pReszveny] - mennyiseg;
+			
+			
+			}
+			
+			
+		}
 		else  if(egyezik(param[1],"deaktiválás") || egyezik(param[1],"deaktivalas"))
 		{
-			if(params < 2) return Msg(playerid,"/jelszó Dektiválás [jelszó]");
+			if(!IsACop(playerid)) return Msg(playerid,"Nem vagy rendvédelem tagja!");
+			if(!Munkarang(playerid, 6)) return Msg(playerid,"Minimum rang 6!");
+			if(params < 2) return Msg(playerid,"/tõzsde Dektiválás [jelszó]");
 			if(egyezik(param[2], TozsdeJelszo))
 			{
 				Msg(playerid,"Helyes Jelszó, Bank védelem deaktiválva!");
@@ -49460,7 +50543,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		{
 			if(IsACop(playerid) && Munkarang(playerid, 6))
 			{
-				if(params < 2) return Msg(playerid,"/jelszó Átír [jelszó]");
+				if(params < 2) return Msg(playerid,"/tõzsde Átír [jelszó]");
 				if(strlen(param[2]) >= 5 && strlen(param[2]) <= 10)
 				{
 					new jelszo[10];
@@ -49492,7 +50575,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		else
 		{
-			Msg(playerid,"/jelszó [Beír/Átír/Megnéz]");
+			Msg(playerid,"/tõzsde [Aktiválás/ Deaktiválás / Átír/Megnéz]");
 			return 1;
 		}
 		return 1;

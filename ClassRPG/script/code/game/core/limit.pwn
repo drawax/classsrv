@@ -77,6 +77,7 @@
 #define MAX_PICKUP 5000
 #define MAX_CHANNEL 6
 #define MAX_BENZINKUT 25
+#define MAX_BOLTOK 80 // TT Bolt - Ryan
 #define MAX_BENZIN_SZALLITAS 500
 #define MAX_BENZIN 10000
 #define MAX_TELEFON 1000

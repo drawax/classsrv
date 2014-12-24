@@ -1037,9 +1037,73 @@ enum pInfo
 	pBrascoTag,
 	pBrascoRang,
 	pJailokSzama,
-	pContractOka[128]
+	pContractOka[128],
+	pBoltTulaj, // TT R.
+	pReszveny
+	
+
 };
 new PlayerInfo[MAX_PLAYERS][pInfo];
+
+
+//Ryan TT Bolt - NE NYÚLJ HOZZÁ, KÖSZI
+enum BoltInfo
+{
+	boltNev[35],
+	boltTulaj[MAX_PLAYER_NAME],
+	boltTulajID,
+	Float:boltAruPosX,
+	Float:boltAruPosY,
+	Float:boltAruPosZ,
+	Float:boltAruTav,
+	Float:boltBejaratPosX,
+	Float:boltBejaratPosY,
+	Float:boltBejaratPosZ,
+	boltProdMennyiseg,
+	boltMaxProdMennyiseg,
+	boltProdVetelAr,
+	boltPozVW,
+	boltPozInti,
+	boltSzef,
+	bTelefon,
+	bTeloKonyv,
+	bGPS,
+	bVontatokotel,
+	bKotszer,
+	bSorsjegy,
+	bKocka,
+	bCsirke,
+	bHambi,
+	bPizza,
+	bSzendvics,
+	bSzendvicsCsomag,
+	bCigi,
+	bGyujto,
+	bNikotinTapasz,
+	bKisOvszer,
+	bNagyOvszer,
+	bLaptop,
+	bHorgaszbot,
+	bCsali,
+	bMP,
+	bCsipogo,
+	bViragcsokor,
+	bFejkendo,
+	bVeszhivo,
+	bVeszhivoCsomag,
+	bFkRadio,
+	bMikiSapi,
+	bMikiCsomi,
+	bVirgacs,
+	bMobilnet
+};
+new Boltok[MAX_BOLTOK][BoltInfo];
+
+/*enum boltEnum {
+    boltcuccnev[48],
+    cuccar
+}*/
+
 
 enum hInfo
 {

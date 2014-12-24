@@ -969,6 +969,62 @@ fpublic INI_Load_KutData(a, name[], value[])
 	return 0;
 }
 
+fpublic INI_Load_BoltData(a, name[], value[]) 
+{
+	INI_Int("BoltID", a);
+	INI_String("Nev", Boltok[a][boltNev],250);
+	INI_String("Tulaj", Boltok[a][boltTulaj],250);
+	INI_Int("TulajID", Boltok[a][boltTulajID]);
+	INI_Float("AruPosX", Boltok[a][boltAruPosX]);
+	INI_Float("AruPosY", Boltok[a][boltAruPosY]);
+	INI_Float("AruPosZ", Boltok[a][boltAruPosZ]);
+	INI_Float("Tavolsag", Boltok[a][boltAruTav]);
+	INI_Float("BejaratX", Boltok[a][boltBejaratPosX]);
+	INI_Float("BejaratY", Boltok[a][boltBejaratPosY]);
+	INI_Float("BejaratZ", Boltok[a][boltBejaratPosZ]);
+	INI_Int("ProdMennyiseg", Boltok[a][boltProdMennyiseg]);
+	INI_Int("MaxProd", Boltok[a][boltMaxProdMennyiseg]);
+	INI_Int("ProdAr", Boltok[a][boltProdVetelAr]);
+	INI_Int("VW", Boltok[a][boltPozVW]);
+	INI_Int("INTI", Boltok[a][boltPozInti]);
+	INI_Int("Szef", Boltok[a][boltSzef]);
+	
+	INI_Int("Telefon", Boltok[a][bTelefon]);
+	INI_Int("TeloKonyv", Boltok[a][bTeloKonyv]);
+	INI_Int("GPS", Boltok[a][bGPS]);
+	INI_Int("Vontatokotel", Boltok[a][bVontatokotel]);
+	INI_Int("Kotszer", Boltok[a][bKotszer]);
+	INI_Int("Sorsjegy", Boltok[a][bSorsjegy]);
+	INI_Int("Kocka", Boltok[a][bKocka]);
+	INI_Int("Csirke", Boltok[a][bCsirke]);
+	INI_Int("Hambi", Boltok[a][bHambi]);
+	INI_Int("Pizza", Boltok[a][bPizza]);
+	INI_Int("Szendvics", Boltok[a][bSzendvics]);
+	INI_Int("SzendvicsCsomag", Boltok[a][bSzendvicsCsomag]);
+	INI_Int("Cigi", Boltok[a][bCigi]);
+	INI_Int("Gyujto", Boltok[a][bGyujto]);
+	INI_Int("NikotinTapasz", Boltok[a][bNikotinTapasz]);
+	INI_Int("KisOvszer", Boltok[a][bKisOvszer]);
+	INI_Int("NagyOvszer", Boltok[a][bNagyOvszer]);
+	INI_Int("Laptop", Boltok[a][bLaptop]);
+	INI_Int("Horgaszbot", Boltok[a][bHorgaszbot]);
+	INI_Int("Csali", Boltok[a][bCsali]);
+	INI_Int("MpNegyLejatszo", Boltok[a][bMP]);
+	INI_Int("Csipogo", Boltok[a][bCsipogo]);
+	INI_Int("Viragcsokor", Boltok[a][bViragcsokor]);
+	INI_Int("Fejkendo", Boltok[a][bFejkendo]);
+	INI_Int("Veszhivo", Boltok[a][bVeszhivo]);
+	INI_Int("VeszhivoCsomag", Boltok[a][bVeszhivoCsomag]);
+	INI_Int("FkRadio", Boltok[a][bFkRadio]);
+	INI_Int("MikiSapi", Boltok[a][bMikiSapi]);
+	INI_Int("MikiCsomi", Boltok[a][bMikiCsomi]);
+	INI_Int("Virgacs", Boltok[a][bVirgacs]);
+	INI_Int("Mobilnet", Boltok[a][bMobilnet]);
+	
+	return 0;
+	
+}
+
 stock INI_Load(type)
 {
 	if(type == INI_TYPE_FEGYVERRAKTAR)
@@ -1174,6 +1230,68 @@ fpublic INI_Save(type, a)
 		INI_WriteInt(ini, "BerlesIdo", BenzinKutak[a][bBerlesIdo]);
 		INI_WriteInt(ini, "Berelheto", BenzinKutak[a][bBerelheto]);
 		INI_WriteInt(ini, "AlapAra", BenzinKutak[a][bAlapAra]);
+		
+		INI_Close(ini);
+	
+	}
+	else if(type == INI_TYPE_BOLTDATA) //Ryan TT Bolt
+	{
+		new fName[64];
+		
+		format(fName, 64, "data/boltok/%d.ini", a);
+	
+		new INI:ini = INI_Open(fName);
+		
+		INI_WriteInt(ini, "BoltID", a);
+		INI_WriteString(ini, "Nev", Boltok[a][boltNev]);
+		INI_WriteString(ini, "Tulaj", Boltok[a][boltTulaj]);
+		INI_WriteInt(ini, "TulajID", Boltok[a][boltTulajID]);
+		INI_WriteFloat(ini, "AruPosX", Boltok[a][boltAruPosX]);
+		INI_WriteFloat(ini, "AruPosY", Boltok[a][boltAruPosY]);
+		INI_WriteFloat(ini, "AruPosZ", Boltok[a][boltAruPosZ]);
+		INI_WriteFloat(ini, "Tavolsag", Boltok[a][boltAruTav]);
+		INI_WriteFloat(ini, "BejaratX", Boltok[a][boltBejaratPosX]);
+		INI_WriteFloat(ini, "BejaratY", Boltok[a][boltBejaratPosY]);
+		INI_WriteFloat(ini, "BejaratZ", Boltok[a][boltBejaratPosZ]);
+		INI_WriteInt(ini, "ProdMennyiseg", Boltok[a][boltProdMennyiseg]);
+		INI_WriteInt(ini, "MaxProd", Boltok[a][boltMaxProdMennyiseg]);
+		INI_WriteInt(ini, "ProdAr", Boltok[a][boltProdVetelAr]);
+		INI_WriteInt(ini, "VW", Boltok[a][boltPozVW]);
+		INI_WriteInt(ini, "INTI", Boltok[a][boltPozInti]);
+		INI_WriteInt(ini, "Szef", Boltok[a][boltSzef]);
+		
+		
+		INI_WriteInt(ini, "Telefon", Boltok[a][bTelefon]);
+		INI_WriteInt(ini, "TeloKonyv", Boltok[a][bTeloKonyv]);
+		INI_WriteInt(ini, "GPS", Boltok[a][bGPS]);
+		INI_WriteInt(ini, "Vontatokotel", Boltok[a][bVontatokotel]);
+		INI_WriteInt(ini, "Kotszer", Boltok[a][bKotszer]);
+		INI_WriteInt(ini, "Sorsjegy", Boltok[a][bSorsjegy]);
+		INI_WriteInt(ini, "Kocka", Boltok[a][bKocka]);
+		INI_WriteInt(ini, "Csirke", Boltok[a][bCsirke]);
+		INI_WriteInt(ini, "Hambi", Boltok[a][bHambi]);
+		INI_WriteInt(ini, "Pizza", Boltok[a][bPizza]);
+		INI_WriteInt(ini, "Szendvics", Boltok[a][bSzendvics]);
+		INI_WriteInt(ini, "SzendvicsCsomag", Boltok[a][bSzendvicsCsomag]);
+		INI_WriteInt(ini, "Cigi", Boltok[a][bCigi]);
+		INI_WriteInt(ini, "Gyujto", Boltok[a][bGyujto]);
+		INI_WriteInt(ini, "NikotinTapasz", Boltok[a][bNikotinTapasz]);
+		INI_WriteInt(ini, "KisOvszer", Boltok[a][bKisOvszer]);
+		INI_WriteInt(ini, "NagyOvszer", Boltok[a][bNagyOvszer]);
+		INI_WriteInt(ini, "Laptop", Boltok[a][bLaptop]);
+		INI_WriteInt(ini, "Horgaszbot", Boltok[a][bHorgaszbot]);
+		INI_WriteInt(ini, "Csali", Boltok[a][bCsali]);
+		INI_WriteInt(ini, "MpNegyLejatszo", Boltok[a][bMP]);
+		INI_WriteInt(ini, "Csipogo", Boltok[a][bCsipogo]);
+		INI_WriteInt(ini, "Viragcsokor", Boltok[a][bViragcsokor]);
+		INI_WriteInt(ini, "Fejkendo", Boltok[a][bFejkendo]);
+		INI_WriteInt(ini, "Veszhivo", Boltok[a][bVeszhivo]);
+		INI_WriteInt(ini, "VeszhivoCsomag", Boltok[a][bVeszhivoCsomag]);
+		INI_WriteInt(ini, "FkRadio", Boltok[a][bFkRadio]);
+		INI_WriteInt(ini, "MikiSapi", Boltok[a][bMikiSapi]);
+		INI_WriteInt(ini, "MikiCsomi", Boltok[a][bMikiCsomi]);
+		INI_WriteInt(ini, "Virgacs", Boltok[a][bVirgacs]);
+		INI_WriteInt(ini, "Mobilnet", Boltok[a][bMobilnet]);
 		
 		INI_Close(ini);
 	
@@ -2079,15 +2197,22 @@ stock PlayerSave(playerid = NINCS)
 
 stock Float:OsszesPenz(playerid, Float:oszto = 1.0)
 {
-	new Float:penz, hKulcs[ MAX_HOUSE_PER_PLAYER ], bKulcs, btKulcs, szef = GetPlayerBerSzefID(playerid), x, benyaKulcs;
+	new Float:penz, hKulcs[ MAX_HOUSE_PER_PLAYER ], bKulcs, btKulcs, szef = GetPlayerBerSzefID(playerid), x, benyaKulcs, boltKulcs;
 	
 	hKulcs[0] = PlayerInfo[playerid][pPhousekey];
 	hKulcs[1] = PlayerInfo[playerid][pPhousekey2];
 	hKulcs[2] = PlayerInfo[playerid][pPhousekey3];
 	
+	// R.
+	
+	/*boltKulcs[0] = PlayerInfo[playerid][pBoltTulaj][0];
+	boltKulcs[1] = PlayerInfo[playerid][pBoltTulaj][1];
+	boltKulcs[2] = PlayerInfo[playerid][pBoltTulaj][2];*/
+	
 	bKulcs = PlayerInfo[playerid][pPbiskey];
 	btKulcs = PlayerInfo[playerid][pBizniszKulcs];
 	benyaKulcs = PlayerInfo[playerid][pBenzinkut];
+	boltKulcs = PlayerInfo[playerid][pBoltTulaj];
 	
 	// Készpénz
 	penz += PlayerInfo[playerid][pCash] > 0 ? float(PlayerInfo[playerid][pCash]) / oszto : 0.0;
@@ -2110,7 +2235,9 @@ stock Float:OsszesPenz(playerid, Float:oszto = 1.0)
 	
 	//Benzinkút
 	penz += benyaKulcs != NINCS && BenzinKutak[benyaKulcs][bSzef] > 0 ? float(BenzinKutak[benyaKulcs][bSzef]) / oszto : 0.0;
-
+	
+	//Bolt
+	penz += boltKulcs != NINCS && Boltok[boltKulcs][boltSzef] > 0 ? float(Boltok[boltKulcs][boltSzef]) / oszto : 0.0;
 	return penz;
 }
 
@@ -4429,6 +4556,9 @@ stock Ado(playerid)
 		
 	if(PlayerInfo[playerid][pBenzinkut] != NINCS)
 		ado *= 1.15;
+		
+	if(PlayerInfo[playerid][pBoltTulaj] != NINCS)
+		ado *= 1.15;
 	
 	if(PlayerInfo[playerid][pPbiskey] != NINCS)
 		ado *= 1.25;
@@ -4742,6 +4872,7 @@ stock PenzLevesz(playerid, penz, bool:kenyszerit = false)
 	else if(penze == 4) BizzInfo[ PlayerInfo[playerid][pPbiskey] ][bTill] -=penz;
 	else if(penze == 5) BizzInfo[ PlayerInfo[playerid][pBizniszKulcs] ][bTill2] -=penz;
 	else if(penze == 6) BenzinKutak[ PlayerInfo[playerid][pBenzinkut] ][bSzef] -=penz;
+	else if(penze == 7) Boltok[ PlayerInfo[playerid][pBoltTulaj] ][boltSzef] -=penz;
 	else if(penze == 2 || penze == 0 && kenyszerit) PlayerInfo[playerid][pAccount] -= penz;
 	return 1;
 }
@@ -4762,7 +4893,9 @@ stock VanEnnyiPenze(playerid, penz)
 	else if(PlayerInfo[playerid][pBizniszKulcs] != NINCS && BizzInfo[ PlayerInfo[playerid][pBizniszKulcs] ][bTill2] > 0)
 		return 5;
 	else if(PlayerInfo[playerid][pBenzinkut] != NINCS && BenzinKutak[ PlayerInfo[playerid][pBenzinkut] ][bSzef] > 0)
-		return 6;	
+		return 6;
+	else if(PlayerInfo[playerid][pBoltTulaj] != NINCS && Boltok[ PlayerInfo[playerid][pBoltTulaj] ][boltSzef] > 0)
+		return 7;	
 
 	return 0;
 }
@@ -11311,13 +11444,14 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 		}
 		else if(dialogid == DIALOG_VESZ)
 		{
+			new vwke = GetPlayerVirtualWorld(playerid);
 			new gondolat[100];
 			listitem++;
 			switch(listitem)
 			{
 				case 1:
 				{
-					if(!BankkartyaFizet(playerid, 50000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bTelefon]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11325,13 +11459,15 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 50000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bTelefon];
+					//BizPenz(BIZ_247, 50000);
 					new randphone = Rand(1000000, 9999999);
 					PlayerInfo[playerid][pPnumber] = randphone;
 					format(string, sizeof(string), "Megvetted a telefont, a számod: %d\n", randphone);
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy telefont", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 2:
@@ -11344,7 +11480,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 5000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bTeloKonyv]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11352,11 +11488,13 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 5000);
+					//BizPenz(BIZ_247, 5000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bTeloKonyv];
 					PlayerInfo[playerid][pPhoneBook] = 1;
 					format(string, sizeof(string), "Vettél egy telefonkönyvet!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy telefonkönyvet", 1);
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 3:
@@ -11369,7 +11507,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 40000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bGPS]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11377,12 +11515,14 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 40000);
+					//BizPenz(BIZ_247, 40000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bGPS];
 					PlayerInfo[playerid][pLokator] = 1;
 					format(string, sizeof(string), "Vettél egy GPS Lokátort!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy GPS Lokátort", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 4:
@@ -11395,7 +11535,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 3000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bVontatokotel]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11403,12 +11543,14 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 3000);
+					//BizPenz(BIZ_247, 3000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bVontatokotel];
 					PlayerInfo[playerid][pVontatokotel] = 1;
 					format(string, sizeof(string), "Vettél egy vontatókötelet!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy vontató kötelet", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 5:
@@ -11421,7 +11563,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 1200))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bKotszer]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11433,14 +11575,16 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					format(string, sizeof(string), "Vettél egy kötszeres dobozt(4db)!\nMost %d kötszer van nálad.\n", PlayerInfo[playerid][pKotszer]);
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy kötszeres dobozt", 1);
-					BizzInfo[BIZ_247][bProducts]--;
-					BizPenz(BIZ_247, 1200);
+					Boltok[vwke][boltProdMennyiseg]--;
+					//BizPenz(BIZ_247, 1200);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bKotszer];
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 
 				}
 				case 6:
 				{
-					if(!BankkartyaFizet(playerid, 500))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bSorsjegy]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11448,8 +11592,10 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 500);
-					BizzInfo[BIZ_247][bProducts]--;
+					//BizPenz(BIZ_247, 500);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bSorsjegy];
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 					new nyero = Rand(1, 3);
 					if(nyero == 1)
@@ -11477,7 +11623,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 500))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bKocka]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11485,17 +11631,19 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 500);
+					//BizPenz(BIZ_247, 500);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bKocka];
 					gDice[playerid] = 1;
 					format(string, sizeof(string), "Vettél egy dobókockát!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy dobókockát", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 8:
 				{
-					if(!BankkartyaFizet(playerid, 800))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bCsirke]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11503,19 +11651,21 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 800);
+					//BizPenz(BIZ_247, 800);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bCsirke];
 					new rand = random(15);
 					Groceries[playerid][pChickens] += 1;
 					Groceries[playerid][pChicken] += rand;
 					format(string, sizeof(string), "Vettél egy csirkét!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy csirkét", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 9:
 				{
-					if(!BankkartyaFizet(playerid, 400))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bHambi]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11523,19 +11673,21 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 400);
+					//BizPenz(BIZ_247, 400);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bHambi];
 					new rand = random(15);
 					Groceries[playerid][pHamburgers] += 1;
 					Groceries[playerid][pHamburger] += rand;
 					format(string, sizeof(string), "Vettél egy hamburgert!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy hamburgert", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 10:
 				{
-					if(!BankkartyaFizet(playerid, 800))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bPizza]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11543,14 +11695,16 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 800);
+					//BizPenz(BIZ_247, 800);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bPizza];
 					new rand = random(15);
 					Groceries[playerid][pPizzas] += 1;
 					Groceries[playerid][pPizza] += rand;
 					format(string, sizeof(string), "Vettél egy fagyasztott pizzát\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy fagyasztott pizzát", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 11:
@@ -11563,7 +11717,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 800))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bSzendvics]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11571,11 +11725,13 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 800);
+					//BizPenz(BIZ_247, 800);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bSzendvics];
 					PlayerInfo[playerid][pKaja]++;
 					format(string, sizeof(string), "Vettél egy szendvicset!\nMost %ddb van nálad", PlayerInfo[playerid][pKaja]);
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 12:
@@ -11588,7 +11744,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 6500))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bSzendvicsCsomag]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11596,16 +11752,18 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 6500);
+					//BizPenz(BIZ_247, 6500);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bSzendvicsCsomag];
 					PlayerInfo[playerid][pKaja]=PlayerInfo[playerid][pKaja]+5;
 					format(string, sizeof(string), "Vettél egy szendvics csomagot!\nMost %ddb van nálad", PlayerInfo[playerid][pKaja]);
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 13:
 				{
-					if(!BankkartyaFizet(playerid, 750))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bCigi]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11613,17 +11771,19 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 750);
+					//BizPenz(BIZ_247, 750);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bCigi];
 					PlayerInfo[playerid][pCigi] += 12;
 					format(string, sizeof(string), "Vettél egy doboz cigit(12 szál)!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy doboz cigit", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 14:
 				{
-					if(!BankkartyaFizet(playerid, 800))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bGyujto]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11631,17 +11791,19 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 800);
-					PlayerInfo[playerid][pGyujto] += 12;
+					//BizPenz(BIZ_247, 800);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bGyujto];
+					PlayerInfo[playerid][pGyujto] += 1;
 					format(string, sizeof(string), "Vettél egy vihar gyújtót!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy vihar gyújtót", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 15:
 				{
-					if(!BankkartyaFizet(playerid, 2500))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bNikotinTapasz]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11649,17 +11811,20 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 2500);
+					//BizPenz(BIZ_247, 2500);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bNikotinTapasz];
+					
 					PlayerInfo[playerid][pNikotin]++;
 					format(string, sizeof(string), "Vettél egy nikotin tapaszt!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy nikotin tapaszt", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 16:
 				{
-					if(!BankkartyaFizet(playerid, 800))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bKisOvszer]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11667,17 +11832,19 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 800);
+					//BizPenz(BIZ_247, 800);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bKisOvszer];
 					Condom[playerid]+=4;
 					format(string, sizeof(string), "Vettél egy kis doboz óvszert!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy óvszert", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 17:
 				{
-					if(!BankkartyaFizet(playerid, 1200))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bNagyOvszer]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11686,11 +11853,13 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						return 1;
 					}
 					BizPenz(BIZ_247, 1200);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bNagyOvszer];
 					Condom[playerid]+=12;
 					format(string, sizeof(string), "Vettél egy nagy doboz óvszert!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy óvszert", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 18:
@@ -11703,7 +11872,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 200000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bLaptop]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11711,12 +11880,14 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 200000);
+					//BizPenz(BIZ_247, 200000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bLaptop];
 					PlayerInfo[playerid][pLaptop] = 1;
 					format(string, sizeof(string), "Vettél egy laptopot!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy laptopot", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 19:
@@ -11729,7 +11900,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 15000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bHorgaszbot]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11737,17 +11908,19 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 15000);
+					//BizPenz(BIZ_247, 15000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bHorgaszbot];
 					PlayerInfo[playerid][pHorgaszBot] = 1;
 					format(string, sizeof(string), "Vettél egy Horgászbotot!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy Horgászbotot", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 20:
 				{
-					if(!BankkartyaFizet(playerid, 700))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bCsali]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11755,12 +11928,14 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 700);
+					//BizPenz(BIZ_247, 700);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bCsali];
 					PlayerInfo[playerid][pCsali] += 30;
 					format(string, sizeof(string), "Vettél egy doboz csalit (30db)!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy doboz csalit", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				
@@ -11774,7 +11949,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 15000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bMP]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11782,13 +11957,15 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 15000);
+					//BizPenz(BIZ_247, 15000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bMP];
 					PlayerInfo[playerid][pRadio] = 1;
 					PlayerInfo[playerid][pCDPlayer] = 1;
 					format(string, sizeof(string), "Vettél egy MP4 lejátszót!!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy rádiót", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 22:
@@ -11801,7 +11978,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					if(!BankkartyaFizet(playerid, 30000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bCsipogo]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11809,12 +11986,14 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 30000);
+					//BizPenz(BIZ_247, 30000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bCsipogo];
 					PlayerInfo[playerid][pCsipogo] = 1;
 					format(string, sizeof(string), "Vettél egy csipogót!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy csipogót", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 23:
@@ -11823,7 +12002,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					if(slot < 0)
 						return ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", "Nem tudsz virágot venni", "Ok", "");
 						
-					if(!BankkartyaFizet(playerid, 1000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bViragcsokor]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11831,17 +12010,18 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 1000);
-					
+					//BizPenz(BIZ_247, 1000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bViragcsokor];
 					format(string, sizeof(string), "Vettél egy virág csokrot!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy virág csokrot", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 24:
 				{
-					if(!BankkartyaFizet(playerid, 10000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bFejkendo]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11849,18 +12029,20 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 10000);
+					//BizPenz(BIZ_247, 10000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bFejkendo];
 					PlayerInfo[playerid][pSzajkendo] = 1;
 					format(string, sizeof(string), "Vettél egy fejkendõt!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy fejkendõt", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				case 25:
 				{
 					if(PlayerInfo[playerid][pVeszHivo] > 0) return Msg(playerid, "Neked van hívód");
-					if(!BankkartyaFizet(playerid, 15000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bVeszhivo]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11868,19 +12050,21 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 15000);
+					//BizPenz(BIZ_247, 15000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bVeszhivo];
 					PlayerInfo[playerid][pVeszHivo] = 3;
 					format(string, sizeof(string), "Vettél egy vészhívót (3)!\n");
 					Msg(playerid, "((/call 112))");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy vészhívót", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}	
 				case 26:
 				{
 					if(PlayerInfo[playerid][pVeszHivo] > 0) return Msg(playerid, "Neked van hívód");
-					if(!BankkartyaFizet(playerid, 80000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bVeszhivoCsomag]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11888,19 +12072,21 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 80000);
+					//BizPenz(BIZ_247, 80000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bVeszhivoCsomag];
 					PlayerInfo[playerid][pVeszHivo] = 30;
 					format(string, sizeof(string), "Vettél egy vészhívót (30)!\n");
 					Msg(playerid, "((/call 112))");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy vészhívót", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}	
 				case 27:
 				{
 					if(PlayerInfo[playerid][pRadio] > 0) return Msg(playerid, "Neked van rádiód");
-					if(!BankkartyaFizet(playerid, 50000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bFkRadio]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11908,12 +12094,14 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 50000);
+					//BizPenz(BIZ_247, 50000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bFkRadio];
 					PlayerInfo[playerid][pRadio] = 1;
-					format(string, sizeof(string), "Vettél egy frakció rádiót (30)!\n");
+					format(string, sizeof(string), "Vettél egy frakció rádiót!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy frakció rádiót", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				}
 				/*case 28:
@@ -11934,7 +12122,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett öt húsvéti tojást!", 1);
 					Msg(playerid,"/mikulás");
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
 					TogglePlayerControllable(playerid, true);
 				
 				
@@ -11944,7 +12132,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				{
 					if(1417824000 > UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
 					if(PlayerInfo[playerid][pMikulasSapka] > 0) return Msg(playerid, "Neked van mikulás sapkád");
-					if(!BankkartyaFizet(playerid, 5000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bMikiSapi]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11952,13 +12140,15 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 5000);
+					//BizPenz(BIZ_247, 5000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bMikiSapi];
 					PlayerInfo[playerid][pMikulasSapka] = 1;
 					format(string, sizeof(string), "Vettél egy mikulás sapkát!\n");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy mikulás sapkát!", 1);
 					Msg(playerid,"/mikulás");
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				
 				
@@ -11967,7 +12157,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				{
 					if(1417824000 > UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
 					//if(PlayerInfo[playerid][pMikulasSapka] > 0) return Msg(playerid, "Neked van mikulás sapkád");
-					if(!BankkartyaFizet(playerid, 1000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bMikiCsomi]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11975,13 +12165,15 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 1000);
+					//BizPenz(BIZ_247, 1000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bMikiCsomi];
 					PlayerInfo[playerid][pMikulasCsomag]++;
 					format(string, sizeof(string), "Vettél egy mikulás csomagot!\n");
 					Msg(playerid,"/mikulás");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy mikulás csomagot!", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				
 				
@@ -11990,7 +12182,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				{
 					if(1417824000 > UnixTime) return Msg(playerid, "HÓ-HÓ-HÓ ne siess annyira majd December 6-tól!");
 					//if(PlayerInfo[playerid][pMikulasSapka] > 0) return Msg(playerid, "Neked van mikulás sapkád");
-					if(!BankkartyaFizet(playerid, 1000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bVirgacs]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
@@ -11998,13 +12190,15 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						TogglePlayerControllable(playerid, true);
 						return 1;
 					}
-					BizPenz(BIZ_247, 1000);
+					//BizPenz(BIZ_247, 1000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bVirgacs];
 					PlayerInfo[playerid][pVirgacs]+=5;
 					format(string, sizeof(string), "Vettél öt virgácsot!\n");
 					Msg(playerid,"/mikulás");
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett öt virgácsot!", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					TogglePlayerControllable(playerid, true);
 				
 				
@@ -12012,7 +12206,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 				case 31:
 				{
 					if(PlayerInfo[playerid][pMobilnet] != NINCS) return Msg(playerid, "Neked van már mobilneted");
-					if(!BankkartyaFizet(playerid, 40000))
+					if(!BankkartyaFizet(playerid, Boltok[vwke][bMobilnet]))
 					{
 						format(string, sizeof(string), "Ezt nem tudom kifizetni\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", ICPlayerName(playerid));
@@ -12020,12 +12214,14 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						UnFreeze(playerid);
 						return 1;
 					}
-					BizPenz(BIZ_247, 40000);
+					//BizPenz(BIZ_247, 40000);
+					Boltok[vwke][boltSzef] += Boltok[vwke][bMobilnet];
 					PlayerInfo[playerid][pMobilnet] = 0;
 					format(string, sizeof(string), "Vettél egy mobilnetet!\nJelenlegi adatforgalom-ár: %d Ft/kb", AdatforgalomAr);
 					ShowPlayerDialog(playerid, DIALOG_VESZ, DIALOG_STYLE_MSGBOX, "24/7", string, "Ok", "");
 					Cselekves(playerid, "vett egy mobilnetet", 1);
-					BizzInfo[BIZ_247][bProducts]--;
+					Boltok[vwke][boltProdMennyiseg]--;
+					BoltAdatFrissites(vwke);
 					UnFreeze(playerid);
 				}
 			}
@@ -12358,20 +12554,20 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 					SendClientMessage(playerid, COLOR_LIGHTGREEN, "Felvetted az új munkádat: Kukás | Ahhoz, hogy felmondj, le kell dolgoznod még 2,5 órát");
 					TogglePlayerControllable(playerid, true);
 				}*/
-				case 15:
+				case 14:
 				{
 			    		
 					UjMunka(playerid, MunkaFelvetel[playerid], MUNKA_HULLA);
 					SendClientMessage(playerid, COLOR_LIGHTGREEN, "Felvetted az új munkádat: Hullaszállító | Ahhoz, hogy felmondj, le kell dolgoznod még 2,5 órát");
 					TogglePlayerControllable(playerid, true);
 				}
-				case 16:
+				case 15:
 				{
 					UjMunka(playerid, MunkaFelvetel[playerid], MUNKA_PENZ);
 					SendClientMessage(playerid, COLOR_LIGHTGREEN, "Felvetted az új munkádat: PénzSzállító | Ahhoz, hogy felmondj, le kell dolgoznod még 2,5 órát");
 					TogglePlayerControllable(playerid, true);
 				}
-				case 17:
+				case 16:
 				{
 					UjMunka(playerid, MunkaFelvetel[playerid], MUNKA_VADASZ);
 					SendClientMessage(playerid, COLOR_LIGHTGREEN, "Felvetted az új munkádat: Vadász | Ahhoz, hogy felmondj, le kell dolgoznod még 2,5 órát");
@@ -15018,6 +15214,10 @@ stock SzerverRestartMentes()
 	{
 		INI_Save(INI_TYPE_KUTDATA, b);
 	}
+	for(new b = 0; b < MAX_BOLTOK; b++)
+	{
+		INI_Save(INI_TYPE_BOLTDATA, b);
+	}
 	for(new h = 0; h < MAXVSKOCSI; h++)
 	{
 		if(CarInfo[h][Van] == 1 && CarInfo[h][cId])
@@ -15055,6 +15255,10 @@ stock SzerverAdatMentes()
 	for(new b = 0; b < MAX_BENZINKUT; b++)
 	{
 		INI_Save(INI_TYPE_KUTDATA, b);
+	}
+	for(new b = 0; b < MAX_BOLTOK; b++)
+	{
+		INI_Save(INI_TYPE_BOLTDATA, b);
 	}
 	for(new h = 0; h < MAXVSKOCSI; h++)
 	{
@@ -16432,7 +16636,28 @@ stock CorrectPlayerDatas(playerid)
 	if(talalat != 1)
 		PlayerInfo[playerid][pBenzinkut] = NINCS;
 	
-	talalat = 0;	
+	
+	talalat = 0;
+	
+	for(x = 0; x < MAX_BOLTOK; x++)
+	{
+		if(Boltok[x][boltPozVW] > 0 && Boltok[x][boltPozInti] > 0 && Boltok[x][boltTulajID] == PlayerInfo[playerid][pID])
+		{
+			PlayerInfo[playerid][pBoltTulaj] = x;
+			if(!egyezik(Boltok[x][boltTulaj], PlayerName(playerid)))
+			{
+				strmid(Boltok[x][boltTulaj], PlayerName(playerid), 0, strlen(PlayerName(playerid)), 50);
+			}
+			talalat = 1;
+			break;
+		}
+	}
+	if(talalat != 1)
+		PlayerInfo[playerid][pBoltTulaj] = NINCS;
+	
+	
+	talalat = 0;
+	 
 	for(x = 0; x < MAX_TELEFON; x++)
 	{
 		if(Telefonok[x][tEladva] && Telefonok[x][tTulajID] == PlayerInfo[playerid][pID])
@@ -16582,6 +16807,63 @@ stock CorrectPlayerDatas(playerid)
 	}
 	
 	talalat = 0;
+	/*for(x = 0; x < MAX_BOLTOK; x++) NE NYÚLJ HOZZÁ! - RYAN
+	{
+		if(Boltok[x][boltPozVW] >= 0 && Boltok[x][boltPozInti] >= 0 && Boltok[x][boltTulajID] == PlayerInfo[playerid][pID])
+		{
+			if(talalat == 0)
+			{
+				PlayerInfo[playerid][pBoltTulaj] = x;
+				if(!egyezik(Boltok[x][boltTulaj], PlayerName(playerid)))
+				{
+					strmid(Boltok[x][boltTulaj], PlayerName(playerid), 0, strlen(PlayerName(playerid)), 50);
+				}
+			}
+			else if(talalat == 1)
+			{
+				PlayerInfo[playerid][pBoltTulaj2] = x;
+				if(!egyezik(Boltok[x][boltTulaj], PlayerName(playerid)))
+				{
+					strmid(Boltok[x][boltTulaj], PlayerName(playerid), 0, strlen(PlayerName(playerid)), 50);
+				}
+			}
+			else if(talalat == 2)
+			{
+				PlayerInfo[playerid][pBoltTulaj3] = x;
+				if(!egyezik(Boltok[x][boltTulaj], PlayerName(playerid)))
+				{
+					strmid(Boltok[x][boltTulaj], PlayerName(playerid), 0, strlen(PlayerName(playerid)), 50);
+				}
+			}
+			else
+				Boltok[x][boltTulajID] = 12345;
+			talalat++;
+		}
+	}
+	if(talalat == 0)
+	{
+		PlayerInfo[playerid][pBoltTulaj] = NINCS;
+		PlayerInfo[playerid][pBoltTulaj2] = NINCS;
+		PlayerInfo[playerid][pBoltTulaj3] = NINCS;
+	}
+	else if(talalat == 1)
+	{	
+		PlayerInfo[playerid][pBoltTulaj2] = NINCS;
+		PlayerInfo[playerid][pBoltTulaj3] = NINCS;
+	}
+	else if(talalat == 2)
+	{	
+		PlayerInfo[playerid][pBoltTulaj3] = NINCS;
+	}
+
+	new boltja = PlayerInfo[playerid][pBoltTulaj];
+	if(boltja != NINCS)
+	{
+		if(boltja > MAX_BOLTOK)
+			PlayerInfo[playerid][pBoltTulaj] = NINCS;
+	}
+	
+	talalat = 0;*/
 	for(x = 0; x < sizeof(CarInfo); x++)
 	{
 		if(CarInfo[x][Van] == 1 && CarInfo[x][cOwned] && CarInfo[x][cKulcsok][0] == PlayerInfo[playerid][pID] || CarInfo[x][cKulcsok][1] == PlayerInfo[playerid][pID])
@@ -23299,6 +23581,19 @@ fpublic IsAtGasStation(playerid)
 	return NINCS;
 }
 
+fpublic IsBoltbaVan(playerid) // Ryan TT Bolt
+{
+	for(new b = 0; b < MAX_BOLTOK; b++)
+	{
+		if(GetPlayerVirtualWorld(playerid) == Boltok[b][boltPozVW] && GetPlayerInterior(playerid) == Boltok[b][boltPozInti])
+		{
+			return b;
+		}
+	}
+	
+	return NINCS;
+}
+
 fpublic IsAtFishPlace(playerid)
 {
 	if(IsPlayerConnected(playerid))
@@ -24495,6 +24790,14 @@ stock ValtozoNullazas(playerid) //vnull
 		PlayerInfo[playerid][pFegyverSkillek][x] = 0;
 		
 	PlayerInfo[playerid][pBenzinkut] = NINCS;
+	
+	//R.
+	/*PlayerInfo[playerid][pBoltTulaj] = NINCS;
+	PlayerInfo[playerid][pBoltTulaj2] = NINCS;
+	PlayerInfo[playerid][pBoltTulaj3] = NINCS;*/
+	
+	PlayerInfo[playerid][pBoltTulaj] = NINCS;
+	
 	Loterben[playerid] = NINCS;
 	Lehallgat[playerid] = NINCS;
 	LoterFigyel[playerid] = false;
@@ -24513,6 +24816,7 @@ stock ValtozoNullazas(playerid) //vnull
 	Loginspawnolas[playerid] = true;
 	PlayerInfo[playerid][pArany] = 0;
 	PlayerInfo[playerid][pAranyBank] = 0;
+	PlayerInfo[playerid][pReszveny] = 0;
 	//PlayerInfo[playerid][pTextdrawszin] = 0;
 	PlayerInfo[playerid][pMobilnet] = NINCS;
 	LaptopConnected[playerid] = false;
@@ -31457,9 +31761,9 @@ fpublic OnPlayerStateChange(playerid, newstate, oldstate) // opsc
 
 		if(IsKocsi(newcar, "Prod")) 
 		{
-			SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Prodok: %d/%d", MAXPROD, PlayerHaul[newcar][pLoad]);
-			SendClientMessage(playerid, COLOR_WHITE, "INFO: A prodokat el tudod adni a bizniszeknél");
-			SendClientMessage(playerid, COLOR_WHITE, "INFO: Parancsok /load /buyprods /sellprods");
+			SendFormatMessage(playerid, TEAM_GROVE_COLOR, "Áru: %d/%d", MAXPROD, PlayerHaul[newcar][pLoad]);
+			SendClientMessage(playerid, COLOR_WHITE, "INFO: Az árukat el tudod adni a bizniszeknél / boltoknál");
+			SendClientMessage(playerid, COLOR_WHITE, "INFO: Parancsok /áru");
 		}
 		new munkakocsi = IsMunkaKocsi(newcar);
 		//new munkakocsiID = NINCS;
@@ -36109,6 +36413,7 @@ fpublic ShowStats(playerid,targetid)
 		new BizniszSzam = PlayerInfo[targetid][pPbiskey];
 		new TarsBizniszSzam = PlayerInfo[targetid][pBizniszKulcs];
 		new benzinkut = PlayerInfo[targetid][pBenzinkut];
+		new bolt = PlayerInfo[targetid][pBoltTulaj];
 		
 	
 
@@ -36117,8 +36422,6 @@ fpublic ShowStats(playerid,targetid)
 
 		new vkocsi[40], vkocsi2[40], vkocsi3[40], bkocsi[40], id, garazs[20];
 		new okocsi[40], okocsi2[40], okocsi3[40];
-		
-		
 
 		if(PlayerInfo[targetid][pPcarkey] != NINCS)
 		{
@@ -36189,6 +36492,7 @@ fpublic ShowStats(playerid,targetid)
 		new fizu = PlayerInfo[targetid][pPayCheck];
 		new bcash = PlayerInfo[targetid][pAccount];
 		new barany = PlayerInfo[targetid][pAranyBank];
+		new reszveny = PlayerInfo[playerid][pReszveny];
 		new Float:bkamat = PlayerInfo[targetid][pAranyBank] * ARANY_KAMAT;
 
 		new premiuminfo[45];
@@ -36239,6 +36543,8 @@ fpublic ShowStats(playerid,targetid)
 		//format(coordsstring, sizeof(coordsstring), "Garázs: %s | %s | Bérjármû: %s | PrémiumInfo: %s ", garazs, JHGarazs(targetid), bkocsi, premiuminfo);
 		//SendClientMessage(playerid, COLOR_GRAD5,coordsstring);
 		SendFormatMessage(playerid, COLOR_GRAD5, "Garázs: %s | %s | Bérjármû: %s | PrémiumInfo: %s | Benzinkút: %d", garazs, JHGarazs(targetid), bkocsi, premiuminfo, benzinkut);
+		
+		SendFormatMessage(playerid, COLOR_GRAD5, "Bolt: %d | Részvények: %ddb |", bolt, reszveny);
 		SendClientMessage(playerid, COLOR_GREEN,"========================================================================");
 	}
 }
@@ -37755,6 +38061,11 @@ stock BenzinKutFrissites(kut)
 	INI_Save(INI_TYPE_KUTDATA, kut);
 	return 1;
 }
+stock BoltAdatFrissites(boltok)
+{
+	INI_Save(INI_TYPE_BOLTDATA, boltok);
+	return 1;
+}
 stock TelefonFrissites(telefon)
 {
 	INI_Save(INI_TYPE_TELEFONDATA, telefon);
@@ -39268,6 +39579,9 @@ fpublic PayDay()
 			
 			if(PlayerInfo[i][pBenzinkut] != NINCS)	
 				SendFormatMessage(i, COLOR_WHITE, "Benzinkút széf: {00C0FF}%s{FFFFFF}Ft",FormatNumber( BenzinKutak[ PlayerInfo[i][pBenzinkut] ][bSzef], 0, ',' ));
+				
+			if(PlayerInfo[i][pBoltTulaj] != NINCS)	
+				SendFormatMessage(i, COLOR_WHITE, "Bolt széf: {00C0FF}%s{FFFFFF}Ft",FormatNumber( Boltok[ PlayerInfo[i][pBoltTulaj] ][boltSzef], 0, ',' ));
 			
 			new osszeg= floatround(adosz * ADO_ONKORMANYZAT_RESZE_FLOAT);
 			FrakcioSzef(FRAKCIO_ONKORMANYZAT,osszeg, 32);
@@ -39639,7 +39953,8 @@ fpublic AdatMentesSQL(playerid)
 		MysqlUpdateInt(query, "BrascoRang", PlayerInfo[playerid][pBrascoRang]);
 		MysqlUpdateInt(query, "AdminJailokSzama", PlayerInfo[playerid][pJailokSzama]);
 		MysqlUpdateStr(query, "VerdijOK", PlayerInfo[playerid][pContractOka]);
-		
+		MysqlUpdateInt(query, "Reszvenyek", PlayerInfo[playerid][pReszveny]);
+		//MysqlUpdateInt(query, "BoltTulaj", PlayerInfo[playerid][pBoltTulaj]);
 		
 		MysqlFinalUpdate(query, PlayerInfo[playerid][pID]);
 	}
@@ -40354,7 +40669,8 @@ stock AdatBetoltesSQL(playerid, bool: preQuery = true)
 	PlayerInfo[playerid][pBrascoRang] = sql_get_int(142);
 	PlayerInfo[playerid][pJailokSzama] = sql_get_int(143);
 	sql_get_str_len(144, PlayerInfo[playerid][pContractOka], 128);
-	
+	PlayerInfo[playerid][pReszveny] = sql_get_int(145);
+	//PlayerInfo[playerid][pBoltTulaj] = sql_get_int(146);
 	return 1;
 }
 

@@ -185,6 +185,24 @@ public OnGameModeInit()
 			BenzinKutak[b][bKerozinAra] = 400;
 		}
 	}
+	for(new b = 0; b < MAX_BOLTOK; b++)
+	{
+		//Bolt betöltése
+		new file[64];
+		format(file, 64, "data/boltok/%d.ini", b);
+				
+		if(fexist(file))
+			INI_ParseFile(file, "INI_Load_BoltData", .bExtra = true, .extra = b);
+		//===================	
+		if(Boltok[b][boltMaxProdMennyiseg] > 1000)
+		{
+			Boltok[b][boltMaxProdMennyiseg] = 300;
+		}
+		if(Boltok[b][boltProdVetelAr] < 0)
+		{
+			Boltok[b][boltProdVetelAr] = 1500;
+		}
+	}
 	IRCInfo[0][iPlayers] = 0; IRCInfo[1][iPlayers] = 0; IRCInfo[2][iPlayers] = 0;
 	IRCInfo[3][iPlayers] = 0; IRCInfo[4][iPlayers] = 0; IRCInfo[5][iPlayers] = 0;
 	IRCInfo[6][iPlayers] = 0; IRCInfo[7][iPlayers] = 0; IRCInfo[8][iPlayers] = 0;

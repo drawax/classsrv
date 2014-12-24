@@ -10,7 +10,7 @@
 #define SPAWNID 0
 
 #define ALAPINTERIORSZAM 1
-#define IDOHOZZAADAS 1 // 1h mert túl késõn sötétedik be.
+#define IDOHOZZAADAS 4 // 4h mert túl késõn sötétedik be. - Ryan
 #define MIN_VEHI_ID 400
 #define KereskedoSpawnok 2
 
@@ -188,6 +188,7 @@
 #define INI_TYPE_FRAKCIO		5
 #define INI_TYPE_OBJECT			6
 #define INI_TYPE_OBJECTTORLES	7
+#define INI_TYPE_BOLTDATA		8
 
 #define CAR_TYPE_NONE	0
 #define CAR_TYPE_VS		1

@@ -14,11 +14,14 @@ new tiltasures[128] = "ures";
 new tiltasnincsegy[128] = "NINCS";
 new tiltasnincsketto[128] = "nincs";*/
 
-//Ryan LV Tõzsde rendszer
+//Ryan Tõzsde rendszer
 new bool:VanLezer; // Be van e kapcsolva a lézer vagy nincs
 new TozsdeJelszo[24]; // Jelszó
 new lezer[21]; //A dynamic objectek tömbje
 new lezerzona; //A zóna
+
+
+new AKTIV_BOLTOK;
 
 
 new AdminDutySkin[MAX_PLAYERS];
