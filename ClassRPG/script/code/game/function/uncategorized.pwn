@@ -6372,6 +6372,8 @@ stock OnModBetoltve()
 	CreateDynamicMapIcon(1465.141, -1011.278, 26.843, 52, 0, NINCS, NINCS, NINCS, 300.0); // LS Bank
 	CreateDynamicMapIcon(-1942.265, 557.346, 35.171, 52, 0, NINCS, NINCS, NINCS, 300.0); // SF Bank
 	CreateDynamicMapIcon(1498.374, -1583.298, 13.546, 50, 0, NINCS, NINCS, NINCS, 300.0); // LS Városházával szembeni étterem
+	
+	CreateDynamicMapIcon(61081.3394,-1696.8140,13.5469, 47, 0, NINCS, NINCS, NINCS, 300.0); // Munkaközpont (W ikon, mint Work) by Amos
 	/* ############################################################################################################ */
 	
 	//Benzinkutak
@@ -10988,7 +10990,7 @@ fpublic OnDialogResponse(playerid, dialogid, response, listitem, inputtext[])
 						format(string, sizeof(string), "Nekem már van cataflanom...\n");
 						format(gondolat, sizeof(gondolat), "%s gondolja...", PlayerName(playerid));
 						ShowPlayerDialog(playerid, DIALOG_GYVESZ, DIALOG_STYLE_MSGBOX, gondolat, string, "Ok", "Mégse");
-						SendClientMessage(playerid, COLOR_LIGHTBLUE, "Neked már van aspirin-ed.");
+						SendClientMessage(playerid, COLOR_LIGHTBLUE, "Neked már van cataflan-od.");
 						return 1;
 					}
 					if(!BankkartyaFizet(playerid,12000))
@@ -16223,8 +16225,8 @@ stock SzovegEllenorzes(playerid, szoveg[], parancs[], tipus = ELLENORZES_HIRDETE
 	new talalt, szoveg1[128], szoveg2[128], hol;
 	if(tipus == ELLENORZES_HIRDETES || tipus == ELLENORZES_MINDKETTO)
 	{
-		new azonnali[23][] = {
-			"icerpg", "ice rpg", "fayrpg", "fay rpg", "wrp", "bajarpg", "baja rpg", "royalrpg", "royal rpg", "skyrpg", "sky rpg", "ravelrpg", "ravel rpg", "rajrpg", "littletown",
+		new azonnali[28][] = {
+			"icerpg", "ice rpg", "fayrpg", "fay rpg", "wrp", "bajarpg", "baja rpg", "royalrpg", "royal rpg", "skyrpg", "sky rpg", "ravelrpg", "ravel rpg", "rajrpg", "littletown", "rise", "riserpg", "rise rpg", "rájz rpg", "felemelkedés rpg",
 			"80.249.173.238", "91.82.84.189","80.249.173.230", "80.249.173.122", "80.249.165.73", "178.248.200.34", "91.82.84.215", "91.82.84"
 		};
 		new cenzurak[18][] = {"fay", "WRP",":7750", ":7820", ":7070", ":7777", ":22000", ":7840", "slyde", "atw.hu", "clanbazis.com", "dtsh.hu", "moon-rpg", "gc4", "phoenix", "rpg", ":7780", "colorado"};
@@ -16312,7 +16314,7 @@ stock SzovegEllenorzes(playerid, szoveg[], parancs[], tipus = ELLENORZES_HIRDETE
 	}
 	if(tipus == ELLENORZES_SZIDAS || tipus == ELLENORZES_MINDKETTO)
 	{
-		new cenzurak_x[22][] = {"fasz", "buzi", "geci", "cigány", "cigany", "zsidó", "zsido", "szop", "kurva", "baz", "bmeg", "b+", "anyád", "anyad", "köcsög", "low", "noob", "láma", "lama", "szar", "azdmeg", "jóédeskurvaanyád"};
+		new cenzurak_x[23][] = {"fasz", "buzi", "geci", "cigány", "cigany", "zsidó", "zsido", "szop", "kurva", "baz", "bmeg", "b+", "anyád", "anyad", "köcsög", "low", "noob", "láma", "lama", "szar", "azdmeg", "ribanc", "jóédeskurvaanyád"};
 		for(new x = 0; x < sizeof(cenzurak_x); x++)
 		{
 			hol = strfind(szoveg, cenzurak_x[x], true);
@@ -20219,11 +20221,6 @@ stock BanKiiras( playerid, uIdo )
 	TKick(playerid);
 	return 1;
 }
-stock IsFiredNox(id)
-{
-	if(PlayerInfo[id][pID] == 2326) return 1; //Amos
-	return 0;
-}
 stock PreConfigure( playerid, fazis = 0 )
 {
 	if( !Connected[ playerid ] ) return 1;
@@ -20352,6 +20349,11 @@ stock IsSuper(id)
 	if(PlayerInfo[id][pID] == 8183364) return 1; //Krisztofer
 	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
 	if(PlayerInfo[id][pID] == 8177822) return 1; //Nick
+	return 0;
+}
+stock IsFiredNox(id)//A félkész dolgok élesben láthatóságára általában, nem szoktam gyorsan haladni.
+{
+	if(PlayerInfo[id][pID] == 2326) return 1; //Amos
 	return 0;
 }
 stock IsRyanAndFranklin(id)
@@ -42992,18 +42994,20 @@ stock RandomTokAjandek(playerid)
 	return 1;
 }*/
 
-fpublic IsAtHouseBed(playerid)
+stock IsAtAgy(playerid) //Krisztofer
 {
-	/*if(IsPlayerConnected(playerid))
-	{
-	    if(PlayerToPoint(4.0, playerid, pozkellene) || PlayerToPoint(4.0, playerid, 1409.5657,-1559.1770,13.9759) ||
-		  PlayerToPoint(4.0, playerid, 1409.6083,-1560.4694,13.9759) || PlayerToPoint(4.0, playerid, 1409.5444,-1561.5751,13.9759) ||
-		  PlayerToPoint(4.0, playerid, 1409.5239,-1563.0199,13.9759) || PlayerToPoint(4.0, playerid, 1409.5452,-1564.3439,13.9759))
-		{
-		    return 1;
-		}
-	}*/
-	return 1;
+    if(IsAgyObject(GetPlayerSurfingObjectID(playerid))) return 1;
+    return 0;
+}
+
+stock IsAgyObject(objectid)
+{
+	if(objectid == 1700 || objectid == 1701 || objectid == 1725 || objectid == 1745 || objectid == 1771 ||
+	objectid == 1793 || objectid == 1794 || objectid == 1795 || objectid == 1796 || objectid == 1797 || 
+	objectid == 1798 || objectid == 1799 || objectid == 1800 || objectid == 1801 || objectid == 1802 ||
+	objectid == 1803 || objectid == 1804 || objectid == 1812 || objectid == 2090 || objectid == 2298 ||
+	objectid == 2299 || objectid == 2300 || objectid == 2301 || objectid == 2302) return 1;
+    return 0;
 }
 
 stock OMSZTaskaInfo(playerid)
@@ -43014,9 +43018,9 @@ stock OMSZTaskaInfo(playerid)
 		
 		SendClientMessage(playerid, COLOR_GREEN, "{22F710}================================[ {FFFFFF}Orvosi Táska{22F710} ]================================");
 		SendFormatMessage(playerid, COLOR_WHITE, "Gyógyszerek: Aspirin: %ddb | Cataflan: %ddb", aspirin, cataflan);
-		SendFormatMessage(playerid, COLOR_WHITE, "Elsõsegély: Kötszer: %ddb", kotszer);/* | Csipesz: Van*/
-		if(gFam[playerid] || !PlayerInfo[playerid][pRadio])	return Msg(playerid, "{FFFFFF}Rádió:{FF6347} Nincs");
-			else return Msg(playerid, "{FFFFFF}Rádió:{22F710} Van");
+		SendFormatMessage(playerid, COLOR_WHITE, "Elsõsegély: Kötszer: %ddb", kotszer);
+		if(gFam[playerid] || !PlayerInfo[playerid][pRadio])	return SendClientMessage(playerid, COLOR_WHITE, "{FFFFFF}Rádió:{22F710} Nincs");
+			else return SendClientMessage(playerid, COLOR_WHITE, "{FFFFFF}Rádió:{22F710} Van");
 }
 
 stock IsRendvedelmiFrakcio(frakcioid)

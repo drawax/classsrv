@@ -499,9 +499,9 @@ public OnPlayerText(playerid, text[]) //opt
 				RadioHallgatas[playerid] = NINCS;
 				return 0;
 			}
-			if(Allomas < 1 || Allomas > MAX_FRAKCIO)
+			if(Allomas < 1 || Allomas > MAX_FRAKCIO || Allomas != 22)
 			{
-				SendFormatMessage(playerid, Pink, "* Rádió állomások: 1-%d", MAX_FRAKCIO);
+				SendFormatMessage(playerid, Pink, "* Rádió állomások: 1-%d (kivéve (22) SSS)", MAX_FRAKCIO);
 				return 0;
 			}
 			RadioHallgatas[playerid] = Allomas;

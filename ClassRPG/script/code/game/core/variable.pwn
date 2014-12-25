@@ -848,3 +848,11 @@ new Felhatalmazas[MAX_PLAYERS][256];
 new Felhatalmazva[MAX_PLAYERS];
 //new VehicleInterior[MAX_VEHICLES];
 //new bool:swimming[MAX_PLAYERS];//Úszás
+
+new acselekves[MAX_PLAYERS];
+new atortenet[MAX_PLAYERS];
+new vacselekves[MAX_PLAYERS];
+
+new Text3D:cselekvesfelirat[MAX_PLAYERS];
+new Text3D:tortenesfelirat[MAX_PLAYERS];
+new Text3D:valakifelirat[MAX_PLAYERS];

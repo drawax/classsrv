@@ -12408,7 +12408,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "==============GPS - személyes lista==============");
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "/gps [funkció]");
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "* ház [házszám], házam [1/2], kocsim [1/2]");
-				SendClientMessage(playerid, COLOR_LIGHTGREEN, "* Fõbb helyek: LSvárosháza, SFvárosháza, kórház, LSPD, LSbank, SFbank, SSS, posta");
+				SendClientMessage(playerid, COLOR_LIGHTGREEN, "* Fõbb helyek: LSvárosháza, SFvárosháza, kórház, Munkaközpont, LSPD, LSbank, SFbank, SSS, posta");
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "* Szórakozóhelyek: alhambra, pigpen, kocsma, paintball(pb), groveclub, yakuzabar");
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "* Egyéb: fort, lottózó, parkoló, farm, fûnyírók, kukásautók, Oktató állomás, Pizza hut, Benzinkutak");
 				SendClientMessage(playerid, COLOR_LIGHTGREEN, "* Egyéb: LSSzerelõKözpont, SFSzerelõKözpont");
@@ -12621,6 +12621,11 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		if(egyezik(f,"berszef") || egyezik(f,"bérszéf"))
 		{
 			SetPlayerCheckpoint(playerid, 1247.654, -1564.028, 13.595, 3.0);
+		    return 1;
+		}
+		if(egyezik(f,"munkakozpont") || egyezik(f,"munkaközpont") || egyezik(f,"munkaközpont"))
+		{
+			SetPlayerCheckpoint(playerid, 1081.3394,-1696.8140,13.5469, 3.0);
 		    return 1;
 		}
 		if(egyezik(f,"autokerhq"))
@@ -33641,11 +33646,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			return SendClientMessage(playerid, COLOR_WHITE, "Nem vagy Rendõr / FBI / CIA / Sheriff Department / Katona / Mentõ / Tûzoltó / SWAT tag!");
 
 		new frakcio = PlayerInfo[playerid][pMember];
-		if(PlayerToPoint(3, playerid,255.3,77.4,1003.6) || //LSPD
+		if(PlayerToPoint(FrakcioInfo[frakcio][fDPosR], playerid, FrakcioInfo[frakcio][fDPosX],FrakcioInfo[frakcio][fDPosY],FrakcioInfo[frakcio][fDPosZ],FrakcioInfo[frakcio][fDVW],FrakcioInfo[frakcio][fDINT]) ||
+		PlayerToPoint(3, playerid, -1615.9227,684.7864,7.1875) || PlayerToPoint(5, playerid, 1564.318359375, 1207.8200683594, 9.8125)) //SWAT HQ
+		/*if(PlayerToPoint(3, playerid,255.3,77.4,1003.6) || //LSPD
 		PlayerToPoint(15, playerid, 2117.2380,-2524.6868,13.5659) || //LSPD új inti, régit bennhagyom hátha kellene még nekik
 		PlayerToPoint(100,playerid, 288.6565,172.2111,1007.1794) || //FBI HQ
 		PlayerToPoint(20,playerid,1600.4218,-1825.1154,13.4536) ||
-		PlayerToPoint(5, playerid, 1564.318359375, 1207.8200683594, 9.8125) ||  //SWAT HQ
 		PlayerToPoint(5, playerid, 1344.59997559,520.29998779,1068.30004883) ||  //SFPD
 		PlayerToPoint(5, playerid, 2505.2888,-2640.2583,13.8623) || //katona hq egyik duty hely
 		PlayerToPoint(5, playerid, 764.395,-1357.598,13.539) || //LS nav hq kint
@@ -33654,9 +33660,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		PlayerToPoint(5, playerid, 2744.5085,-2453.8015,13.8623) || //katona hq második duty hely
 		(PlayerToPoint(10, playerid, 1964.044, -2411.701, 13.559) && GetPlayerVirtualWorld(playerid) == 137) || // Tûzoltó HQ
 		(PlayerToPoint(20, playerid,1944.6885,-2458.5464,13.5703) && GetPlayerVirtualWorld(playerid) == 104) || //Kórház Interior
-		PlayerToPoint(3, playerid, -1615.9227,684.7864,7.1875) || // SF SWAT HQ
 		PlayerToPoint(20, playerid, 1776.2656,-1301.5513,13.5828) || // FBI HQ lent
-		PlayerToPoint(5, playerid, 280.8905,1855.4027,8.7759)) // katona HQ
+		PlayerToPoint(5, playerid, 280.8905,1855.4027,8.7759)) // katona HQ*/
 		{
 			tmp = strtok(cmdtext, idx);
 			if(!strlen(tmp))
@@ -33933,7 +33938,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		else
 		{
-			SendClientMessage(playerid, COLOR_WHITE, "Itt hol akarsz öltözni?! >.<");
+			SendFormatMessage(playerid, COLOR_YELLOW,"Nem vagy duty helyen! [VW: %d, INT: %d]",FrakcioInfo[frakcio][fDVW],FrakcioInfo[frakcio][fDINT]),SetPlayerCheckpoint(playerid, FrakcioInfo[frakcio][fDPosX],FrakcioInfo[frakcio][fDPosY],FrakcioInfo[frakcio][fDPosZ],FrakcioInfo[frakcio][fDPosR]);
 		}
 		return 1;
 	}
@@ -52088,7 +52093,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	{
 		if(!IsACop(playerid))
 		{
-			if(!IsPlayerInAnyVehicle(playerid) || IsAtHouseBed(playerid))
+			if(!IsPlayerInAnyVehicle(playerid) || IsAtAgy(playerid))
 			{
 				SendClientMessage(playerid, COLOR_GREY, "Csak kocsiba vagy ágyban tudsz Sexelni!");
 				return 1;
@@ -52364,10 +52369,10 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			if(FloodCheck(playerid, 10, 2)) return Msg(playerid, "Ezt nem kéne....");
 			
 			if(PlayerInfo[playerid][pLkocsi] > 400) return Msg(playerid, "Már van munkád!");
-			if(!PlayerToPoint(8, playerid, -1716.6292,-40.7065,3.5547)) 
+			if(!PlayerToPoint(10, playerid, 221.7762,113.9820,1010.2188,3223,10)) 
 			{
-				Msg(playerid, "Itt nem lehet!");
-				SetPlayerCheckpoint(playerid, -1716.6292,-40.7065,3.5547, 5);
+				Msg(playerid, "Munkát felvenni a Munkaügyi Központban tudsz!");
+				SetPlayerCheckpoint(playerid, 1081.3394,-1696.8140,13.5469, 5);
 				return 1;
 			}
 			
