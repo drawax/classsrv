@@ -194,13 +194,13 @@ public OnGameModeInit()
 		if(fexist(file))
 			INI_ParseFile(file, "INI_Load_BoltData", .bExtra = true, .extra = b);
 		//===================	
-		if(Boltok[b][boltMaxProdMennyiseg] > 1000)
+		if(Boltok[b][boltPozVW] == 0)
 		{
-			Boltok[b][boltMaxProdMennyiseg] = 300;
+			Boltok[b][boltPozVW] = 9999;
 		}
-		if(Boltok[b][boltProdVetelAr] < 0)
+		if(Boltok[b][boltPozInti] == 0)
 		{
-			Boltok[b][boltProdVetelAr] = 1500;
+			Boltok[b][boltPozInti] = 9999;
 		}
 	}
 	IRCInfo[0][iPlayers] = 0; IRCInfo[1][iPlayers] = 0; IRCInfo[2][iPlayers] = 0;
