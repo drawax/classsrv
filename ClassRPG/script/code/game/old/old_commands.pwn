@@ -28816,9 +28816,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 
 	if(strcmp(cmd, "/készít", true) == 0 ||strcmp(cmd, "/keszit", true) == 0)
 	{
-		
-		
-		
+		if(!LMT(playerid, 3) && !LMT(playerid, 8) && !LMT(playerid, 11) && !LMT(playerid, 17)) return Msg(playerid, "Csak a Bandák készíthetnek drogot!");
+
 	    if(IsPlayerConnected(playerid))
 	    {
 			new leveldrog = SkillLevel(PInfo(playerid,DrugsSkill));
@@ -36739,11 +36738,15 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			if(weapon < 1 || weapon > MAX_WEAPONS)
 				return Msg(playerid, "Ilyen fegyver nem létezik");
 			
-			/*if(weapon == WEAPON_M4	|| weapon == WEAPON_SNIPER || weapon == WEAPON_COMBAT || weapon == WEAPON_SHOTGUN)
+			if(weapon == WEAPON_M4	|| weapon == WEAPON_SNIPER || weapon == WEAPON_AK47 || weapon == WEAPON_COMBAT || weapon == WEAPON_SHOTGUN || weapon == WEAPON_RIFLE)
 			{
-				if(rang < 5) return Msg(playerid, "Ennél a fegyvernél minimum 5-ös rang kell!");
-			}*/
-				
+				if(rang < 13) return Msg(playerid, "Ennek a fegyvernek a szolgálatban való használatát határozatlan idõre tiltja a Kormány!");
+			}
+
+			if(weapon == WEAPON_MP5)
+			{
+				if(rang < 4) return Msg(playerid, "Ennek a fegyvernek az alkalmazása csak 4-es rangtól lehetséges.");
+			}
 			if(weapon == WEAPON_DEAGLE)
 				FrakcioInfo[frakcio][fDeagle][2] =rang;
 			if(weapon == WEAPON_AK47)

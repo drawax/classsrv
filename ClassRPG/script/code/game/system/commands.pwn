@@ -261,11 +261,11 @@ CMD:help(playerid, params[])
 			Msg(playerid,"Úttisztító: /úttisztítás", false, COLOR_YELLOW);
 		if(!IsACop(playerid))
 			Msg(playerid,"Prostituált: /sex", false, COLOR_YELLOW);
-		if(!IsACop(playerid))
+		if(LMT(playerid, 3) && LMT(playerid, 8) && LMT(playerid, 11) && LMT(playerid, 17))
 			Msg(playerid,"Drogkereskedõ: /szed /készít", false, COLOR_YELLOW);
 	    if(!IsACop(playerid))
 			Msg(playerid,"Autótolvaj: /car /ellop", false, COLOR_YELLOW);
-		if(!IsACop(playerid))
+		if(LMT(playerid, 5) && LMT(playerid, 6) && LMT(playerid, 21))
 			Msg(playerid,"Fegyverkereskedõ: /felvesz /készít", false, COLOR_YELLOW);
         if(!IsACop(playerid))
 			Msg(playerid,"Hacker: /hack", false, COLOR_YELLOW);
@@ -511,7 +511,7 @@ CMD:gy4gyszer(playerid, params[])
 	
 	if(sscanf(params, "s[32]", param)) 
 	{
-		Msg(playerid,"/gyógyszer [aspirin / cataflan / info /]");
+		Msg(playerid,"/gyógyszer [aspirin / cataflan / info]");
 		
 		return 1;
 	}
@@ -560,7 +560,7 @@ CMD:gy4gyszer(playerid, params[])
 	}
 	return 1;
 }
-//Már fölöslegessé vált alias kivéve by Amos
+
 CMD:taxi(playerid, params[])
 {
 	if(!LMT(playerid,FRAKCIO_TAXI)) return Msg(playerid, "Csak taxisok!");
@@ -747,7 +747,7 @@ CMD:object(playerid, params[])
 			Msg(playerid, "Hotdog: 1340, | Italautomata: 1775 | Csokiautomata: 1776 | Szerencsegép: 2754 | Telefon: 1216");
 			Msg(playerid, "Ha nem írsz id-t automata üresra rakja.");
 			
-			if(IsTerno(playerid))
+			if(IsSuper(playerid))
 			{
 				Msg(playerid,"19808-19999 (19901 kivételével)");
 				Msg(playerid,"Sebeség korlátok: 30: 19878 50: 19880 90: 19884 130:19888 Övezet30: 19893 / 19895");
@@ -2655,7 +2655,7 @@ CMD:koszt(playerid, params[])
    //if(PInfo(playerid,Jailed) != 7) return Msg(playerid, "Nem a fegyenctelepen vagy elhelyezve, így nem kérhetsz kosztot!");
    if(!PInfo(playerid,Jailed)) return Msg(playerid, "Nem vagy börtönben");
    new kaja[32];
-   if(sscanf(params, "s[32]", kaja)) return Msg(playerid, "/koszt [bableves/tojásleves/sertéspörkölt/rántotthús/borsófõzelék/krumplifõzelék/tökfözelék/tökleves]");
+   if(sscanf(params, "s[32]", kaja)) return Msg(playerid, "/koszt [bableves/tojásleves/sertéspörkölt/rántotthús/borsófõzelék/krumplifõzelék/tökfözelék/tökleves/hagymásleves]");
    if(egyezik(kaja, "bableves"))
       Szukseglet(playerid, -7.5, -2.5),Cselekves(playerid, "kért egy adag bablevest.");
    elseif(egyezik(kaja, "tojásleves") || egyezik(kaja, "tojasleves"))
@@ -2667,11 +2667,9 @@ CMD:koszt(playerid, params[])
    elseif(egyezik(kaja, "borsófõzelék") || egyezik(kaja, "borsofozelek"))
       Szukseglet(playerid, -8.5, -1.5),Cselekves(playerid, "kért egy adag borsófõzeléket.");
    elseif(egyezik(kaja, "krumplifõzelék") || egyezik(kaja, "krumplifozelek"))
-      Szukseglet(playerid, -4.5, -5.5),Cselekves(playerid, "kért egy adag tojáslevest.");
+      Szukseglet(playerid, -4.5, -5.5),Cselekves(playerid, "kért egy adag krumplifõzeléket.");
    elseif(egyezik(kaja, "tökfözelék") || egyezik(kaja, "tokfozelek"))
       Szukseglet(playerid, -5.5, -4.5),Cselekves(playerid, "kért egy adag tökfözelék.");
-   elseif(egyezik(kaja, "tökleves") || egyezik(kaja, "tokleves"))
-      Szukseglet(playerid, -6.5, -6.3),Cselekves(playerid, "kért egy adag tökleves.");
    else return Msg(playerid,"Nincs ilyen koszt.");
    
    Evett[playerid] = UnixTime+300;
@@ -6056,6 +6054,8 @@ CMD:fegyver(playerid, params[])
 	}
 	else if(egyezik(func, "készít") || egyezik(func, "keszit"))
 	{
+		if(!LMT(playerid, 5) && !LMT(playerid, 6) && !LMT(playerid, 21)) return Msg(playerid, "Csak a Maffia készíthet fegyvert!");//Maffia készíthet csak fegyvert feltétel by Amos
+	
 		if(Szint(playerid) < WEAPON_MIN_LEVEL)
 			return SendFormatMessage(playerid, COLOR_LIGHTRED, "Hiba: Fegyverhasználat nem engedélyezett a %d. szintig", WEAPON_MIN_LEVEL);
 		
