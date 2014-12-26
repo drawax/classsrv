@@ -9,6 +9,48 @@
  *    é: 2   ö: 5   ü: 8    *
  *    í: 3   õ: 6   û: 9    *  
  ****************************/
+
+CMD:adminfelirat(playerid, params[])//feliratot rak a fejed fölés by Amos
+{
+	if(IsSuper(playerid))
+	if(Csendvan && PlayerInfo[playerid][pAdmin] == 0) return Msg(playerid, "Most nem beszélhetsz!");
+	if(Leutve[playerid]) return Msg(playerid,"Leütve nem cselekedhetsz semmit!");
+	new result[100], string[140];
+	if(sscanf(params, "s[100]", result))
+	{
+		Msg(playerid, "Használat: /adminfelirat [leírás]");
+		Msg(playerid, "A kikapcsolásához: /adminfelirat ki");
+		return 1;
+	}
+	if(strlen(result) >3) return Msg(playerid, "A leírásnak hosszabbnak kell lennie, mint 3 karakter.");
+	if(strcmp(result, "ki", true) == 0)
+	{
+		if(adminszoveg[playerid] == 0) return Msg(playerid, "Most már nincsen felirat a fejed fölött.");
+		DestroyDynamic3DTextLabel(adminfelirat[playerid]);
+		Msg(playerid, "/adminfelirat törölve.");
+		acselekves[playerid] = 0;
+		return 1;
+	}
+	if(adminszoveg[playerid] == 0)
+	{
+		format(string, sizeof(string), "* %s *", playerid);
+		adminfelirat[playerid] = CreateDynamic3DTextLabel(string, COLOR_RED, 0.0, 0.0, 0.0, 40.0, playerid);
+		format(string, sizeof(string), "FELIRAT: %s", string);
+		Msg(playerid, "/fme kirakva a fejed fölé.");
+		SendClientMessage(playerid, COLOR_RED, string);
+		adminszoveg[playerid] = 1;
+	}
+	else
+	{
+		format(string, sizeof(string), "* %s *", playerid);
+		UpdateDynamic3DTextLabelText(adminfelirat[playerid], COLOR_RED, string);
+		format(string, sizeof(string), "FELIRAT: %s", string);
+		SendClientMessage(playerid, COLOR_RED, string);
+		return 1;
+	}
+	return 1;
+}
+
 ALIAS(fecs):fme;
 ALIAS(fejcselekv2s):fme; //feje fölé írja a cselekvést by Amos
 CMD:fme(playerid, params[])

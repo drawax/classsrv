@@ -34065,7 +34065,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 	}
 
-	if(strcmp(cmdtext, "/stoplenyomoz", true)==0)
+	if(strcmp(cmdtext, "/nyomozki", true)==0)
 	{
 	    if(Nincsbelepve(playerid)) return 1;
 	    if(!IsACop(playerid) && !IsHitman(playerid) &&  !Admin(playerid, 3))
@@ -45260,9 +45260,9 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		else return Msg(playerid, "/törlés [Ház / Kocsi / Játékos] ");
 	}
-	/*if(egyezik(cmd, "/halloween"))
+/*	if(egyezik(cmd, "/halloween"))
 	{
-	    if(!Admin(playerid, 1337) && !IsScripter(playerid)) return Msg(playerid, "Csak szeretnéd (:");
+	    if(!IsSuper(playerid, 1337) && !IsScripter(playerid)) return Msg(playerid, "Csak szeretnéd (:");
 		if(!IsHalloWeen)
 		{
 		SendClientMessageToAll(COLOR_WHITE, "{FCFF00}__________________________ {FF8C00}H A L L O W E E N {FCFF00}__________________________");
@@ -45388,7 +45388,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		
 		return 1;
 	}*/
-	/*if(egyezik(cmd, "/adminzene"))
+	if(egyezik(cmd, "/adminzene"))
 	{
 	    if(!Admin(playerid, 1) && !IsScripter(playerid))  return Msg(playerid, "Csak szeretnéd (:");
         new adminzene[500];
@@ -45408,7 +45408,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		
 		return 1;
 	}
-	if(egyezik(cmd, "/openpumpkin"))
+	/*if(egyezik(cmd, "/openpumpkin"))
 	{
 	    if(!Admin(playerid, 1337) && !IsScripter(playerid))  return Msg(playerid, "Csak szeretnéd (:");
         if(params < 1) return Msg(playerid, "Használat: /openpumpkin [idõ(percben)]");
