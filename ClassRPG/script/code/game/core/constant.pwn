@@ -10,28 +10,28 @@ stock const
 
 
 new const FishNames[MAX_FISH_NAMES][32] = {
-{"Kabát"},
-{"Dzseki"},
-{"Fûrészes Sügér"},
-{"Vörös Csattogóhal"},
-{"Nadrág"},
-{"Pisztráng"},
-{"Blue Marlin"},
-{"Doboz"},
-{"Makréla"},
-{"Tengeri Sügér"},
-{"Bakancs"},
-{"Csuka"},
-{"Vitorláshal"},
-{"Szemét"},
-{"Tonhal"},
-{"Angolna"},
-{"Delfin"},
-{"Cápa"},
-{"Teknõs"},
-{"Harcsa"},
-{"Money Bag"},
-{"Kardhal"}
+{"Kabát"},//1
+{"Dzseki"},//2
+{"Fûrészes Sügér"},//3
+{"Vörös Csattogóhal"},//4
+{"Nadrág"},//5
+{"Pisztráng"},//6
+{"Blue Marlin"},//7
+{"Doboz"},//8
+{"Makréla"},//9
+{"Tengeri Sügér"},//10
+{"Bakancs"},//11
+{"Csuka"},//12
+{"Vitorláshal"},//13
+{"Szemét"},//14
+{"Tonhal"},//15
+{"Angolna"},//16
+{"Delfin"},//17
+{"Cápa"},//18
+{"Teknõs"},//19
+{"Harcsa"},//20
+{"Pénzes Zsák"},//21
+{"Kardhal"}//22
 };
 
 new const Float:PaintballSpawns[14][3] = {
@@ -2721,7 +2721,7 @@ new const Float:AJCP[13][4] = {
 
 
 
-new const JailSzovegek[53][128] = {
+new const JailSzovegek[54][128] = {
 	{"A kezdõ játékosokat minden esetben segítem, nem verem át és nem ölöm meg õket."},
 	{"A szerveren kizárólag a szabályok maximális betartásával játszom."},
 	{"Az adminokat reportban nem zaklatom, nem odaillõ témákkal, kérdésekkel."},
@@ -2774,7 +2774,8 @@ new const JailSzovegek[53][128] = {
 	{"Ha egy admin nem válaszol, türelmesen várok, nem floodolok."},
 	{"Kis karakteren nem tárolok pénzt, mivel tudom, hogy ez tilos."},
 	{"A frakció széfbe soha nem rakok saját cuccokat."},
-	{"Bilincsben egy helyben maradok, nem rohangálok össze-vissza."}
+	{"Bilincsben egy helyben maradok, nem rohangálok össze-vissza."},
+	{"Scriptert csak nagyon indokolt esetben keresek fel a problémámmal."}
 };
 
 new const ItemName[MAX_ITEM_TYPE][20] = {

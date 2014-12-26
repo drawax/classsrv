@@ -43023,12 +43023,23 @@ stock OMSZTaskaInfo(playerid)
 			else return SendClientMessage(playerid, COLOR_WHITE, "{FFFFFF}Rádió:{22F710} Van");
 }
 
-stock IsRendvedelmiFrakcio(frakcioid)
+stock IsRendvedelmiFrakcio(fkid)
 {
-	if(frakcioid == FRAKCIO_SCPD || frakcioid == FRAKCIO_FBI || frakcioid == FRAKCIO_KATONASAG || frakcioid == FRAKCIO_SFPD || frakcioid == FRAKCIO_NAV) return 1;
+	if(fkid == FRAKCIO_SCPD || fkid == FRAKCIO_FBI || fkid == FRAKCIO_KATONASAG || fkid == FRAKCIO_SFPD || fkid == FRAKCIO_NAV) return 1;
 	return 0;
 }
 
+stock IsMaffia(fkid)// Maffiák meghatározása egyszerûsítésnek by Amos
+{
+	if(fkid == FRAKCIO_COSANOSTRA || fkid == FRAKCIO_TURKEY || fkid == FRAKCIO_YAKUZA) return 1;
+	return 0;
+}
+
+stock IsBanda(fkid)// Bandák meghatározása egyszerûsítésnek by Amos
+{
+	if(fkid == FRAKCIO_GSF || fkid == FRAKCIO_SONSOFANARCHY || fkid == FRAKCIO_AZTEC || fkid == FRAKCIO_VAGOS) return 1;
+	return 0;
+}
 /*stock IsPlayerInWater( playerid ) //By Ryan
 {
         new Float[ 3 ];

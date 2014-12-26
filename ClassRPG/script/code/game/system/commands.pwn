@@ -22,7 +22,7 @@ CMD:fme(playerid, params[])
 		Msg(playerid, "A kikapcsolásához: /fme ki");
 		return 1;
 	}
-	if(strlen(result) >100) return Msg(playerid, "A leírásnak hosszabbnak kell lennie, mint 100 karakter.");
+	if(strlen(result) >30) return Msg(playerid, "A leírásnak hosszabbnak kell lennie, mint 30 karakter.");
 	if(strcmp(result, "ki", true) == 0)
 	{
 		if(acselekves[playerid] == 0) return Msg(playerid, "Most már nincsen felirat a fejed fölött.");
@@ -60,7 +60,7 @@ CMD:fdo(playerid, params[])// Feje fölé írja a történést by Amos
 		Msg(playerid, "A kikapcsolásához: /fdo ki");
 		return 1;
 	}
-	if(strlen(result) >100) return Msg(playerid, "A leírásnak hosszabbnak kell lennie, mint 100 karakter.");
+	if(strlen(result) >30) return Msg(playerid, "A leírásnak hosszabbnak kell lennie, mint 30 karakter.");
 	if(strcmp(result, "ki", true) == 0)
 	{
 		if(atortenet[playerid] == 0) return Msg(playerid, "Most már nincsen felirat a fejed fölött.");
@@ -261,11 +261,11 @@ CMD:help(playerid, params[])
 			Msg(playerid,"Úttisztító: /úttisztítás", false, COLOR_YELLOW);
 		if(!IsACop(playerid))
 			Msg(playerid,"Prostituált: /sex", false, COLOR_YELLOW);
-		if(LMT(playerid, 3) && LMT(playerid, 8) && LMT(playerid, 11) && LMT(playerid, 17))
+		if(IsBanda(playerid))
 			Msg(playerid,"Drogkereskedõ: /szed /készít", false, COLOR_YELLOW);
 	    if(!IsACop(playerid))
 			Msg(playerid,"Autótolvaj: /car /ellop", false, COLOR_YELLOW);
-		if(LMT(playerid, 5) && LMT(playerid, 6) && LMT(playerid, 21))
+		if(IsMaffia(playerid))
 			Msg(playerid,"Fegyverkereskedõ: /felvesz /készít", false, COLOR_YELLOW);
         if(!IsACop(playerid))
 			Msg(playerid,"Hacker: /hack", false, COLOR_YELLOW);
@@ -6054,7 +6054,7 @@ CMD:fegyver(playerid, params[])
 	}
 	else if(egyezik(func, "készít") || egyezik(func, "keszit"))
 	{
-		if(!LMT(playerid, 5) && !LMT(playerid, 6) && !LMT(playerid, 21)) return Msg(playerid, "Csak a Maffia készíthet fegyvert!");//Maffia készíthet csak fegyvert feltétel by Amos
+		if (!IsMaffia(playerid)) return Msg(playerid, "Csak a Maffia készíthet fegyvert!");//Maffia készíthet csak fegyvert feltétel by Amos
 	
 		if(Szint(playerid) < WEAPON_MIN_LEVEL)
 			return SendFormatMessage(playerid, COLOR_LIGHTRED, "Hiba: Fegyverhasználat nem engedélyezett a %d. szintig", WEAPON_MIN_LEVEL);

@@ -28816,7 +28816,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 
 	if(strcmp(cmd, "/készít", true) == 0 ||strcmp(cmd, "/keszit", true) == 0)
 	{
-		if(!LMT(playerid, 3) && !LMT(playerid, 8) && !LMT(playerid, 11) && !LMT(playerid, 17)) return Msg(playerid, "Csak a Bandák készíthetnek drogot!");
+		if(!IsBanda(playerid)) return Msg(playerid, "Csak a Bandák készíthetnek drogot!");
 
 	    if(IsPlayerConnected(playerid))
 	    {
