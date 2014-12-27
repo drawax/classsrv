@@ -7,7 +7,7 @@
 
 // MYSQL :: MAIN CREDENTIALS
 #define SQL_User "root"
-#define SQL_Jelszo "Hát erre nem számítottál mi?:D Meg se próbáld, nem ez a jelszó:P" // Ryan automata rootpw levédõ scriptje miatt látod azt amit..
+#define SQL_Jelszo "Ed42FMLyLwAvde4j" // Ryan automata rootpw levédõ scriptje miatt látod azt amit..
 #define SQL_Adatbazis "class_db"
 
 // MYSQL :: TEST CREDENTIALS

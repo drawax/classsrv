@@ -150,6 +150,8 @@
 #define HAZ_Butorok 32
 #define HAZ_Alma 33
 #define HAZ_Arany 34
+#define HAZ_Kulcsok1 35
+#define HAZ_Kulcsok2 36
 
 #define GARAZS_Tulajid 30
 #define GARAZS_Eladva 31

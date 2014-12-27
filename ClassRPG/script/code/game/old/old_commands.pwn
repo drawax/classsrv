@@ -10868,7 +10868,9 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			strmid(HouseInfo[cucc][hOwner], nev, 0, strlen(nev), MAX_PLAYER_NAME);
 			HouseInfo[cucc][hTulaj] = PlayerInfo[player][pID];
 			//HazUpdate(cucc, "Tulaj='%s'", nev);
-			HazUpdate(cucc, HAZ_Owner, HAZ_Tulaj);
+			HouseInfo[cucc][hKulcsVan][0] = NINCS;
+			HouseInfo[cucc][hKulcsVan][1] = NINCS;
+			HazUpdate(cucc, HAZ_Owner, HAZ_Tulaj, HAZ_Kulcsok1, HAZ_Kulcsok2);
 			PlayerInfo[playerid][pPhousekey] = NINCS;
 			PlayerInfo[playerid][pLakcimkartya] = 0;
 
@@ -22910,6 +22912,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		{
 			new mit[256], mennyit;
 			new house = HazabanVan(playerid);
+			if(house == NINCS) house = HazabanVan2(playerid);
 			if(house != NINCS)
 			{
 				tmp = strtok(cmdtext, idx);
@@ -23417,8 +23420,9 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	{
 	    if(IsPlayerConnected(playerid))
 	    {
-	        if(NincsHaza(playerid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs házad!");
+	        if(NincsHaza(playerid) && NincsHaza2(playerid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs házad sem házkulcsod!");
 			new house = HazabanVan(playerid);
+			if(house == NINCS) house = HazabanVan2(playerid);
 	        if(house == NINCS)
 	            return Msg(playerid, "Nem vagy a házadban!");
 
@@ -23452,8 +23456,9 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	{
 	    if(IsPlayerConnected(playerid))
 	    {
-	        if(NincsHaza(playerid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs házad!");
+	        if(NincsHaza(playerid) && NincsHaza2(playerid)) return SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs házad sem házkulcsod!");
 			new house = HazabanVan(playerid);
+			if(house == NINCS) house = HazabanVan2(playerid);
 	        if(house == NINCS)
 	            return Msg(playerid, "Nem vagy a házadban!");
 
@@ -23596,10 +23601,10 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	{
 	    if(Nincsbelepve(playerid)) return 1;
 
-		if(NincsHaza(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Nincs házad!");
+		if(NincsHaza(playerid) && NincsHaza2(playerid)) return SendClientMessage(playerid, COLOR_GREY, "Nincs házad se házkulcsod!");
 
-		if(HazabanVan(playerid) == NINCS)
-			return Msg(playerid, "Nem vagy a házadban!");
+		if(HazabanVan(playerid) == NINCS && HazabanVan2(playerid) == NINCS)
+			return Msg(playerid, "Nem vagy a házadban vagy nincs házkulcsod!");
 
 		new house = IsAt(playerid, IsAt_Haz);
 
@@ -23630,6 +23635,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			GetPlayerName(playerid, playername, sizeof(playername));
 
 			new house = HazabanVan(playerid);
+			if(house == NINCS) house = HazabanVan2(playerid);
 			if(house != NINCS)
 			{
 
@@ -37419,6 +37425,8 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	    {
 			new haz = HazaElottVan(playerid), berel = PlayerInfo[playerid][pBerlo];
 			if(haz == NINCS) haz = HazabanVan(playerid);
+			if(haz == NINCS) haz = HazaElottVan2(playerid);
+			if(haz == NINCS) haz = HazabanVan2(playerid);
 
 			if(berel == NINCS || (!Haznal(playerid, berel) && !Hazban(playerid, berel)))
 				berel = NINCS;
@@ -45108,7 +45116,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		{
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /anév /unbanip /adminálnév(be) /aterület /ujmodel /warvan");
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /álnév /atuningolás /robbant /pozmentés /noooc /pmek /fa /tod /setweaponskill");
-			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /igénytörlése /ujadatok /ház /háztipus /ip /kormány /örökkulcs töröl");
+			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /igénytörlése /ujadatok /ház /háztipus /ip /kormány /kocsikulcs töröl /házkulcs töröl");
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /garázs /asellbiz /edit /munkaid /jármûhp /desync /weather /ppont /szint /óra");
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /arcmost /startlotto /makeadmin /makeleader /maketagsag /mati /raktár érték");
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /kocsikulcs /házkulcs /bizniszkulcs /setstat /fuelcar /aopen /npc /szerelõ /autoker /swat");
@@ -45178,7 +45186,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		{
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /anév /unbanip /adminálnév(be) /aterület /ujmodel /warvan");
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /álnév /atuningolás /robbant /pozmentés /noooc /pmek /fa /tod /setweaponskill");
-			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /igénytörlése /ujadatok /ház /háztipus /ip /kormány /örökkulcs töröl");
+			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /igénytörlése /ujadatok /ház /háztipus /ip /kormány /kocsikulcs töröl /házkulcs töröl");
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /garázs /asellbiz /edit /munkaid /jármûhp /desync /weather /ppont /szint /óra");
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /arcmost /startlotto /makeadmin /makeleader /maketagsag /mati /raktár érték");
 			SendClientMessage(playerid, COLOR_DARKYELLOW,"FõAdmin(1337): /kocsikulcs /házkulcs /bizniszkulcs /setstat /fuelcar /aopen /npc /szerelõ /autoker /swat");
@@ -52096,7 +52104,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	{
 		if(!IsACop(playerid))
 		{
-			if(!IsPlayerInAnyVehicle(playerid) || IsAtAgy(playerid))
+			if(!IsPlayerInAnyVehicle(playerid) && !IsAtAgy(playerid))
 			{
 				SendClientMessage(playerid, COLOR_GREY, "Csak kocsiba vagy ágyban tudsz Sexelni!");
 				return 1;

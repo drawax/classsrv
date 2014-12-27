@@ -12,7 +12,7 @@
 
 CMD:adminfelirat(playerid, params[])//feliratot rak a fejed fölés by Amos
 {
-	if(IsSuper(playerid))
+	if(!IsSuper(playerid)) return 1;
 	if(Csendvan && PlayerInfo[playerid][pAdmin] == 0) return Msg(playerid, "Most nem beszélhetsz!");
 	if(Leutve[playerid]) return Msg(playerid,"Leütve nem cselekedhetsz semmit!");
 	new result[100], string[140];
@@ -996,15 +996,14 @@ CMD:object(playerid, params[])
 	}
 	return 1;
 }
-ALIAS(5r5kkulcs):orokkulcs;
-CMD:orokkulcs(playerid, params[])
+CMD:kocsikulcs(playerid, params[])
 {
 	new pm[32], pid, kid, spm[32], jarmu;
 	if(PlayerInfo[playerid][pPcarkey] == NINCS && PlayerInfo[playerid][pPcarkey2] == NINCS && PlayerInfo[playerid][pPcarkey3] == NINCS) return Msg(playerid, "Nincs jármûved.");
-	if(sscanf(params, "s[32]S()[32]", pm, spm)) { Msg(playerid, "/örökkulcs [ad/elvesz]"); if(Admin(playerid, 1337)) Msg(playerid, "/örökkulcs töröl"); return true; }
+	if(sscanf(params, "s[32]S()[32]", pm, spm)) { Msg(playerid, "/kocsikulcs [ad/elvesz]"); if(Admin(playerid, 1337)) Msg(playerid, "/kocsikulcs töröl"); return true; }
 	if(egyezik(pm, "ad"))
 	{
-		if(sscanf(spm, "ri", pid, kid)) return Msg(playerid, "/örökkulcs ad [név/id] [1/2/3]");
+		if(sscanf(spm, "ri", pid, kid)) return Msg(playerid, "/kocsikulcs ad [név/id] [1/2/3]");
 		if(pid == INVALID_PLAYER_ID || pid == playerid) return Msg(playerid, "Nem létezõ játékos");
 		if(GetDistanceBetweenPlayers(playerid, pid) > 3.0) return Msg(playerid, "Nincs a közeledben a játékos.");
 		if(kid == 1)
@@ -1044,7 +1043,7 @@ CMD:orokkulcs(playerid, params[])
 	}
 	elseif(egyezik(pm, "elvesz"))
 	{
-		if(sscanf(spm, "ri", pid, kid)) return Msg(playerid, "/örökkulcs elvesz [név/id] [1/2/3]");
+		if(sscanf(spm, "ri", pid, kid)) return Msg(playerid, "/kocsikulcs elvesz [név/id] [1/2/3]");
 		if(pid == INVALID_PLAYER_ID || pid == playerid) return Msg(playerid, "Nem létezõ játékos");
 		if(GetDistanceBetweenPlayers(playerid, pid) > 3.0) return Msg(playerid, "Nincs a közeledben a játékos.");
 		if(kid == 1)
@@ -1086,7 +1085,7 @@ CMD:orokkulcs(playerid, params[])
 	{
 		if(!Admin(playerid, 1337)) return 1;
 		new type;
-		if(sscanf(spm, "ri", pid, type)) return Msg(playerid, "/örökkulcs töröl [név/id] [1/2/3]");
+		if(sscanf(spm, "ri", pid, type)) return Msg(playerid, "/kocsikulcs töröl [név/id] [1/2/3]");
 		if(pid == INVALID_PLAYER_ID) return Msg(playerid, "Nem létezõ játékos");
 		switch(type)
 		{
@@ -1134,6 +1133,152 @@ CMD:orokkulcs(playerid, params[])
 			
 				
 				format(_tmpString,sizeof(_tmpString),"<< %s %s elvette %s 3. pótkulcsát >>", AdminRangNev(playerid), AdminName(playerid), PlayerName(pid));
+				SendMessage(SEND_MESSAGE_ADMIN,_tmpString,COLOR_LIGHTRED,PlayerInfo[playerid][pAdmin]);
+			}
+			default: Msg(playerid, "1/2/3");
+		}
+	}
+	return 1;
+}
+
+ALIAS(h1zkulcs):hazkulcs;
+CMD:hazkulcs(playerid, params[])
+{
+	new pm[32], pid, kid, spm[32], haz;
+	if(PlayerInfo[playerid][pPhousekey] == NINCS && PlayerInfo[playerid][pPhousekey2] == NINCS && PlayerInfo[playerid][pPhousekey3] == NINCS) return Msg(playerid, "Nincs házad, akkor minek a kulcsát akarod átadni? c(:.");
+	if(sscanf(params, "s[32]S()[32]", pm, spm)) { Msg(playerid, "/házkulcs [ad/elvesz]"); if(Admin(playerid, 1337)) Msg(playerid, "/házkulcs töröl"); return true; }
+	if(egyezik(pm, "ad"))
+	{
+		if(sscanf(spm, "ri", pid, kid)) return Msg(playerid, "/házkulcs ad [név/id] [1/2/3]");
+		if(pid == INVALID_PLAYER_ID || pid == playerid) return Msg(playerid, "Nem létezõ játékos");
+		if(GetDistanceBetweenPlayers(playerid, pid) > 3.0) return Msg(playerid, "Nincs a közeledben a játékos.");
+		if(kid == 1)
+		{
+			if(PlayerInfo[playerid][pPhousekey] == NINCS) return true;
+			haz = PlayerInfo[playerid][pPhousekey];
+		}
+		elseif(kid == 2)
+		{
+			if(PlayerInfo[playerid][pPhousekey2] == NINCS) return true;
+			haz = PlayerInfo[playerid][pPhousekey2];
+		}
+		elseif(kid == 3)
+		{
+			if(PlayerInfo[playerid][pPhousekey3] == NINCS) return true;
+			haz = PlayerInfo[playerid][pPhousekey3];
+		}
+		else return Msg(playerid, "Úgy tudom csak 3 házad lehet, nem? :)");
+		
+		if(HouseInfo[haz][hKulcsVan][0] != NINCS && HouseInfo[haz][hKulcsVan][1] != NINCS) return Msg(playerid,"Csak két pótkulcs van hozzá, amiket már átadtál valakinek!");
+		if(PlayerInfo[pid][pHazKulcsok][0] != NINCS && PlayerInfo[pid][pHazKulcsok][1] != NINCS && PlayerInfo[pid][pHazKulcsok][2] != NINCS) return Msg(playerid,"Már van 3 kulcsa, ennél több nem lehet neki!");
+		
+		if(PlayerInfo[pid][pHazKulcsok][0] == NINCS)
+			PlayerInfo[pid][pHazKulcsok][0] = haz;
+		elseif(PlayerInfo[pid][pHazKulcsok][1] == NINCS)
+			PlayerInfo[pid][pHazKulcsok][1] = haz;
+		elseif(PlayerInfo[pid][pHazKulcsok][2] == NINCS)
+			PlayerInfo[pid][pHazKulcsok][2] = haz;
+		
+		if(HouseInfo[haz][hKulcsVan][0] == NINCS)
+			HouseInfo[haz][hKulcsVan][0] = PlayerInfo[pid][pID], HazUpdate(haz, HAZ_Kulcsok1);
+		else
+			HouseInfo[haz][hKulcsVan][1] = PlayerInfo[pid][pID], HazUpdate(haz, HAZ_Kulcsok2);
+		
+		SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Átadtad a házad egyik pótkulcsát neki: %s | Házszám: %d", ICPlayerName(pid), haz);
+		SendFormatMessage(pid, COLOR_LIGHTGREEN, "* %s odaadta a háza egyik pótkulcsát neked | Házszám: %d", ICPlayerName(playerid), haz);
+	}
+	elseif(egyezik(pm, "elvesz"))
+	{
+		if(sscanf(spm, "ri", pid, kid)) return Msg(playerid, "/házkulcs elvesz [név/id] [1/2/3]");
+		if(pid == INVALID_PLAYER_ID || pid == playerid) return Msg(playerid, "Nem létezõ játékos");
+		if(GetDistanceBetweenPlayers(playerid, pid) > 3.0) return Msg(playerid, "Nincs a közeledben a játékos.");
+		if(kid == 1)
+		{
+			if(PlayerInfo[playerid][pPhousekey] == NINCS) return true;
+			haz = PlayerInfo[playerid][pPhousekey];
+		}
+		elseif(kid == 2)
+		{
+			if(PlayerInfo[playerid][pPhousekey2] == NINCS) return true;
+			haz = PlayerInfo[playerid][pPhousekey2];
+		}
+		elseif(kid == 3)
+		{
+			if(PlayerInfo[playerid][pPhousekey3] == NINCS) return true;
+			haz = PlayerInfo[playerid][pPhousekey3];
+		}
+		else return Msg(playerid, "Úgy tudom csak 3 házad lehet, nem? :)");
+		
+		if(HouseInfo[haz][hKulcsVan][0] != PlayerInfo[pid][pID] && HouseInfo[haz][hKulcsVan][1] != PlayerInfo[pid][pID]) return Msg(playerid, "Ehhez a házhoz neki nincsen pótkulcsa!");
+		if(PlayerInfo[pid][pHazKulcsok][0] != haz && PlayerInfo[pid][pHazKulcsok][1] != haz && PlayerInfo[pid][pHazKulcsok][2] != haz) return Msg(playerid,"Ehhez a házhoz neki nincsen pótkulcsa!");
+		
+		if(PlayerInfo[pid][pHazKulcsok][0] == haz)
+			PlayerInfo[pid][pHazKulcsok][0] = NINCS;
+		if(PlayerInfo[pid][pHazKulcsok][1] == haz)
+			PlayerInfo[pid][pHazKulcsok][1] = NINCS;
+		if(PlayerInfo[pid][pHazKulcsok][2] == haz)
+			PlayerInfo[pid][pHazKulcsok][2] = NINCS;
+		
+		if(HouseInfo[haz][hKulcsVan][0] == PlayerInfo[pid][pID])
+			HouseInfo[haz][hKulcsVan][0] = NINCS, HazUpdate(haz, HAZ_Kulcsok1);
+		else
+			HouseInfo[haz][hKulcsVan][1] = NINCS, HazUpdate(haz, HAZ_Kulcsok2);
+			
+		SendFormatMessage(playerid, COLOR_LIGHTGREEN, "Elvetted a házad pótkulcsát tõle: %s | Házszám: %d", ICPlayerName(pid), haz);
+		SendFormatMessage(pid, COLOR_LIGHTGREEN, "* %s elvette a háza pótkulcsát tõled | Házszám: %d", ICPlayerName(playerid), haz);
+	}
+	elseif(egyezik(pm, "töröl") || egyezik(pm, "torol"))
+	{
+		if(!Admin(playerid, 1337)) return 1;
+		new type;
+		if(sscanf(spm, "ri", pid, type)) return Msg(playerid, "/házkulcs töröl [név/id] [1/2/3]");
+		if(pid == INVALID_PLAYER_ID) return Msg(playerid, "Nem létezõ játékos");
+		switch(type)
+		{
+			case 1:
+			{
+				if(HouseInfo[PlayerInfo[pid][pHazKulcsok][0]][hKulcsVan][0] == PlayerInfo[pid][pID])
+					HouseInfo[PlayerInfo[pid][pHazKulcsok][0]][hKulcsVan][0] = NINCS, HazUpdate(haz, HAZ_Kulcsok1);
+				else
+					HouseInfo[PlayerInfo[pid][pHazKulcsok][0]][hKulcsVan][1] = NINCS, HazUpdate(haz, HAZ_Kulcsok1);
+					
+				PlayerInfo[pid][pHazKulcsok][0] = NINCS;
+				
+				SendFormatMessage(pid, COLOR_LIGHTRED, "ClassRPG: %s %s elvette az 1. házkulcsodat", AdminRangNev(playerid), AdminName(playerid));
+				SendFormatMessage(playerid, COLOR_LIGHTRED, "ClassRPG: Elvetted %s 1. házkulcsát", PlayerName(pid));
+				format(_tmpString,sizeof(_tmpString),"<< %s %s elvette %s 1. házkulcsát >>", AdminRangNev(playerid), AdminName(playerid), PlayerName(pid));
+				SendMessage(SEND_MESSAGE_ADMIN,_tmpString,COLOR_LIGHTRED,PlayerInfo[playerid][pAdmin]);
+			}
+			case 2:
+			{
+				if(HouseInfo[PlayerInfo[pid][pHazKulcsok][1]][hKulcsVan][0] == PlayerInfo[pid][pID])
+					HouseInfo[PlayerInfo[pid][pHazKulcsok][1]][hKulcsVan][0] = NINCS, HazUpdate(haz, HAZ_Kulcsok1);
+				else
+					HouseInfo[PlayerInfo[pid][pHazKulcsok][1]][hKulcsVan][1] = NINCS, HazUpdate(haz, HAZ_Kulcsok2);
+					
+				PlayerInfo[pid][pHazKulcsok][1] = NINCS;
+				
+				SendFormatMessage(pid, COLOR_LIGHTRED, "ClassRPG: %s %s elvette az 2. házkulcsodat", AdminRangNev(playerid), AdminName(playerid));
+				SendFormatMessage(playerid, COLOR_LIGHTRED, "ClassRPG: Elvetted %s 2. házkulcsát", PlayerName(pid));
+				
+				format(_tmpString,sizeof(_tmpString),"<< %s %s elvette %s 2. házkulcsát >>", AdminRangNev(playerid), AdminName(playerid), PlayerName(pid));
+				
+				SendMessage(SEND_MESSAGE_ADMIN,_tmpString,COLOR_LIGHTRED,PlayerInfo[playerid][pAdmin]);
+			}
+			case 3:
+			{
+				if(HouseInfo[PlayerInfo[pid][pHazKulcsok][2]][hKulcsVan][0] == PlayerInfo[pid][pID])
+					HouseInfo[PlayerInfo[pid][pHazKulcsok][2]][hKulcsVan][0] = NINCS, HazUpdate(haz, HAZ_Kulcsok1);
+				else
+					HouseInfo[PlayerInfo[pid][pHazKulcsok][2]][hKulcsVan][1] = NINCS, HazUpdate(haz, HAZ_Kulcsok2);
+					
+				PlayerInfo[pid][pHazKulcsok][2] = NINCS;
+				
+				SendFormatMessage(pid, COLOR_LIGHTRED, "ClassRPG: %s %s elvette az 3. házkulcsodat", AdminRangNev(playerid), AdminName(playerid));
+				SendFormatMessage(playerid, COLOR_LIGHTRED, "ClassRPG: Elvetted %s 3. házkulcsát", PlayerName(pid));
+			
+				
+				format(_tmpString,sizeof(_tmpString),"<< %s %s elvette %s 3. házkulcsát >>", AdminRangNev(playerid), AdminName(playerid), PlayerName(pid));
 				SendMessage(SEND_MESSAGE_ADMIN,_tmpString,COLOR_LIGHTRED,PlayerInfo[playerid][pAdmin]);
 			}
 			default: Msg(playerid, "1/2/3");
@@ -5322,12 +5467,13 @@ CMD:wanted(playerid, params[])
 ALIAS(l6szereim):loszereim;
 CMD:loszereim(playerid, params[])
 {
-	if(NincsHaza(playerid))
-		return SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs házad!");
+	if(NincsHaza(playerid) && NincsHaza2(playerid))
+		return SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs házad se házkulcsod!");
 		
 	new house = HazabanVan(playerid);
+	if(house == NINCS) house = HazabanVan2(playerid);
 	if(house == NINCS)
-		return Msg(playerid, "Nem vagy a házadban!");
+		return Msg(playerid, "Nem vagy a házadban vagy nincs házkulcsod!");
 
 	new slots = 5;
 	if(PlayerInfo[playerid][pPremiumCsomag] >= 400)
@@ -5357,12 +5503,13 @@ CMD:loszereim(playerid, params[])
 
 CMD:fegyvereim(playerid, params[])
 {
-	if(NincsHaza(playerid))
-		return SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs házad!");
+	if(NincsHaza(playerid) && NincsHaza2(playerid))
+		return SendClientMessage(playerid, COLOR_LIGHTRED, "Nincs házad se házkulcsod!");
 		
 	new house = HazabanVan(playerid);
+	if(house == NINCS) house = HazabanVan2(playerid);
 	if(house == NINCS)
-		return Msg(playerid, "Nem vagy a házadban!");
+		return Msg(playerid, "Nem vagy a házadban vagy nincs házkulcsod!");
 
 	new slots = 5;
 	if(PlayerInfo[playerid][pPremiumCsomag] >= 400)

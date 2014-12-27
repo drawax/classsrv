@@ -864,6 +864,7 @@ fpublic INI_Load_Userdata(playerid, name[], value[])
 	INI_Custom("Gyogyszer","p<,>dd",PlayerInfo[playerid][pAspirin],PlayerInfo[playerid][pCataflan]);
 	INI_Int("TaxiSzolgalati",Taxi[playerid][tFizetes]);
 	INI_Custom("SpecJogsi","p<@>s[128]f",PlayerInfo[playerid][pSpecialJogsiNev],PlayerInfo[playerid][pSpecialJogsiKm]);
+	INI_Custom("Hazkulcsok","p<,>ddd",PlayerInfo[playerid][pHazKulcsok][0],PlayerInfo[playerid][pHazKulcsok][1],PlayerInfo[playerid][pHazKulcsok][2]);
 	
 	return 0;
 }
@@ -1445,6 +1446,9 @@ fpublic INI_Save(type, a)
 		
 		format(_tmpString, 256, "%s@%.3f",PlayerInfo[a][pSpecialJogsiNev],PlayerInfo[a][pSpecialJogsiKm]);
 		INI_WriteString(ini, "SpecJogsi", _tmpString);
+		
+		format(_tmpString, 128, "%d,%d,%d",PlayerInfo[a][pHazKulcsok][0],PlayerInfo[a][pHazKulcsok][1],PlayerInfo[a][pHazKulcsok][2]);
+		INI_WriteString(ini, "Hazkulcsok", _tmpString);
 		
 		INI_Close(ini);
 	}
@@ -3205,7 +3209,7 @@ stock IdoAllitas(hour = NINCS)
 {
 	if(hour != NINCS)
 	{
-		//hour +=IDOHOZZAADAS;
+		hour +=IDOHOZZAADAS;
 	
 		switch(hour)
 		{
@@ -8346,6 +8350,8 @@ stock HazUpdate(c, ...)
 		else if(val == HAZ_Butorok) HouseUpdates[c][Butorok] = true;
 		else if(val == HAZ_Arany) HouseUpdates[c][hArany] = true;
 		//else if(val == HAZ_) HouseUpdates[c][h] = true;
+		else if(val == HAZ_Kulcsok1) HouseUpdates[c][hKulcsVan][0] = true;
+		else if(val == HAZ_Kulcsok2) HouseUpdates[c][hKulcsVan][1] = true;
 	}
 }
 
@@ -8607,6 +8613,14 @@ fpublic Updater(type)
 				HouseUpdates[x][hRuhak] = false;
 			}
 			if(HouseUpdates[x][Butorok]) { MysqlUpdateInt(query, "Butorok", HouseInfo[x][Butorok]); HouseUpdates[x][Butorok] = false; }
+			if(HouseUpdates[x][hKulcsVan][0] || HouseUpdates[x][hKulcsVan][1])
+			{
+				new kulcsok[54];
+				Format(kulcsok, "%d,%d", HouseInfo[x][hKulcsVan][0],HouseInfo[x][hKulcsVan][1]);
+				MysqlUpdateStr(query, "HazKulcsok", kulcsok);
+				HouseUpdates[x][hKulcsVan][0] = false;
+				HouseUpdates[x][hKulcsVan][1] = false;
+			}
 			MysqlFinalUpdate(query, x);
 			
 			HouseInfo[x][hNeedUpdate] = false;
@@ -15469,6 +15483,13 @@ stock NincsHaza(playerid)
 	return 0;
 }
 
+stock NincsHaza2(playerid)
+{
+	if(PlayerInfo[playerid][pHazKulcsok][0] == NINCS && PlayerInfo[playerid][pHazKulcsok][1] == NINCS && PlayerInfo[playerid][pHazKulcsok][2] == NINCS)
+		return 1;
+	return 0;
+}
+
 stock Hazban(playerid, haz)
 {
 	new VW = GetPlayerVirtualWorld(playerid), Int = GetPlayerInterior(playerid);
@@ -15511,6 +15532,29 @@ stock HazaElottVan(playerid)
 	{
 		if(Haznal(playerid, PlayerInfo[playerid][pPhousekey3]))
 			return PlayerInfo[playerid][pPhousekey3];
+	}
+	
+	return NINCS;
+}
+
+stock HazaElottVan2(playerid)
+{
+	if(NincsHaza2(playerid)) return NINCS;
+	
+	if(PlayerInfo[playerid][pHazKulcsok][0] != NINCS)
+	{
+		if(Haznal(playerid, PlayerInfo[playerid][pHazKulcsok][0]))
+			return PlayerInfo[playerid][pHazKulcsok][0];
+	}
+	if(PlayerInfo[playerid][pHazKulcsok][1] != NINCS)
+	{
+		if(Haznal(playerid, PlayerInfo[playerid][pHazKulcsok][1]))
+			return PlayerInfo[playerid][pHazKulcsok][1];
+	}
+	if(PlayerInfo[playerid][pHazKulcsok][2] != NINCS)
+	{
+		if(Haznal(playerid, PlayerInfo[playerid][pHazKulcsok][2]))
+			return PlayerInfo[playerid][pHazKulcsok][2];
 	}
 	
 	return NINCS;
@@ -15570,6 +15614,28 @@ stock HazabanVan(playerid)
 	{
 		if(Hazban(playerid, PlayerInfo[playerid][pPhousekey3]))
 			return PlayerInfo[playerid][pPhousekey3];
+	}
+	return NINCS;
+}
+
+stock HazabanVan2(playerid)
+{
+	if(NincsHaza2(playerid)) return NINCS;
+	
+	if(PlayerInfo[playerid][pHazKulcsok][0] != NINCS)
+	{
+		if(Hazban(playerid, PlayerInfo[playerid][pHazKulcsok][0]))
+			return PlayerInfo[playerid][pHazKulcsok][0];
+	}
+	if(PlayerInfo[playerid][pHazKulcsok][1] != NINCS)
+	{
+		if(Hazban(playerid, PlayerInfo[playerid][pHazKulcsok][1]))
+			return PlayerInfo[playerid][pHazKulcsok][1];
+	}
+	if(PlayerInfo[playerid][pHazKulcsok][2] != NINCS)
+	{
+		if(Hazban(playerid, PlayerInfo[playerid][pHazKulcsok][2]))
+			return PlayerInfo[playerid][pHazKulcsok][2];
 	}
 	return NINCS;
 }
@@ -16892,6 +16958,35 @@ stock CorrectPlayerDatas(playerid)
 	}
 	else if(talalat == 2)
 		PlayerInfo[playerid][pKulcsok][2] = NINCS;
+	
+	talalat = 0;
+	
+	for(x = 0; x < sizeof(HouseInfo); x++)
+	{
+		if(HouseInfo[x][Van] == 1 && HouseInfo[x][hKulcsVan][0] == PlayerInfo[playerid][pID] || HouseInfo[x][hKulcsVan][1] == PlayerInfo[playerid][pID])
+		{
+			if(talalat == 0)
+				PlayerInfo[playerid][pHazKulcsok][0] = x;
+			else if(talalat == 1)
+				PlayerInfo[playerid][pHazKulcsok][1] = x;
+			else if(talalat == 2)
+				PlayerInfo[playerid][pHazKulcsok][2] = x;
+			talalat++;
+		}
+	}
+	if(talalat == 0)
+	{
+		PlayerInfo[playerid][pHazKulcsok][0] = NINCS;
+		PlayerInfo[playerid][pHazKulcsok][1] = NINCS;
+		PlayerInfo[playerid][pHazKulcsok][2] = NINCS;
+	}
+	else if(talalat == 1)
+	{
+		PlayerInfo[playerid][pHazKulcsok][1] = NINCS;
+		PlayerInfo[playerid][pHazKulcsok][2] = NINCS;
+	}
+	else if(talalat == 2)
+		PlayerInfo[playerid][pHazKulcsok][2] = NINCS;
 	
 	talalat = 0;
 	return 1;
@@ -24439,7 +24534,8 @@ stock ValtozoNullazas(playerid) //vnull
 	JailTime[playerid] = NINCS; 
 	PlayerInfo[playerid][pVadaszEngedely] = NINCS; 
 	PlayerInfo[playerid][pPaintballKitiltva] = NINCS; 
-	PlayerInfo[playerid][pKulcsok][0] = NINCS; PlayerInfo[playerid][pKulcsok][1] = NINCS; PlayerInfo[playerid][pKulcsok][2] = NINCS; 
+	PlayerInfo[playerid][pKulcsok][0] = NINCS; PlayerInfo[playerid][pKulcsok][1] = NINCS; PlayerInfo[playerid][pKulcsok][2] = NINCS;
+	PlayerInfo[playerid][pHazKulcsok][0] = NINCS; PlayerInfo[playerid][pHazKulcsok][1] = NINCS; PlayerInfo[playerid][pHazKulcsok][2] = NINCS; 	
 	
 	PlayerInfo[playerid][pSMS]=false;
 	
@@ -24774,6 +24870,9 @@ stock ValtozoNullazas(playerid) //vnull
 	PlayerInfo[playerid][pKulcsok][0] = NINCS;
 	PlayerInfo[playerid][pKulcsok][1] = NINCS;
 	PlayerInfo[playerid][pKulcsok][2] = NINCS;
+	PlayerInfo[playerid][pHazKulcsok][0] = NINCS;
+	PlayerInfo[playerid][pHazKulcsok][1] = NINCS;
+	PlayerInfo[playerid][pHazKulcsok][2] = NINCS;
 	PlayerInfo[playerid][pBizniszKulcs] = NINCS;
 	HalalInti[playerid] = NINCS;
 	HalalVW[playerid] = NINCS;
@@ -36408,6 +36507,9 @@ fpublic ShowStats(playerid,targetid)
 		new housekey = PlayerInfo[targetid][pPhousekey];
 		new housekey2 = PlayerInfo[targetid][pPhousekey2];
 		new housekey3 = PlayerInfo[targetid][pPhousekey3];
+		new ohousekey = PlayerInfo[targetid][pHazKulcsok][0];
+		new ohousekey2 = PlayerInfo[targetid][pHazKulcsok][1];
+		new ohousekey3 = PlayerInfo[targetid][pHazKulcsok][2];
 		
 		new coordsstring[256];
 
@@ -36527,10 +36629,10 @@ fpublic ShowStats(playerid,targetid)
 			format(coordsstring, sizeof(coordsstring),"*** Név: %s ***", ICPlayerNameString(PlayerInfo[targetid][pHamisNev]));
 		SendClientMessage(playerid, COLOR_WHITE,coordsstring);
 
-		format(coordsstring, sizeof(coordsstring), "Nem: %s | Életkor: %d | Származás: %s | Bank: %sFt | Telefonszám: %s", atext,age,otext,  FormatNumber( bcash, 0, ',' ), FormatNumber( pnumber, 0, '-' ));
+		format(coordsstring, sizeof(coordsstring), "Nem: %s | Életkor: %d | Származás: %s | Bank: %sFt | Telefonszám: %s | Házastárs: %s", atext,age,otext,  FormatNumber( bcash, 0, ',' ), FormatNumber( pnumber, 0, '-' ), married);
 		SendClientMessage(playerid, COLOR_GRAD1,coordsstring);
 
-		format(coordsstring, sizeof(coordsstring), "Ház: %d/%d/%d | Biznisz: %d | Biznisz Társtulaj: %d | Házastárs: %s | FõMunka: %s(%dp) | Másodmunka: %s(%dp)", housekey, housekey2, housekey3, BizniszSzam, TarsBizniszSzam, married, jtext, meg, jtext2, meg2);
+		format(coordsstring, sizeof(coordsstring), "Ház: %d/%d/%d | Házkulcsok: %d/%d/%d | Biznisz: %d | Biznisz Társtulaj: %d | FõMunka: %s(%dp) | Másodmunka: %s(%dp)", housekey, housekey2, housekey3, ohousekey, ohousekey2, ohousekey3, BizniszSzam, TarsBizniszSzam, jtext, meg, jtext2, meg2);
 		SendClientMessage(playerid, COLOR_GRAD2,coordsstring);
 
 		format(coordsstring, sizeof(coordsstring), "Letartóztatások: %d | Szervezet: %s | Rang: %s | Betegség: %s | Arany (bank): %ddb (%.3f%%)", arrests,ttext,rtext,dtext,barany,bkamat);
@@ -37468,6 +37570,7 @@ stock LoadHouse( bool: preQuery = true )
 			HouseInfo[uid][Butorok] = sql_get_row_int(row, 29);
 			HouseInfo[uid][hAlma] = sql_get_row_int(row, 30);
 			HouseInfo[uid][hArany] = sql_get_row_int(row, 31);
+			sql_get_row_str(row, 32, _tmpString), sscanf(_tmpString, "p<,>A<i>(-1)[2]", HouseInfo[uid][hKulcsVan]);
 
 			if(HouseInfo[uid][hCsak] == 1)
 				printf("Haz %d betoltve! Tulaj:%s Hazpenz:%d Csakneki:%s",uid,HouseInfo[uid][hOwner],HouseInfo[uid][hTakings], HouseInfo[uid][hCsakneki]);
@@ -42996,7 +43099,7 @@ stock RandomTokAjandek(playerid)
 
 stock IsAtAgy(playerid) //Krisztofer
 {
-    if(IsAgyObject(GetPlayerSurfingObjectID(playerid))) return 1;
+    if(IsAgyObject(GetPlayerSurfingObjectID(playerid)) == 1) return 1;
     return 0;
 }
 

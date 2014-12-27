@@ -1039,9 +1039,8 @@ enum pInfo
 	pJailokSzama,
 	pContractOka[128],
 	pBoltTulaj, // TT R.
-	pReszveny
-	
-
+	pReszveny,
+	pHazKulcsok[3]
 };
 new PlayerInfo[MAX_PLAYERS][pInfo];
 
@@ -1144,7 +1143,8 @@ enum hInfo
 	hRuhak[10],
 	Butorok,
 	hArany,
-	bool:hNeedUpdate
+	bool:hNeedUpdate,
+	hKulcsVan[2]
 };
 
 enum hUpdateInfo
@@ -1182,7 +1182,8 @@ enum hUpdateInfo
 	bool:hMellenyek,
 	bool:hRuhak,
 	bool:Butorok,
-	bool:hArany
+	bool:hArany,
+	bool:hKulcsVan[2]
 };
 new HouseInfo[MAXHAZ][hInfo], HouseUpdates[MAXHAZ][hUpdateInfo], HazakSzamaOsszesen;
 
