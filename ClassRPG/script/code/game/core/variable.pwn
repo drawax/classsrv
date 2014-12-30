@@ -72,7 +72,7 @@ new KincsKozte[MAX_PLAYERS];
 
 new JailTime[MAX_PLAYERS]; // Ez ahhoz kell, ha a büntetése nagyobb volt, mint 25 perc, akkor nem engedi õt közmunkára
 new bool:IdgScripter[MAX_PLAYERS];
-new MulatasTime;
+//new MulatasTime; 
 //new bool:Meghalt[MAX_PLAYERS];
 new Warozott[MAX_PLAYERS];
 new bool:ScriptShoot[MAX_PLAYERS], Shooted[MAX_PLAYERS][MAX_PLAYERS];

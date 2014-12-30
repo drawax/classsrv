@@ -92,6 +92,7 @@
 #include "system\system_ytplayer.pwn"
 #include "system\tablet"
 #include "system\teplan.pwn" // Tepi Tõzsde rendszere
+#include "system\amos.pwn" // Amikor valamit késleltetni akarok, élesben tesztelés miatt. by Amos
 
 // CLASSRPG :: Functions & hooks
 #include "function\hooks.pwn"
@@ -106,10 +107,11 @@
 #include "function\timer.pwn"
 #include "function\uncategorized.pwn"
 
-// CLASSRPG :: Systems (after)
-#include "system\commands.pwn"
-#include "system\amos.pwn"
-
+// CLASSRPG :: Commands (NEW! V3.6 by Amos)
+#include "commands\commands.pwn"
+#include "commands\helps.pwn"
+#include "commands\Admin.pwn"
+//#warning [V3.6] Parancsok kategorizálása elkezdve a könnyebb kezelés érdekében.
 
 // CLASSRPG :: old code
 #include "old\old_commands.pwn"
