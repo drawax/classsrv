@@ -111,6 +111,7 @@
 #include "commands\commands.pwn"
 #include "commands\helps.pwn"
 #include "commands\Admin.pwn"
+#include "commands\rpalap.pwn"
 //#warning [V3.6] Parancsok kategorizálása elkezdve a könnyebb kezelés érdekében.
 
 // CLASSRPG :: old code
