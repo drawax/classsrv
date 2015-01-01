@@ -8,6 +8,14 @@ stock Torlesek() { //orem
 	// REMOVEBUILDING KÓD - A szokásos formában: MI EZ - KI KÜLDTE - MIKOR RAKTAD BE
 	// &&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&&& //
 	
+	//Vagos Telephely - Amos Vincenzo 2015,01.01 09:50
+	RemoveBuildingForPlayer(playerid, 1447, 2434.2734, -1879.7031, 13.8203, 0.25);
+	RemoveBuildingForPlayer(playerid, 1413, 2439.5469, -1879.9219, 13.8203, 0.25);
+	RemoveBuildingForPlayer(playerid, 1447, 2444.8281, -1879.8750, 13.8203, 0.25);
+	RemoveBuildingForPlayer(playerid, 3594, 2450.4609, -1890.7813, 13.1641, 0.25);
+	RemoveBuildingForPlayer(playerid, 1413, 2452.3047, -1879.7109, 13.8203, 0.25);
+	RemoveBuildingForPlayer(playerid, 1447, 2461.8828, -1879.7031, 13.8203, 0.25);
+	
 	//Körforgalom - Tony Anderson - 2014.11.09.
 	RemoveBuildingForPlayer(playerid, 1283, 1332.0859, -1406.4063, 15.6875, 0.25);
 	RemoveBuildingForPlayer(playerid, 1283, 1342.0000, -1384.6563, 15.7109, 0.25);
@@ -180,14 +188,8 @@ stock Torlesek() { //orem
 	
 	// Rendõrség külsõ törlések pár útban levõ fa és tábla - 2014.03.23 - John S. Gates
 	RemoveBuildingForPlayer(playerid, 1266, 1538.5234, -1609.8047, 19.8438, 0.25);
-	RemoveBuildingForPlayer(playerid, 1266, 1565.4141, -1722.3125, 25.0391, 0.25);
 	RemoveBuildingForPlayer(playerid, 4229, 1597.9063, -1699.7500, 30.2109, 0.25);
 	RemoveBuildingForPlayer(playerid, 4230, 1597.9063, -1699.7500, 30.2109, 0.25);
-	RemoveBuildingForPlayer(playerid, 1260, 1565.4141, -1722.3125, 25.0391, 0.25);
-	RemoveBuildingForPlayer(playerid, 620, 1541.4531, -1709.6406, 13.0469, 0.25);
-	RemoveBuildingForPlayer(playerid, 620, 1547.5703, -1689.9844, 13.0469, 0.25);
-	RemoveBuildingForPlayer(playerid, 620, 1547.5703, -1661.0313, 13.0469, 0.25);
-	RemoveBuildingForPlayer(playerid, 620, 1541.4531, -1642.0313, 13.0469, 0.25);
 	RemoveBuildingForPlayer(playerid, 1260, 1538.5234, -1609.8047, 19.8438, 0.25);
 	
 	//Butler Birtok - Raul Butler - 2014.03.23
@@ -741,9 +743,9 @@ stock Torlesek() { //orem
 	RemoveBuildingForPlayer(playerid, 672, -149.3359, -160.5078, 3.4688, 0.25);
 		
 	//vagos kerítés - terno - 2013-04-25
-	RemoveBuildingForPlayer(playerid, 1410, 2488.8672, -968.4609, 81.7188, 0.25);
+/*	RemoveBuildingForPlayer(playerid, 1410, 2488.8672, -968.4609, 81.7188, 0.25);
 	RemoveBuildingForPlayer(playerid, 1407, 2493.5859, -968.5078, 81.8438, 0.25);
-	RemoveBuildingForPlayer(playerid, 1410, 2498.1875, -968.4531, 81.9297, 0.25);
+	RemoveBuildingForPlayer(playerid, 1410, 2498.1875, -968.4531, 81.9297, 0.25);*/
 
 	//Toretto birtok - James Toretto - 2013-06-09
 	RemoveBuildingForPlayer(playerid, 1350, 997.3906, 2387.6016, 9.8125, 0.25);
@@ -957,9 +959,9 @@ stock Torlesek() { //orem
 	RemoveBuildingForPlayer(playerid, 1231, -2447.1641, 90.2969, 36.8984, 0.25);
 		
 	//SFPD sorompó törlése - Andrew - 2013-01-10
-	RemoveBuildingForPlayer(playerid, 966, -2436.8516, 495.4531, 28.9531, 0.25);
+/*	RemoveBuildingForPlayer(playerid, 966, -2436.8516, 495.4531, 28.9531, 0.25);
 	RemoveBuildingForPlayer(playerid, 967, -2438.7266, 495.0078, 29.1016, 0.25);
-	RemoveBuildingForPlayer(playerid, 968, -2436.8125, 495.4688, 29.6797, 0.25);
+	RemoveBuildingForPlayer(playerid, 968, -2436.8125, 495.4688, 29.6797, 0.25);*/
 
 	//Kerim - Hotel - 2012-10-06
 	RemoveBuildingForPlayer(playerid, 1294, 1802.7891, -1270.9297, 17.1406, 0.25);
