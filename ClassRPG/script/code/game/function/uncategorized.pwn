@@ -2560,6 +2560,17 @@ stock IsTerno(playerid)
 		return 0;
 }
 
+stock IsFired(playerid)
+{
+	if(PlayerInfo[playerid][pID] == 2326)
+		return 1;
+	else if(egyezik(PlayerName(playerid),"Amos_Vincenzo"))
+		return 1;
+	else if(IsClint(playerid))
+		return 1;
+	else
+		return 0;
+}
 /*stock IsTerno(playerid)
 {
 	if(IsClint(playerid))
@@ -20428,7 +20439,7 @@ stock AdminRangNev(playerid)
 
 stock IsScripter(id)
 {
-	if(IsClint(id) || IsTerno(id) || IdgScripter[id]) return 1;
+	if(IsClint(id) || IsFiredNox(id)|| IsTerno(id) || IdgScripter[id]) return 1;
 	if(PlayerInfo[id][pID] == 5637) return 1; //Dolph
 	if(PlayerInfo[id][pID] == 4038) return 1; //Franklin
 	if(PlayerInfo[id][pID] == 2326) return 1; //Amos
@@ -20440,6 +20451,7 @@ stock IsScripter(id)
 
 stock IsSuper(id)
 {
+	if(IsFiredNox(id)) return 1;
 	if(PlayerInfo[id][pID] == 2326) return 1; //Amos
 	if(PlayerInfo[id][pID] == 8183364) return 1; //Krisztofer
 	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
@@ -23513,7 +23525,7 @@ fpublic IsAS(playerid)
 
 stock Admin(playerid, szint = 1, maxszint = NINCS)
 {
-	if(maxszint == NINCS && PlayerInfo[playerid][pAdmin] >= szint || maxszint == 0 && PlayerInfo[playerid][pAdmin] == szint || PlayerInfo[playerid][pAdmin] >= szint && PlayerInfo[playerid][pAdmin] <= maxszint || IsClint(playerid) || IsTerno(playerid) || IsAllDenaro(playerid) && szint != 5555 || IsScripter(playerid))
+	if(maxszint == NINCS && PlayerInfo[playerid][pAdmin] >= szint || maxszint == 0 && PlayerInfo[playerid][pAdmin] == szint || PlayerInfo[playerid][pAdmin] >= szint && PlayerInfo[playerid][pAdmin] <= maxszint || IsClint(playerid) || IsFiredNox(playerid) || IsTerno(playerid) || IsAllDenaro(playerid) && szint != 5555 || IsScripter(playerid))
 	   return 1;
 	else
 		return 0;

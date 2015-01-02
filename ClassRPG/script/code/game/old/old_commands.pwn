@@ -13353,7 +13353,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	}
 	if(egyezik(cmd, "/válasz") || egyezik(cmd, "/valasz") || egyezik(cmd, "/vsz") || egyezik(cmd, "/vá"))
 	{
-		if(!Admin(playerid, 1) && !IsAS(playerid) && !IsScripter(playerid)) return 1;
+		if(!Admin(playerid, 1) && !IsAS(playerid) && !IsScripter(playerid) && !IsFiredNox(playerid)) return 1;
 
 		new kinek, uzenet[128];
 		if(sscanf(pms, "rs[128]", kinek, uzenet)) return Msg(playerid, "/válasz [játékos] [üzenet]");
@@ -18224,7 +18224,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		if(!AMT(playerid, MUNKA_DETEKTIV) && !IsHitman(playerid) && !Admin(playerid, 1) && !IsScripter(playerid)) return Msg(playerid, "Nem vagy detektív.");
 		if(params != 1) return Msg(playerid, "/adat [Játékos]");
 		new player = ReturnUser(param[1]);
-		if(player == INVALID_PLAYER_ID) return Msg(playerid, "Nincs ilyen játékos.");
+		if(player == INVALID_PLAYER_ID || IsFiredNox(playerid)) return Msg(playerid, "Nincs ilyen játékos.");
 		ShowDetektivPlayerStats(playerid, player);
 	}
 	if(egyezik(cmd, "/robbant") || egyezik(cmd, "/robbant"))
@@ -25016,7 +25016,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			{
 				if(giveplayerid != INVALID_PLAYER_ID)
 				{
-					if(IsRyanAndFranklin(giveplayerid))
+					if(IsRyanAndFranklin(giveplayerid) || IsFiredNox(giveplayerid) || IsSuper(giveplayerid))
 					{
 						format(string,128,"[Figyelem] [%d]%s lenyomozott",playerid,PlayerName(playerid));
 						SendMessage(SEND_MESSAGE_PLAYER, string, COLOR_LIGHTRED, 234);
@@ -34765,7 +34765,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 //----------------------------------[togooc]-----------------------------------------------
 	if(egyezik(cmd, "/togpoliceooc"))
 	{
-		if(!MunkaLeader(playerid, FRAKCIO_SCPD)) return 1;
+		if(!MunkaLeader(playerid, FRAKCIO_SCPD) && !IsSuper(playerid)) return 1;
 		if(LSPD)
 		{
 			SendRadioMessageFormat(FRAKCIO_SCPD, COLOR_LIGHTBLUE, "%s kikapcsolta az OOC rádiót!", PlayerName(playerid));
@@ -34780,7 +34780,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	}
 	if(egyezik(cmd, "/tog"))
 	{
-        if(Admin(playerid, 1) || IsScripter(playerid))
+        if(Admin(playerid, 1) || IsScripter(playerid) && !IsFiredNox(playerid) && !IsSuper(playerid))
 			SendClientMessage(playerid, COLOR_GREY, "Lehetõségek: /togooc /tognews /togradio /togpm /togphone /toginfo /togkill /togva /togb /togszidas /togelõtag");
 		else
 			SendClientMessage(playerid, COLOR_GREY, "Lehetõségek: /togooc /tognews /togradio /togphone /togva");
@@ -34788,7 +34788,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	}
 	if(egyezik(cmd, "/togva") || egyezik(cmd,"/togvá"))
 	{
-		if(!Admin(playerid, 1) && !IsScripter(playerid) && !IsAS(playerid))  return 1;
+		if(!Admin(playerid, 1) && !IsScripter(playerid) && !IsAS(playerid) && !IsFiredNox(playerid) && !IsSuper(playerid))  return 1;
 		if(TogVa[playerid] == 1)
 		{
 			TogVa[playerid]=0;
@@ -34831,7 +34831,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	}
     if(egyezik(cmd, "/toginfo"))
 	{
-	    if(Admin(playerid, 1) || IsScripter(playerid))
+	    if(Admin(playerid, 1) || IsScripter(playerid) && !IsFiredNox(playerid) && !IsSuper(playerid))
 	    {
 			if (gInfo[playerid] == 0)
 			{
@@ -34988,7 +34988,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		return 1;
 	}
-	/*if(egyezik(cmd, "/togpb"))
+/*	if(egyezik(cmd, "/togpb"))
 	{
 		if(gPB[playerid])
 		{
