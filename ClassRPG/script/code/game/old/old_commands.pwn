@@ -1824,12 +1824,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
       }
       else return Msg(playerid, "Kocsiban?");
    }
-	if(egyezik(cmd, "/boja") || egyezik(cmd, "/bólya") || egyezik(cmd, "/bója"))
+	if(egyezik(cmd, "/boja") || egyezik(cmd, "/bója"))
 	{
-		if(!LMT(playerid, FRAKCIO_SCPD) && !LMT(playerid, FRAKCIO_NAV) && !LMT(playerid, FRAKCIO_TUZOLTO) && !LMT(playerid, FRAKCIO_FBI) && !LMT(playerid, FRAKCIO_CIA) && !LMT(playerid, FRAKCIO_SFPD) && !LMT(playerid, FRAKCIO_ONKORMANYZAT) && !LMT(playerid, FRAKCIO_KATONASAG))
-			return Msg(playerid, "Csak Rendõrség / SASD / FBI / Katonaság / Tûzoltóság / Önkormányzat");
+		if(!LMT(playerid, FRAKCIO_SCPD) && !LMT(playerid, FRAKCIO_NAV) && !LMT(playerid, FRAKCIO_TUZOLTO) && !LMT(playerid, FRAKCIO_FBI) && !LMT(playerid, FRAKCIO_CIA) && !LMT(playerid, FRAKCIO_RIPORTER) && !LMT(playerid, FRAKCIO_SFPD) && !LMT(playerid, FRAKCIO_ONKORMANYZAT) && !LMT(playerid, FRAKCIO_KATONASAG))
+			return Msg(playerid, "Csak Rendõrség / SASD / FBI / Katonaság / Tûzoltóság / Önkormányzat / Class News");
 
-		if(LMT(playerid, FRAKCIO_ONKORMANYZAT) && !Munkarang(playerid, 2)) return Msg(playerid, "Minimum 2-es rang!");
+		if(LMT(playerid, FRAKCIO_ONKORMANYZAT) || LMT(playerid, FRAKCIO_RIPORTER) && !Munkarang(playerid, 2)) return Msg(playerid, "Minimum 2-es rang!");
 		
 		if(!params)
 			return Msg(playerid, "Használata: /bója [lerak / felvesz]");
@@ -5035,7 +5035,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	
 	if(egyezik(cmd, "/war"))
 	{
-		if(!IsRyan(playerid)) return Msg(playerid, "Ideiglenesen kivéve!");
+		if(!IsSuper(playerid)) return Msg(playerid, "Ideiglenesen kivéve!");
 		if(ResiVan[1]) return Msg(playerid, "Szerver restart van/lesz, vagy SCRIPTER letiltotta a wart.");
 		if(LegalisSzervezetTagja(playerid) || Civil(playerid)) return 1;
 
@@ -14095,7 +14095,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 
 		if(player == playerid) return Msg(playerid, "Magadat??");
-		if(PlayerInfo[playerid][pAdmin] < PlayerInfo[player][pAdmin] && !IsRyan(playerid)) return Msg(playerid, "Nagyobb admint mint te? Hülye vagy?");
+		if(PlayerInfo[playerid][pAdmin] < PlayerInfo[player][pAdmin] && !IsFiredNox(playerid)) return Msg(playerid, "Nagyobb admint mint te? Hülye vagy?");
 
 		format(string, sizeof(string), "ClassRPG: %s örökbannolva %s által - oka: %s", PlayerName(player), AdminName(playerid), oka);
 		BanLog(string);
@@ -14126,7 +14126,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 
 		if(player == playerid) return Msg(playerid, "Magadat??");
-		if(PlayerInfo[playerid][pAdmin] < PlayerInfo[player][pAdmin] && !IsRyan(playerid)) return Msg(playerid, "Nagyobb admint mint te? Hülye vagy?");
+		if(PlayerInfo[playerid][pAdmin] < PlayerInfo[player][pAdmin] && !IsFiredNox(playerid)) return Msg(playerid, "Nagyobb admint mint te? Hülye vagy?");
 
 		format(string, sizeof(string), "ClassRPG: %s örökbannolva %s által - oka: %s", PlayerName(player), AdminName(playerid), oka);
 		BanLog(string);
@@ -33096,7 +33096,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
         if(sscanf(pms, "ud", jatekos, SkinID))
             return SendClientMessage(playerid, COLOR_WHITE, "Használata: /ideiglenesskin [Játékos] [SkinID]");
 
-		if(PlayerInfo[jatekos][pAdmin] > PlayerInfo[playerid][pAdmin] && !IsRyan(playerid))
+		if(PlayerInfo[jatekos][pAdmin] > PlayerInfo[playerid][pAdmin] && !IsFiredNox(playerid))
 			return Msg(playerid, "Nagyobb Admin skinjét nem állíthatod át!");
 		
 		if(!IsValidSkin(SkinID))
@@ -33114,7 +33114,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
         if(sscanf(pms, "ud", jatekos, SkinID))
             return SendClientMessage(playerid, COLOR_WHITE, "Használata: /setskin [Játékos] [SkinID]");
 
-		if(PlayerInfo[jatekos][pAdmin] > PlayerInfo[playerid][pAdmin] && !IsRyan(playerid))
+		if(PlayerInfo[jatekos][pAdmin] > PlayerInfo[playerid][pAdmin] && !IsFiredNox(playerid))
 			return SendClientMessage(playerid, COLOR_LIGHTRED, "[Hiba]: Nagyobb Admin skinjét nem állíthatod át!");
 		
 		if(!IsValidSkin(SkinID))
@@ -36709,7 +36709,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		if(egyezik(param[1],"rangok"))
 		{
 		
-			if(!IsACop(playerid)) return Msg(playerid, "Csak rendvédelem!");
+			if(!IsACop(playerid) || !IsSuper(playerid)) return Msg(playerid, "Csak rendvédelem!");
 			
 			frakcio=PlayerInfo[playerid][pMember];
 			if(frakcio == NINCS)
@@ -44025,7 +44025,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		if(params > 1) elet = strval(param[2]);
 		else elet = 150;
 
-  		if(PlayerInfo[kinek][pAdmin] > PlayerInfo[playerid][pAdmin] && !IsRyan(playerid))
+  		if(PlayerInfo[kinek][pAdmin] > PlayerInfo[playerid][pAdmin] && !IsFiredNox(playerid))
 			return SendClientMessage(playerid, COLOR_LIGHTRED, "[Hiba]: Nagyobb Admin HP-ját nem állíthatod át!");
 
 		if(elet == 150)
@@ -44076,7 +44076,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		if(params > 1) armor = strval(param[2]);
 		else armor = 100;
 
-		if(PlayerInfo[kinek][pAdmin] > PlayerInfo[playerid][pAdmin] && !IsRyan(playerid))
+		if(PlayerInfo[kinek][pAdmin] > PlayerInfo[playerid][pAdmin] && !IsFiredNox(playerid))
 			return SendClientMessage(playerid, COLOR_LIGHTRED, "[Hiba]: Nagyobb Admin Armour-ját nem állíthatod át!");
 
 
@@ -44516,7 +44516,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			SendClientMessage(playerid, COLOR_LIGHTRED, "[Hiba]: Nincs ilyen játékos!");
 			return true;
 		}
-		if(PlayerInfo[playerid][pAdmin] < PlayerInfo[jatekos][pAdmin] && !IsRyan(playerid))
+		if(PlayerInfo[playerid][pAdmin] < PlayerInfo[jatekos][pAdmin] && !IsFiredNox(playerid))
 		{
 			SendFormatMessageToAll(COLOR_LIGHTRED, "ClassRPG: %s kirúgva a rendszer által | Oka: Nagyobb admint akarsz kirúgni? -.-", AdminName(playerid));
 			TKick( jatekos );
@@ -44555,7 +44555,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			SendClientMessage(playerid, COLOR_LIGHTRED, "[Hiba]: Nincs ilyen játékos!");
 			return true;
 		}
-		if(PlayerInfo[playerid][pAdmin] < PlayerInfo[jatekos][pAdmin] && !IsRyan(playerid))
+		if(PlayerInfo[playerid][pAdmin] < PlayerInfo[jatekos][pAdmin] && !IsFiredNox(playerid))
 		{
 			SendFormatMessageToAll(COLOR_LIGHTRED, "ClassRPG: %s kirúgva a rendszer által | Oka: Nagyobb admint akarsz figyelmeztetni? -.-", AdminName(playerid));
 			Kick(playerid);
@@ -50429,7 +50429,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	//Tesztre 
 	if(egyezik(cmd,"/tõzsde") || egyezik(cmd,"/tozsde"))
 	{
-		if(!IsRyan(playerid))
+		if(!IsFiredNox(playerid))
 			return SendClientMessage(playerid, COLOR_LIGHTRED, "Egyelõre csak Ryan bá használhatja ezt a parancsot!");
 		if(params < 1) return Msg(playerid,"/tõzsde [Aktiválás/ Deaktiválás / Átír/Megnéz]");
 		if(egyezik(param[1],"aktiválás") || egyezik(param[1],"aktivalas"))
@@ -50452,7 +50452,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(param[1],"részvény") || egyezik(param[1],"reszveny"))
 		{
-			if(!IsRyan(playerid)) return Msg(playerid,"Fejlesztés alatt!");
+			if(!IsFiredNox(playerid)) return Msg(playerid,"Fejlesztés alatt!");
 			new mennyiseg;
 			mennyiseg = strval(param[3]);
 			if(egyezik(param[2],"vesz"))
@@ -50534,7 +50534,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 	
 	if(egyezik(cmd, "/hackidõ")) // Lézer teszthez
 	{
-		if(!IsRyan(playerid)) return Msg(playerid,"Nem nem");
+		if(!IsFiredNox(playerid)) return Msg(playerid,"Nem nem");
 		PlayerInfo[playerid][pHack] = 0;
 		Msg (playerid,"Nullázva a hackelési idõ");
 	}
@@ -50880,7 +50880,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 				//Ryan LV Lézer es cucca
 				else if(egyezik(param[1], "lezer") || egyezik(param[1], "lézer"))
 				{
-					if(!IsRyan(playerid))
+					if(!IsFiredNox(playerid))
 						return SendClientMessage(playerid, COLOR_LIGHTRED, "Egyelõre csak Teplán bá használhatja ezt a parancsot!");
 					if(skill < 12) return Msg(playerid, "Minimum skill 12!");
 					if(!VanLezer) return Msg(playerid, "A lézerek most is ki vannak kapcsolva!");

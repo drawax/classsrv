@@ -2541,13 +2541,13 @@ stock IsAllDenaro(playerid)
 		return 0;
 }
 
-stock IsRyan(playerid)
+/*stock IsRyan(playerid)
 {	
 	if(PlayerInfo[playerid][pID] == 8175449)
 		return 1;
 	else
 		return 0;
-}
+}*/
 stock IsTerno(playerid)
 {
 	if(PlayerInfo[playerid][pID] == 234)
@@ -20444,7 +20444,7 @@ stock IsScripter(id)
 	if(PlayerInfo[id][pID] == 4038) return 1; //Franklin
 	if(PlayerInfo[id][pID] == 2326) return 1; //Amos
 	if(PlayerInfo[id][pID] == 8183364) return 1; //Krisztofer
-	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
+	//if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
 	if(PlayerInfo[id][pID] == 8177822) return 1; //Nick
 	return 0;
 }
@@ -20454,7 +20454,7 @@ stock IsSuper(id)
 	if(IsFiredNox(id)) return 1;
 	if(PlayerInfo[id][pID] == 2326) return 1; //Amos
 	if(PlayerInfo[id][pID] == 8183364) return 1; //Krisztofer
-	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
+	//if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
 	if(PlayerInfo[id][pID] == 8177822) return 1; //Nick
 	return 0;
 }
@@ -20465,7 +20465,7 @@ stock IsFiredNox(id)//A félkész dolgok élesben láthatóságára általában, nem szok
 }
 stock IsRyanAndFranklin(id)
 {
-	if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
+	//if(PlayerInfo[id][pID] == 8175449) return 1; //Ryan
 	if(PlayerInfo[id][pID] == 4038) return 1; //Franlin
 	return 0;
 }
@@ -25028,7 +25028,7 @@ stock OnPlayerConnectKick(playerid)
 
 	if(ClassClient)
 	{
-		if(IsRyan(playerid) && !egyezik(PlayerInfo[playerid][pCode],"8702-245A-51A9-58FB-34F5-C1B2-2677-2AFF"))
+/*		if(IsRyan(playerid) && !egyezik(PlayerInfo[playerid][pCode],"8702-245A-51A9-58FB-34F5-C1B2-2677-2AFF"))
 		{
 			new string[128];
 			format(string, 128,"ClassRPG: %s kibannolva Teplán szelleme által | Oka: Túl kicsi a farkad, hogy ezzel a névvel felgyere:( Páápá", PlayerIP(playerid));
@@ -25037,7 +25037,7 @@ stock OnPlayerConnectKick(playerid)
 			SeeBan(playerid, 0, NINCS, "Ryan karakter", true, false);
 			TKick(playerid);
 			return 1;
-		}
+		}*/
 		if(egyezik(PlayerName(playerid), "Franklin_F_Gates") && !egyezik(PlayerInfo[playerid][pCode],"82F3-006C-8D01-D717-46AE-8FDA-EE14-3E3A"))
 		{
 			Format(_tmpString, "ClassRPG: %s kibannolva Franklin szelleme által | Oka: Ne gyere már fel a karimmal légyszives... Köszi, pápá :)", PlayerIP(playerid));
