@@ -167,7 +167,7 @@ CMD:carresiset(playerid, params[])//CRSSET
 
 CMD:object(playerid, params[])//OBJECT
 {
-	if(!Admin(playerid, 1338) && !IsScripter(playerid) && PlayerInfo[playerid][pID] != 8172362) return 1;
+	if(!IsScripter(playerid) && PlayerInfo[playerid][pID] != 8176177) return 1;
 	
 	new param[32];
 	new func[256];
@@ -230,7 +230,7 @@ CMD:object(playerid, params[])//OBJECT
 		{
 			Msg(playerid, "/object uj [típus]");
 			Msg(playerid, "Hotdog: 1340, | Italautomata: 1775 | Csokiautomata: 1776 | Szerencsegép: 2754 | Telefon: 1216");
-			Msg(playerid, "Ha nem írsz id-t automata üresra rakja.");
+			Msg(playerid, "Ha nem írsz id-t automata üresre rakja.");
 			
 			if(IsSuper(playerid))
 			{

@@ -41750,7 +41750,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		if(egyezik(param[1], "szolgálat") || egyezik(param[1], "szolgalat") || egyezik(param[1], "duty"))
 		{
-		    if(PlayerToPoint(5, playerid, 1358.359,-1523.176,17.085))
+		    if(PlayerToPoint(5, playerid, 1602.3849,-1056.2834,23.9063))//LS Bank melleti plac by Amos
 		    {
 				if(PlayerInfo[playerid][pAutoker]<1) return Msg(playerid, "Te nem vagy autókereskedõ!");
 			    if(PlayerInfo[playerid][pSex] == 1)
@@ -45128,7 +45128,7 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 		}
 		case 1338:
 		{
-			SendClientMessage(playerid, COLOR_ORANGE,"SuperAdmin(1338): /fegyveranticheat /loadversion /object /goingenyles /szerver /újajtó /válaszok törlés");
+			SendClientMessage(playerid, COLOR_ORANGE,"SuperAdmin(1338): /fegyveranticheat /loadversion  /goingenyles /szerver /újajtó /válaszok törlés");
 			SendClientMessage(playerid, COLOR_ORANGE,"SuperAdmin(1338): /asellcar /asellhouse /benzinkút /ajtó /kapu");
 		}
 
@@ -45136,12 +45136,12 @@ fpublic S:OnPlayerCommandText(playerid, cmdtext[], cmd[], pms[]) //opcbeg
 			SendClientMessage(playerid, COLOR_LIGHTGREEN,"AdminController(1339): /resivan /weatherall");
 
 		case 1340:
-			SendClientMessage(playerid, COLOR_GREEN,"FõAdminController(1340): /széf érték /swatleader /kapu /object /pickups /rendel /atm /forgalom");
+			SendClientMessage(playerid, COLOR_GREEN,"FõAdminController(1340): /széf érték /swatleader /kapu /pickups /rendel /atm /forgalom");
 
 		case 5555:
 		{
 			SendClientMessage(playerid, COLOR_BLUE, "Scripter(5555): /sa /sendrcon /resivan /spawn /debug /betölt /mentés /pickups /méreg /bank /objdel /pickdel");
-			SendClientMessage(playerid, COLOR_BLUE, "Scripter(5555): /ujpick /ujgarazs /ujhaz /ujkocsi /lowryder /ujbiznev /ujbizhely /igénylések /sduty");
+			SendClientMessage(playerid, COLOR_BLUE, "Scripter(5555): /ujpick /ujgarazs /ujhaz /ujkocsi /lowryder /ujbiznev /ujbizhely /igénylések /sduty /object");
 			SendClientMessage(playerid, COLOR_BLUE, "Scripter(5555): /saveint /deleteint /editint /goint /weatherall /kapu /npc /parancsbetöltés /forgalom /alapkocsi");
 
 		}
